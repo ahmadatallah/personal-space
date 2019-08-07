@@ -13,6 +13,7 @@ function Header() {
       borderColor="black-20"
       display="flex"
       alignItems="center"
+      style={{ 'box-shadow': '0 4px 8px 0 rgba(97, 107, 128, 0.24)'}}
     >
       <div maxWidth="6rem">
         <a display="block" href="/">
