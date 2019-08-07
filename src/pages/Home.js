@@ -1,25 +1,80 @@
 /** @jsx jsx */
-import jsx from '../jsx'
-import React from 'react'
-import theme from '../theme'
+import jsx from "../jsx";
+import React from "react";
+import theme from "../theme";
 
-import Container from '../components/Container'
-import { H1 } from '../elements';
-import Flex from '../components/Flex'
-import BlockLinkGrow from '../components/BlockLinkGrow';
-import avatar from '../assets/images/avatar.png'
-import Avatar from '../components/Avatar'
+import Container from "../components/Container";
+import { H1, H3, Div } from "../elements";
+import Flex from "../components/Flex";
+import BlockLinkGrow from "../components/BlockLinkGrow";
+import Header from "../containers/Header";
+import Card from "../components/Card";
+import Footer from "../containers/Footer";
+
 function Home() {
   return (
-    <Container>
-      <Flex justifyContent='center'>
-        <Avatar src={avatar} borderRadius={100} width={128}></Avatar>
-        <BlockLinkGrow  width={890}>
-          <H1 fontSize={130} ml={5}>A^Squared</H1>
-        </BlockLinkGrow>
+    <>
+      <Header />
+      <Container>
+        <Flex justifyContent="left">
+          <BlockLinkGrow width={1} ml={[0, 0, 4]}>
+            <H1 fontSize={45}>Sync... </H1>
+            <H1 fontSize={80} mt={-4}>
+              Atallah
+            </H1>
+          </BlockLinkGrow>
+        </Flex>
+        <H3>
+          I am a software engineer. Noam Chomsky once said: "When you walk
+          around, you're talking to yourself. You can't stop. I mean, it takes a
+          real act of will not to talk to yourself, and what you're doing is
+          thinking" and I find it the actual state of my mind all the time.{" "}
+        </H3>
+        <Footer />
+      </Container>
+      <Flex justifyContent="center" height={480}>
+        <Card
+          title="Waking Life"
+          subtitle="Directed by Richard Linklater"
+          text=""
+          image="https://66.media.tumblr.com/e692bdcfdaf65f2395236f7ebc0a3690/tumblr_p76px1gfSE1tzp3hyo2_1280.png"
+          tag="Frames"
+          link={{
+            text: "Read more",
+            href: "#0"
+          }}
+          maxWidth="25em"
+          mr={5}
+        />
+
+        <Card
+          title="Is The Man Who Is Tall Happy?"
+          subtitle="Noam Chomsky"
+          text=""
+          image="https://i.ytimg.com/vi/sgHt59KNGks/maxresdefault.jpg"
+          tag="Readings"
+          link={{
+            text: "Read more",
+            href: "#0"
+          }}
+          maxWidth="25em"
+          mr={5}
+        />
+        <Card
+          title="I want to be the scenery"
+          subtitle="Phone Camera"
+          text=""
+          image="https://66.media.tumblr.com/f7a70e78d419ba97fdd712a79b8c8700/tumblr_punsh7w51j1tzp3hyo1_500.jpg"
+          tag="Writings"
+          link={{
+            text: "Read more",
+            href: "#0"
+          }}
+          maxWidth="25em"
+        />
       </Flex>
-    </Container>
-  )
+    </>
+  );
 }
 
-export default Home
+export default Home;

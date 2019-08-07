@@ -1,18 +1,20 @@
 /** @jsx jsx */
-import jsx from '../jsx'
-import React from 'react'
-import theme from '../theme'
+import jsx from "../jsx";
+import React from "react";
+import theme from "../theme";
 
-import Logo from '../components/Logo'
-import Container from '../components/Container'
-import { H1 } from '../elements';
+import Container from "../components/Container";
+import { H1 } from "../elements";
+import Flex from "../components/Flex";
 
 function NotFound() {
   return (
-      <div>
-          <H1 color="red"> Not Found </H1>
-      </div>
-  )
+    <div>
+      <Flex justifyContent='center'>
+        <H1 color="red"> Not Found </H1>
+      </Flex>
+    </div>
+  );
 }
 
-export default NotFound
+export default NotFound;

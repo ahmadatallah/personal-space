@@ -1,16 +1,30 @@
 /** @jsx jsx */
-import jsx from '../jsx'
-import React from 'react'
-import theme from '../theme'
+import jsx from "../jsx";
+import React from "react";
+import theme from "../theme";
 
-import Logo from '../components/Logo'
-import Container from '../components/Container'
-import { H1 } from '../elements';
+import Container from "../components/Container";
+import { H1, H3 } from "../elements";
+import Flex from "../components/Flex";
+import BlockLinkGrow from "../components/BlockLinkGrow";
+import Header from "../containers/Header";
 
 function HomeAR() {
   return (
-   <H1> سينك عطااللّه</H1>
-  )
+    <>
+      <Header />
+      <Container>
+        <Flex justifyContent="left">
+          <BlockLinkGrow width={1} ml={[0, 0, 4]}>
+            <H1 fontSize={45}>Sync... </H1>
+            <H1 fontSize={90} mt={-4}>
+              Atallah
+            </H1>
+          </BlockLinkGrow>
+        </Flex>
+      </Container>
+    </>
+  );
 }
 
-export default HomeAR
+export default HomeAR;
