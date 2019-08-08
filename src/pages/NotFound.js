@@ -10,7 +10,7 @@ import Flex from "../components/Flex";
 function NotFound() {
   return (
     <div>
-      <Flex justifyContent='center'>
+      <Flex justifyContent="center">
         <H1 color="red"> Not Found </H1>
       </Flex>
     </div>

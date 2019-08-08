@@ -2,37 +2,44 @@
 import jsx from "../jsx";
 import React from "react";
 import theme from "../theme";
-
 import Container from "../components/Container";
-import { H1, H3, Div } from "../elements";
+import { H1, Section, H3, Div } from "../elements";
 import Flex from "../components/Flex";
-import BlockLinkGrow from "../components/BlockLinkGrow";
 import Header from "../containers/Header";
 import Card from "../components/Card";
 import Footer from "../containers/Footer";
+import { ThemeProvider, ColorMode } from "theme-ui";
 
 function Home() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <ColorMode />
       <Header />
-      <Container>
-        <Flex justifyContent="left">
-          <BlockLinkGrow width={1} ml={[0, 0, 4]}>
+      <Section mx="auto" maxWidth="128rem" minWidth="20rem">
+        <Container>
+          <Div px={[3, 4]}>
             <H1 fontSize={45}>Sync... </H1>
             <H1 fontSize={80} mt={-4}>
               Atallah
             </H1>
-          </BlockLinkGrow>
-        </Flex>
-        <H3>
-          I am a software engineer. Noam Chomsky once said: "When you walk
-          around, you're talking to yourself. You can't stop. I mean, it takes a
-          real act of will not to talk to yourself, and what you're doing is
-          thinking" and I find it the actual state of my mind all the time.{" "}
-        </H3>
+          </Div>
+          <H3
+            px={[3, 4]}
+            fontWeight={4}
+            style={{ "font-family": theme.typefaces.mono }}
+          >
+            I am a software engineer. Currently at Swvl. Noam Chomsky once said:
+            "When you walk around, you're talking to yourself. You can't stop. I
+            mean, it takes a real act of will not to talk to yourself, and what
+            you're doing is thinking" and I find it the actual state of my mind
+            all the time.{" "}
+          </H3>
+        </Container>
+      </Section>
+      <Section mx="auto" px={[3, 4]} maxWidth="64rem">
         <Footer />
-      </Container>
-      <Flex justifyContent="center" height={480}>
+      </Section>
+      <Flex justifyContent="center">
         <Card
           title="Waking Life"
           subtitle="Directed by Richard Linklater"
@@ -44,7 +51,8 @@ function Home() {
             href: "#0"
           }}
           maxWidth="25em"
-          mr={5}
+          mx={[2, 3, 4]}
+          width={[1 / 3, 1 / 2, 1]}
         />
 
         <Card
@@ -58,7 +66,8 @@ function Home() {
             href: "#0"
           }}
           maxWidth="25em"
-          mr={5}
+          mx={[2, 3, 4]}
+          width={[1 / 3, 1 / 2, 1]}
         />
         <Card
           title="I want to be the scenery"
@@ -71,9 +80,11 @@ function Home() {
             href: "#0"
           }}
           maxWidth="25em"
+          mx={[2, 3, 4]}
+          width={[1 / 3, 1 / 2, 1]}
         />
       </Flex>
-    </>
+    </ThemeProvider>
   );
 }
 

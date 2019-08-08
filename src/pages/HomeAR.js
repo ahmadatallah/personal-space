@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React from "react";
-import theme from "../theme";
 
 import Container from "../components/Container";
-import { H1, H3 } from "../elements";
+import { H1 } from "../elements";
 import Flex from "../components/Flex";
 import BlockLinkGrow from "../components/BlockLinkGrow";
 import Header from "../containers/Header";

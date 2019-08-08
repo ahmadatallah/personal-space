@@ -4,7 +4,13 @@ import React from "react";
 import theme from "../theme";
 import Avatar from "../components/Avatar";
 import avatarImg from "../assets/images/avatar.png";
+import ColorModeApplier from "./ColorModeApplier";
+import { useColorMode } from "theme-ui";
+
+const modes = ["light", "black", "dark", "deep", "hack", "pink"];
+
 function Header() {
+  const [colorMode, setColorMode] = useColorMode();
   return (
     <header
       px={4}
@@ -12,8 +18,9 @@ function Header() {
       borderBottom="1px solid"
       borderColor="black-20"
       display="flex"
+      minWidth= '460px'
       alignItems="center"
-      style={{ 'box-shadow': '0 4px 8px 0 rgba(97, 107, 128, 0.24)'}}
+      style={{ "box-shadow": "0 4px 8px 0 rgba(97, 107, 128, 0.24)" }}
     >
       <div maxWidth="6rem">
         <a display="block" href="/">
@@ -69,6 +76,7 @@ function Header() {
         fontSize={0}
         fontWeight={700}
         pb={2}
+        mr={3}
         color="black"
         href="/"
         title="عربي"
@@ -76,6 +84,14 @@ function Header() {
       >
         عربي{" "}
       </a>
+      <ColorModeApplier
+        mode={colorMode}
+        onClick={e => {
+          const i = modes.indexOf(colorMode);
+          const n = (i + 1) % modes.length;
+          setColorMode(modes[n]);
+        }}
+      />
     </header>
   );
 }

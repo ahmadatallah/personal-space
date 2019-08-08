@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
-import theme from "../theme";
 import {
   space,
   width,
