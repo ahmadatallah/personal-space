@@ -3,12 +3,13 @@ import jsx from "../jsx";
 import React from "react";
 import theme from "../theme";
 import Container from "../components/Container";
-import { H1, Section, H3, Div } from "../elements";
+import { H1, H2, Section, H3, Div } from "../elements";
 import Flex from "../components/Flex";
 import Header from "../containers/Header";
 import Card from "../components/Card";
-import Footer from "../containers/Footer";
+import Connect from "../containers/Connect";
 import { ThemeProvider, ColorMode } from "theme-ui";
+import Footer from "../containers/Footer";
 
 function Home() {
   return (
@@ -18,13 +19,14 @@ function Home() {
       <Section mx="auto" maxWidth="128rem" minWidth="20rem">
         <Container>
           <Div px={[3, 4]}>
-            <H1 fontSize={45}>Sync... </H1>
+            <H2 fontSize={45}>Sync... </H2>
             <H1 fontSize={80} mt={-4}>
               Atallah
             </H1>
           </Div>
           <H3
             px={[3, 4]}
+            mt={-4}
             fontWeight={4}
             style={{ "font-family": theme.typefaces.mono }}
           >
@@ -37,7 +39,7 @@ function Home() {
         </Container>
       </Section>
       <Section mx="auto" px={[3, 4]} maxWidth="64rem">
-        <Footer />
+        <Connect />
       </Section>
       <Flex justifyContent="center">
         <Card
@@ -81,6 +83,7 @@ function Home() {
           mx={[2, 3, 4]}
         />
       </Flex>
+      <Footer/>
     </ThemeProvider>
   );
 }

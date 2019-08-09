@@ -1,52 +1,16 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React from "react";
-import BlockLinkGrow from "../components/BlockLinkGrow";
-
+import theme from '../theme'
 function Footer() {
   return (
-    <footer borderTop="0.5px solid" borderColor='currentcolor' py={4}>
-      <div ml="auto" px="auto" display="flex">
-        <BlockLinkGrow
-          color="black"
-          py={1}
-          mr={2}
-          fontWeight={700}
-          href="https://github.com/syncatallah"
-          title="Syncatallah"
-        >
-          Github
-        </BlockLinkGrow>
-        <BlockLinkGrow
-          color="black"
-          py={1}
-          mr={2}
-          fontWeight={700}
-          href="https://twitter.com/ahmadatallah"
-          title="ahmadatallah"
-        >
-          Twitter
-        </BlockLinkGrow>
-        <BlockLinkGrow
-          color="black"
-          py={1}
-          mr={2}
-          fontWeight={700}
-          href="https://www.instagram.com/ahmad.atallah"
-          title="ahmad.atallah"
-        >
-          Instagram
-        </BlockLinkGrow>
-        <BlockLinkGrow
-          color="black"
-          py={1}
-          mr={2}
-          fontWeight={700}
-          href="https://www.linkedin.com/in/ahmad-atallah/"
-          title="ahmad.atallah"
-        >
-          Linkedin
-        </BlockLinkGrow>
+    <footer>
+      <div
+        display="flex"
+        justifyContent='center'
+        my={0}
+      >
+        <p style={{ fontFamily: theme.typefaces.mono}}>© 2019 syncatallah</p>
       </div>
     </footer>
   );
