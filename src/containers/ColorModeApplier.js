@@ -2,11 +2,11 @@
 import jsx from "../jsx";
 import React from "react";
 import ColorModeButton from "../components/ColorModeButton";
-
+import { Svg, Path } from "../elements";
 function ColorModeApplier({ ...props }) {
   return (
     <ColorModeButton onClick={props.onClick}>
-      <svg
+      <Svg
         viewBox="0 0 32 32"
         width="24"
         height="24"
@@ -23,14 +23,14 @@ function ColorModeApplier({ ...props }) {
           stroke="currentcolor"
           strokeWidth="4"
         />
-        <path
+        <Path
           d={`
             M 16 0
             A 16 16 0 0 0 16 32
             z
             `}
         />
-      </svg>
+      </Svg>
     </ColorModeButton>
   );
 }

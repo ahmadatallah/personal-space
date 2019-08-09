@@ -83,7 +83,7 @@ function Home() {
           mx={[2, 3, 4]}
         />
       </Flex>
-      <Footer/>
+      <Footer />
     </ThemeProvider>
   );
 }

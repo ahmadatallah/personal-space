@@ -2,15 +2,18 @@
 import jsx from "../jsx";
 import React from "react";
 import BlockLinkGrow from "../components/BlockLinkGrow";
+import { Div } from "../elements";
+
 import {
   FaTwitter as Twitter,
   FaGithub as GitHub,
   FaInstagram as Instagram,
   FaLinkedin as Linkedin
 } from "react-icons/fa";
+
 function Connect() {
   return (
-    <div
+    <Div
       ml="auto"
       px="auto"
       display="flex"
@@ -58,7 +61,7 @@ function Connect() {
       >
         <Linkedin size={24} />
       </BlockLinkGrow>
-    </div>
+    </Div>
   );
 }
 
