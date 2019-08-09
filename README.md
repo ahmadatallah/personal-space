@@ -1,4 +1,4 @@
-# Syncatallah Personal Blog 
+# Syncatallah Personal Blog | https://sycnatallah.now.sh
 
 ## TODO 
 - Add styles 
