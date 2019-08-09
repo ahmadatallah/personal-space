@@ -5,7 +5,7 @@ import BlockLinkGrow from "../components/BlockLinkGrow";
 
 function Footer() {
   return (
-    <footer borderTop="1px solid" borderColor="black-20" py={4}>
+    <footer borderTop="0.5px solid" borderColor='currentcolor' py={4}>
       <div ml="auto" px="auto" display="flex">
         <BlockLinkGrow
           color="black"

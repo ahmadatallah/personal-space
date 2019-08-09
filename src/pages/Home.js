@@ -32,7 +32,7 @@ function Home() {
             "When you walk around, you're talking to yourself. You can't stop. I
             mean, it takes a real act of will not to talk to yourself, and what
             you're doing is thinking" and I find it the actual state of my mind
-            all the time.{" "}
+            all the time.
           </H3>
         </Container>
       </Section>
@@ -52,7 +52,6 @@ function Home() {
           }}
           maxWidth="25em"
           mx={[2, 3, 4]}
-          width={[1 / 3, 1 / 2, 1]}
         />
 
         <Card
@@ -67,7 +66,6 @@ function Home() {
           }}
           maxWidth="25em"
           mx={[2, 3, 4]}
-          width={[1 / 3, 1 / 2, 1]}
         />
         <Card
           title="I want to be the scenery"
@@ -81,7 +79,6 @@ function Home() {
           }}
           maxWidth="25em"
           mx={[2, 3, 4]}
-          width={[1 / 3, 1 / 2, 1]}
         />
       </Flex>
     </ThemeProvider>

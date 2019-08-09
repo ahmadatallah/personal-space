@@ -15,8 +15,8 @@ const Card = ({ image, title, subtitle, text, tag, link, ...props }) => {
             px={2}
             py={1}
             borderRadius={1}
-            bg="black-80"
-            color="white"
+            bg="gray"
+            color="currentcolor"
             fontSize={0}
           >
             {tag}{" "}

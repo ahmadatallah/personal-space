@@ -18,9 +18,9 @@ function Header() {
       borderBottom="1px solid"
       borderColor="black-20"
       display="flex"
-      minWidth= '460px'
+      minWidth="460px"
       alignItems="center"
-      style={{ "box-shadow": "0 4px 8px 0 rgba(97, 107, 128, 0.24)" }}
+      style={{ "box-shadow": "0 1px 9px 0 currentcolor" }}
     >
       <div maxWidth="6rem">
         <a display="block" href="/">
@@ -32,57 +32,57 @@ function Header() {
         mr={3}
         fontSize={0}
         fontWeight={700}
-        color="black"
+        color="currentcolor"
         href="/"
         title="Readings"
-        style={{ fontFamily: theme.typefaces.mono }}
+        style={{ fontFamily: theme.typefaces.mono, ":hover": {color: 'currentcolor'}} }
       >
-        Readings{" "}
+        Readings
       </a>
       <a
         fontSize={0}
         mr={3}
         fontWeight={700}
-        color="black"
+        color="currentcolor"
         href="/"
         title="Writings"
         style={{ fontFamily: theme.typefaces.mono }}
       >
-        Writings{" "}
+        Writings
       </a>
       <a
         fontSize={0}
         mr={3}
         fontWeight={700}
-        color="black"
+        color="currentcolor"
         href="/"
         title="Frames"
         style={{ fontFamily: theme.typefaces.mono }}
       >
-        Frames{" "}
+        Frames
       </a>
       <a
         fontSize={0}
         mr={3}
         fontWeight={700}
-        color="black"
+        color="currentcolor"
         href="/"
         title="Frames"
         style={{ fontFamily: theme.typefaces.mono }}
       >
-        Music{" "}
+        Music
       </a>
       <a
         fontSize={0}
         fontWeight={700}
         pb={2}
         mr={3}
-        color="black"
+        color="currentcolor"
         href="/"
         title="عربي"
         style={{ fontFamily: theme.typefaces.helvetica }}
       >
-        عربي{" "}
+        عربي
       </a>
       <ColorModeApplier
         mode={colorMode}
