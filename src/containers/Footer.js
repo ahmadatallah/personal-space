@@ -8,14 +8,14 @@ function Footer() {
   return (
     <footer>
       <Flex justifyContent="center" my={0}>
-        <P style={{ fontFamily: theme.typefaces.mono }}>© 2019 syncatallah. </P>
+        <P fontFamily={theme.typefaces.mono}>© 2019 syncatallah. </P>
         <A
           ml={3}
           fontWeight={700}
           color="currentcolor"
           href="/about"
           title="About"
-          style={{ fontFamily: theme.typefaces.mono }}
+          fontFamily={theme.typefaces.mono}
         >
           {"About | "}
         </A>
@@ -27,7 +27,7 @@ function Footer() {
           color="currentcolor"
           href="/"
           title="عربي"
-          style={{ fontFamily: theme.typefaces.helvetica }}
+          fontFamily={theme.typefaces.helvetica}
         >
           عربي
         </A>

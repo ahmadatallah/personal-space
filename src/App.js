@@ -21,20 +21,23 @@ function App() {
       <ColorMode />
       <GlobalStyles />
       {isRTL ? (
-        <Div dir="rtl" style={{ fontFamily: theme.typefaces.helvetica }}>
+        <Div dir="rtl" fontFamily={theme.typefaces.helvetica}>
           <Router>
             <Route path="/ar" component={HomeAR} />
           </Router>
         </Div>
       ) : (
-        <Div style={{ fontFamily: theme.typefaces.baskerville }}>
+        <Div fontFamily={theme.typefaces.sansSerif}>
           <Router>
             <Route exact path="/" component={Home} />
             <Route path="/not-found" component={NotFound} />
             {/* TODO Add routes */}
-            <Route path="/about" component={About}/>
+            <Route path="/about" component={About} />
             <Route path="/writings" component={Home} />
-            <Route path="/readings" component={() => <Reading showColorMode={true} />} />
+            <Route
+              path="/readings"
+              component={() => <Reading showColorMode={true} />}
+            />
             <Route path="/frames" component={Home} />
             <Route path="/music" component={Home} />
           </Router>

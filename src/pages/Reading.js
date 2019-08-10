@@ -7,8 +7,7 @@ import ColorModeApplier from "../containers/ColorModeApplier";
 import { Div } from "../elements";
 import { useColorMode } from "theme-ui";
 import Readings from "../containers/Readings";
-
-const modes = ["light", "black", "dark", "deep", "hack", "pink"];
+import { modes } from "../utils/constants";
 
 function Reading({ showColorMode, ...props }) {
   const [colorMode, setColorMode] = useColorMode();

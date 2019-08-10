@@ -6,9 +6,8 @@ import Avatar from "../components/Avatar";
 import avatarImg from "../assets/images/avatar.png";
 import ColorModeApplier from "./ColorModeApplier";
 import { useColorMode } from "theme-ui";
-import { Div, A} from "../elements";
-
-const modes = ["light", "black", "dark", "deep", "hack", "pink"];
+import { Div, A } from "../elements";
+import { modes } from "../utils/constants";
 
 function Header() {
   const [colorMode, setColorMode] = useColorMode();
@@ -35,9 +34,7 @@ function Header() {
         color="currentcolor"
         href="/readings"
         title="Readings"
-        style={{
-          fontFamily: theme.typefaces.mono
-        }}
+        fontFamily={theme.typefaces.mono}
       >
         Readings
       </A>
@@ -48,7 +45,7 @@ function Header() {
         color="currentcolor"
         href="/"
         title="Writings"
-        style={{ fontFamily: theme.typefaces.mono }}
+        fontFamily={theme.typefaces.mono}
       >
         Writings
       </A>
@@ -59,7 +56,7 @@ function Header() {
         color="currentcolor"
         href="/"
         title="Frames"
-        style={{ fontFamily: theme.typefaces.mono }}
+        fontFamily={theme.typefaces.mono}
       >
         Frames
       </A>
@@ -70,7 +67,7 @@ function Header() {
         color="currentcolor"
         href="/"
         title="Frames"
-        style={{ fontFamily: theme.typefaces.mono }}
+        fontFamily={theme.typefaces.mono}
       >
         Music
       </A>
