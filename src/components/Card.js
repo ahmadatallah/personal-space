@@ -2,7 +2,16 @@
 import jsx from "../jsx";
 import React from "react";
 
-const Card = ({ image, title, subtitle, text, tag, link, ...props }) => {
+const Card = ({
+  image,
+  title,
+  subtitle,
+  text,
+  tag,
+  link,
+  subLink,
+  ...props
+}) => {
   return (
     <article {...props}>
       <div position="relative">
@@ -22,7 +31,7 @@ const Card = ({ image, title, subtitle, text, tag, link, ...props }) => {
             {tag}{" "}
           </div>
         )}
-        <img src={image} />
+        {props.children ? props.children : <img src={image} alt={title} />}
       </div>
       <div px={[3, 4]} py={[3, 4]}>
         {title && (
@@ -34,6 +43,23 @@ const Card = ({ image, title, subtitle, text, tag, link, ...props }) => {
           <h3 fontSize={1} mt={0} mb={2} lineHeight={1.25}>
             {subtitle}
           </h3>
+        )}
+        {subLink && (
+          <>
+            <a
+              href={subLink}
+              fontWeight={500}
+              fontSize={1}
+              borderRadius={3}
+              color="currentcolor"
+              textDecoration="underline"
+              px={0}
+              py={2}
+              mr={2}
+            >
+              Read or
+            </a>
+          </>
         )}
         {text && (
           <p fontSize={1} my={0}>

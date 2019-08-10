@@ -39,6 +39,7 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
   {
     boxSizing: "border-box",
     backfaceVisibility: "hidden",
+    textDecoration:'none',
     color: 'currentcolor',
     opacity: 0.75,
     transition: "transform 0.25s ease-out",
@@ -46,7 +47,7 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
       cursor: "pointer",
       opacity: 1,
       transition: "scale(1.05)",
-      color: 'currentcolor'
+      color: 'currentcolor',
     }
   }
 );

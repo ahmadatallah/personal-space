@@ -14,6 +14,7 @@ import {
   display,
   flex,
   flexWrap,
+  flexDirection,
   alignItems,
   justifyContent,
   fontFamily,
@@ -71,6 +72,7 @@ const Flex = styled('div', { shouldForwardProp })(
   gridTemplateRows,
   gridTemplateAreas,
   gridArea,
+  flexDirection,
   {
     boxSizing: "border-box"
   }

@@ -33,7 +33,7 @@ function Header() {
         fontSize={0}
         fontWeight={700}
         color="currentcolor"
-        href="/"
+        href="/readings"
         title="Readings"
         style={{
           fontFamily: theme.typefaces.mono

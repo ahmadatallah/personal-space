@@ -10,6 +10,10 @@ import Card from "../components/Card";
 import Connect from "../containers/Connect";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import Footer from "../containers/Footer";
+import nix from "../assets/images/nixverse-without-labels.png";
+import frames from "../assets/images/frames.jpg";
+import Quotation from "../containers/Qoutation";
+import music from "../assets/images/music.jpg";
 
 function Home() {
   return (
@@ -41,46 +45,69 @@ function Home() {
       <Section mx="auto" px={[3, 4]} maxWidth="64rem">
         <Connect />
       </Section>
-      <Flex justifyContent="center">
+      <Flex minWidth={["1884px"]} justifyContent="center" flexWrap="wrap">
         <Card
-          title="Waking Life"
-          subtitle="Directed by Richard Linklater"
-          text=""
-          image="https://66.media.tumblr.com/e692bdcfdaf65f2395236f7ebc0a3690/tumblr_p76px1gfSE1tzp3hyo2_1280.png"
-          tag="Frames"
+          title="Mapping a universe of open source software"
+          subLink="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
+          image={nix}
+          tag="Readings"
           link={{
-            text: "Read more",
-            href: "#0"
+            text: "See more",
+            href: "/readings"
           }}
           maxWidth="25em"
           mx={[2, 3, 4]}
+          mb={[2, 2, 0]}
+          borderColor="currencolor"
+          width={[1, 1 / 2, 1 / 4]}
         />
 
         <Card
-          title="Is The Man Who Is Tall Happy?"
-          subtitle="Noam Chomsky"
+          title="Coming Soon"
           text=""
-          image="https://i.ytimg.com/vi/sgHt59KNGks/maxresdefault.jpg"
-          tag="Readings"
-          link={{
-            text: "Read more",
-            href: "#0"
-          }}
-          maxWidth="25em"
-          mx={[2, 3, 4]}
-        />
-        <Card
-          title="I want to be the scenery"
-          subtitle="Phone Camera"
-          text=""
-          image="https://66.media.tumblr.com/f7a70e78d419ba97fdd712a79b8c8700/tumblr_punsh7w51j1tzp3hyo1_500.jpg"
           tag="Writings"
           link={{
-            text: "Read more",
-            href: "#0"
+            text: "See more",
+            href: "/writings"
           }}
           maxWidth="25em"
           mx={[2, 3, 4]}
+          mb={2}
+          borderColor="currencolor"
+          width={[1, 1 / 2, 1 / 4]}
+        >
+          <Quotation />
+        </Card>
+        <Card
+          title="I want to be the scenery"
+          subtitle="Cinema . Phone Camera"
+          text=""
+          image={frames}
+          tag="Frames"
+          link={{
+            text: "See more",
+            href: "/Frames"
+          }}
+          maxWidth="25em"
+          mx={[2, 3, 4]}
+          mb={2}
+          borderColor="currencolor"
+          width={[1, 1 / 2, 1 / 4]}
+        />
+        <Card
+          title="A music that make me quite"
+          subtitle="Indie . Soundtracks . Rock .etc."
+          image={music}
+          tag="Music"
+          link={{
+            text: "See more",
+            href: "/music"
+          }}
+          maxWidth="25em"
+          mx={[2, 3, 4]}
+          mb={[2, 2, 0]}
+          borderColor="currencolor"
+          width={[1, 1 / 2, 1 / 4]}
         />
       </Flex>
       <Footer />
