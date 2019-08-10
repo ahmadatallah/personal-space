@@ -4,9 +4,8 @@ import React from "react";
 import theme from "../theme";
 import Flex from "../components/Flex";
 import ColorModeApplier from "../containers/ColorModeApplier";
-import { Div, H1 } from "../elements";
+import { Div } from "../elements";
 import { useColorMode } from "theme-ui";
-import { ThemeProvider, ColorMode } from "theme-ui";
 import Readings from "../containers/Readings";
 
 const modes = ["light", "black", "dark", "deep", "hack", "pink"];

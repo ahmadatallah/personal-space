@@ -11,6 +11,7 @@ import HomeAR from "./pages/HomeAR";
 import NotFound from "./pages/NotFound";
 import Reading from "./pages/Reading";
 import Div from "./elements/Div";
+import About from "./pages/About";
 
 function App() {
   const currentLocation = window.location.pathname;
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/not-found" component={NotFound} />
             {/* TODO Add routes */}
+            <Route path="/about" component={About}/>
             <Route path="/writings" component={Home} />
             <Route path="/readings" component={() => <Reading showColorMode={true} />} />
             <Route path="/frames" component={Home} />

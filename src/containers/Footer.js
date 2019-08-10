@@ -13,7 +13,7 @@ function Footer() {
           ml={3}
           fontWeight={700}
           color="currentcolor"
-          href="/"
+          href="/about"
           title="About"
           style={{ fontFamily: theme.typefaces.mono }}
         >
