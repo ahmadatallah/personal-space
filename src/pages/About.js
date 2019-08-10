@@ -3,7 +3,7 @@ import jsx from "../jsx";
 import React from "react";
 import theme from "../theme";
 import Container from "../components/Container";
-import { Section, H3, Div, Img } from "../elements";
+import { H3, Div, Img } from "../elements";
 import Flex from "../components/Flex";
 import Connect from "../containers/Connect";
 import ColorModeApplier from "../containers/ColorModeApplier";

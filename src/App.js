@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import theme from "./theme";
@@ -11,7 +11,7 @@ import HomeAR from "./pages/HomeAR";
 import NotFound from "./pages/NotFound";
 import Reading from "./pages/Reading";
 import Div from "./elements/Div";
-import About from "./pages/About";
+const About = lazy(() => import("./pages/About"));
 
 function App() {
   const currentLocation = window.location.pathname;
@@ -32,7 +32,14 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/not-found" component={NotFound} />
             {/* TODO Add routes */}
-            <Route path="/about" component={About} />
+            <Route
+              path="/about"
+              component={() => (
+                <Suspense fallback={null}>
+                  <About />
+                </Suspense>
+              )}
+            />
             <Route path="/writings" component={Home} />
             <Route
               path="/readings"
