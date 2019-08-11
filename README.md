@@ -1,4 +1,4 @@
-# Syncatallah Personal Blog | https://sycnatallah.now.sh
+# Syncatallah Personal Blog | https://syncatallah.now.sh
 
 ## TODO 
 - ~Add themes~

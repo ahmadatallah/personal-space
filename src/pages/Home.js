@@ -99,7 +99,7 @@ function Home() {
         </Suspense>
         <Suspense fallback={null}>
           <Card
-            title="A music that make me quite"
+            title="A music that makes me quite"
             subtitle="Indie . Soundtracks . Rock .etc."
             image={music}
             tag="Music"
