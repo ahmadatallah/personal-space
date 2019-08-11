@@ -65,8 +65,8 @@ function Header() {
         mr={3}
         fontWeight={700}
         color="currentcolor"
-        href="/"
-        title="Frames"
+        href="/music"
+        title="Music"
         fontFamily={theme.typefaces.mono}
       >
         Music

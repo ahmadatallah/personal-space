@@ -11,6 +11,7 @@ import HomeAR from "./pages/HomeAR";
 import NotFound from "./pages/NotFound";
 import Reading from "./pages/Reading";
 import Div from "./elements/Div";
+import Music from "./pages/Music";
 const About = lazy(() => import("./pages/About"));
 const Frames = lazy(() => import ("./pages/Frames"));
 
@@ -51,7 +52,7 @@ function App() {
                 <Frames/>
               </Suspense>
             )} />
-            <Route path="/music" component={Home} />
+            <Route path="/music" component={Music} />
           </Router>
         </Div>
       )}
