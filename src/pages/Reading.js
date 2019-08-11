@@ -1,30 +1,15 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React from "react";
-import theme from "../theme";
 import Flex from "../components/Flex";
-import ColorModeApplier from "../containers/ColorModeApplier";
 import { Div } from "../elements";
-import { useColorMode } from "theme-ui";
 import Readings from "../containers/Readings";
-import { modes } from "../utils/constants";
+import MinimalHeader from "../containers/MinimalHeader";
 
 function Reading({ showColorMode, ...props }) {
-  const [colorMode, setColorMode] = useColorMode();
   return (
     <>
-      {showColorMode && (
-        <Div mt={1} px={4} py={2} textAlign="right">
-          <ColorModeApplier
-            mode={colorMode}
-            onClick={e => {
-              const i = modes.indexOf(colorMode);
-              const n = (i + 1) % modes.length;
-              setColorMode(modes[n]);
-            }}
-          />
-        </Div>
-      )}
+      <MinimalHeader />
       <Flex
         alignItems="center"
         flexDirection="column"

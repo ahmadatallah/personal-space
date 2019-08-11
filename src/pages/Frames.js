@@ -2,16 +2,13 @@
 import jsx from "../jsx";
 import React, { useState, useCallback, lazy, Suspense } from "react";
 import { H1, H2, Div } from "../elements";
-import ColorModeApplier from "../containers/ColorModeApplier";
 import Flex from "../components/Flex";
-import { useColorMode } from "theme-ui";
-import { modes } from "../utils/constants";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { photos } from "../utils/constants";
+import MinimalHeader from "../containers/MinimalHeader";
 
 const Gallery = lazy(() => import("react-photo-gallery"));
 function Frames({ ...props }) {
-  const [colorMode, setColorMode] = useColorMode();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const openLightbox = useCallback((event, { photo, index }) => {
@@ -25,29 +22,21 @@ function Frames({ ...props }) {
   };
   return (
     <>
-      <Div mt={1} px={4} py={2} textAlign="right">
-        <ColorModeApplier
-          mode={colorMode}
-          onClick={e => {
-            const i = modes.indexOf(colorMode);
-            const n = (i + 1) % modes.length;
-            setColorMode(modes[n]);
-          }}
-        />
-      </Div>
+      <MinimalHeader />
       <Flex flexDirection="column" px={5} py={2} mx="auto">
         <Div ml={1}>
           <H1 fontWeight={300}>Photography</H1>
         </Div>
         <Suspense
           fallback={
-            <>
-              <Flex flexDirection="column" px={5} py={2} mx="auto">
-                <Div ml={1}>
-                    <H2 fontWeight={300}> Loading .... </H2>
-                </Div>
-              </Flex>
-            </>
+            <Flex
+              flexDirection="column"
+              justifyContent="center"
+              mt={[200, 300, 350]}
+              mx="auto"
+            >
+              <H2 fontWeight={300}> Loading .... </H2>
+            </Flex>
           }
         >
           <Gallery photos={photos} onClick={openLightbox} />

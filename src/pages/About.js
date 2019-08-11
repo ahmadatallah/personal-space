@@ -1,31 +1,20 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import theme from "../theme";
 import Container from "../components/Container";
-import { H3, Div, Img } from "../elements";
+import { H3, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Connect from "../containers/Connect";
-import ColorModeApplier from "../containers/ColorModeApplier";
-import { useColorMode } from "theme-ui";
 import about from "../assets/images/about-img.jpg";
-import { modes } from "../utils/constants";
-function About() {
-  const [colorMode, setColorMode] = useColorMode();
+import MinimalHeader from "../containers/MinimalHeader";
 
+const Img = lazy(() => import("../elements/Img"));
+
+function About() {
   return (
     <>
-      <Div mt={1} px={4} py={2} textAlign="right">
-        <ColorModeApplier
-          mode={colorMode}
-          onClick={e => {
-            const i = modes.indexOf(colorMode);
-            const n = (i + 1) % modes.length;
-            setColorMode(modes[n]);
-          }}
-        />
-      </Div>
-
+      <MinimalHeader />
       <Flex justifyContent="center" flexDirection="column" pt={[5, 2, 3]}>
         <Div
           display="block"
@@ -33,7 +22,20 @@ function About() {
           width={[300, 300, 400]}
           alignItems="center"
         >
-          <Img src={about} />
+          <Suspense
+            fallback={
+              <Flex
+                flexDirection="column"
+                justifyContent="center"
+                mt={[200, 300, 350]}
+                mx="auto"
+              >
+                <H2 fontWeight={300}> Loading .... </H2>
+              </Flex>
+            }
+          >
+            <Img src={about} />
+          </Suspense>
         </Div>
         <Div mx="auto" maxWidth="64rem">
           <H3
