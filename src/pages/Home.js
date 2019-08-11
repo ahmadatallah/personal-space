@@ -35,11 +35,8 @@ function Home() {
             fontWeight={4}
             style={{ "font-family": theme.typefaces.mono }}
           >
-            I am a software engineer. Currently at Swvl. Noam Chomsky once said:
-            "When you walk around, you're talking to yourself. You can't stop. I
-            mean, it takes a real act of will not to talk to yourself, and what
-            you're doing is thinking" and I find it the actual state of my mind
-            all the time.
+            A software engineer. Interested in functional programming, frontend
+            engineering, and design. Sync... ? because we are all about sync. So, let the data flow!
           </H3>
         </Container>
       </Section>

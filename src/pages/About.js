@@ -24,11 +24,7 @@ function About() {
         >
           <Suspense
             fallback={
-              <Flex
-                flexDirection="column"
-                justifyContent="center"
-                mx="auto"
-              >
+              <Flex flexDirection="column" justifyContent="center" mx="auto">
                 <H2 fontWeight={300}> Loading .... </H2>
               </Flex>
             }
@@ -42,13 +38,16 @@ function About() {
             fontWeight={4}
             style={{ "font-family": theme.typefaces.mono }}
           >
-            I am Ahmad Atallah. An egyptian software engineer. What makes me
-            alife that I am supposed to do things that I am interested in,
-            learning more and fastly. I like taking visual photos, or I can say
-            that I love cinematography. Noam Chomsky once said: "When you walk
-            around, you're talking to yourself. You can't stop. I mean, it takes
-            a real act of will not to talk to yourself, and what you're doing is
-            thinking" and I find it the actual state of my mind all the time.
+            He is Ahmad Atallah. An egyptian software engineer. Interested in
+            functional programming, frontend engineering, and design. What makes
+            him alive is doing things he's interested in, like
+            previously mentioned, and willing to learn more and fastly. He likes
+            taking visual photos. Photos that he passes by in his dairy life;
+            every single day. Noam Chomsky once said: "When you walk around,
+            you're talking to yourself. You can't stop. I mean, it takes a real
+            act of will not to talk to yourself, and what you're doing is
+            thinking" and he finds this is all about the actual state of his
+            mind all the time.
           </H3>
         </Div>
         <Container mx="auto" px={[3, 4]} maxWidth="64rem">
