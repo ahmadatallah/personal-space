@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useCallback, Suspense } from "react";
-import { H1, Div } from "../elements";
+import React, { useState, useCallback, lazy, Suspense } from "react";
+import { H1, H2, Div } from "../elements";
 import ColorModeApplier from "../containers/ColorModeApplier";
 import Flex from "../components/Flex";
 import { useColorMode } from "theme-ui";
 import { modes } from "../utils/constants";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import Gallery from "react-photo-gallery";
 import { photos } from "../utils/constants";
 
+const Gallery = lazy(() => import("react-photo-gallery"));
 function Frames({ ...props }) {
   const [colorMode, setColorMode] = useColorMode();
   const [currentImage, setCurrentImage] = useState(0);
@@ -39,7 +39,17 @@ function Frames({ ...props }) {
         <Div ml={1}>
           <H1 fontWeight={300}>Photography</H1>
         </Div>
-        <Suspense fallback={null}>
+        <Suspense
+          fallback={
+            <>
+              <Flex flexDirection="column" px={5} py={2} mx="auto">
+                <Div ml={1}>
+                    <H2 fontWeight={300}> Loading .... </H2>
+                </Div>
+              </Flex>
+            </>
+          }
+        >
           <Gallery photos={photos} onClick={openLightbox} />
         </Suspense>
         <ModalGateway>
