@@ -54,7 +54,7 @@ function Header() {
         mr={3}
         fontWeight={700}
         color="currentcolor"
-        href="/"
+        href="/frames"
         title="Frames"
         fontFamily={theme.typefaces.mono}
       >

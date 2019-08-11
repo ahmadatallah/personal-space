@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import Reading from "./pages/Reading";
 import Div from "./elements/Div";
 const About = lazy(() => import("./pages/About"));
+const Frames = lazy(() => import ("./pages/Frames"));
 
 function App() {
   const currentLocation = window.location.pathname;
@@ -45,7 +46,11 @@ function App() {
               path="/readings"
               component={() => <Reading showColorMode={true} />}
             />
-            <Route path="/frames" component={Home} />
+            <Route path="/frames" component={() => (
+              <Suspense fallback={null}>
+                <Frames/>
+              </Suspense>
+            )} />
             <Route path="/music" component={Home} />
           </Router>
         </Div>
