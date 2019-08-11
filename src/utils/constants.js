@@ -437,12 +437,4 @@ export const photos = [
   }
 ];
 
-export const frames = [
-  {
-    src: require("../assets/images/frames/frame-1.jpg"),
-    width: 1,
-    height: 1,
-    title: `Amid the chaos of that day, when all I could hear was the thunder of gunshots, and all I could smell was the violence in the air, I look back and am amazed that my thoughts were so clear and true, that three words went through my mind endlessly, repeating themselves like a broken record: you’re so cool, you’re so cool, you’re so cool. And sometimes Clarence asks me what I would have done if he had died, if that bullet had been two inches more to the left. To this, I always smile, as if I’m not going to satisfy him with a response. But I always do. I tell him of how I would want to die, but that the anguish and the want of death would fade like the stars at dawn, and that things would be much as they are now. Perhaps. Except maybe I wouldn’t have named our son Elvis.
-        True Romance 1993`
-  }
-];
+export const frames = [];
