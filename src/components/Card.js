@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React from "react";
+import React, { lazy, Suspense } from "react";
+const Img = lazy(() => import("../elements/Img"));
 
 const Card = ({
   image,
@@ -31,7 +32,19 @@ const Card = ({
             {tag}{" "}
           </div>
         )}
-        {props.children ? props.children : <img src={image} alt={title} />}
+        {props.children ? (
+          props.children
+        ) : (
+          <Suspense
+            fallback={
+              <div flexDirection="column" justifyContent="center" mx="auto">
+                <h2 fontWeight={300}> Loading .... </h2>
+              </div>
+            }
+          >
+            <Img src={image} alt={title} />
+          </Suspense>
+        )}
       </div>
       <div px={[3, 4]} py={[3, 4]}>
         {title && (

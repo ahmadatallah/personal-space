@@ -27,7 +27,6 @@ function About() {
               <Flex
                 flexDirection="column"
                 justifyContent="center"
-                mt={[200, 300, 350]}
                 mx="auto"
               >
                 <H2 fontWeight={300}> Loading .... </H2>
