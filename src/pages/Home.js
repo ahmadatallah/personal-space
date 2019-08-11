@@ -97,23 +97,6 @@ function Home() {
             width={[1, 1 / 2, 1 / 4]}
           />
         </Suspense>
-        <Suspense fallback={null}>
-          <Card
-            title="A music that makes me quite"
-            subtitle="Indie . Soundtracks . Rock .etc."
-            image={music}
-            tag="Music"
-            link={{
-              text: "See more",
-              href: "/music"
-            }}
-            maxWidth="25em"
-            mx={[2, 3, 4]}
-            mb={[2, 2, 0]}
-            borderColor="currencolor"
-            width={[1, 1 / 2, 1 / 4]}
-          />
-        </Suspense>
       </Flex>
       <Footer />
     </ThemeProvider>

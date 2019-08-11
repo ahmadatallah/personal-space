@@ -60,17 +60,6 @@ function Header() {
       >
         Frames
       </A>
-      <A
-        fontSize={0}
-        mr={3}
-        fontWeight={700}
-        color="currentcolor"
-        href="/music"
-        title="Music"
-        fontFamily={theme.typefaces.mono}
-      >
-        Music
-      </A>
       <ColorModeApplier
         mode={colorMode}
         onClick={e => {

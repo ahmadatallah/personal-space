@@ -52,8 +52,8 @@ export const photos = [
   },
   {
     src: require("../assets/images/carousel/0011carousel.jpg"),
-    width: 1,
-    height: 1
+    width: 6,
+    height: 5
   },
   {
     src: require("../assets/images/carousel/0012carousel.jpg"),
@@ -62,23 +62,13 @@ export const photos = [
   },
   {
     src: require("../assets/images/carousel/0013carousel.jpg"),
-    width: 4,
+    width: 5,
     height: 3
   },
   {
     src: require("../assets/images/carousel/0014carousel.jpg"),
     width: 3,
     height: 4
-  },
-  {
-    src: require("../assets/images/carousel/0016carousel.jpg"),
-    width: 4,
-    height: 3
-  },
-  {
-    src: require("../assets/images/carousel/0017carousel.jpg"),
-    width: 1,
-    height: 1
   },
   {
     src: require("../assets/images/carousel/0018carousel.jpg"),
@@ -101,11 +91,6 @@ export const photos = [
     height: 3
   },
   {
-    src: require("../assets/images/carousel/0024carousel.jpg"),
-    width: 3,
-    height: 4
-  },
-  {
     src: require("../assets/images/carousel/0027carousel.jpg"),
     width: 1,
     height: 1
@@ -116,19 +101,9 @@ export const photos = [
     height: 4
   },
   {
-    src: require("../assets/images/carousel/0029carousel.jpg"),
-    width: 1,
-    height: 1
-  },
-  {
     src: require("../assets/images/carousel/0030carousel.jpg"),
     width: 3,
     height: 4
-  },
-  {
-    src: require("../assets/images/carousel/0032carousel.jpg"),
-    width: 1,
-    height: 1
   },
   {
     src: require("../assets/images/carousel/0033carousel.jpg"),
@@ -146,19 +121,9 @@ export const photos = [
     height: 4
   },
   {
-    src: require("../assets/images/carousel/0036carousel.jpg"),
-    width: 4,
-    height: 3
-  },
-  {
     src: require("../assets/images/carousel/0037carousel.jpg"),
     width: 4,
     height: 3
-  },
-  {
-    src: require("../assets/images/carousel/0041carousel.jpg"),
-    width: 1,
-    height: 1
   },
   {
     src: require("../assets/images/carousel/0043carousel.jpg"),
@@ -186,21 +151,6 @@ export const photos = [
     height: 4
   },
   {
-    src: require("../assets/images/carousel/0048carousel.jpg"),
-    width: 4,
-    height: 3
-  },
-  {
-    src: require("../assets/images/carousel/0049carousel.jpg"),
-    width: 1,
-    height: 1
-  },
-  {
-    src: require("../assets/images/carousel/0050carousel.jpg"),
-    width: 3,
-    height: 4
-  },
-  {
     src: require("../assets/images/carousel/0051carousel.jpg"),
     width: 1,
     height: 1
@@ -211,11 +161,6 @@ export const photos = [
     height: 3
   },
   {
-    src: require("../assets/images/carousel/0053carousel.jpg"),
-    width: 3,
-    height: 4
-  },
-  {
     src: require("../assets/images/carousel/0055carousel.jpg"),
     width: 4,
     height: 3
@@ -224,11 +169,6 @@ export const photos = [
     src: require("../assets/images/carousel/0056carousel.jpg"),
     width: 3,
     height: 4
-  },
-  {
-    src: require("../assets/images/carousel/0057carousel.jpg"),
-    width: 1,
-    height: 1
   },
   {
     src: require("../assets/images/carousel/0058carousel.jpg"),
@@ -251,19 +191,9 @@ export const photos = [
     height: 3
   },
   {
-    src: require("../assets/images/carousel/0063carousel.jpg"),
-    width: 6,
-    height: 5
-  },
-  {
     src: require("../assets/images/carousel/0064carousel.jpg"),
     width: 1,
     height: 1
-  },
-  {
-    src: require("../assets/images/carousel/0067carousel.jpg"),
-    width: 4,
-    height: 3
   },
   {
     src: require("../assets/images/carousel/0068carousel.jpg"),
@@ -281,11 +211,6 @@ export const photos = [
     height: 3
   },
   {
-    src: require("../assets/images/carousel/0076carousel.jpg"),
-    width: 4,
-    height: 3
-  },
-  {
     src: require("../assets/images/carousel/0077carousel.jpg"),
     width: 2,
     height: 3
@@ -297,8 +222,8 @@ export const photos = [
   },
   {
     src: require("../assets/images/carousel/0079carousel.jpg"),
-    width: 6,
-    height: 5
+    width: 1,
+    height: 1
   },
   {
     src: require("../assets/images/carousel/0081carousel.jpg"),
@@ -311,19 +236,9 @@ export const photos = [
     height: 1
   },
   {
-    src: require("../assets/images/carousel/0084carousel.jpg"),
+    src: require("../assets/images/carousel/0085carousel.jpg"),
     width: 1,
     height: 1
-  },
-  {
-    src: require("../assets/images/carousel/0085carousel.jpg"),
-    width: 3,
-    height: 4
-  },
-  {
-    src: require("../assets/images/carousel/0086carousel.jpg"),
-    width: 4,
-    height: 3
   },
   {
     src: require("../assets/images/carousel/0087carousel.jpg"),
@@ -342,11 +257,6 @@ export const photos = [
   },
   {
     src: require("../assets/images/carousel/0090carousel.jpg"),
-    width: 1,
-    height: 1
-  },
-  {
-    src: require("../assets/images/carousel/0091carousel.jpg"),
     width: 1,
     height: 1
   },
