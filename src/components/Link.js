@@ -12,8 +12,8 @@ function Link({ title, href, ...props }) {
       mx={1}
       my={1}
       fontWeight={400}
-      style={{ "font-family": theme.typefaces.mono }}
       href={href}
+      {...props}
     >
       {title}
     </BlockLinkGrow>

@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { ThemeProvider, ColorMode } from "theme-ui";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import theme from "./theme";
 import GlobalStyles from "./global-styles";
 import rtl from "./styled-rtl";
@@ -13,7 +13,7 @@ import Reading from "./pages/Reading";
 import Div from "./elements/Div";
 
 const About = lazy(() => import("./pages/About"));
-const Frames = lazy(() => import ("./pages/Frames"));
+const Frames = lazy(() => import("./pages/Frames"));
 
 function App() {
   const currentLocation = window.location.pathname;
@@ -23,7 +23,7 @@ function App() {
       <ColorMode />
       <GlobalStyles />
       {isRTL ? (
-        <Div dir="rtl" fontFamily={theme.typefaces.helvetica}>
+        <Div dir="rtl">
           <Router>
             <Route path="/ar" component={HomeAR} />
           </Router>
@@ -31,27 +31,35 @@ function App() {
       ) : (
         <Div fontFamily={theme.typefaces.sansSerif}>
           <Router>
-            <Route exact path="/" component={Home} />
-            <Route path="/not-found" component={NotFound} />
-            {/* TODO Add routes */}
-            <Route
-              path="/about"
-              component={() => (
-                <Suspense fallback={null}>
-                  <About />
-                </Suspense>
-              )}
-            />
-            <Route path="/writings" component={Home} />
-            <Route
-              path="/readings"
-              component={() => <Reading showColorMode={true} />}
-            />
-            <Route path="/frames" component={() => (
-              <Suspense fallback={null}>
-                <Frames/>
-              </Suspense>
-            )} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              {/* TODO Add routes */}
+              <Route
+                path="/about"
+                exact={true}
+                component={() => (
+                  <Suspense fallback={null}>
+                    <About />
+                  </Suspense>
+                )}
+              />
+              <Route path="/writings" component={Home} />
+              <Route
+                path="/readings"
+                exact={true}
+                component={() => <Reading showColorMode={true} />}
+              />
+              <Route
+                path="/frames"
+                exact={true}
+                component={() => (
+                  <Suspense fallback={null}>
+                    <Frames />
+                  </Suspense>
+                )}
+              />
+              <Route component={NotFound} />
+            </Switch>
           </Router>
         </Div>
       )}

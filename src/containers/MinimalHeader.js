@@ -13,8 +13,8 @@ function MinimalHeader() {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <Flex mt={1} px={4} py={2} textAlign="right" justifyContent="center">
-      <A display="block" href="/" mr={5}>
+    <Flex mt={1} px={4} py={2} textAlign="right" justifyContent="space-between">
+      <A display="block" href="/" px={2}>
         <Avatar src={avatarImg} borderRadius={100} width={[32, 64]} />
       </A>
       <ColorModeApplier

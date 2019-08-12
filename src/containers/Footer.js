@@ -25,7 +25,7 @@ function Footer() {
           pb={2}
           ml={3}
           color="currentcolor"
-          href="/"
+          href="/ar"
           title="عربي"
           fontFamily={theme.typefaces.helvetica}
         >
