@@ -4,7 +4,6 @@ import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
 import { H3, H2, Div } from "../../elements";
 import Flex from "../../components/Flex";
-import MDXStyle from 'mdx-style'
 import MinimalHeader from "../../containers/MinimalHeader";
 import { importMDX } from "mdx.macro";
 const Content = lazy(() => importMDX("./Bio.mdx"));
