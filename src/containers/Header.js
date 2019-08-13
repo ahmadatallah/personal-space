@@ -60,6 +60,19 @@ function Header() {
       >
         Frames
       </A>
+      <A
+        fontSize={1}
+        fontWeight={700}
+        pb={2}
+        mr={3}
+        color="currentcolor"
+        href="/ar"
+        title="عربي"
+        fontFamily={theme.typefaces.helvetica}
+      >
+        عربي
+      </A>
+
       <ColorModeApplier
         mode={colorMode}
         onClick={e => {

@@ -17,19 +17,7 @@ function Footer() {
           title="About"
           fontFamily={theme.typefaces.mono}
         >
-          {"About | "}
-        </A>
-        <A
-          fontSize={1}
-          fontWeight={700}
-          pb={2}
-          ml={3}
-          color="currentcolor"
-          href="/ar"
-          title="عربي"
-          fontFamily={theme.typefaces.helvetica}
-        >
-          عربي
+          {"About"}
         </A>
       </Flex>
     </footer>
