@@ -20,7 +20,7 @@ function Writings({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div display="grid" px={6} py={[3, 4, 5]}>
+        <Div display="grid"  pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
           <L
             to="/writings/create-react-app-run-build-envs"
             style={{ textDecoration: "none", color: "currentcolor" }}

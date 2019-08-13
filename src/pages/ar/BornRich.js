@@ -16,7 +16,7 @@ function BornRich({ ...props }) {
         dir="rtl"
         justifyConent="center"
         maxWidth={900}
-        px={5}
+        px={[4, 4, 5]}
         py={2}
         mx='auto'
         fontFamily={theme.typefaces.helvetica}

@@ -1,6 +1,7 @@
 {
   "name": "syncatallah",
-  "version": "0.2.0",
+  "version": "1.0.0",
+  "author": {"name": "Ahmad Atallah"},
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.15",

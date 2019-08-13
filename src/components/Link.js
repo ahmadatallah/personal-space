@@ -10,7 +10,7 @@ function Link({ title, href, ...props }) {
     <BlockLinkGrow
       fontSize={[1, 2, 3]}
       mx={1}
-      my={1}
+      my={2}
       fontWeight={400}
       href={href}
       {...props}

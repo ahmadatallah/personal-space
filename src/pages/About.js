@@ -42,7 +42,7 @@ function About() {
             functional programming, frontend engineering, and design. What makes
             him alive is doing things he's interested in, like
             previously mentioned, and willing to learn more and fastly. He likes
-            taking visual photos. Photos that he passes by in his dairy life;
+            taking visual photos. Photos that he passes by in his daily life;
             every single day. Noam Chomsky once said: "When you walk around,
             you're talking to yourself. You can't stop. I mean, it takes a real
             act of will not to talk to yourself, and what you're doing is

@@ -23,7 +23,7 @@ function Frames({ ...props }) {
   return (
     <>
       <MinimalHeader />
-      <Flex flexDirection="column" px={5} py={2} mx="auto">
+      <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto">
         <Div ml={1}>
           <H1 fontWeight={300}>Photography</H1>
         </Div>
@@ -33,7 +33,6 @@ function Frames({ ...props }) {
               flexDirection="column"
               justifyContent="center"
               mt={[200, 300, 350]}
-              mx="auto"
             >
               <H2 fontWeight={300}> Loading .... </H2>
             </Flex>

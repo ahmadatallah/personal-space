@@ -9,7 +9,7 @@ import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
 function HomeAR({ ...props }) {
   return (
-    <Div dir="rtl">
+    <>
       <MinimalHeader />
       <Flex
         alignItems="center"
@@ -19,10 +19,10 @@ function HomeAR({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div display="grid" px={6} py={[3, 4, 5]}>
+        <Div dir="rtl" display="grid" pr={[5, 6, 6]} py={5}>
           <L
             to="/ar/school-of-biomedical-engineering"
-            style={{ textDecoration: "none", color: "currentcolor" }}
+            style={{ textDecoration: "none", color: "currentcolor", marginBottom: '16px' }}
           >
             <Link
               title="كلية الهندسة الحيوية والطبية والمنظومات ١"
@@ -31,7 +31,7 @@ function HomeAR({ ...props }) {
           </L>
           <L
             to="/ar/sorry-being-born-rich-still-leads-to-success"
-            style={{ textDecoration: "none", color: "currentcolor" }}
+            style={{ textDecoration: "none", color: "currentcolor", marginBottom: '16px' }}
           >
             <Link
               title="الملعقة الذهب التي تؤدي دائمًا للنجاح"
@@ -40,7 +40,7 @@ function HomeAR({ ...props }) {
           </L>
         </Div>
       </Flex>
-    </Div>
+    </>
   );
 }
 

@@ -3,7 +3,7 @@
 
 This post will show you how I migrate create-react-app custom environement variables from build-time to be configurable at run-time.
 According to create-react-app [docs](https://create-react-app.dev/docs/adding-custom-environment-variables) we can not embed environement variables during runtime.
-so defining them with the prefix **REACT\_APP\_** will expose them only in build-time where you can access them by **process.env.REACT\_APP\_SOME\_KEY**
+so defining them with the prefix **REACT\_APP\_** will expose them only in build-time where you can access them by **process.env.REACT\_APP\_KEY**
 
 Note: I will use these aliases throughout the rest of article:
 - **env vars** instead of environment variables
@@ -37,7 +37,7 @@ Note: **.env.local** is missing from **yarn/npm test** and don't know why! but i
 A final example will be a **.env** file with env vars keys and values like this: 
 
 ** 
-    REACT\_APP\_SOME\_KEY=some-value
+    REACT\_APP\_KEY=some-value
 **
 <br></br><br></br>
 
@@ -74,9 +74,13 @@ I will extract the env vars in **.env** file into a new javascript config file u
 
   **if printf '%s\n' "$line" | grep -q -e '='; then**
     
-       varname=$(printf '%s\\n' "$line" | sed -e 's/=.*//')
+       varname=$(printf '%s\\n' 
+        
+        "$line" | sed -e 's/=.*//')
 
-       varvalue=$(printf '%s\\n' "$line" | sed -e 's/^[^=]*=//')
+       varvalue=$(printf '%s\\n' 
+        
+        "$line" | sed -e 's/^[^=]*=//')
 
   **fi**
 
@@ -107,7 +111,7 @@ into your **public/index.html**
 Finally this how the file will look like: 
 
 ------------------------
-**window.__env__ = { REACT_APP_SOME_KEY: value }**
+**window.__env__ = { REACT_APP_KEY: value }**
 
 ------------------------
 <br></br><br></br>
@@ -117,21 +121,24 @@ To get all of these running in development, you will need to:
 
 - update **yarn/npm start** command to 
 
-    **./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start**
+    **./env.sh && ./env.sh && cp**
+        **env-config.js ./public/ && react-scripts start**
 
-- update all **process.env.REACT\_APP\_SOME\_KEY** to **window.\_\_env\_\_.REACT\_APP\_SOME\_KEY**
+- update all 
+    **process.env.REACT\_APP\_KEY** 
+    to **window.\_\_env\_\_.REACT\_APP\_KEY**
 <br></br><br></br>
 
 #### Setup Tests Environment Variables
 
 Doing all of the above will not guarantee running your test suites correctly, actually,you will see an error
-that can't read property **REACT_APP_SOME_KEY** of undefined. This is because **\_\_env\_\_** 
+that can't read property **REACT_APP_KEY** of undefined. This is because **\_\_env\_\_** 
 is not exposed in test environment which by the way is a build-time process. There is a hack solution
 for this problem which reusing **.env** file to assign all the values from it to **\_\_env\_\_**
 into your **setupTests.js** like below: 
 
 ------------------------
-**window.__env__ = { REACT_APP_SOME_KEY: process.env.REACT_APP_SOME_KEY }**
+**window.__env__ = { REACT_APP_KEY: process.env.REACT_APP_KEY }**
 
 ------------------------
 
