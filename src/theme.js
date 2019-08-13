@@ -1,4 +1,14 @@
 const theme = {
+  styles: {
+    h3: {
+      fontSize: 32,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      color: 'primary',
+      mt: 4,
+      mb: 2,
+    },
+  },
   breakpoints: [
     '30em', '60em'
   ],

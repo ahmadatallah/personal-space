@@ -11,6 +11,8 @@ import HomeAR from "./pages/HomeAR";
 import NotFound from "./pages/NotFound";
 import Reading from "./pages/Reading";
 import Div from "./elements/Div";
+import Bio from "./pages/ar/Bio";
+import BornRich from "./pages/ar/BornRich";
 
 const About = lazy(() => import("./pages/About"));
 const Frames = lazy(() => import("./pages/Frames"));
@@ -25,7 +27,9 @@ function App() {
       {isRTL ? (
         <Div dir="rtl">
           <Router>
-            <Route path="/ar" component={HomeAR} />
+            <Route exact path="/ar" component={HomeAR} />
+            <Route path={`/ar/school-of-biomedical-engineering`} component={Bio} />
+            <Route path={`/ar/sorry-being-born-rich-still-leads-to-success`} component={BornRich} />
           </Router>
         </Div>
       ) : (
