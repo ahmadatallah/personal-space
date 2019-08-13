@@ -63,13 +63,13 @@ function Home() {
         </Suspense>
         <Suspense fallback={null}>
           <Card
-            title="Coming Soon"
-            text=""
+            title="Create React App: Run-time vs Build-time Environment Variables"
             tag="Writings"
             link={{
               text: "See more",
               href: "/writings"
             }}
+            subLink="/writings/create-react-app-run-build-envs"
             maxWidth="25em"
             mx={[2, 3, 4]}
             mb={2}

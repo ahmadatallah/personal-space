@@ -7,41 +7,33 @@ import { Div } from "../elements";
 import MinimalHeader from "../containers/MinimalHeader";
 import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
-function HomeAR({ ...props }) {
+
+function Writings({ ...props }) {
   return (
-    <Div dir="rtl">
+    <>
       <MinimalHeader />
       <Flex
         alignItems="center"
         flexDirection="column"
-        maxWidth="50em"
+        maxWidth="80em"
         minHeight="100%"
         mr="auto"
         ml="auto"
       >
         <Div display="grid" px={6} py={[3, 4, 5]}>
           <L
-            to="/ar/school-of-biomedical-engineering"
+            to="/writings/create-react-app-run-build-envs"
             style={{ textDecoration: "none", color: "currentcolor" }}
           >
             <Link
-              title="كلية الهندسة الحيوية والطبية والمنظومات ١"
-              fontFamily={theme.typefaces.helvetica}
-            />
-          </L>
-          <L
-            to="/ar/sorry-being-born-rich-still-leads-to-success"
-            style={{ textDecoration: "none", color: "currentcolor" }}
-          >
-            <Link
-              title="الملعقة الذهب التي تؤدي دائمًا للنجاح"
-              fontFamily={theme.typefaces.helvetica}
+              title="Create React App: Run-time vs Build-time Environment Variables"
+              fontFamily={theme.typefaces.mono}
             />
           </L>
         </Div>
       </Flex>
-    </Div>
+    </>
   );
 }
 
-export default HomeAR;
+export default Writings;

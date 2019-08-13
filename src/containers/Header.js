@@ -43,7 +43,7 @@ function Header() {
         mr={3}
         fontWeight={700}
         color="currentcolor"
-        href="/"
+        href="/writings"
         title="Writings"
         fontFamily={theme.typefaces.mono}
       >

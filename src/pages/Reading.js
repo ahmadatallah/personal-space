@@ -13,7 +13,7 @@ function Reading({ showColorMode, ...props }) {
       <Flex
         alignItems="center"
         flexDirection="column"
-        maxWidth="50em"
+        maxWidth="60em"
         mr="auto"
         ml="auto"
       >

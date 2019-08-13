@@ -2,25 +2,24 @@
 import jsx from "../../jsx";
 import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
-import { Div } from "../../elements";
+import { H3, H2, Div } from "../../elements";
 import Flex from "../../components/Flex";
 import MinimalHeader from "../../containers/MinimalHeader";
 import { importMDX } from "mdx.macro";
-const Content = lazy(() => importMDX("./Bio.mdx"));
+const Content = lazy(() => importMDX("./CreateReactAppEnvVars.mdx"));
 
-function Bio({ ...props }) {
+function CreateReactAppEnvVars({ ...props }) {
   return (
     <>
       <MinimalHeader />
       <Flex
-        dir="rtl"
         justifyConent="center"
         px={[1, 4, 6]}
         py={2}
         mx="auto"
-        fontFamily={theme.typefaces.helvetica}
+        fontFamily={theme.typefaces.mono}
       >
-        <Suspense fallback={<Div>Loading...</Div>}>
+        <Suspense fallback={<div>Loading...</div>}>
           <Content />
         </Suspense>
       </Flex>
@@ -28,4 +27,4 @@ function Bio({ ...props }) {
   );
 }
 
-export default Bio;
+export default CreateReactAppEnvVars;
