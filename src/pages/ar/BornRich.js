@@ -10,14 +10,21 @@ const Content = lazy(() => importMDX("./BornRich.mdx"));
 
 function BornRich({ ...props }) {
   return (
-    <Div dir="rtl">
-    <MinimalHeader />
-      <Flex px={8} py={2} mx="auto" fontFamily={theme.typefaces.helvetica} >
+    <>
+      <MinimalHeader />
+      <Flex
+        dir="rtl"
+        justifyConent="center"
+        px={[1, 4, 6]}
+        py={2}
+        mx="auto"
+        fontFamily={theme.typefaces.helvetica}
+      >
         <Suspense fallback={<Div>Loading...</Div>}>
-          <Content/>
+          <Content />
         </Suspense>
       </Flex>
-    </Div>
+    </>
   );
 }
 
