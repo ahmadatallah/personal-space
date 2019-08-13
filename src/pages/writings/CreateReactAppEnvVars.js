@@ -12,17 +12,18 @@ function CreateReactAppEnvVars({ ...props }) {
   return (
     <>
       <MinimalHeader />
-      <Flex
+      <Div
         justifyConent="center"
-        px={[1, 4, 6]}
+        maxWidth={900}
+        px={5}
         py={2}
-        mx="auto"
+        mx='auto'
         fontFamily={theme.typefaces.mono}
       >
         <Suspense fallback={<div>Loading...</div>}>
           <Content />
         </Suspense>
-      </Flex>
+      </Div>
     </>
   );
 }

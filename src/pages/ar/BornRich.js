@@ -15,9 +15,10 @@ function BornRich({ ...props }) {
       <Flex
         dir="rtl"
         justifyConent="center"
-        px={[1, 4, 6]}
+        maxWidth={900}
+        px={5}
         py={2}
-        mx="auto"
+        mx='auto'
         fontFamily={theme.typefaces.helvetica}
       >
         <Suspense fallback={<Div>Loading...</Div>}>
