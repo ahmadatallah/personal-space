@@ -18,7 +18,7 @@ function CreateReactAppEnvVars({ ...props }) {
         px={[2, 3, 5]}
         py={2}
         mx='auto'
-        fontFamily={theme.typefaces.mono}
+        fontFamily={theme.typefaces.sansSerif}
       >
         <Suspense fallback={<div>Loading...</div>}>
           <Content />
