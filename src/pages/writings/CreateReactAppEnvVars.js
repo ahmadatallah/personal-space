@@ -2,11 +2,9 @@
 import jsx from "../../jsx";
 import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
-import { H3, H2, Div } from "../../elements";
-import Flex from "../../components/Flex";
+import { Div } from "../../elements";
 import MinimalHeader from "../../containers/MinimalHeader";
-import { importMDX } from "mdx.macro";
-import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/themes/prism-solarizedlight.css";
 
 const Content = React.lazy(() =>
   import("!babel-loader!mdx-loader!./CreateReactAppEnvVars.mdx")
