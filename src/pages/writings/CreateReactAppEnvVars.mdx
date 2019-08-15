@@ -1,6 +1,6 @@
-###  13 Aug, 2019 . 📖⏰ 10 min read
+####  13 Aug, 2019 . 📖⏰ 10 min read
 
-## Create React App: Run-time vs Build-time Environment Variables
+# Create React App: Run-time vs Build-time Environment Variables
 
 This post will show you how I migrate create-react-app custom environement variables from build-time to be configurable at run-time.
 According to create-react-app [docs](https://create-react-app.dev/docs/adding-custom-environment-variables) we can not embed environement variables during runtime.
@@ -11,7 +11,7 @@ Note: I will use these aliases throughout the rest of article:
 - **env/s** instead of enviroment/s
 
 
-### Initializing Envirnoment Variables in Build Time
+## Initializing Envirnoment Variables in Build Time
 
 To define env vars in build-time, just put your own env vars keys into `.env` file located in your home path, and prefixed by `REACT_APP_`. 
 The env vars in this file will be exposed into your JS code in development enviroment only.
@@ -36,11 +36,11 @@ Note: `.env.local` is missing from `yarn/npm test` and don't know why! but it is
 
 A final example will be a `.env` file with env vars keys and values like this: 
 
-` 
+```js
     REACT_APP_KEY=some-value
-`
+```
 
-### Migrate to Run Time Environment Variables
+## Migrate to Run Time Environment Variables
 This is a hack solution because the definition of env vars in browsers does not even exist. It is something like a fake abstraction as mentioned [here](https://www.freecodecamp.org/news/how-to-implement-runtime-environment-variables-with-create-react-app-docker-and-nginx-7f9d42a91d70/).
 We will keep our `.env` file only with the default develepment env vars as it is our main concern now!
 
@@ -102,18 +102,21 @@ echo "}" >> ./env-config.js
 
 This will create `env-config.js` file that you will need to embed it like below:
 
------------------------
-```<script src="%PUBLIC_URL%/env-config.js"></script>```
 
------------------------
+```html 
+<script src="%PUBLIC_URL%/env-config.js"></script>
+```
+
 <br></br>
 
 into your `public/index.html`.  Finally this is how the file will look like: 
 
-------------------------
-`window.__env__ = { REACT_APP_KEY: value }`
+```js 
+window.__env__ = { 
+    REACT_APP_KEY: value 
+}
+```
 
-------------------------
 
 
 #### Putting All Together
@@ -121,12 +124,20 @@ To get all of these running in development, you will need to:
 
 - update `yarn/npm start` command to 
 
-    `./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start`
+    ```bash
+    ./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start
+    ```
 
 - update all 
-    `process.env.REACT_APP_KEY` 
-    to `window.__env__.REACT_APP_KEY`
-
+    ```js 
+    process.env.REACT_APP_KEY
+    ```
+    
+    to 
+    
+    ```js 
+    window.__env__.REACT_APP_KEY
+    ```
 
 #### Setup Tests Environment Variables
 
@@ -136,9 +147,11 @@ is not exposed in test environment which by the way is a build-time process. The
 for this problem which reusing `.env` file to assign all the values from it to `__env__`
 into your `setupTests.js` like below: 
 
-------------------------
-`window.__env__ = { REACT_APP_KEY: process.env.REACT_APP_KEY }`
+```js 
+window.__env__ = { 
+    REACT_APP_KEY: process.env.REACT_APP_KEY 
+}
+```
 
-------------------------
 
 
