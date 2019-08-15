@@ -1,11 +1,10 @@
 # Syncatallah Personal Blog | https://syncatallah.now.sh
 
 ## TODO 
-- ~Add themes~
-- ~Add fonts~
-- ~about~
-- arabic readings page
-- arabic writings page
-- writings 
-- ~readings~
-- frames
+- [x] ~~Add themes~~
+- [x] ~~Add fonts~~
+- [x] ~~about~~
+- [x] ~~arabic writings page~~
+- [x] ~~writings~~
+- [x] ~~readings~~
+- [x] ~~frames~~
