@@ -35,7 +35,7 @@ const theme = {
   typefaces: {
     helvetica: 'Helvetica, sans-serif',
     serif: 'athelas, georgia, times, serif',
-    sansSerif: 'system-ui, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif', 
+    sansSerif: '"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, , "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif', 
     mono: 'Consolas, monaco, monospace'
   },
   textStyles: {

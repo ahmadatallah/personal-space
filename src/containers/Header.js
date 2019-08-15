@@ -61,7 +61,7 @@ function Header() {
         Frames
       </A>
       <A
-        fontSize={1}
+        fontSize={0}
         fontWeight={700}
         pb={2}
         mr={3}

@@ -15,7 +15,7 @@ function CreateReactAppEnvVars({ ...props }) {
       <Div
         justifyConent="center"
         maxWidth={900}
-        px={[2, 3, 5]}
+        px={[4, 3, 5]}
         py={2}
         mx='auto'
         fontFamily={theme.typefaces.sansSerif}

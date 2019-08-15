@@ -1,4 +1,5 @@
 ###  13 Aug, 2019 . 📖⏰ 10 min read
+
 ## Create React App: Run-time vs Build-time Environment Variables
 
 This post will show you how I migrate create-react-app custom environement variables from build-time to be configurable at run-time.
@@ -48,8 +49,9 @@ We will keep our `.env` file only with the default develepment env vars as it is
 I will extract the env vars in `.env` file into a new javascript config file using a simple bash script as below imported from [here](https://www.freecodecamp.org/news/how-to-implement-runtime-environment-variables-with-create-react-app-docker-and-nginx-7f9d42a91d70/)
 
 -----------------
+
 ```bash
-#!/bin/bash`
+#!/bin/bash
 
 set -e
 
@@ -94,6 +96,7 @@ done < .env
 
 echo "}" >> ./env-config.js
 ```
+
 ------------------
 <br></br>
 

@@ -24,7 +24,7 @@ function Home() {
       <Section mx="auto" maxWidth="128rem" minWidth="20rem">
         <Container>
           <Div px={[3, 4]}>
-            <H2 fontSize={45}>Sync... </H2>
+            <H2 fontSize={45} >Sync... </H2>
             <H1 fontSize={80} mt={-4}>
               Atallah
             </H1>
