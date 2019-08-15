@@ -5,6 +5,7 @@ import theme from "../../theme";
 import { Div } from "../../elements";
 import MinimalHeader from "../../containers/MinimalHeader";
 import "prismjs/themes/prism-solarizedlight.css";
+import "./pre.css"
 
 const Content = React.lazy(() =>
   import("!babel-loader!mdx-loader!./CreateReactAppEnvVars.mdx")
