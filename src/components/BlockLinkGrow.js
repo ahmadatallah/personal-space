@@ -49,7 +49,7 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
       cursor: "pointer",
       opacity: 1,
       transition: "scale(1.05)",
-      color: 'currentcolor',
+      color: theme.colors.purple,
     }
   }
 );

@@ -2,7 +2,9 @@
 import jsx from "../jsx";
 import React from "react";
 import BlockLinkGrow from "../components/BlockLinkGrow";
+import theme from "../theme"
 import { Div } from "../elements";
+import Resume from "../external/Resume.pdf";
 
 import {
   FaTwitter as Twitter,
@@ -18,11 +20,11 @@ function Connect() {
       px="auto"
       display="flex"
       borderTop="0.5px solid"
+      alignItems="center"
       borderColor="currentcolor"
       py={4}
     >
       <BlockLinkGrow
-        color="black"
         py={1}
         mr={2}
         fontWeight={700}
@@ -32,7 +34,6 @@ function Connect() {
         <GitHub size={24} />
       </BlockLinkGrow>
       <BlockLinkGrow
-        color="black"
         py={1}
         mr={2}
         fontWeight={700}
@@ -42,7 +43,6 @@ function Connect() {
         <Twitter size={24} />
       </BlockLinkGrow>
       <BlockLinkGrow
-        color="black"
         py={1}
         mr={2}
         fontWeight={700}
@@ -52,7 +52,6 @@ function Connect() {
         <Instagram size={24} />
       </BlockLinkGrow>
       <BlockLinkGrow
-        color="black"
         py={1}
         mr={2}
         fontWeight={700}
@@ -60,6 +59,16 @@ function Connect() {
         title="ahmad.atallah"
       >
         <Linkedin size={24} />
+      </BlockLinkGrow>
+
+      <BlockLinkGrow
+        py={1}
+        mr={2}
+        fontWeight={700}
+        href={Resume}
+        title="Ahmad's Resume"
+      >
+        Resume
       </BlockLinkGrow>
     </Div>
   );
