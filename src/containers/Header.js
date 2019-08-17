@@ -15,11 +15,8 @@ function Header() {
     <header
       px={3}
       py={2}
-      borderBottom="1px solid"
-      borderColor="black-20"
       display="flex"
       alignItems="center"
-      style={{ "box-shadow": "0 1px 9px 0 currentcolor" }}
     >
       <Div maxWidth="6rem" mr={2}>
         <A display="block" href="/">
