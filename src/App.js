@@ -15,6 +15,7 @@ import Div from "./elements/Div";
 import Bio from "./pages/ar/Bio";
 import BornRich from "./pages/ar/BornRich";
 import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
+import Society from "./pages/ar/Society";
 
 const About = lazy(() => import("./pages/About"));
 const Frames = lazy(() => import("./pages/Frames"));
@@ -36,6 +37,10 @@ function App() {
             <Route
               path={`/ar/sorry-being-born-rich-still-leads-to-success`}
               component={BornRich}
+            />
+            <Route
+              path={`/ar/happy-society`}
+              component={Society}
             />
             <Route
               path="/writings"
