@@ -5,8 +5,7 @@ pre {
     white-space: -o-pre-wrap;
     word-wrap: break-word;
     overflow-x: scroll;
-    overflow-x: moz-scroll;
-    overflow-x: -o-scroll;
+    overflow-y:hidden;
     background-color: rgb(179, 179, 179, 0.2);
     padding-left: 16px;
     padding-right: 16px;

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React, { lazy, Suspense } from "react";
+import BlockLinkGrow from "./BlockLinkGrow";
 const Img = lazy(() => import("../elements/Img"));
 
 const Card = ({
@@ -42,7 +43,7 @@ const Card = ({
               </div>
             }
           >
-            <Img src={image} alt={title} />
+            <Img src={image} alt={link.text} />
           </Suspense>
         )}
       </div>
@@ -80,7 +81,7 @@ const Card = ({
           </p>
         )}
         {link && (
-          <a
+          <BlockLinkGrow
             href={link.href}
             fontWeight={700}
             fontSize={1}
@@ -90,7 +91,7 @@ const Card = ({
             py={2}
           >
             {link.text}
-          </a>
+          </BlockLinkGrow>
         )}
       </div>
     </article>

@@ -46,13 +46,12 @@ function Home() {
       <Flex minWidth={["1884px"]} justifyContent="center" flexWrap="wrap">
         <Suspense fallback={null}>
           <Card
-            title="Mapping a universe of open source software"
-            subLink="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
+            subtitle="Recently Read"
             image={nix}
             tag="Readings"
             link={{
-              text: "See more",
-              href: "/readings"
+              text: "Mapping a universe of open source software",
+              href: "https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
             }}
             maxWidth="25em"
             mx={[2, 3, 4]}
@@ -63,13 +62,12 @@ function Home() {
         </Suspense>
         <Suspense fallback={null}>
           <Card
-            title="Create React App: Run-time vs Build-time Environment Variables"
+            subtitle="Recently Added"
             tag="Writings"
             link={{
-              text: "See more",
-              href: "/writings"
+              text: "Create React App: Run-time vs Build-time Environment Variables",
+              href: "/writings/create-react-app-run-build-envs"
             }}
-            subLink="/writings/create-react-app-run-build-envs"
             maxWidth="25em"
             mx={[2, 3, 4]}
             mb={2}
@@ -81,13 +79,12 @@ function Home() {
         </Suspense>
         <Suspense fallback={null}>
           <Card
-            title="I want to be the scenery"
-            subtitle="Cinema . Phone Camera"
+            subtitle="I want to be the scenery"
             text=""
             image={frames}
             tag="Frames"
             link={{
-              text: "See more",
+            text: "Phone Camera Photos",
               href: "/Frames"
             }}
             maxWidth="25em"
