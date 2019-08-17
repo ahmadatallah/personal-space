@@ -4,13 +4,13 @@ import React from "react";
 import Link from "../components/Link";
 import theme from "../theme";
 import { Div } from "../elements";
-import MinimalHeader from "../containers/MinimalHeader";
+import Header from "../containers/Header";
 import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
 function HomeAR({ ...props }) {
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Flex
         alignItems="center"
         flexDirection="column"

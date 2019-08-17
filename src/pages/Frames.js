@@ -5,7 +5,7 @@ import { H1, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { photos } from "../utils/constants";
-import MinimalHeader from "../containers/MinimalHeader";
+import Header from "../containers/Header";
 
 const Gallery = lazy(() => import("react-photo-gallery"));
 function Frames({ ...props }) {
@@ -22,7 +22,7 @@ function Frames({ ...props }) {
   };
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto">
         <Div ml={1}>
           <H1 fontWeight={300}>Photography</H1>

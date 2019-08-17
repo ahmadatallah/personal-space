@@ -3,7 +3,7 @@ import jsx from "../../jsx";
 import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
 import { Div } from "../../elements";
-import MinimalHeader from "../../containers/MinimalHeader";
+import Header from "../../containers/Header";
 import Footer from "../../containers/Footer";
 
 import "prismjs/themes/prism-solarizedlight.css";
@@ -16,7 +16,7 @@ const Content = lazy(() =>
 function CreateReactAppEnvVars({ ...props }) {
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Div
         justifyConent="center"
         maxWidth={900}

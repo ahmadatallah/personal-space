@@ -7,14 +7,14 @@ import { H3, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Connect from "../containers/Connect";
 import about from "../assets/images/about-img.jpg";
-import MinimalHeader from "../containers/MinimalHeader";
+import Header from "../containers/Header";
 
 const Img = lazy(() => import("../elements/Img"));
 
 function About() {
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Flex justifyContent="center" flexDirection="column" pt={[5, 2, 3]}>
         <Div
           display="block"

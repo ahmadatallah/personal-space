@@ -3,13 +3,13 @@ import jsx from "../jsx";
 import React from "react";
 import { H1, Svg, Path } from "../elements";
 import Flex from "../components/Flex";
-import MinimalHeader from "../containers/MinimalHeader";
+import Header from "../containers/Header";
 import theme from "../theme";
 
 function NotFound() {
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Flex justifyContent="center" flexDirection="column">
         <H1 color="currentcolor" fontFamily={theme.typefaces.mono}>
           Not Found

@@ -4,14 +4,14 @@ import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
 import { Div } from "../../elements";
 import Flex from "../../components/Flex";
-import MinimalHeader from "../../containers/MinimalHeader";
+import Header from "../../containers/Header";
 import { importMDX } from "mdx.macro";
 const Content = lazy(() => importMDX("./Society.mdx"));
 
 function Society({ ...props }) {
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Flex
         dir="rtl"
         justifyConent="center"

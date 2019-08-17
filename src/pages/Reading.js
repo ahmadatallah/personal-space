@@ -4,12 +4,12 @@ import React from "react";
 import Flex from "../components/Flex";
 import { Div } from "../elements";
 import Readings from "../containers/Readings";
-import MinimalHeader from "../containers/MinimalHeader";
+import Header from "../containers/Header";
 
 function Reading({ showColorMode, ...props }) {
   return (
     <>
-      <MinimalHeader />
+      <Header />
       <Flex
         alignItems="center"
         flexDirection="column"

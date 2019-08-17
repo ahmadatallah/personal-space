@@ -12,7 +12,6 @@ import Footer from "../containers/Footer";
 import nix from "../assets/images/nixverse-without-labels.png";
 import frames from "../assets/images/frames.jpg";
 import Quotation from "../containers/Qoutation";
-import music from "../assets/images/music.jpg";
 
 const Card = lazy(() => import("../components/Card"));
 
