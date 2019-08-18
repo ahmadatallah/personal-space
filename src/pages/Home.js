@@ -23,7 +23,7 @@ function Home() {
       <Section mx="auto" maxWidth="128rem" minWidth="20rem">
         <Container>
           <Div px={[3, 4]}>
-            <H2 fontSize={45} >Sync... </H2>
+            <H2 fontSize={45}>Sync... </H2>
             <H1 fontSize={80} mt={-4}>
               Atallah
             </H1>
@@ -35,7 +35,8 @@ function Home() {
             style={{ "font-family": theme.typefaces.mono }}
           >
             A software engineer. Interested in functional programming, frontend
-            engineering, and design. Sync... ? because we are all about sync. So, let the data flow!
+            engineering, and design. Sync... ? because we are all about sync.
+            So, let the data flow!
           </H3>
         </Container>
       </Section>
@@ -45,12 +46,14 @@ function Home() {
       <Flex minWidth={["1884px"]} justifyContent="center" flexWrap="wrap">
         <Suspense fallback={null}>
           <Card
+            href="/readings"
             subtitle="Recently Read"
             image={nix}
             tag="Readings"
             link={{
               text: "Mapping a universe of open source software",
-              href: "https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
+              href:
+                "https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
             }}
             maxWidth="25em"
             mx={[2, 3, 4]}
@@ -64,7 +67,8 @@ function Home() {
             subtitle="Recently Added"
             tag="Writings"
             link={{
-              text: "Create React App: Run-time vs Build-time Environment Variables",
+              text:
+                "Create React App: Run-time vs Build-time Environment Variables",
               href: "/writings/create-react-app-run-build-envs"
             }}
             maxWidth="25em"
@@ -73,18 +77,19 @@ function Home() {
             borderColor="currencolor"
             width={[1, 1 / 2, 1 / 4]}
           >
-            <Quotation />
+            <Quotation href="/writings" />
           </Card>
         </Suspense>
         <Suspense fallback={null}>
           <Card
+            href="/frames"
             subtitle="I want to be the scenery"
             text=""
             image={frames}
             tag="Frames"
             link={{
-            text: "Phone Camera Photos",
-              href: "/Frames"
+              text: "Phone Camera Photos",
+              href: "/frames"
             }}
             maxWidth="25em"
             mx={[2, 3, 4]}

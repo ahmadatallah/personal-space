@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React from "react";
-import theme from "../theme";
 
-function Qoutation() {
+function Qoutation({href}) {
   return (
     <svg
       version="1.1"
@@ -15,6 +14,7 @@ function Qoutation() {
       width="100%"
       viewBox="-240 -150 720.226 500.226"
       style={{ "enable-background": "new 0 0 255.226 255.226" }}
+      onClick= {() => window.location.href = href }
     >
       <g>
         <g>

@@ -5,6 +5,7 @@ import BlockLinkGrow from "./BlockLinkGrow";
 const Img = lazy(() => import("../elements/Img"));
 
 const Card = ({
+  href,
   image,
   title,
   subtitle,
@@ -43,7 +44,7 @@ const Card = ({
               </div>
             }
           >
-            <Img src={image} alt={link.text} />
+            <Img src={image} alt={link.text} onClick= {() => window.location.href = href } />
           </Suspense>
         )}
       </div>
