@@ -7,6 +7,12 @@ import { Div } from "../elements";
 import Header from "../containers/Header";
 import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
+import BlockLinkGrow from "../components/BlockLinkGrow";
+import { IoMdQuote } from "react-icons/io";
+
+const LinkIcon = ({ href }) => {
+  return <IoMdQuote size={20} />;
+};
 
 function Writings({ ...props }) {
   return (
@@ -20,16 +26,20 @@ function Writings({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div display="grid"  pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
-          <L
-            to="/writings/create-react-app-run-build-envs"
-            style={{ textDecoration: "none", color: "currentcolor" }}
-          >
-            <Link
-              title="Create React App: Run-time vs Build-time Environment Variables"
-              fontFamily={theme.typefaces.mono}
-            />
-          </L>
+        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
+          <Div>
+            <LinkIcon />
+            <L
+              to="/writings/create-react-app-run-build-envs"
+              style={{ textDecoration: "none", color: "currentcolor" }}
+            >
+              <Link
+                title="Create React App: Run-time vs Build-time Environment Variables"
+                fontFamily={theme.typefaces.mono}
+              />
+            </L>
+            <LinkIcon />
+          </Div>
         </Div>
       </Flex>
     </>
