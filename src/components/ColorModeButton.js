@@ -11,7 +11,7 @@ import {
   borders,
   borderColor,
   borderRadius,
-  borderWidth,
+  borderWidth
 } from "styled-system";
 
 const ColorModeButton = styled("button", { shouldForwardProp })(
@@ -27,21 +27,21 @@ const ColorModeButton = styled("button", { shouldForwardProp })(
   borderRadius,
   borderWidth,
   {
-    minWidth: '32px',
-    width: '32px',
-    height: '32px',
-    display: 'inline-block',
-    appearance: 'none',
-    bg: 'transparent',
-    color: 'inherit',
+    minWidth: "32px",
+    width: "32px",
+    height: "32px",
+    display: "inline-block",
+    appearance: "none",
+    bg: "transparent",
+    color: "inherit",
     p: 1,
     m: 0,
     border: 0,
     borderRadius: 9999,
-    ':hover,:focus': {
-      color: 'primary',
-      boxShadow: '0 0 0 3px',
-      outline: 'none',
+    ":hover,:focus": {
+      color: "primary",
+      boxShadow: "0 0 0 3px",
+      outline: "none"
     }
   }
 );

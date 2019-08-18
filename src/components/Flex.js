@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from "@emotion/styled";
+import shouldForwardProp from "@styled-system/should-forward-prop";
 
 import {
   space,
@@ -7,7 +7,7 @@ import {
   height,
   maxWidth,
   position,
-  top, 
+  top,
   left,
   right,
   bottom,
@@ -36,15 +36,15 @@ import {
   gridTemplateRows,
   gridTemplateAreas,
   gridArea
-} from "styled-system"
+} from "styled-system";
 
-const Flex = styled('div', { shouldForwardProp })(
+const Flex = styled("div", { shouldForwardProp })(
   space,
   width,
   height,
   maxWidth,
   position,
-  top, 
+  top,
   left,
   right,
   bottom,
@@ -76,13 +76,13 @@ const Flex = styled('div', { shouldForwardProp })(
   {
     boxSizing: "border-box"
   }
-)
+);
 
 Flex.defaultProps = {
   width: 1,
-  display: 'flex',
-  flexWrap: ['wrap', 'nowrap'],
-  alignItems: 'center'
-}
+  display: "flex",
+  flexWrap: ["wrap", "nowrap"],
+  alignItems: "center"
+};
 
-export default Flex
+export default Flex;

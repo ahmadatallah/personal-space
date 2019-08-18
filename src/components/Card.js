@@ -44,7 +44,11 @@ const Card = ({
               </div>
             }
           >
-            <Img src={image} alt={link.text} onClick= {() => window.location.href = href } />
+            <Img
+              src={image}
+              alt={link.text}
+              onClick={() => (window.location.href = href)}
+            />
           </Suspense>
         )}
       </div>
