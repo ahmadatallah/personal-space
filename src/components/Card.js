@@ -44,7 +44,13 @@ const Card = ({
               </div>
             }
           >
-            <Img src={image} alt={link.text} onClick= {() => window.location.href = href } />
+            <BlockLinkGrow>
+              <Img
+                src={image}
+                alt={link.text}
+                onClick={() => (window.location.href = href)}
+              />
+            </BlockLinkGrow>
           </Suspense>
         )}
       </div>

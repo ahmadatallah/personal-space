@@ -12,6 +12,7 @@ import Footer from "../containers/Footer";
 import nix from "../assets/images/nixverse-without-labels.png";
 import frames from "../assets/images/frames.jpg";
 import Quotation from "../containers/Qoutation";
+import BlockLinkGrow from "../components/BlockLinkGrow";
 
 const Card = lazy(() => import("../components/Card"));
 
@@ -77,7 +78,9 @@ function Home() {
             borderColor="currencolor"
             width={[1, 1 / 2, 1 / 4]}
           >
-            <Quotation href="/writings" />
+            <BlockLinkGrow>
+              <Quotation href="/writings" />
+            </BlockLinkGrow>
           </Card>
         </Suspense>
         <Suspense fallback={null}>

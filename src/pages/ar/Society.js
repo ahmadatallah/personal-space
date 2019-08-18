@@ -18,7 +18,7 @@ function Society({ ...props }) {
         maxWidth={900}
         px={[4, 4, 5]}
         py={2}
-        mx='auto'
+        mx="auto"
         fontFamily={theme.typefaces.helvetica}
       >
         <Suspense fallback={<Div>Loading...</Div>}>

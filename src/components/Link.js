@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React from "react";
-import theme from "../theme";
-import { H4 } from "../elements";
 import BlockLinkGrow from "./BlockLinkGrow";
 
 function Link({ title, href, ...props }) {

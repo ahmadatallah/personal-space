@@ -40,14 +40,13 @@ function About() {
           >
             I'm Ahmad Atallah. An egyptian software engineer. Interested in
             functional programming, frontend engineering, and design. What makes
-            me alive is doing things I'm interested in, like
-            previously mentioned, and the willing to learn more and fastly. I like
-            taking visual photos. Photos that I pass by in my daily life;
-            every single day. Noam Chomsky once said: "When you walk around,
-            you're talking to yourself. You can't stop. I mean, it takes a real
-            act of will not to talk to yourself, and what you're doing is
-            thinking" and I find this is about the actual state of my
-            mind all the time.
+            me alive is doing things I'm interested in, like previously
+            mentioned, and the willing to learn more and fastly. I like taking
+            visual photos. Photos that I pass by in my daily life; every single
+            day. Noam Chomsky once said: "When you walk around, you're talking
+            to yourself. You can't stop. I mean, it takes a real act of will not
+            to talk to yourself, and what you're doing is thinking" and I find
+            this is about the actual state of my mind all the time.
           </H3>
         </Div>
         <Container mx="auto" px={[3, 4]} maxWidth="64rem">

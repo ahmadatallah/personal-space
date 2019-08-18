@@ -2,7 +2,6 @@
 import jsx from "../jsx";
 import React from "react";
 import BlockLinkGrow from "../components/BlockLinkGrow";
-import theme from "../theme"
 import { Div } from "../elements";
 import Resume from "../external/Resume.pdf";
 

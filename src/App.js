@@ -3,7 +3,6 @@ import { ThemeProvider, ColorMode } from "theme-ui";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import theme from "./theme";
 import GlobalStyles from "./global-styles";
-import rtl from "./styled-rtl";
 
 // import pages here
 import Home from "./pages/Home";
@@ -38,10 +37,7 @@ function App() {
               path={`/ar/sorry-being-born-rich-still-leads-to-success`}
               component={BornRich}
             />
-            <Route
-              path={`/ar/happy-society`}
-              component={Society}
-            />
+            <Route path={`/ar/happy-society`} component={Society} />
             <Route
               path="/writings"
               exact={true}
