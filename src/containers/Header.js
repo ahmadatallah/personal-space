@@ -60,14 +60,14 @@ function Header() {
       <A
         fontSize={0}
         fontWeight={700}
-        pb={2}
+        pb={1}
         mr={3}
         color="currentcolor"
         href="/ar"
-        title="عربي"
+        title="كتابات"
         fontFamily={theme.typefaces.helvetica}
       >
-        عربي
+        كتابات
       </A>
 
       <ColorModeApplier
