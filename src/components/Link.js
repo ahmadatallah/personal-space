@@ -8,6 +8,7 @@ function Link({ title, href, ...props }) {
     <BlockLinkGrow
       fontSize={[1, 2, 3]}
       mx={1}
+      textStyle="underline"
       my={2}
       fontWeight={400}
       href={href}

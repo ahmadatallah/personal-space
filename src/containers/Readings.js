@@ -10,7 +10,7 @@ import { IoIosLink } from "react-icons/io";
 const LinkIcon = ({ href }) => {
   return (
     <BlockLinkGrow href={href}>
-      <IoIosLink size={24} />
+      <IoIosLink size={22} />
     </BlockLinkGrow>
   );
 };
