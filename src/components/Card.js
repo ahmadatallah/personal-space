@@ -91,6 +91,7 @@ const Card = ({
           <BlockLinkGrow
             href={link.href}
             fontWeight={700}
+            textStyle='none'
             fontSize={1}
             color="blue"
             borderRadius={3}

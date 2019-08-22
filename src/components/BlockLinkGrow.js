@@ -41,9 +41,9 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
   {
     boxSizing: "border-box",
     backfaceVisibility: "hidden",
-    textDecoration: "none",
     color: "currentcolor",
     opacity: 0.75,
+    textDecoration: 'none',
     transition: "transform 0.25s ease-out",
     ":hover": {
       cursor: "pointer",
@@ -56,7 +56,8 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
 
 BlockLinkGrow.defaultProps = {
   bg: "transparent",
-  cursor: "pointer"
+  cursor: "pointer",
+  textDecoration: 'none'
 };
 
 export default BlockLinkGrow;

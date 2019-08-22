@@ -10,7 +10,7 @@ import { IoIosLink } from "react-icons/io";
 const LinkIcon = ({ href }) => {
   return (
     <BlockLinkGrow href={href}>
-      <IoIosLink size={24} />
+      <IoIosLink size={22} />
     </BlockLinkGrow>
   );
 };
@@ -25,6 +25,7 @@ function Readings({ title, href, ...props }) {
           title="No, I have no side code projects to show you"
           href="https://bit.ly/33zdmtc"
           fontFamily={theme.typefaces.mono}
+          style={{ textDecoration: "underline" }}
         >
           {" "}
         </Link>
@@ -36,6 +37,7 @@ function Readings({ title, href, ...props }) {
           title="Mapping a universe of open source software"
           href="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
           fontFamily={theme.typefaces.mono}
+          style={{ textDecoration: "underline" }}
         >
           {" "}
         </Link>
@@ -46,6 +48,7 @@ function Readings({ title, href, ...props }) {
           title="React as a UI runtime"
           href="https://overreacted.io/react-as-a-ui-runtime/"
           fontFamily={theme.typefaces.mono}
+          style={{ textDecoration: "underline" }}
         >
           {" "}
         </Link>
@@ -56,6 +59,7 @@ function Readings({ title, href, ...props }) {
           title="Category Theory for Programmers: The Preface"
           href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
           fontFamily={theme.typefaces.mono}
+          style={{ textDecoration: "underline" }}
         >
           {" "}
         </Link>
