@@ -47,18 +47,18 @@ function Home() {
       <Flex minWidth={["1884px"]} justifyContent="center" flexWrap="wrap">
         <Suspense fallback={null}>
           <Card
-            href="/readings"
-            subtitle="Recently Read"
-            image={nix}
-            tag="Readings"
+            href="/frames"
+            subtitle="I want to be the scenery"
+            text=""
+            image={frames}
+            tag="Frames"
             link={{
-              text: "Mapping a universe of open source software",
-              href:
-                "https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
+              text: "Phone Camera Photos",
+              href: "/frames"
             }}
             maxWidth="25em"
             mx={[2, 3, 4]}
-            mb={[2, 2, 0]}
+            mb={2}
             borderColor="currencolor"
             width={[1, 1 / 2, 1 / 4]}
           />
@@ -85,18 +85,18 @@ function Home() {
         </Suspense>
         <Suspense fallback={null}>
           <Card
-            href="/frames"
-            subtitle="I want to be the scenery"
-            text=""
-            image={frames}
-            tag="Frames"
+            href="/readings"
+            subtitle="Recently Read"
+            image={nix}
+            tag="Readings"
             link={{
-              text: "Phone Camera Photos",
-              href: "/frames"
+              text: "Mapping a universe of open source software",
+              href:
+                "https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
             }}
             maxWidth="25em"
             mx={[2, 3, 4]}
-            mb={2}
+            mb={[2, 2, 0]}
             borderColor="currencolor"
             width={[1, 1 / 2, 1 / 4]}
           />

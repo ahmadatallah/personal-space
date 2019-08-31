@@ -212,8 +212,8 @@ export const photos = [
   },
   {
     src: require("../assets/images/carousel/0077carousel.jpg"),
-    width: 2,
-    height: 3
+    width: 3,
+    height: 5
   },
   {
     src: require("../assets/images/carousel/0078carousel.jpg"),
@@ -262,8 +262,8 @@ export const photos = [
   },
   {
     src: require("../assets/images/carousel/0092carousel.jpg"),
-    width: 5,
-    height: 6
+    width: 1,
+    height: 1
   },
   {
     src: require("../assets/images/carousel/0093carousel.jpg"),
