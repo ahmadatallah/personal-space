@@ -73,7 +73,6 @@ const Card = ({
               fontSize={1}
               borderRadius={3}
               color="currentcolor"
-              textDecoration="underline"
               px={0}
               py={2}
               mr={2}
