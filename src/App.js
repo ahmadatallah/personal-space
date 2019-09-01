@@ -13,6 +13,7 @@ import Writings from "./pages/Writings";
 import Div from "./elements/Div";
 import Bio from "./pages/ar/Bio";
 import BornRich from "./pages/ar/BornRich";
+import MidnightStory from "./pages/ar/MidnightStory";
 import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
 import Society from "./pages/ar/Society";
 
@@ -38,6 +39,7 @@ function App() {
               component={BornRich}
             />
             <Route path={`/ar/happy-society`} component={Society} />
+            <Route path={`/ar/midnight-story`} component={MidnightStory} />
             <Route
               path="/writings"
               exact={true}

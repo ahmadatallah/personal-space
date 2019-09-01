@@ -7,7 +7,6 @@ import { Div } from "../elements";
 import Header from "../containers/Header";
 import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
-import BlockLinkGrow from "../components/BlockLinkGrow";
 import { IoMdQuote } from "react-icons/io";
 
 const LinkIcon = ({ href }) => {

@@ -7,6 +7,7 @@ import { Div } from "../elements";
 import Header from "../containers/Header";
 import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
+
 function HomeAR({ ...props }) {
   return (
     <>
@@ -56,6 +57,19 @@ function HomeAR({ ...props }) {
           >
             <Link
               title="المجتمعات السعيدة"
+              fontFamily={theme.typefaces.helvetica}
+            />
+          </L>
+          <L
+            to="/ar/midnight-story"
+            style={{
+              textDecoration: "none",
+              color: "currentcolor",
+              marginBottom: "16px"
+            }}
+          >
+            <Link
+              title="قصة في منتصف الليل"
               fontFamily={theme.typefaces.helvetica}
             />
           </L>
