@@ -5,7 +5,6 @@ import theme from "../theme";
 import Container from "../components/Container";
 import { H1, H2, Section, H3, Div } from "../elements";
 import Flex from "../components/Flex";
-import Header from "../containers/Header";
 import Connect from "../containers/Connect";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import Footer from "../containers/Footer";
@@ -13,10 +12,11 @@ import nix from "../assets/images/nixverse-without-labels.png";
 import frames from "../assets/images/frames.jpg";
 import Quotation from "../containers/Qoutation";
 import BlockLinkGrow from "../components/BlockLinkGrow";
+import Header from "../containers/Header";
 
 const Card = lazy(() => import("../components/Card"));
 
-function Home() {
+function Home({...props}) {
   return (
     <ThemeProvider theme={theme}>
       <ColorMode />
@@ -37,7 +37,7 @@ function Home() {
           >
             A software engineer. Interested in functional programming, frontend
             engineering, and design. Sync... ? because we are all about sync.
-            So, let the data flow!
+            So, let the data flows!
           </H3>
         </Container>
       </Section>

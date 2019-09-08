@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "../components/Avatar";
 import avatarImg from "../assets/images/avatar.png";
 import ColorModeApplier from "./ColorModeApplier";
@@ -9,21 +9,51 @@ import { Div, A } from "../elements";
 import { modes } from "../utils/constants";
 import theme from "../theme";
 
-
 function Header() {
   const [colorMode, setColorMode] = useColorMode();
-  const [textColor, changeTextTheme] = useState('black')
-  const [backgroundColor, changeBackgroundTheme] = useState('white')
-  
-  window.theme = theme
-  const changeTheme = e => {
-    const i = modes.indexOf(colorMode);
+  const [textColor, changeTextTheme] = useState();
+  const [backgroundColor, changeBackgroundTheme] = useState();
+  const populateTheme = colorTheme => {
+    const i = modes.indexOf(colorTheme);
     const n = (i + 1) % modes.length;
     const currentMode = modes[n];
-    changeTextTheme(window.theme.colors.modes[currentMode].primary)
-    changeBackgroundTheme(window.theme.colors.modes[currentMode].background)
-    setColorMode(modes[n]);
-  }
+    document.querySelectorAll("h1").forEach(tag => {
+      tag.setAttribute(
+        "style",
+        `color: ${theme.colors.modes[currentMode].secondary}`
+      );
+    });
+
+    document.querySelectorAll("a").forEach(a => {
+      a.setAttribute(
+        "style",
+        `color: ${theme.colors.modes[currentMode].secondary}`
+      );
+    });
+
+    document.querySelectorAll("svg").forEach(tag => {
+      tag.setAttribute(
+        "style",
+        `color: ${theme.colors.modes[currentMode].secondary}`
+      );
+    });
+
+    changeTextTheme(theme.colors.modes[currentMode].secondary);
+    changeBackgroundTheme(theme.colors.modes[currentMode].background);
+    setColorMode(currentMode);
+  };
+
+  useEffect(() => {
+    populateTheme(colorMode);
+
+    return () => {
+      populateTheme("light");
+    };
+  }, []);
+
+  const changeTheme = e => {
+    populateTheme(colorMode);
+  };
 
   return (
     <header
@@ -32,11 +62,11 @@ function Header() {
       display="flex"
       alignItems="center"
       width="100%"
-      style= {{
+      style={{
         position: "fixed",
         zIndex: 100,
         top: 0,
-        height: "80px",
+        height: "80px"
       }}
       color={textColor}
       backgroundColor={backgroundColor}
@@ -93,10 +123,7 @@ function Header() {
         كتابات
       </A>
 
-      <ColorModeApplier
-        mode={colorMode}
-        onClick={changeTheme.bind(global)}
-      />
+      <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
     </header>
   );
 }

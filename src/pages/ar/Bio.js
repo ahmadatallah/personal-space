@@ -20,7 +20,7 @@ function Bio({ ...props }) {
         py={2}
         mx="auto"
         fontFamily={theme.typefaces.helvetica}
-        mt={100}
+        mt={70}
       >
         <Suspense fallback={<Div>Loading...</Div>}>
           <Content />

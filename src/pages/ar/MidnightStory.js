@@ -18,9 +18,9 @@ function BornRich({ ...props }) {
         maxWidth={900}
         px={[4, 4, 5]}
         py={2}
-        mx='auto'
+        mx="auto"
         fontFamily={theme.typefaces.helvetica}
-        mt={100}
+        mt={70}
       >
         <Suspense fallback={<Div>Loading...</Div>}>
           <Content />

@@ -6,7 +6,7 @@ import { Div } from "../elements";
 import Readings from "../containers/Readings";
 import Header from "../containers/Header";
 
-function Reading({ showColorMode, ...props }) {
+function Reading({ ...props }) {
   return (
     <>
       <Header />
@@ -16,7 +16,7 @@ function Reading({ showColorMode, ...props }) {
         maxWidth="60em"
         mr="auto"
         ml="auto"
-        mt={100}
+        mt={70}
       >
         <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
           <Readings />

@@ -1,7 +1,11 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import BlockLinkGrow from "./BlockLinkGrow";
+import { modes } from "../utils/constants";
+import { useColorMode } from "theme-ui";
+import theme from "../theme";
+
 const Img = lazy(() => import("../elements/Img"));
 
 const Card = ({
@@ -15,6 +19,20 @@ const Card = ({
   subLink,
   ...props
 }) => {
+  const [colorMode] = useColorMode();
+  const [textColor, changeTextTheme] = useState();
+  const populateTheme = colorTheme => {
+    changeTextTheme(theme.colors.modes[colorTheme].secondary);
+  };
+
+  useEffect(() => {
+    populateTheme(colorMode);
+
+    return () => {
+      populateTheme("light");
+    };
+  }, []);
+
   return (
     <article {...props}>
       <div position="relative">
@@ -90,9 +108,9 @@ const Card = ({
           <BlockLinkGrow
             href={link.href}
             fontWeight={700}
-            textStyle='none'
+            color={textColor}
+            textStyle="none"
             fontSize={1}
-            color="blue"
             borderRadius={3}
             px={0}
             py={2}

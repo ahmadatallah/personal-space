@@ -15,7 +15,7 @@ function About() {
   return (
     <>
       <Header />
-      <Flex justifyContent="center" flexDirection="column" pt={[5, 2, 3]}>
+      <Flex justifyContent="center" flexDirection="column" pt={[5, 2, 3]}  mt={70}>
         <Div
           display="block"
           mb={[3, 2, 1]}

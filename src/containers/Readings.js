@@ -1,11 +1,13 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import theme from "../theme";
 import { H1, Div } from "../elements";
 import Link from "../components/Link";
 import BlockLinkGrow from "../components/BlockLinkGrow";
 import { IoIosLink } from "react-icons/io";
+import { modes } from "../utils/constants";
+import { useColorMode } from "theme-ui";
 
 const LinkIcon = ({ href }) => {
   return (
@@ -16,9 +18,26 @@ const LinkIcon = ({ href }) => {
 };
 
 function Readings({ title, href, ...props }) {
+  const [colorMode] = useColorMode();
+  const [textColor, changeTextTheme] = useState();
+  const populateTheme = colorTheme => {
+    const i = modes.indexOf(colorTheme);
+    const n = (i + 1) % modes.length;
+    const currentMode = modes[n];
+    changeTextTheme(theme.colors.modes[currentMode].secondary);
+  };
+
+  useEffect(() => {
+    populateTheme(colorMode);
+
+    return () => {
+      populateTheme("light");
+    };
+  }, []);
+
   return (
     <>
-      <H1 fontWeight={400}> Readings </H1>
+      <H1 fontWeight={400} color={textColor}> Readings </H1>
       <Div mb={2}>
         <LinkIcon href="https://bit.ly/33zdmtc" />
         <Link

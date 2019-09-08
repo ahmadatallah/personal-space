@@ -5,21 +5,26 @@ import theme from "./theme";
 import GlobalStyles from "./global-styles";
 
 // import pages here
-import Home from "./pages/Home";
-import HomeAR from "./pages/HomeAR";
-import NotFound from "./pages/NotFound";
-import Reading from "./pages/Reading";
-import Writings from "./pages/Writings";
 import Div from "./elements/Div";
-import Bio from "./pages/ar/Bio";
-import BornRich from "./pages/ar/BornRich";
-import MidnightStory from "./pages/ar/MidnightStory";
-import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
-import PascalTypeScript from "./pages/writings/PascalTypeScript";
-import Society from "./pages/ar/Society";
+
+const Bio = lazy(() => import("./pages/ar/Bio"));
+const BornRich = lazy(() => import("./pages/ar/BornRich"));
+const MidnightStory = lazy(() => import("./pages/ar/MidnightStory"));
+const CreateReactAppEnvVars = lazy(() =>
+  import("./pages/writings/CreateReactAppEnvVars")
+);
+const PascalTypeScript = lazy(() =>
+  import("./pages/writings/PascalTypeScript")
+);
+const Society = lazy(() => import("./pages/ar/Society"));
 
 const About = lazy(() => import("./pages/About"));
 const Frames = lazy(() => import("./pages/Frames"));
+const Home = lazy(() => import("./pages/Home"));
+const HomeAR = lazy(() => import("./pages/HomeAR"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Reading = lazy(() => import("./pages/Reading"));
+const Writings = lazy(() => import("./pages/Writings"));
 
 function App() {
   return (
@@ -29,18 +34,56 @@ function App() {
       <Div fontFamily={theme.typefaces.sansSerif}>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/ar" component={HomeAR} />
+            <Route
+              exact
+              path="/"
+              component={() => (
+                <Suspense fallback={null}>
+                  <Home />
+                </Suspense>
+              )}
+            />
+            <Route
+              exact
+              path="/ar"
+              component={() => (
+                <Suspense fallback={null}>
+                  <HomeAR />
+                </Suspense>
+              )}
+            />
             <Route
               path={`/ar/school-of-biomedical-engineering`}
-              component={Bio}
+              component={() => (
+                <Suspense fallback={null}>
+                  <Bio />
+                </Suspense>
+              )}
             />
             <Route
               path={`/ar/sorry-being-born-rich-still-leads-to-success`}
-              component={BornRich}
+              component={() => (
+                <Suspense fallback={null}>
+                  <BornRich />
+                </Suspense>
+              )}
             />
-            <Route path={`/ar/happy-society`} component={Society} />
-            <Route path={`/ar/midnight-story`} component={MidnightStory} />
+            <Route
+              path={`/ar/happy-society`}
+              component={() => (
+                <Suspense fallback={null}>
+                  <Society />
+                </Suspense>
+              )}
+            />
+            <Route
+              path={`/ar/midnight-story`}
+              component={() => (
+                <Suspense fallback={null}>
+                  <MidnightStory />
+                </Suspense>
+              )}
+            />
             <Route
               path="/writings"
               exact={true}
@@ -52,14 +95,20 @@ function App() {
             />
             <Route
               path={`/writings/create-react-app-run-build-envs`}
-              component={CreateReactAppEnvVars}
+              component={() => (
+                <Suspense fallback={null}>
+                  <CreateReactAppEnvVars />
+                </Suspense>
+              )}
             />{" "}
             <Route
               path={`/writings/pascal-typescript-example`}
-              component={PascalTypeScript}
-            >
-            </Route>
-
+              component={() => (
+                <Suspense fallback={null}>
+                  <PascalTypeScript />
+                </Suspense>
+              )}
+            ></Route>
             <Route
               path="/about"
               exact={true}
@@ -73,7 +122,11 @@ function App() {
             <Route
               path="/readings"
               exact={true}
-              component={() => <Reading showColorMode={true} />}
+              component={() => (
+                <Suspense fallback={null}>
+                  <Reading />
+                </Suspense>
+              )}
             />
             <Route
               path="/frames"
@@ -84,7 +137,13 @@ function App() {
                 </Suspense>
               )}
             />
-            <Route component={NotFound} />
+            <Route
+              component={() => (
+                <Suspense fallback={null}>
+                  <NotFound />
+                </Suspense>
+              )}
+            />
           </Switch>
         </Router>
       </Div>
