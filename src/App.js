@@ -14,6 +14,7 @@ import Div from "./elements/Div";
 import Bio from "./pages/ar/Bio";
 import BornRich from "./pages/ar/BornRich";
 import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
+import PascalTypeScript from "./pages/writings/PascalTypeScript";
 import Society from "./pages/ar/Society";
 
 const About = lazy(() => import("./pages/About"));
@@ -51,6 +52,12 @@ function App() {
               path={`/writings/create-react-app-run-build-envs`}
               component={CreateReactAppEnvVars}
             />{" "}
+            <Route
+              path={`/writings/pascal-typescript-example`}
+              component={PascalTypeScript}
+            >
+            </Route>
+
             <Route
               path="/about"
               exact={true}

@@ -27,7 +27,7 @@ function Writings({ ...props }) {
         ml="auto"
       >
         <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
-          <Div>
+          <Div mb={3}>
             <LinkIcon />
             <L
               to="/writings/create-react-app-run-build-envs"
@@ -35,6 +35,19 @@ function Writings({ ...props }) {
             >
               <Link
                 title="Create React App: Run-time vs Build-time Environment Variables"
+                fontFamily={theme.typefaces.mono}
+              />
+            </L>
+            <LinkIcon />
+          </Div>
+          <Div>
+            <LinkIcon />
+            <L
+              to="/writings/pascal-typescript-example"
+              style={{ textDecoration: "none", color: "currentcolor" }}
+            >
+              <Link
+                title="Pattern Matching Example in TypeScript"
                 fontFamily={theme.typefaces.mono}
               />
             </L>
