@@ -17,6 +17,12 @@ function Header() {
       py={2}
       display="flex"
       alignItems="center"
+      width="100%"
+      style= {{
+        position: 'fixed',
+        zIndex: 100,
+        top: 0
+      }}
     >
       <Div maxWidth="6rem" mr={2}>
         <A display="block" href="/">
