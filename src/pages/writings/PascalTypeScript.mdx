@@ -118,7 +118,7 @@ function pascal(p: PascalEdges): (row: number, column: number) => number {
 
 ## Currying 
 
-At the end, to apply this above code blocks all together, we will use function currying to evalute the expected result. 
+At the end, to apply the above code blocks all together, we will use function currying to get the expected result. 
 For example to evaluate pascal(3, 2), we will create an instance of `PascalEdges`, pass it to the pascal wrapper 
 function and curry the result function to be invoked with the actual logic arguments, which will be `column` and `row` in our case.
 
