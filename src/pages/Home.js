@@ -68,9 +68,8 @@ function Home() {
             subtitle="Recently Added"
             tag="Writings"
             link={{
-              text:
-                "Create React App: Run-time vs Build-time Environment Variables",
-              href: "/writings/create-react-app-run-build-envs"
+              text: "Pattern Matching Example in TypeScript",
+              href: "/writings/pascal-typescript-example"
             }}
             maxWidth="25em"
             mx={[2, 3, 4]}
