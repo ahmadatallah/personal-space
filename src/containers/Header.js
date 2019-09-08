@@ -1,16 +1,30 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React from "react";
-import theme from "../theme";
+import React, { useState } from "react";
 import Avatar from "../components/Avatar";
 import avatarImg from "../assets/images/avatar.png";
 import ColorModeApplier from "./ColorModeApplier";
 import { useColorMode } from "theme-ui";
 import { Div, A } from "../elements";
 import { modes } from "../utils/constants";
+import theme from "../theme";
+
 
 function Header() {
   const [colorMode, setColorMode] = useColorMode();
+  const [textColor, changeTextTheme] = useState('black')
+  const [backgroundColor, changeBackgroundTheme] = useState('white')
+  
+  window.theme = theme
+  const changeTheme = e => {
+    const i = modes.indexOf(colorMode);
+    const n = (i + 1) % modes.length;
+    const currentMode = modes[n];
+    changeTextTheme(window.theme.colors.modes[currentMode].primary)
+    changeBackgroundTheme(window.theme.colors.modes[currentMode].background)
+    setColorMode(modes[n]);
+  }
+
   return (
     <header
       px={3}
@@ -19,10 +33,13 @@ function Header() {
       alignItems="center"
       width="100%"
       style= {{
-        position: 'fixed',
+        position: "fixed",
         zIndex: 100,
-        top: 0
+        top: 0,
+        height: "80px",
       }}
+      color={textColor}
+      backgroundColor={backgroundColor}
     >
       <Div maxWidth="6rem" mr={2}>
         <A display="block" href="/">
@@ -78,11 +95,7 @@ function Header() {
 
       <ColorModeApplier
         mode={colorMode}
-        onClick={e => {
-          const i = modes.indexOf(colorMode);
-          const n = (i + 1) % modes.length;
-          setColorMode(modes[n]);
-        }}
+        onClick={changeTheme.bind(global)}
       />
     </header>
   );

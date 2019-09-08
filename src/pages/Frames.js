@@ -23,7 +23,7 @@ function Frames({ ...props }) {
   return (
     <>
       <Header />
-      <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto">
+      <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto" mt={100}>
         <Div ml={1}>
           <H1 fontWeight={300}>Photography</H1>
         </Div>

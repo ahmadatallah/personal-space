@@ -23,6 +23,7 @@ function PascalTypeScript({ ...props }) {
         px={[4, 3, 5]}
         py={2}
         mx="auto"
+        mt={100}
         fontFamily={theme.typefaces.sansSerif}
       >
         <Suspense fallback={<div>Loading...</div>}>

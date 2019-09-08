@@ -25,7 +25,7 @@ function Writings({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
+        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={100}>
           <Div mb={3}>
             <LinkIcon />
             <L

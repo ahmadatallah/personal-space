@@ -20,6 +20,7 @@ function BornRich({ ...props }) {
         py={2}
         mx='auto'
         fontFamily={theme.typefaces.helvetica}
+        mt={100}
       >
         <Suspense fallback={<Div>Loading...</Div>}>
           <Content />

@@ -16,6 +16,7 @@ function Reading({ showColorMode, ...props }) {
         maxWidth="60em"
         mr="auto"
         ml="auto"
+        mt={100}
       >
         <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
           <Readings />

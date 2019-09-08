@@ -20,7 +20,7 @@ function HomeAR({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div dir="rtl" display="grid" pr={[5, 6, 6]} py={5}>
+        <Div dir="rtl" display="grid" pr={[5, 6, 6]} py={5} mt={100}>
           <L
             to="/ar/school-of-biomedical-engineering"
             style={{

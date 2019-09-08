@@ -10,7 +10,7 @@ function NotFound() {
   return (
     <>
       <Header />
-      <Flex justifyContent="center" flexDirection="column">
+      <Flex justifyContent="center" flexDirection="column" mt={100}>
         <H1 color="currentcolor" fontFamily={theme.typefaces.mono}>
           Not Found
         </H1>

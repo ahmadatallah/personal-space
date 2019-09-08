@@ -21,7 +21,7 @@ function Home() {
     <ThemeProvider theme={theme}>
       <ColorMode />
       <Header />
-      <Section mx="auto" maxWidth="128rem" minWidth="20rem">
+      <Section mx="auto" maxWidth="128rem" minWidth="20rem" mt={100}>
         <Container>
           <Div px={[3, 4]}>
             <H2 fontSize={45}>Sync... </H2>
