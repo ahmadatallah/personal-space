@@ -50,7 +50,7 @@ const theme = {
         text: "#000",
         background: "#fff",
         primary: "hsl(120, 100%, 40%)",
-        secondary: "hsl(120, 50%, 40%)",
+        secondary: "hsl(180, 50%, 40%)",
         accent: "hsl(120, 100%, 90%)",
         muted: "hsl(120, 20%, 7%)",
         gray: "hsl(0, 0%, 75%)"
