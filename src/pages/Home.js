@@ -56,11 +56,10 @@ function Home({...props}) {
               text: "Phone Camera Photos",
               href: "/frames"
             }}
-            maxWidth="25em"
             mx={[2, 3, 4]}
             mb={2}
             borderColor="currencolor"
-            width={[1, 1 / 2, 1 / 4]}
+            width={[1, 3/4, 1 / 4]}
           />
         </Suspense>
         <Suspense fallback={null}>
@@ -71,11 +70,10 @@ function Home({...props}) {
               text: "Pattern Matching Example in TypeScript",
               href: "/writings/pascal-typescript-example"
             }}
-            maxWidth="25em"
             mx={[2, 3, 4]}
             mb={2}
             borderColor="currencolor"
-            width={[1, 1 / 2, 1 / 4]}
+            width={[1, 3/4, 1 / 4]}
           >
             <BlockLinkGrow>
               <Quotation href="/writings" />
@@ -93,11 +91,10 @@ function Home({...props}) {
               href:
                 "https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
             }}
-            maxWidth="25em"
             mx={[2, 3, 4]}
-            mb={[2, 2, 0]}
+            mb={[2]}
             borderColor="currencolor"
-            width={[1, 1 / 2, 1 / 4]}
+            width={[1, 3/4, 1 / 4]}
           />
         </Suspense>
       </Flex>
