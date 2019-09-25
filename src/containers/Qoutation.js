@@ -10,7 +10,8 @@ function Qoutation({href}) {
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
-      height="235px"
+      height="260px"
+      minHeight="235px"
       width="100%"
       viewBox="-240 -150 720.226 500.226"
       style={{ "enable-background": "new 0 0 255.226 255.226" }}
