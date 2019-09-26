@@ -112,6 +112,17 @@ function Header() {
       </A>
       <A
         fontSize={0}
+        mr={3}
+        fontWeight={700}
+        color="currentcolor"
+        href="https://ahmad-atallah.tumblr.com"
+        title="Archive"
+        fontFamily={theme.typefaces.mono}
+      >
+        Archive
+      </A>
+      <A
+        fontSize={0}
         fontWeight={700}
         pb={1}
         mr={3}
