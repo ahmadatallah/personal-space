@@ -48,7 +48,7 @@ function Frames({ ...props }) {
       <Header />
       <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto" mt={70}>
         <Div ml={1}>
-          <H1 fontWeight={300} color={textColor}>Photography</H1>
+          <H1 fontWeight={600} color={textColor}>Frames</H1>
         </Div>
         <Suspense
           fallback={

@@ -56,7 +56,6 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
 BlockLinkGrow.defaultProps = {
   bg: "transparent",
   cursor: "pointer",
-  textDecoration: 'none'
 };
 
 export default BlockLinkGrow;

@@ -2,10 +2,10 @@
 import jsx from "../jsx";
 import React, { useState, useEffect } from "react";
 import Link from "../components/Link";
+import StyledLink from "../components/StyledLink";
 import theme from "../theme";
-import { H1, Div } from "../elements";
+import { H1, Div, Small, P } from "../elements";
 import Header from "../containers/Header";
-import { Link as L } from "react-router-dom";
 import Flex from "../components/Flex";
 import { IoMdQuote } from "react-icons/io";
 import { modes } from "../utils/constants";
@@ -45,35 +45,54 @@ function Writings({ ...props }) {
         ml="auto"
       >
         <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={70}>
-          <H1 fontWeight={400} color={textColor}>
+          <H1 fontWeight={600} color={textColor}>
             {" "}
             Writings{" "}
           </H1>
           <Div mb={3}>
             <LinkIcon color={textColor} />
-            <L
-              to="/writings/create-react-app-run-build-envs"
-              style={{ textDecoration: "none", color: "currentcolor" }}
-            >
+            <StyledLink to="/writings/create-react-app-run-build-envs">
               <Link
                 title="Create React App: Run-time vs Build-time Environment Variables"
                 fontFamily={theme.typefaces.mono}
+                fontWeight={600}
               />
-            </L>
+            </StyledLink>
             <LinkIcon color={textColor} />
+            <Div ml={[2, 2, 4]}>
+              <Small>
+                13 Aug, 2019{" "}
+                <span role="img" aria-label="min-read">
+                  • 📖☕️{" "}
+                </span>
+                7 min read
+              </Small>
+              <P mt={0}>
+                Set create-react-app custom environment variables in build, and
+                run time environments without ejecting default configuration.
+              </P>
+            </Div>
           </Div>
           <Div>
             <LinkIcon color={textColor} />
-            <L
-              to="/writings/pascal-typescript-example"
-              style={{ textDecoration: "none", color: "currentcolor" }}
-            >
+            <StyledLink to="/writings/pascal-typescript-example">
               <Link
                 title="Pattern Matching Example in TypeScript"
                 fontFamily={theme.typefaces.mono}
+                fontWeight={600}
               />
-            </L>
+            </StyledLink>
             <LinkIcon color={textColor} />
+            <Div ml={[2, 2, 4]}>
+              <Small>
+                8 Sep, 2019{" "}
+                <span role="img" aria-label="min-read">
+                  • 📖{" "}
+                </span>
+                5 min read
+              </Small>
+              <P mt={0}>A "semi-pattern-matching" example in Typescript.</P>
+            </Div>
           </Div>
         </Div>
       </Flex>

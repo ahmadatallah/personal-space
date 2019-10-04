@@ -37,14 +37,14 @@ function Readings({ title, href, ...props }) {
 
   return (
     <>
-      <H1 fontWeight={400} color={textColor}> Readings </H1>
+      <H1 fontWeight={600} color={textColor}> Readings </H1>
       <Div mb={2}>
         <LinkIcon href="https://bit.ly/33zdmtc" />
         <Link
           title="No, I have no side code projects to show you"
           href="https://bit.ly/33zdmtc"
           fontFamily={theme.typefaces.mono}
-          style={{ textDecoration: "underline" }}
+          fontWeight={600}
         >
           {" "}
         </Link>
@@ -56,7 +56,7 @@ function Readings({ title, href, ...props }) {
           title="Mapping a universe of open source software"
           href="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
           fontFamily={theme.typefaces.mono}
-          style={{ textDecoration: "underline" }}
+          fontWeight={600}
         >
           {" "}
         </Link>
@@ -67,7 +67,7 @@ function Readings({ title, href, ...props }) {
           title="React as a UI runtime"
           href="https://overreacted.io/react-as-a-ui-runtime/"
           fontFamily={theme.typefaces.mono}
-          style={{ textDecoration: "underline" }}
+          fontWeight={600}
         >
           {" "}
         </Link>
@@ -78,7 +78,7 @@ function Readings({ title, href, ...props }) {
           title="Category Theory for Programmers: The Preface"
           href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
           fontFamily={theme.typefaces.mono}
-          style={{ textDecoration: "underline" }}
+          fontWeight={600}
         >
           {" "}
         </Link>
