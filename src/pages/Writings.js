@@ -2,7 +2,7 @@
 import jsx from "../jsx";
 import React, { useState, useEffect } from "react";
 import Link from "../components/Link";
-import StyledLink from '../components/StyledLink'
+import StyledLink from "../components/StyledLink";
 import theme from "../theme";
 import { H1, Div, Small, P } from "../elements";
 import Header from "../containers/Header";
@@ -51,9 +51,7 @@ function Writings({ ...props }) {
           </H1>
           <Div mb={3}>
             <LinkIcon color={textColor} />
-            <StyledLink
-              to="/writings/create-react-app-run-build-envs"
-            >
+            <StyledLink to="/writings/create-react-app-run-build-envs">
               <Link
                 title="Create React App: Run-time vs Build-time Environment Variables"
                 fontFamily={theme.typefaces.mono}
@@ -77,9 +75,7 @@ function Writings({ ...props }) {
           </Div>
           <Div>
             <LinkIcon color={textColor} />
-            <StyledLink
-              to="/writings/pascal-typescript-example"
-            >
+            <StyledLink to="/writings/pascal-typescript-example">
               <Link
                 title="Pattern Matching Example in TypeScript"
                 fontFamily={theme.typefaces.mono}
@@ -91,7 +87,7 @@ function Writings({ ...props }) {
               <Small>
                 8 Sep, 2019{" "}
                 <span role="img" aria-label="min-read">
-                  • ☕️{" "}
+                  • 📖{" "}
                 </span>
                 5 min read
               </Small>
