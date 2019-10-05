@@ -23,7 +23,7 @@ const Frames = lazy(() => import("./pages/Frames"));
 const Home = lazy(() => import("./pages/Home"));
 const HomeAR = lazy(() => import("./pages/HomeAR"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Reading = lazy(() => import("./pages/Reading"));
+const Readings = lazy(() => import("./pages/Readings"));
 const Writings = lazy(() => import("./pages/Writings"));
 
 function App() {
@@ -124,7 +124,7 @@ function App() {
               exact={true}
               component={() => (
                 <Suspense fallback={null}>
-                  <Reading />
+                  <Readings />
                 </Suspense>
               )}
             />

@@ -17,7 +17,7 @@ const LinkIcon = ({ href }) => {
   );
 };
 
-function Readings({ title, href, ...props }) {
+function ReadingsContainer({ title, href, ...props }) {
   const [colorMode] = useColorMode();
   const [textColor, changeTextTheme] = useState();
   const populateTheme = colorTheme => {
@@ -44,8 +44,9 @@ function Readings({ title, href, ...props }) {
           title="No, I have no side code projects to show you"
           href="https://bit.ly/33zdmtc"
           fontFamily={theme.typefaces.mono}
-          fontWeight={600}
-        >
+          fontSize={[2, 3, 3]}
+          fontWeight={[700, 600, 600]}
+      >
           {" "}
         </Link>
       </Div>
@@ -56,8 +57,9 @@ function Readings({ title, href, ...props }) {
           title="Mapping a universe of open source software"
           href="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
           fontFamily={theme.typefaces.mono}
-          fontWeight={600}
-        >
+          fontSize={[2, 3, 3]}
+          fontWeight={[700, 600, 600]}
+      >
           {" "}
         </Link>
       </Div>
@@ -67,8 +69,9 @@ function Readings({ title, href, ...props }) {
           title="React as a UI runtime"
           href="https://overreacted.io/react-as-a-ui-runtime/"
           fontFamily={theme.typefaces.mono}
-          fontWeight={600}
-        >
+          fontSize={[2, 3, 3]}
+          fontWeight={[700, 600, 600]}
+      >
           {" "}
         </Link>
       </Div>
@@ -78,8 +81,9 @@ function Readings({ title, href, ...props }) {
           title="Category Theory for Programmers: The Preface"
           href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
           fontFamily={theme.typefaces.mono}
-          fontWeight={600}
-        >
+          fontSize={[2, 3, 3]}
+          fontWeight={[700, 600, 600]}
+      >
           {" "}
         </Link>
       </Div>
@@ -87,4 +91,4 @@ function Readings({ title, href, ...props }) {
   );
 }
 
-export default Readings;
+export default ReadingsContainer;

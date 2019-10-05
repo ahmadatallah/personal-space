@@ -3,10 +3,10 @@ import jsx from "../jsx";
 import React from "react";
 import Flex from "../components/Flex";
 import { Div } from "../elements";
-import Readings from "../containers/Readings";
+import ReadingsContainer from "../containers/ReadingsContainer";
 import Header from "../containers/Header";
 
-function Reading({ ...props }) {
+function Readings({ ...props }) {
   return (
     <>
       <Header />
@@ -16,14 +16,14 @@ function Reading({ ...props }) {
         maxWidth="60em"
         mr="auto"
         ml="auto"
-        mt={70}
+        mt={[3, 4, 5]}
       >
         <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
-          <Readings />
+          <ReadingsContainer />
         </Div>
       </Flex>
     </>
   );
 }
 
-export default Reading;
+export default Readings;

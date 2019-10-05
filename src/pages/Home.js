@@ -10,7 +10,7 @@ import { ThemeProvider, ColorMode } from "theme-ui";
 import Footer from "../containers/Footer";
 import nix from "../assets/images/nixverse-without-labels.png";
 import frames from "../assets/images/frames.jpg";
-import Quotation from "../containers/Qoutation";
+import Quotation from "../components/Qoutation";
 import BlockLinkGrow from "../components/BlockLinkGrow";
 import Header from "../containers/Header";
 
