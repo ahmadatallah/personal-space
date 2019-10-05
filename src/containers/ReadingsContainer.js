@@ -1,13 +1,12 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import theme from "../theme";
 import { H1, Div } from "../elements";
 import Link from "../components/Link";
 import BlockLinkGrow from "../components/BlockLinkGrow";
 import { IoIosLink } from "react-icons/io";
-import { modes } from "../utils/constants";
-import { useColorMode } from "theme-ui";
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
 
 const LinkIcon = ({ href }) => {
   return (
@@ -18,22 +17,7 @@ const LinkIcon = ({ href }) => {
 };
 
 function ReadingsContainer({ title, href, ...props }) {
-  const [colorMode] = useColorMode();
-  const [textColor, changeTextTheme] = useState();
-  const populateTheme = colorTheme => {
-    const i = modes.indexOf(colorTheme);
-    const n = (i + 1) % modes.length;
-    const currentMode = modes[n];
-    changeTextTheme(theme.colors.modes[currentMode].secondary);
-  };
-
-  useEffect(() => {
-    populateTheme(colorMode);
-
-    return () => {
-      populateTheme("light");
-    };
-  }, []);
+  const { textColor } = useEveryReloadColorMode()
 
   return (
     <>

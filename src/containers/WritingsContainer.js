@@ -1,35 +1,19 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import theme from "../theme";
 import Link from "../components/Link";
 import StyledLink from "../components/StyledLink";
 import { H1, Div, Small, P } from "../elements";
 import { IoMdQuote } from "react-icons/io";
-import { modes } from "../utils/constants";
-import { useColorMode } from "theme-ui";
+import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
 
 const LinkIcon = ({ color }) => {
   return <IoMdQuote size={18} color={color} />;
 };
 
 function WritingsContainer({ title, href, ...props }) {
-  const [colorMode] = useColorMode();
-  const [textColor, changeTextTheme] = useState();
-  const populateTheme = colorTheme => {
-    const i = modes.indexOf(colorTheme);
-    const n = (i + 1) % modes.length;
-    const currentMode = modes[n];
-    changeTextTheme(theme.colors.modes[currentMode].secondary);
-  };
-
-  useEffect(() => {
-    populateTheme(colorMode);
-
-    return () => {
-      populateTheme("light");
-    };
-  }, []);
+  const { textColor } = useEveryReloadColorMode();
 
   return (
     <>

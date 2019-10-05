@@ -5,7 +5,7 @@ import ColorModeButton from "../components/ColorModeButton";
 import { Svg, Path } from "../elements";
 function ColorModeApplier({ ...props }) {
   return (
-    <ColorModeButton onClick={props.onClick}>
+    <ColorModeButton onClick={props.onClick} colorMode={props.mode}>
       <Svg
         viewBox="0 0 32 32"
         width="24"

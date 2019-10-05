@@ -1,38 +1,20 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
+import React, { useState, useCallback, lazy, Suspense } from "react";
 import { H1, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { photos } from "../utils/constants";
 import Header from "../containers/Header";
 import Footer from "../containers/Footer";
-import { modes } from "../utils/constants";
-import { useColorMode } from "theme-ui";
-import theme from "../theme"
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+
 
 const Gallery = lazy(() => import("react-photo-gallery"));
 function Frames({ ...props }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const [colorMode, setColorMode] = useColorMode();
-  const [textColor, changeTextTheme] = useState();
-
-  const populateTheme = colorTheme => {
-    const i = modes.indexOf(colorTheme);
-    const n = (i + 1) % modes.length;
-    const currentMode = modes[n];
-    changeTextTheme(theme.colors.modes[currentMode].secondary);
-    setColorMode(currentMode);
-  };
-
-  useEffect(() => {
-    populateTheme(colorMode);
-
-    return () => {
-      populateTheme("light");
-    };
-  }, []);
+  const { textColor } = useEveryReloadColorMode();
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
@@ -48,7 +30,9 @@ function Frames({ ...props }) {
       <Header />
       <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto" mt={65}>
         <Div ml={1}>
-          <H1 fontWeight={600} color={textColor}>Frames</H1>
+          <H1 fontWeight={600} color={textColor}>
+            Frames
+          </H1>
         </Div>
         <Suspense
           fallback={

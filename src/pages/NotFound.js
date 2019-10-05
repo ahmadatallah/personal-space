@@ -1,32 +1,15 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { H1, Img } from "../elements";
 import Flex from "../components/Flex";
 import Header from "../containers/Header";
-import { useColorMode } from "theme-ui";
 import theme from "../theme";
-import { modes } from "../utils/constants";
+import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
 
 import ConfusedTravolta from "../assets/images/confused-travolta.svg";
 function NotFound() {
-  const [colorMode, ] = useColorMode();
-  const [textColor, changeTextTheme] = useState();
-  const populateTheme = colorTheme => {
-    const i = modes.indexOf(colorTheme);
-    const n = (i + 1) % modes.length;
-    const currentMode = modes[n];
-    changeTextTheme(theme.colors.modes[currentMode].secondary);
-  };
-
-  useEffect(() => {
-    populateTheme(colorMode);
-
-    return () => {
-      populateTheme("light");
-    };
-  }, []);
-
+  const { textColor } = useEveryReloadColorMode()
   return (
     <>
       <Header />

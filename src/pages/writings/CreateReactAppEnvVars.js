@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import jsx from "../../jsx";
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import theme from "../../theme";
 import { Div } from "../../elements";
 import Header from "../../containers/Header";
 import Footer from "../../containers/Footer";
+import useEveryReloadColorMode from "../../hooks/useEveryReloadColorMode";
 
 import "prismjs/themes/prism-solarizedlight.css";
 import "./pre.css";

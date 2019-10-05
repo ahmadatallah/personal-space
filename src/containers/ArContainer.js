@@ -1,38 +1,18 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "../components/Link";
-import theme from "../theme";
 import { H1, Div, Small } from "../elements";
-import { modes } from "../utils/constants";
-import { useColorMode } from "theme-ui";
 import { IoMdQuote } from "react-icons/io";
 import StyledLink from "../components/StyledLink";
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
 
 const LinkIcon = ({ color }) => {
   return <IoMdQuote size={18} color={color} />;
 };
 
 function ArContainer({ ...props }) {
-  const [colorMode, setColorMode] = useColorMode();
-  const [textColor, changeTextTheme] = useState();
-
-  const populateTheme = colorTheme => {
-    const i = modes.indexOf(colorTheme);
-    const n = (i + 1) % modes.length;
-    const currentMode = modes[n];
-    changeTextTheme(theme.colors.modes[currentMode].secondary);
-    setColorMode(currentMode);
-  };
-
-  useEffect(() => {
-    populateTheme(colorMode);
-
-    return () => {
-      populateTheme("light");
-    };
-  }, []);
-
+  const { textColor } = useEveryReloadColorMode();
   return (
     <>
       <H1 fontWeight={600} color={textColor}>
