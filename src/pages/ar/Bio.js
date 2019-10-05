@@ -6,13 +6,14 @@ import { Div } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
 import { importMDX } from "mdx.macro";
+
 const Content = lazy(() => importMDX("./Bio.mdx"));
 
 function Bio({ ...props }) {
   return (
     <>
       <Header />
-      <Flex
+      <Div
         dir="rtl"
         justifyConent="center"
         maxWidth={900}
@@ -25,7 +26,7 @@ function Bio({ ...props }) {
         <Suspense fallback={<Div>Loading...</Div>}>
           <Content />
         </Suspense>
-      </Flex>
+      </Div>
     </>
   );
 }

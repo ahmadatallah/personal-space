@@ -1,14 +1,4 @@
 const theme = {
-  styles: {
-    h3: {
-      fontSize: 32,
-      fontFamily: "heading",
-      fontWeight: "heading",
-      color: "primary",
-      mt: 4,
-      mb: 2
-    }
-  },
   breakpoints: ["30em", "60em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 36, 48, 80, 96, 128],
@@ -179,7 +169,26 @@ const theme = {
       p: 1,
       borderRadius: "default"
     }
-  }
+  },
+  // MDX Styles
+  styles: {
+    h1: {
+      color: "secondary",
+      mt: 4,
+      mb: 2
+    },
+    a: {
+      color: "secondary"
+    },
+    h2: {
+      color: "secondary",
+      mt: 4,
+      mb: 2
+    },
+    h4: {
+      color: "secondary",
+    }
+  },
 };
 
 export default theme;

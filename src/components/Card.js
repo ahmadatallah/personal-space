@@ -17,8 +17,6 @@ const Card = ({
   subLink,
   ...props
 }) => {
-  const { textColor } = useEveryReloadColorMode()
-
   return (
     <article {...props}>
       <div position="relative">
@@ -94,7 +92,7 @@ const Card = ({
           <BlockLinkGrow
             href={link.href}
             fontWeight={700}
-            color={textColor}
+            color="currentcolor"
             textStyle="none"
             fontSize={1}
             borderRadius={3}
