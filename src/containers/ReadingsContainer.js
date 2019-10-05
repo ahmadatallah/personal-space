@@ -22,7 +22,7 @@ function ReadingsContainer({ title, href, ...props }) {
   return (
     <>
       <H1 fontWeight={600} color={textColor}> Readings </H1>
-      <Div mb={2}>
+      <Div mb={3}>
         <LinkIcon href="https://bit.ly/33zdmtc" />
         <Link
           title="No, I have no side code projects to show you"
@@ -34,7 +34,7 @@ function ReadingsContainer({ title, href, ...props }) {
           {" "}
         </Link>
       </Div>
-      <Div mb={2}>
+      <Div mb={3}>
         <LinkIcon href="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html" />
 
         <Link
@@ -47,7 +47,7 @@ function ReadingsContainer({ title, href, ...props }) {
           {" "}
         </Link>
       </Div>
-      <Div mb={2}>
+      <Div mb={3}>
         <LinkIcon href="https://overreacted.io/react-as-a-ui-runtime/" />
         <Link
           title="React as a UI runtime"
@@ -59,7 +59,7 @@ function ReadingsContainer({ title, href, ...props }) {
           {" "}
         </Link>
       </Div>
-      <Div mb={2}>
+      <Div mb={3}>
         <LinkIcon href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/" />
         <Link
           title="Category Theory for Programmers: The Preface"
