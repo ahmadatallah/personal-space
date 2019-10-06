@@ -37,7 +37,7 @@ function Home({...props}) {
           >
             A software engineer. Interested in functional programming, frontend
             engineering, and design. Sync... ? because we are all about sync.
-            So, let the data flows!
+            So, let the data flow!
           </H3>
         </Container>
       </Section>
