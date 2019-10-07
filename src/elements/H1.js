@@ -39,6 +39,8 @@ const H1 = styled('h1', { shouldForwardProp })(
   },
 )
 
-H1.defaultProps = {}
+H1.defaultProps = {
+  color: "secondary"
+}
 
 export default H1

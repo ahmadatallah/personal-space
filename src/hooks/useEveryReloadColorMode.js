@@ -39,18 +39,9 @@ function useEveryReloadColorMode({ ...props }) {
     setColorMode(currentMode);
   };
 
-  useEffect(() => {
-    populateTheme(colorMode);
-
-    return () => {
-      populateTheme("light");
-    };
-  }, []);
-
   const changeTheme = e => {
     populateTheme(colorMode);
   };
-
 
   return { colorMode, textColor, backgroundColor, changeTheme };
 }

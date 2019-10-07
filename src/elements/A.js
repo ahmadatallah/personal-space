@@ -47,6 +47,7 @@ const A = styled('a', { shouldForwardProp })(
 A.defaultProps = {
   display: "inline-block",
   bg: "transparent",
+  color: "secondary"
 }
 
 export default A

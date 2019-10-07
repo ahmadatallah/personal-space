@@ -13,12 +13,12 @@ function Readings({ ...props }) {
       <Flex
         alignItems="center"
         flexDirection="column"
-        maxWidth="60em"
+        maxWidth="80em"
+        minHeight="100%"
         mr="auto"
         ml="auto"
-        mt={[3, 4, 5]}
       >
-        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5}>
+        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
           <ReadingsContainer />
         </Div>
       </Flex>

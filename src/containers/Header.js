@@ -4,9 +4,10 @@ import React from "react";
 import Avatar from "../components/Avatar";
 import avatarImg from "../assets/images/avatar.png";
 import ColorModeApplier from "./ColorModeApplier";
-import { Div, A } from "../elements";
+import { Div, A, Header as header } from "../elements";
 import theme from "../theme";
 import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
+import BlockLinkGrow from "../components/BlockLinkGrow";
 
 function Header() {
   const {
@@ -31,67 +32,62 @@ function Header() {
       backgroundColor={backgroundColor}
     >
       <Div maxWidth="6rem" mr={2}>
-        <A display="block" href="/">
+        <BlockLinkGrow display="block" href="/">
           <Avatar src={avatarImg} borderRadius={100} width={[32, 64]} />
-        </A>
+        </BlockLinkGrow>
       </Div>
-      <A
+      <BlockLinkGrow
         ml="auto"
         mr={3}
         fontSize={0}
         fontWeight={700}
-        color="currentcolor"
         href="/readings"
         title="Readings"
         fontFamily={theme.typefaces.mono}
       >
         Readings
-      </A>
-      <A
+      </BlockLinkGrow>
+      <BlockLinkGrow
         fontSize={0}
         mr={3}
         fontWeight={700}
-        color="currentcolor"
         href="/writings"
         title="Writings"
         fontFamily={theme.typefaces.mono}
       >
         Writings
-      </A>
-      <A
+      </BlockLinkGrow>
+      <BlockLinkGrow
         fontSize={0}
         mr={3}
         fontWeight={700}
-        color="currentcolor"
         href="/frames"
         title="Frames"
         fontFamily={theme.typefaces.mono}
       >
         Frames
-      </A>
-      <A
+      </BlockLinkGrow>
+      <BlockLinkGrow
         fontSize={0}
         mr={3}
         fontWeight={700}
-        color="currentcolor"
         href="https://ahmad-atallah.tumblr.com"
         title="Archive"
         fontFamily={theme.typefaces.mono}
       >
         Archive
-      </A>
-      <A
+      </BlockLinkGrow>
+      <BlockLinkGrow
         fontSize={0}
         fontWeight={700}
         pb={1}
         mr={3}
-        color="currentcolor"
         href="/ar"
         title="كتابات"
         fontFamily={theme.typefaces.helvetica}
       >
         كتابات
-      </A>
+      </BlockLinkGrow>
 
       <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
     </header>
