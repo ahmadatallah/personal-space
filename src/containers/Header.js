@@ -12,7 +12,6 @@ import BlockLinkGrow from "../components/BlockLinkGrow";
 function Header() {
   const {
     colorMode,
-    backgroundColor,
     changeTheme
   } = useEveryReloadColorMode();
 
@@ -29,7 +28,6 @@ function Header() {
         top: 0,
         height: "80px"
       }}
-      backgroundColor={backgroundColor}
     >
       <Div maxWidth="6rem" mr={2}>
         <BlockLinkGrow display="block" href="/">
