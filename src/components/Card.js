@@ -74,7 +74,6 @@ const Card = ({
               fontWeight={500}
               fontSize={1}
               borderRadius={3}
-              color="currentcolor"
               px={0}
               py={2}
               mr={2}
@@ -92,7 +91,6 @@ const Card = ({
           <BlockLinkGrow
             href={link.href}
             fontWeight={700}
-            color="currentcolor"
             textStyle="none"
             fontSize={1}
             borderRadius={3}
