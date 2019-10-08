@@ -9,9 +9,8 @@ import Header from "../containers/Header";
 import Footer from "../containers/Footer";
 import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
 import debounce from "../utils/debounce";
+import Gallery from "react-photo-gallery";
 import Loading from "../components/Loading";
-
-const Gallery = lazy(() => import("react-photo-gallery"));
 
 function Frames({ ...props }) {
   const [currentImage, setCurrentImage] = useState(0);
@@ -66,27 +65,16 @@ function Frames({ ...props }) {
             Frames
           </H1>
         </Div>
-        <Suspense
-          fallback={
-            <Flex
-              flexDirection="column"
-              justifyContent="center"
-              mt={[200, 300, 350]}
-              mb={[200, 300, 350]}
-            >
-              <H2 fontWeight={300} mr={1}> Loading  </H2>
-              <Loading type="spokes" color="currentcolor" />
-            </Flex>
-          }
-        >
-          <Gallery photos={images} onClick={openLightbox} />
-          {!loadedAll && (
-            <Flex flexDirection="row" justifyContent="center">
-              <H2 fontWeight={300} mr={2}> Loading </H2>
-              <Loading type="spokes" color="currentcolor" />
-            </Flex>
-          )}
-        </Suspense>
+        <Gallery photos={images} onClick={openLightbox} />
+        {!loadedAll && (
+          <Flex flexDirection="row" justifyContent="center">
+            <H2 fontWeight={300} mr={2}>
+              {" "}
+              Loading{" "}
+            </H2>
+            <Loading type="spokes" color="currentcolor" />
+          </Flex>
+        )}
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>

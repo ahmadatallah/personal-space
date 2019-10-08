@@ -4,11 +4,20 @@ import React from "react";
 import theme from "../theme";
 import Flex from "../components/Flex";
 import { P } from "../elements";
-import BlockLinkGrow from '../components/BlockLinkGrow.js';
+import BlockLinkGrow from "../components/BlockLinkGrow.js";
 
 function Footer() {
   return (
-    <footer>
+    <footer
+      mb={1}
+      px={3}
+      display="flex"
+      alignItems="center"
+      width="100%"
+      style={{
+        bottom: 0,
+      }}
+    >
       <Flex justifyContent="center" my={0}>
         <P fontFamily={theme.typefaces.mono}>© 2019 syncatallah. </P>
         <BlockLinkGrow
