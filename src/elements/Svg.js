@@ -9,7 +9,7 @@ const Svg = styled('svg', { shouldForwardProp })(
 })
 
 Svg.defaultProps = {
-  fill: 'currentColor'
+  color:'secondary'
 }
 
 export default Svg

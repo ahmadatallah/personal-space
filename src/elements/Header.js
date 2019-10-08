@@ -11,6 +11,7 @@ import {
   textAlign,
   color,
   borders,
+  borderTop,
   borderColor,
   gridGap,
   gridColumnGap,
@@ -55,6 +56,8 @@ const Header = styled('header', { shouldForwardProp })(
   },
 )
 
-Header.defaultProps = {}
+Header.defaultProps = {
+  backgroundColor: 'background'
+}
 
 export default Header

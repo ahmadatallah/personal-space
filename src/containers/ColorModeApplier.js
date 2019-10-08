@@ -3,6 +3,8 @@ import jsx from "../jsx";
 import React from "react";
 import ColorModeButton from "../components/ColorModeButton";
 import { Svg, Path } from "../elements";
+import theme from "../theme";
+
 function ColorModeApplier({ ...props }) {
   return (
     <ColorModeButton onClick={props.onClick} colorMode={props.mode}>
@@ -10,7 +12,6 @@ function ColorModeApplier({ ...props }) {
         viewBox="0 0 32 32"
         width="24"
         height="24"
-        fill="currentcolor"
         style={{
           display: "block"
         }}
@@ -20,7 +21,7 @@ function ColorModeApplier({ ...props }) {
           cy="16"
           r="14"
           fill="none"
-          stroke="currentcolor"
+          stroke={theme.colors.modes[props.mode].secondary}
           strokeWidth="4"
         />
         <Path

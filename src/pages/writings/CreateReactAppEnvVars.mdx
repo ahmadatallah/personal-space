@@ -48,7 +48,7 @@ We will keep our `.env` file only with the default develepment env vars as it is
 #### How this will be done? 
 I will extract the env vars in `.env` file into a new javascript config file using a simple bash script as below imported from [here](https://www.freecodecamp.org/news/how-to-implement-runtime-environment-variables-with-create-react-app-docker-and-nginx-7f9d42a91d70/)
 
------------------
+
 ```bash 
 
 #!/bin/bash
@@ -97,7 +97,7 @@ done < .env
 echo "}" >> ./env-config.js
 ```
 
-------------------
+
 <br></br>
 
 This will create `env-config.js` file that you will need to embed it like below:

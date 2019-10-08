@@ -1,4 +1,4 @@
-# Syncatallah Personal Space | https://syncatallah.now.sh
+# Syncatallah Personal Space | https://syncatallah.cc
 
 ## TODO 
 - [x] ~~Add themes~~

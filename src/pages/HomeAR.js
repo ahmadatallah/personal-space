@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import theme from "../theme";
 import { Div } from "../elements";
 import Header from "../containers/Header";

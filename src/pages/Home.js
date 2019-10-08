@@ -16,7 +16,7 @@ import Header from "../containers/Header";
 
 const Card = lazy(() => import("../components/Card"));
 
-function Home({...props}) {
+function Home({ ...props }) {
   return (
     <ThemeProvider theme={theme}>
       <ColorMode />
@@ -24,9 +24,12 @@ function Home({...props}) {
       <Section mx="auto" maxWidth="128rem" minWidth="20rem" mt={100}>
         <Container>
           <Div px={[3, 4]}>
-            <H2 fontSize={45}>Sync... </H2>
-            <H1 fontSize={80} mt={-4}>
-              Atallah
+            <H2 fontSize={45}> Sync... </H2>
+            <H1
+              fontSize={80}
+              mt={-4}
+            >
+               Atallah
             </H1>
           </Div>
           <H3
@@ -59,7 +62,7 @@ function Home({...props}) {
             mx={[2, 3, 4]}
             mb={2}
             borderColor="currencolor"
-            width={[1, 3/4, 1 / 4]}
+            width={[1, 3 / 4, 1 / 4]}
           />
         </Suspense>
         <Suspense fallback={null}>
@@ -73,7 +76,7 @@ function Home({...props}) {
             mx={[2, 3, 4]}
             mb={2}
             borderColor="currencolor"
-            width={[1, 3/4, 1 / 4]}
+            width={[1, 3 / 4, 1 / 4]}
           >
             <BlockLinkGrow>
               <Quotation href="/writings" />
@@ -94,7 +97,7 @@ function Home({...props}) {
             mx={[2, 3, 4]}
             mb={[2]}
             borderColor="currencolor"
-            width={[1, 3/4, 1 / 4]}
+            width={[1, 3 / 4, 1 / 4]}
           />
         </Suspense>
       </Flex>

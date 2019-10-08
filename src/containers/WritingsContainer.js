@@ -5,12 +5,7 @@ import theme from "../theme";
 import Link from "../components/Link";
 import StyledLink from "../components/StyledLink";
 import { H1, Div, Small, P } from "../elements";
-import { IoMdQuote } from "react-icons/io";
 import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
-
-const LinkIcon = ({ color }) => {
-  return <IoMdQuote size={18} color={color} />;
-};
 
 function WritingsContainer({ title, href, ...props }) {
   const { textColor } = useEveryReloadColorMode();
@@ -22,7 +17,6 @@ function WritingsContainer({ title, href, ...props }) {
         Writings{" "}
       </H1>
       <Div mb={3}>
-        <LinkIcon color={textColor} />
         <StyledLink to="/writings/create-react-app-run-build-envs">
           <Link
             title="Create React App: Run-time vs Build-time Environment Variables"
@@ -31,8 +25,7 @@ function WritingsContainer({ title, href, ...props }) {
             fontWeight={[900, 600, 600]}
           />
         </StyledLink>
-        <LinkIcon color={textColor} />
-        <Div ml={[2, 2, 4]}>
+        <Div ml={[2, 2, 3]}>
           <Small>
             13 Aug, 2019{" "}
             <span role="img" aria-label="min-read">
@@ -47,7 +40,6 @@ function WritingsContainer({ title, href, ...props }) {
         </Div>
       </Div>
       <Div>
-        <LinkIcon color={textColor} />
         <StyledLink to="/writings/pascal-typescript-example">
           <Link
             title="Pattern Matching Example in TypeScript"
@@ -56,8 +48,7 @@ function WritingsContainer({ title, href, ...props }) {
             fontWeight={[900, 600, 600]}
           />
         </StyledLink>
-        <LinkIcon color={textColor} />
-        <Div ml={[2, 2, 4]}>
+        <Div ml={[2, 2, 3]}>
           <Small>
             8 Sep, 2019{" "}
             <span role="img" aria-label="min-read">

@@ -46,9 +46,8 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
     transition: "transform 0.25s ease-out",
     ":hover": {
       cursor: "pointer",
-      opacity: 1,
+      opacity: 0.5,
       transition: "scale(1.05)",
-      color: theme.colors.purple
     }
   }
 );
@@ -56,6 +55,7 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
 BlockLinkGrow.defaultProps = {
   bg: "transparent",
   cursor: "pointer",
+  color: "secondary"
 };
 
 export default BlockLinkGrow;
