@@ -8,6 +8,7 @@ import Flex from "../components/Flex";
 import Connect from "../containers/Connect";
 import about from "../assets/images/about-img.jpg";
 import Header from "../containers/Header";
+import Loading from '../components/Loading';
 
 const Img = lazy(() => import("../elements/Img"));
 
@@ -25,7 +26,8 @@ function About() {
           <Suspense
             fallback={
               <Flex flexDirection="column" justifyContent="center" mx="auto">
-                <H2 fontWeight={300}> Loading .... </H2>
+                <H2 fontWeight={300}> Loading </H2>
+                <Loading type="spokes" color="currentcolor" />
               </Flex>
             }
           >

@@ -2,7 +2,9 @@
 import jsx from "../jsx";
 import React, { lazy, Suspense } from "react";
 import BlockLinkGrow from "./BlockLinkGrow";
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import { H2 } from "../elements";
+import Flex from "./Flex";
+import Loading from './Loading';
 
 const Img = lazy(() => import("../elements/Img"));
 
@@ -39,21 +41,25 @@ const Card = ({
         {props.children ? (
           props.children
         ) : (
-          <Suspense
-            fallback={
-              <div flexDirection="column" justifyContent="center" mx="auto">
-                <h2 fontWeight={300}> Loading .... </h2>
-              </div>
-            }
-          >
-            <BlockLinkGrow>
+          <BlockLinkGrow>
+            <Suspense
+              fallback={
+                <Flex flexDirection="row" justifyContent="center">
+                  <H2 fontWeight={300} mr={2}>
+                    {" "}
+                    Loading{" "}
+                  </H2>
+                  <Loading type="spokes" color="currentcolor" />
+                </Flex>
+              }
+            >
               <Img
                 src={image}
                 alt={link.text}
                 onClick={() => (window.location.href = href)}
               />
-            </BlockLinkGrow>
-          </Suspense>
+            </Suspense>
+          </BlockLinkGrow>
         )}
       </div>
       <div px={[3, 4]} py={[3, 4]}>
