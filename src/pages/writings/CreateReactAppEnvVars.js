@@ -2,9 +2,11 @@
 import jsx from "../../jsx";
 import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
-import { Div } from "../../elements";
+import { Div, H2 } from "../../elements";
 import Header from "../../containers/Header";
 import Footer from "../../containers/Footer";
+import Flex from "../../components/Flex";
+import Loading from '../../components/Loading';
 
 import "prismjs/themes/prism-solarizedlight.css";
 import "./pre.css";
@@ -26,7 +28,17 @@ function CreateReactAppEnvVars({ ...props }) {
         fontFamily={theme.typefaces.sansSerif}
         mt={70}
       >
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <Flex flexDirection="row" justifyContent="center">
+              <H2 fontWeight={300} mr={2}>
+                {" "}
+                Loading{" "}
+              </H2>
+              <Loading type="spokes" color="currentcolor" />
+            </Flex>
+          }
+        >
           <Content />
         </Suspense>
         <Footer />
