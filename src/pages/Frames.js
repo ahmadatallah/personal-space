@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import React, { useState, useCallback, lazy, Suspense, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { H1, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Carousel, { Modal, ModalGateway } from "react-images";
@@ -20,10 +20,9 @@ function Frames({ ...props }) {
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const { textColor } = useEveryReloadColorMode();
 
-  // TODO handle this initial value based on innerWidth 
-  let initialLength=15
+  // TODO handle this initial value based on innerWidth
+  let initialLength = 15;
   const [images, setImages] = useState(photos.slice(0, initialLength));
-
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
@@ -31,7 +30,6 @@ function Frames({ ...props }) {
   }, []);
 
   const closeLightbox = () => {
-    setCurrentImage(0);
     setViewerIsOpen(false);
   };
 
@@ -59,7 +57,6 @@ function Frames({ ...props }) {
       loadMorePhotos();
     }
   };
-
   return (
     <>
       <Header />

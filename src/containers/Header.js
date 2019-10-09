@@ -24,7 +24,6 @@ function Header() {
       width="100%"
       style={{
         position: "fixed",
-        zIndex: 100,
         top: 0,
         height: "80px"
       }}
