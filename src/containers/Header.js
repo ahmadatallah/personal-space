@@ -64,16 +64,6 @@ function Header() {
       >
         Frames
       </BlockLinkGrow>
-      {/* <BlockLinkGrow
-        fontSize={0}
-        mr={3}
-        fontWeight={700}
-        href="https://ahmad-atallah.tumblr.com"
-        title="Archive"
-        fontFamily={theme.typefaces.mono}
-      >
-        Archive
-      </BlockLinkGrow> */}
       <BlockLinkGrow
         fontSize={0}
         fontWeight={700}
