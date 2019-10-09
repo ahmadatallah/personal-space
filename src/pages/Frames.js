@@ -14,12 +14,16 @@ import Loading from "../components/Loading";
 
 function Frames({ ...props }) {
   const [currentImage, setCurrentImage] = useState(0);
-  const [images, setImages] = useState(photos.slice(0, 6));
   const [pageNum, setPageNum] = useState(1);
   const [loadedAll, setLoadedAll] = useState(false);
   const TOTAL_PAGES = 3;
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const { textColor } = useEveryReloadColorMode();
+
+  // TODO handle this initial value based on innerWidth 
+  let initialLength=15
+  const [images, setImages] = useState(photos.slice(0, initialLength));
+
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
