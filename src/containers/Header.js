@@ -64,7 +64,7 @@ function Header() {
       >
         Frames
       </BlockLinkGrow>
-      <BlockLinkGrow
+      {/* <BlockLinkGrow
         fontSize={0}
         mr={3}
         fontWeight={700}
@@ -73,7 +73,7 @@ function Header() {
         fontFamily={theme.typefaces.mono}
       >
         Archive
-      </BlockLinkGrow>
+      </BlockLinkGrow> */}
       <BlockLinkGrow
         fontSize={0}
         fontWeight={700}
