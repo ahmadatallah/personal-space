@@ -283,7 +283,8 @@ export const photos = [
       `${carouselx1x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'man and women on the shore ...',
   },
   {
     src: require("../assets/images/carousel/0002carousel.jpg"),
@@ -294,7 +295,8 @@ export const photos = [
       `${carouselx2x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'boats in river, fogs ...',
   },
   {
     src: require("../assets/images/carousel/0003carousel.jpg"),
@@ -305,7 +307,8 @@ export const photos = [
       `${carouselx3x4} 1312w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'a goat',
   },
   {
     src: require("../assets/images/carousel/0004carousel.jpg"),
@@ -316,7 +319,8 @@ export const photos = [
       `${carouselx4x4} 1400w`,
     ],
     width: 2,
-    height: 1
+    height: 1,
+    alt: 'red cloude, kid standing and a dog ...',
   },
   {
     src: require("../assets/images/carousel/0005carousel.jpg"),
@@ -327,7 +331,8 @@ export const photos = [
       `${carouselx5x4} 1033w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'like neurons ...',
   },
   {
     src: require("../assets/images/carousel/0006carousel.jpg"),
@@ -338,7 +343,8 @@ export const photos = [
       `${carouselx6x4} 1213w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'man below a tree ...',
   },
   {
     src: require("../assets/images/carousel/0007carousel.jpg"),
@@ -349,7 +355,8 @@ export const photos = [
       `${carouselx7x4} 1080w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'bird in the desert ...',
   },
   {
     src: require("../assets/images/carousel/0008carousel.jpg"),
@@ -360,7 +367,8 @@ export const photos = [
       `${carouselx8x4} 1396w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'statues in a museum...',
   },
   {
     src: require("../assets/images/carousel/0009carousel.jpg"),
@@ -371,7 +379,8 @@ export const photos = [
       `${carouselx9x4} 1221w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'short tree behind wall ...',
   },
   {
     src: require("../assets/images/carousel/0010carousel.jpg"),
@@ -382,7 +391,8 @@ export const photos = [
       `${carouselx10x4} 1080w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'green garden with lovers ...',
   },
   {
     src: require("../assets/images/carousel/0011carousel.jpg"),
@@ -393,7 +403,8 @@ export const photos = [
       `${carouselx11x4} 1080w`,
     ],
     width: 6,
-    height: 5
+    height: 5,
+    alt: 'building, clouds tableaux...',
   },
   {
     src: require("../assets/images/carousel/0012carousel.jpg"),
@@ -404,7 +415,8 @@ export const photos = [
       `${carouselx12x4} 1248w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'kids conquering the sea ...',
   },
   {
     src: require("../assets/images/carousel/0013carousel.jpg"),
@@ -415,7 +427,8 @@ export const photos = [
       `${carouselx13x4} 1400w`,
     ],
     width: 5,
-    height: 3
+    height: 3,
+    alt: 'two girls on the shore ...',
   },
   {
     src: require("../assets/images/carousel/0014carousel.jpg"),
@@ -426,7 +439,8 @@ export const photos = [
       `${carouselx14x4} 1119w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'a passage ...',
   },
   {
     src: require("../assets/images/carousel/0018carousel.jpg"),
@@ -437,7 +451,8 @@ export const photos = [
       `${carouselx18x4} 1080w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'golden leaves ...',
   },
   {
     src: require("../assets/images/carousel/0019carousel.jpg"),
@@ -448,7 +463,8 @@ export const photos = [
       `${carouselx19x4} 1080w`,
     ],
     width: 3,
-    height: 2
+    height: 2,
+    alt: 'man standing scenery ...',
   },
   {
     src: require("../assets/images/carousel/0021carousel.jpg"),
@@ -459,7 +475,8 @@ export const photos = [
       `${carouselx21x4} 1224w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'trees road ...',
   },
   {
     src: require("../assets/images/carousel/0022carousel.jpg"),
@@ -470,7 +487,8 @@ export const photos = [
       `${carouselx22x4} 1379w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'side by side old buildings ...',
   },
   {
     src: require("../assets/images/carousel/0027carousel.jpg"),
@@ -481,7 +499,8 @@ export const photos = [
       `${carouselx27x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'a fisherman ...',
   },
   {
     src: require("../assets/images/carousel/0028carousel.jpg"),
@@ -492,7 +511,8 @@ export const photos = [
       `${carouselx28x4} 1315w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'shore rainbows ...',
   },
   {
     src: require("../assets/images/carousel/0030carousel.jpg"),
@@ -503,7 +523,8 @@ export const photos = [
       `${carouselx30x4} 1400w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'two elders ...',
   },
   {
     src: require("../assets/images/carousel/0033carousel.jpg"),
@@ -514,7 +535,8 @@ export const photos = [
       `${carouselx33x4} 1080w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'a fisherman in the river, boat...',
   },
   {
     src: require("../assets/images/carousel/0034carousel.jpg"),
@@ -525,7 +547,8 @@ export const photos = [
       `${carouselx34x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'out focus man and woman running ...',
   },
   {
     src: require("../assets/images/carousel/0035carousel.jpg"),
@@ -536,7 +559,8 @@ export const photos = [
       `${carouselx35x4} 1080w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'friends on shore ...',
   },
   {
     src: require("../assets/images/carousel/0037carousel.jpg"),
@@ -547,7 +571,9 @@ export const photos = [
       `${carouselx37x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'a cat scenery ...',
+
   },
   {
     src: require("../assets/images/carousel/0043carousel.jpg"),
@@ -558,7 +584,8 @@ export const photos = [
       `${carouselx43x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'man standing in front of waves ...',
   },
   {
     src: require("../assets/images/carousel/0044carousel.jpg"),
@@ -569,7 +596,8 @@ export const photos = [
       `${carouselx44x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'trees and palm trees ...',
   },
   {
     src: require("../assets/images/carousel/0045carousel.jpg"),
@@ -580,7 +608,8 @@ export const photos = [
       `${carouselx45x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'a spin game ...',
   },
   {
     src: require("../assets/images/carousel/0046carousel.jpg"),
@@ -591,7 +620,8 @@ export const photos = [
       `${carouselx46x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'a statues in alexandria ...',
   },
   {
     src: require("../assets/images/carousel/0047carousel.jpg"),
@@ -602,7 +632,8 @@ export const photos = [
       `${carouselx47x4} 1400w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'cat in front of boats ...',
   },
   {
     src: require("../assets/images/carousel/0051carousel.jpg"),
@@ -613,7 +644,8 @@ export const photos = [
       `${carouselx51x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'spring flowers, colorful ...',
   },
   {
     src: require("../assets/images/carousel/0052carousel.jpg"),
@@ -624,7 +656,8 @@ export const photos = [
       `${carouselx52x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'four sails ...',
   },
   {
     src: require("../assets/images/carousel/0055carousel.jpg"),
@@ -634,7 +667,8 @@ export const photos = [
       `${carouselx55x3} 1080w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'dark passage with little light ...',
   },
   {
     src: require("../assets/images/carousel/0056carousel.jpg"),
@@ -645,7 +679,8 @@ export const photos = [
       `${carouselx56x4} 1400w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'a cat in a garden ...',
   },
   {
     src: require("../assets/images/carousel/0058carousel.jpg"),
@@ -656,7 +691,8 @@ export const photos = [
       `${carouselx58x4} 1400w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'a dog sleeping ...',
   },
   {
     src: require("../assets/images/carousel/0060carousel.jpg"),
@@ -667,7 +703,8 @@ export const photos = [
       `${carouselx60x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'green field, focused leaves ...',
   },
   {
     src: require("../assets/images/carousel/0061carousel.jpg"),
@@ -678,7 +715,8 @@ export const photos = [
       `${carouselx61x4} 1400w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'tree side view ...',
   },
   {
     src: require("../assets/images/carousel/0062carousel.jpg"),
@@ -689,7 +727,8 @@ export const photos = [
       `${carouselx62x4} 1080w`,
     ],
     width: 2,
-    height: 3
+    height: 3,
+    alt: 'cat in train station ...',
   },
   {
     src: require("../assets/images/carousel/0064carousel.jpg"),
@@ -700,7 +739,8 @@ export const photos = [
       `${carouselx64x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'man holding yellow flowers ...',
   },
   {
     src: require("../assets/images/carousel/0068carousel.jpg"),
@@ -711,7 +751,8 @@ export const photos = [
       `${carouselx68x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'golden sunrise ...',
   },
   {
     src: require("../assets/images/carousel/0071carousel.jpg"),
@@ -722,7 +763,8 @@ export const photos = [
       `${carouselx71x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'road and silhouettes ...',
   },
   {
     src: require("../assets/images/carousel/0072carousel.jpg"),
@@ -733,7 +775,8 @@ export const photos = [
       `${carouselx72x4} 1080w`,
     ],
     width: 2,
-    height: 3
+    height: 3,
+    alt: 'fisherman in white sea ...',
   },
   {
     src: require("../assets/images/carousel/0077carousel.jpg"),
@@ -744,7 +787,8 @@ export const photos = [
       `${carouselx77x4} 1080w`,
     ],
     width: 3,
-    height: 5
+    height: 5,
+    alt: 'two friends silhouettes, self portrait ...',
   },
   {
     src: require("../assets/images/carousel/0078carousel.jpg"),
@@ -755,7 +799,8 @@ export const photos = [
       `${carouselx78x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'men sailing ...',
   },
   {
     src: require("../assets/images/carousel/0079carousel.jpg"),
@@ -766,7 +811,8 @@ export const photos = [
       `${carouselx79x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'woman behind a wall ...',
   },
   {
     src: require("../assets/images/carousel/0081carousel.jpg"),
@@ -777,7 +823,8 @@ export const photos = [
       `${carouselx81x4} 1231w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'woman silhouettes, shore ...',
   },
   {
     src: require("../assets/images/carousel/0083carousel.jpg"),
@@ -788,7 +835,8 @@ export const photos = [
       `${carouselx83x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'walking people ...',
   },
   {
     src: require("../assets/images/carousel/0085carousel.jpg"),
@@ -799,7 +847,8 @@ export const photos = [
       `${carouselx85x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'three violet buildings ...',
   },
   {
     src: require("../assets/images/carousel/0087carousel.jpg"),
@@ -810,7 +859,8 @@ export const photos = [
       `${carouselx87x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'tree in the sky ...',
   },
   {
     src: require("../assets/images/carousel/0088carousel.jpg"),
@@ -821,7 +871,8 @@ export const photos = [
       `${carouselx88x4} 1400w`,
     ],
     width: 4,
-    height: 3
+    height: 3,
+    alt: 'kid sitting ...',
   },
   {
     src: require("../assets/images/carousel/0089carousel.jpg"),
@@ -832,7 +883,8 @@ export const photos = [
       `${carouselx89x4} 1400w`,
     ],
     width: 3,
-    height: 4
+    height: 4,
+    alt: 'self portrait ...',
   },
   {
     src: require("../assets/images/carousel/0090carousel.jpg"),
@@ -843,7 +895,8 @@ export const photos = [
       `${carouselx90x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'window with curtain ...',
   },
   {
     src: require("../assets/images/carousel/0092carousel.jpg"),
@@ -854,7 +907,8 @@ export const photos = [
       `${carouselx92x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'woman sitting in the roof ...',
   },
   {
     src: require("../assets/images/carousel/0093carousel.jpg"),
@@ -865,7 +919,8 @@ export const photos = [
       `${carouselx93x4} 1400w`,
     ],
     width: 1,
-    height: 1
+    height: 1,
+    alt: 'woman holding umbrella  ...',
   },
   {
     src: require("../assets/images/carousel/0094carousel.jpg"),
@@ -876,7 +931,8 @@ export const photos = [
       `${carouselx94x4} 1400w`,
     ],
     width: 2,
-    height: 1
+    height: 1,
+    alt: 'short trees on a river ...',
   }
 ];
 
