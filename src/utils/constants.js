@@ -227,11 +227,6 @@ import carouselx81x2 from "../assets/images/carousel/0081carousel/0081carousel_v
 import carouselx81x3 from "../assets/images/carousel/0081carousel/0081carousel_vrkieq_c_scale,w_1196.jpg"
 import carouselx81x4 from "../assets/images/carousel/0081carousel/0081carousel_vrkieq_c_scale,w_1231.jpg"
 
-import carouselx82x1 from "../assets/images/carousel/0082carousel/0082carousel_al9odq_c_scale,w_483.jpg"
-import carouselx82x2 from "../assets/images/carousel/0082carousel/0082carousel_al9odq_c_scale,w_864.jpg"
-import carouselx82x3 from "../assets/images/carousel/0082carousel/0082carousel_al9odq_c_scale,w_1291.jpg"
-import carouselx82x4 from "../assets/images/carousel/0082carousel/0082carousel_al9odq_c_scale,w_1400.jpg"
-
 import carouselx83x1 from "../assets/images/carousel/0083carousel/0083carousel_n5dzyb_c_scale,w_437.jpg"
 import carouselx83x2 from "../assets/images/carousel/0083carousel/0083carousel_n5dzyb_c_scale,w_909.jpg"
 import carouselx83x3 from "../assets/images/carousel/0083carousel/0083carousel_n5dzyb_c_scale,w_1267.jpg"
