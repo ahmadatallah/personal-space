@@ -16,12 +16,12 @@ function Frames({ ...props }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [pageNum, setPageNum] = useState(1);
   const [loadedAll, setLoadedAll] = useState(false);
-  const TOTAL_PAGES = 3;
+  const TOTAL_PAGES = 2;
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const { textColor } = useEveryReloadColorMode();
 
   // TODO handle this initial value based on innerWidth
-  let initialLength = 15;
+  let initialLength = 45;
   const [images, setImages] = useState(photos.slice(0, initialLength));
 
   const openLightbox = useCallback((event, { photo, index }) => {
