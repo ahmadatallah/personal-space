@@ -3,9 +3,19 @@
   "name": "Sync Atallah Space",
   "icons": [
     {
-      "src": "favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon@x1.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon@x2.png",
+      "sizes": "130x130",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon@x3.png",
+      "sizes": "440x439",
+      "type": "image/png"
     }
   ],
   "start_url": "/",
