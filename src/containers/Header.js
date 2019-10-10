@@ -25,7 +25,8 @@ function Header() {
       style={{
         position: "fixed",
         top: 0,
-        height: "80px"
+        height: "80px",
+        zIndex: 100,
       }}
     >
       <Div maxWidth="6rem" mr={2}>

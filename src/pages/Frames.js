@@ -78,8 +78,37 @@ function Frames({ ...props }) {
         )}
         <ModalGateway>
           {viewerIsOpen ? (
-            <Modal onClose={closeLightbox}>
+            <Modal
+              onClose={closeLightbox}
+              styles={{
+                positioner: base => ({
+                  ...base,
+                  display: "block",
+                  zIndex: 1000
+                }),
+              }}
+            >
               <Carousel
+                styles={{
+                  header: base => ({
+                    ...base,
+                    position: "static",
+                    opacity: 0.8,
+                    backgroundColor: `black !important`,
+                    height: '80px'
+                  }),
+                  headerClose: base => ({
+                    ...base,
+                    color: 'white',
+                  }),
+                  headerFullscreen: base => ({
+                    ...base,
+                    color: 'white',
+                  }),
+                  view: base => ({
+                    ...base,
+                  })
+                }}
                 currentIndex={currentImage}
                 views={photos.map(x => ({
                   ...x,
