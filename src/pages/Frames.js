@@ -92,10 +92,9 @@ function Frames({ ...props }) {
                 styles={{
                   header: base => ({
                     ...base,
-                    position: "static",
                     opacity: 0.8,
                     backgroundColor: `black !important`,
-                    height: '80px'
+                    height: '90px'
                   }),
                   headerClose: base => ({
                     ...base,
@@ -105,9 +104,6 @@ function Frames({ ...props }) {
                     ...base,
                     color: 'white',
                   }),
-                  view: base => ({
-                    ...base,
-                  })
                 }}
                 currentIndex={currentImage}
                 views={photos.map(x => ({
