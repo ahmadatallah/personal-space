@@ -35,15 +35,14 @@ const ColorModeButton = styled("button", { shouldForwardProp })(
   borderRadius,
   borderWidth,
   {
-    minWidth: "28px",
+    minWidth: "1.8rem",
     width: "28px",
     height: "28px",
     display: "inline-block",
     appearance: "none",
     bg: "transparent",
     color: "inherit",
-    p: 1,
-    m: 0,
+    marginTop: "4px",
     border: 0,
     borderRadius: 9999
   }
