@@ -4,79 +4,79 @@ import React from "react";
 import Avatar from "../components/Avatar";
 import avatarImg from "../assets/images/avatar.png";
 import ColorModeApplier from "./ColorModeApplier";
-import { Div, A, Header as header } from "../elements";
+import { Div, Header as header } from "../elements";
 import theme from "../theme";
 import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
-import BlockLinkGrow from "../components/BlockLinkGrow";
+import Link from "../components/Link";
+import StyledLink from "../components/StyledLink";
+import Flex from "../components/Flex";
 
 function Header() {
-  const {
-    colorMode,
-    changeTheme
-  } = useEveryReloadColorMode();
+  const { colorMode, changeTheme } = useEveryReloadColorMode();
 
   return (
     <header
-      px={3}
+      px={[3, 4, 5]}
       py={2}
       display="flex"
       alignItems="center"
+      justifyContent="space-around"
       width="100%"
       style={{
         position: "fixed",
         top: 0,
-        height: "80px",
-        zIndex: 100,
+        height: "60px",
+        zIndex: 100
       }}
     >
-      <Div maxWidth="6rem" mr={2}>
-        <BlockLinkGrow display="block" href="/">
-          <Avatar src={avatarImg} borderRadius={100} width={[32, 64]} />
-        </BlockLinkGrow>
+      <Div>
+        <StyledLink to="/">
+          <Avatar src={avatarImg} borderRadius={100} marginTop={2} width={[32, 46]} />
+        </StyledLink>
       </Div>
-      <BlockLinkGrow
-        ml="auto"
-        mr={3}
-        fontSize={0}
-        fontWeight={700}
-        href="/readings"
-        title="Readings"
-        fontFamily={theme.typefaces.mono}
-      >
-        Readings
-      </BlockLinkGrow>
-      <BlockLinkGrow
-        fontSize={0}
-        mr={3}
-        fontWeight={700}
-        href="/writings"
-        title="Writings"
-        fontFamily={theme.typefaces.mono}
-      >
-        Writings
-      </BlockLinkGrow>
-      <BlockLinkGrow
-        fontSize={0}
-        mr={3}
-        fontWeight={700}
-        href="/frames"
-        title="Frames"
-        fontFamily={theme.typefaces.mono}
-      >
-        Frames
-      </BlockLinkGrow>
-      <BlockLinkGrow
-        fontSize={0}
-        fontWeight={700}
-        pb={1}
-        mr={3}
-        href="/ar"
-        title="كتابات"
-        fontFamily={theme.typefaces.helvetica}
-      >
-        كتابات
-      </BlockLinkGrow>
+      <Flex maxWidth="14rem" flexDirection="row">
+        <Div>
+          <StyledLink to="/readings">
+            <Link
+              title="Readings"
+              fontSize={0}
+              mr={3}
+              fontWeight={700}
+              fontFamily={theme.typefaces.mono}
+            />
+          </StyledLink>
 
+          <StyledLink to="/writings">
+            <Link
+              title="Writings"
+              fontSize={0}
+              mr={3}
+              fontWeight={700}
+              fontFamily={theme.typefaces.mono}
+            />
+          </StyledLink>
+          <StyledLink to="/frames">
+            <Link
+              title="Frames"
+              fontSize={0}
+              mr={3}
+              fontWeight={700}
+              fontFamily={theme.typefaces.mono}
+            />
+          </StyledLink>
+
+          <StyledLink to="/ar">
+            <Link
+              title="كتابات"
+              fontSize={0}
+              pb={1}
+              mr={3}
+              fontWeight={700}
+              fontFamily={theme.typefaces.helvetica}
+            />
+          </StyledLink>
+        </Div>
+      </Flex>
       <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
     </header>
   );
