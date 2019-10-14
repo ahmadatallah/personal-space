@@ -34,7 +34,7 @@ function Header() {
           <Avatar src={avatarImg} borderRadius={100} marginTop={2} width={[32, 46]} />
         </StyledLink>
       </Div>
-      <Flex maxWidth="14rem" flexDirection="row">
+      <Flex maxWidth="14rem" flexDirection="row" mr={2}>
         <Div>
           <StyledLink to="/readings">
             <Link

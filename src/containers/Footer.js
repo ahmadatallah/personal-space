@@ -10,7 +10,8 @@ function Footer() {
   return (
     <footer
       mb={1}
-      px={3}
+      px={2}
+      py={3}
       display="flex"
       alignItems="center"
       width="100%"
@@ -19,7 +20,7 @@ function Footer() {
       }}
     >
       <Flex justifyContent="center" my={0}>
-        <P fontFamily={theme.typefaces.mono}>© 2019 syncatallah. </P>
+        <P fontFamily={theme.typefaces.mono}> © 2019 syncatallah{" •"}</P>
         <BlockLinkGrow
           ml={3}
           fontWeight={700}

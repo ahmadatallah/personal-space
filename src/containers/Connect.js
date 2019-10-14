@@ -20,7 +20,7 @@ function Connect() {
       display="flex"
       borderTop="0.5px solid"
       alignItems="center"
-      borderColor="currentcolor"
+      borderColor="secondary"
       py={4}
     >
       <BlockLinkGrow
