@@ -60,7 +60,7 @@ function Frames({ ...props }) {
   return (
     <>
       <Header />
-      <Flex flexDirection="column" px={[3, 4, 5]} py={2} mx="auto" mt={65}>
+      <Flex flexDirection="column" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
         <Div ml={1}>
           <H1 fontWeight={600} color={textColor}>
             Frames
