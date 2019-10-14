@@ -5,16 +5,15 @@ import theme from "../../theme";
 import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
-import { importMDX } from "mdx.macro";
 import Loading from "../../components/Loading";
 
-const Content = lazy(() => importMDX("./Society.mdx"));
+const Content = lazy(() => import("!babel-loader!mdx-loader!./Society.mdx"));
 
 function Society({ ...props }) {
   return (
     <>
       <Header />
-      <Flex
+      <Div
         dir="rtl"
         justifyConent="center"
         maxWidth={900}
@@ -37,7 +36,7 @@ function Society({ ...props }) {
         >
           <Content />
         </Suspense>
-      </Flex>
+      </Div>
     </>
   );
 }

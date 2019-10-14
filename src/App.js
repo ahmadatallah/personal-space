@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import theme from "./theme";
-import { H2 } from "./elements";
+import { H2, Div } from "./elements";
 import GlobalStyles from "./global-styles";
 import Loading from "./components/Loading";
 import Flex from "./components/Flex";
@@ -14,19 +14,12 @@ import HomeAR from "./pages/HomeAR";
 import NotFound from "./pages/NotFound";
 import Readings from "./pages/Readings";
 import Writings from "./pages/Writings";
-
-import Div from "./elements/Div";
-
-const Bio = lazy(() => import("./pages/ar/Bio"));
-const BornRich = lazy(() => import("./pages/ar/BornRich"));
-const MidnightStory = lazy(() => import("./pages/ar/MidnightStory"));
-const CreateReactAppEnvVars = lazy(() =>
-  import("./pages/writings/CreateReactAppEnvVars")
-);
-const PascalTypeScript = lazy(() =>
-  import("./pages/writings/PascalTypeScript")
-);
-const Society = lazy(() => import("./pages/ar/Society"));
+import Bio from "./pages/ar/Bio";
+import BornRich from "./pages/ar/BornRich";
+import MidnightStory from "./pages/ar/MidnightStory";
+import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
+import PascalTypeScript from "./pages/writings/PascalTypeScript";
+import Society from "./pages/ar/Society";
 
 function App() {
   return (
@@ -40,102 +33,26 @@ function App() {
             <Route exact path="/ar" component={HomeAR} />
             <Route
               path={`/ar/school-of-biomedical-engineering`}
-              component={() => (
-                <Suspense fallback={null}>
-                  <Bio />
-                </Suspense>
-              )}
+              component={Bio}
             />
             <Route
               path={`/ar/sorry-being-born-rich-still-leads-to-success`}
-              component={() => (
-                <Suspense fallback={null}>
-                  <BornRich />
-                </Suspense>
-              )}
+              component={BornRich}
             />
-            <Route
-              path={`/ar/happy-society`}
-              component={() => (
-                <Suspense fallback={null}>
-                  <Society />
-                </Suspense>
-              )}
-            />
-            <Route
-              path={`/ar/midnight-story`}
-              component={() => (
-                <Suspense fallback={null}>
-                  <MidnightStory />
-                </Suspense>
-              )}
-            />
-            <Route
-              path="/writings"
-              exact={true}
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <Writings />
-                </Suspense>
-              )}
-            />
+            <Route path={`/ar/happy-society`} component={Society} />
+            <Route path={`/ar/midnight-story`} component={MidnightStory} />
+            <Route path="/writings" exact={true} component={Writings} />
             <Route
               path={`/writings/create-react-app-run-build-envs`}
-              component={() => (
-                <Suspense fallback={null}>
-                  <CreateReactAppEnvVars />
-                </Suspense>
-              )}
+              component={CreateReactAppEnvVars}
             />{" "}
             <Route
               path={`/writings/pascal-typescript-example`}
-              component={() => (
-                <Suspense fallback={null}>
-                  <PascalTypeScript />
-                </Suspense>
-              )}
+              component={PascalTypeScript}
             ></Route>
             <Route path="/about" exact={true} component={About} />
             <Route path="/writings" component={Home} />
-            <Route
-              path="/readings"
-              exact={true}
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <Readings />
-                </Suspense>
-              )}
-            />
+            <Route path="/readings" exact={true} component={Readings} />
             <Route path="/frames" exact={true} component={Frames} />
             <Route component={NotFound} />
           </Switch>

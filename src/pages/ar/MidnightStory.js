@@ -5,16 +5,17 @@ import theme from "../../theme";
 import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
-import { importMDX } from "mdx.macro";
 import Loading from "../../components/Loading";
 
-const Content = lazy(() => importMDX("./MidnightStory.mdx"));
+const Content = lazy(() =>
+  import("!babel-loader!mdx-loader!./MidnightStory.mdx")
+);
 
 function BornRich({ ...props }) {
   return (
     <>
       <Header />
-      <Flex
+      <Div
         dir="rtl"
         justifyConent="center"
         maxWidth={900}
@@ -37,7 +38,7 @@ function BornRich({ ...props }) {
         >
           <Content />
         </Suspense>
-      </Flex>
+      </Div>
     </>
   );
 }

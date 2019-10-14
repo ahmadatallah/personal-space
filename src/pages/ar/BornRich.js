@@ -5,15 +5,14 @@ import theme from "../../theme";
 import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
-import { importMDX } from "mdx.macro";
-import Loading from '../../components/Loading';
-const Content = lazy(() => importMDX("./BornRich.mdx"));
+import Loading from "../../components/Loading";
+const Content = lazy(() => import("!babel-loader!mdx-loader!./BornRich.mdx"));
 
 function BornRich({ ...props }) {
   return (
     <>
       <Header />
-      <Flex
+      <Div
         dir="rtl"
         justifyConent="center"
         maxWidth={900}
@@ -36,7 +35,7 @@ function BornRich({ ...props }) {
         >
           <Content />
         </Suspense>
-      </Flex>
+      </Div>
     </>
   );
 }

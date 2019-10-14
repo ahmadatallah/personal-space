@@ -5,10 +5,9 @@ import theme from "../../theme";
 import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
-import { importMDX } from "mdx.macro";
-import Loading from '../../components/Loading';
+import Loading from "../../components/Loading";
 
-const Content = lazy(() => importMDX("./Bio.mdx"));
+const Content = lazy(() => import("!babel-loader!mdx-loader!./Bio.mdx"));
 
 function Bio({ ...props }) {
   return (
