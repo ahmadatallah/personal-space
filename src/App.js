@@ -7,7 +7,14 @@ import GlobalStyles from "./global-styles";
 import Loading from "./components/Loading";
 import Flex from "./components/Flex";
 
-// import pages here
+import About from "./pages/About";
+import Frames from "./pages/Frames";
+import Home from "./pages/Home";
+import HomeAR from "./pages/HomeAR";
+import NotFound from "./pages/NotFound";
+import Readings from "./pages/Readings";
+import Writings from "./pages/Writings";
+
 import Div from "./elements/Div";
 
 const Bio = lazy(() => import("./pages/ar/Bio"));
@@ -21,13 +28,13 @@ const PascalTypeScript = lazy(() =>
 );
 const Society = lazy(() => import("./pages/ar/Society"));
 
-const About = lazy(() => import("./pages/About"));
-const Frames = lazy(() => import("./pages/Frames"));
-const Home = lazy(() => import("./pages/Home"));
-const HomeAR = lazy(() => import("./pages/HomeAR"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Readings = lazy(() => import("./pages/Readings"));
-const Writings = lazy(() => import("./pages/Writings"));
+// const About = lazy(() => import("./pages/About"));
+// const Frames = lazy(() => import("./pages/Frames"));
+// const Home = lazy(() => import("./pages/Home"));
+// const HomeAR = lazy(() => import("./pages/HomeAR"));
+// const NotFound = lazy(() => import("./pages/NotFound"));
+// const Readings = lazy(() => import("./pages/Readings"));
+// const Writings = lazy(() => import("./pages/Writings"));
 
 function App() {
   return (
@@ -37,54 +44,8 @@ function App() {
       <Div fontFamily={theme.typefaces.sansSerif}>
         <Router>
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <Home />
-                </Suspense>
-              )}
-            />
-            <Route
-              exact
-              path="/ar"
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <HomeAR />
-                </Suspense>
-              )}
-            />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/ar" component={HomeAR} />
             <Route
               path={`/ar/school-of-biomedical-engineering`}
               component={() => (
@@ -157,30 +118,7 @@ function App() {
                 </Suspense>
               )}
             ></Route>
-            <Route
-              path="/about"
-              exact={true}
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <About />
-                </Suspense>
-              )}
-            />
+            <Route path="/about" exact={true} component={About} />
             <Route path="/writings" component={Home} />
             <Route
               path="/readings"
@@ -206,52 +144,8 @@ function App() {
                 </Suspense>
               )}
             />
-            <Route
-              path="/frames"
-              exact={true}
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <Frames />
-                </Suspense>
-              )}
-            />
-            <Route
-              component={() => (
-                <Suspense
-                  fallback={
-                    <Flex
-                      flexDirection="row"
-                      mt={4}
-                      pt={5}
-                      justifyContent="center"
-                    >
-                      <H2 fontWeight={300} mr={2}>
-                        {" "}
-                        Loading{" "}
-                      </H2>
-                      <Loading type="spokes" color="currentcolor" />
-                    </Flex>
-                  }
-                >
-                  <NotFound />
-                </Suspense>
-              )}
-            />
+            <Route path="/frames" exact={true} component={Frames} />
+            <Route component={NotFound} />
           </Switch>
         </Router>
       </Div>
