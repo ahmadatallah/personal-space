@@ -2,7 +2,10 @@ import React, { lazy, Suspense } from "react";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import theme from "./theme";
+import { H2 } from "./elements";
 import GlobalStyles from "./global-styles";
+import Loading from "./components/Loading";
+import Flex from "./components/Flex";
 
 // import pages here
 import Div from "./elements/Div";
@@ -38,7 +41,22 @@ function App() {
               exact
               path="/"
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <Home />
                 </Suspense>
               )}
@@ -47,7 +65,22 @@ function App() {
               exact
               path="/ar"
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <HomeAR />
                 </Suspense>
               )}
@@ -88,7 +121,22 @@ function App() {
               path="/writings"
               exact={true}
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <Writings />
                 </Suspense>
               )}
@@ -113,7 +161,22 @@ function App() {
               path="/about"
               exact={true}
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <About />
                 </Suspense>
               )}
@@ -123,7 +186,22 @@ function App() {
               path="/readings"
               exact={true}
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <Readings />
                 </Suspense>
               )}
@@ -132,14 +210,44 @@ function App() {
               path="/frames"
               exact={true}
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <Frames />
                 </Suspense>
               )}
             />
             <Route
               component={() => (
-                <Suspense fallback={null}>
+                <Suspense
+                  fallback={
+                    <Flex
+                      flexDirection="row"
+                      mt={4}
+                      pt={5}
+                      justifyContent="center"
+                    >
+                      <H2 fontWeight={300} mr={2}>
+                        {" "}
+                        Loading{" "}
+                      </H2>
+                      <Loading type="spokes" color="currentcolor" />
+                    </Flex>
+                  }
+                >
                   <NotFound />
                 </Suspense>
               )}
