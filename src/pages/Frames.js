@@ -60,21 +60,28 @@ function Frames({ ...props }) {
   return (
     <>
       <Header />
-      <Flex flexDirection="column" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
-        <Div ml={1}>
+      <Flex
+        alignItems="center"
+        flexDirection="column"
+        maxWidth="80em"
+        minHeight="100%"
+        mr="auto"
+        ml="auto"
+      >
+        <Div pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
           <H1 fontWeight={600} color={textColor}>
             Frames
           </H1>
+          <Gallery photos={images} onClick={openLightbox} />
         </Div>
-        <Gallery photos={images} onClick={openLightbox} />
         {!loadedAll && (
-          <Flex flexDirection="row" justifyContent="center">
+          <>
             <H2 fontWeight={300} mr={2}>
               {" "}
               Loading{" "}
             </H2>
             <Loading type="spokes" color="currentcolor" />
-          </Flex>
+          </>
         )}
         <ModalGateway>
           {viewerIsOpen ? (
@@ -85,7 +92,7 @@ function Frames({ ...props }) {
                   ...base,
                   display: "block",
                   zIndex: 1000
-                }),
+                })
               }}
             >
               <Carousel
@@ -94,16 +101,16 @@ function Frames({ ...props }) {
                     ...base,
                     opacity: 0.8,
                     backgroundColor: `black !important`,
-                    height: '90px'
+                    height: "90px"
                   }),
                   headerClose: base => ({
                     ...base,
-                    color: 'white',
+                    color: "white"
                   }),
                   headerFullscreen: base => ({
                     ...base,
-                    color: 'white',
-                  }),
+                    color: "white"
+                  })
                 }}
                 currentIndex={currentImage}
                 views={photos.map(x => ({
