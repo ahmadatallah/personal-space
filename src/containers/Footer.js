@@ -16,21 +16,31 @@ function Footer() {
       alignItems="center"
       width="100%"
       style={{
-        bottom: 0,
+        bottom: 0
       }}
     >
-      <Flex justifyContent="center" my={0}>
-        <P fontFamily={theme.typefaces.mono}> © 2019 syncatallah{" •"}</P>
-        <BlockLinkGrow
-          ml={3}
-          fontWeight={700}
-          color="currentcolor"
-          href="/about"
-          title="About"
-          fontFamily={theme.typefaces.mono}
-        >
-          {"About"}
-        </BlockLinkGrow>
+      <Flex
+        fontFamily={theme.typefaces.mono}
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="row"
+        my={0}
+      >
+        <P pt="7%" textAlign="center" fontWeight={600}>
+          {" "}
+          Proudly built with Tachyons, Styled System and React © syncatallah
+          2019 {" •"}
+          <BlockLinkGrow
+            ml={2}
+            fontWeight={700}
+            color="currentcolor"
+            href="/about"
+            title="About"
+            fontFamily={theme.typefaces.mono}
+          >
+            {"About"}
+          </BlockLinkGrow>
+        </P>
       </Flex>
     </footer>
   );
