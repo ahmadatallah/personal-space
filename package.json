@@ -25,9 +25,13 @@
     "react-live": "^2.1.1",
     "react-loading": "^2.0.3",
     "react-photo-gallery": "^8.0.0",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "react-toastify": "^5.4.0",
     "rebass": "^4.0.2",
+    "redux": "^4.0.4",
+    "reselect": "^4.0.0",
     "styled-components": "^4.3.2",
     "styled-system": "^4.1.0",
     "theme-ui": "^0.2.31"
