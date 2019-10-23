@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import theme from "./theme";
-import { P, Div } from "./elements";
+import { P, Div, Span } from "./elements";
 import GlobalStyles from "./global-styles";
 import { connect } from "react-redux";
 import Flex from "./components/Flex";
@@ -26,11 +26,30 @@ import "react-toastify/dist/ReactToastify.minimal.css";
 import "./App.css";
 
 const Msg = ({ closeToast }) => (
-  <Flex justifyContent="center">
-    <P color="secondary" fontWeight={400} fontSize="12px">
+  <Flex flexDirection="column" alignItems="start">
+    <P
+      color="secondary"
+      fontWeight={600}
+      fontSize="12px"
+      borderBottom="0.5px solid"
+      borderColor="secondary"
+    >
       {" "}
-      Update available! Please refresh your browser
+      Update available, Please refresh your browser!
     </P>
+    <Flex
+      flexDirection="column"
+      fontFamily={theme.typefaces.mono}
+      alignItems="start"
+      py={2}
+    >
+      <Span color="primary" fontWeight={600} fontSize="12px">
+        From PCs: Press Ctrl + Shift + R{" "}
+      </Span>
+      <Span color="primary" fontWeight={600} fontSize="12px">
+        From Mobile Phones: Close all your opened tabs
+      </Span>
+    </Flex>
   </Flex>
 );
 const mapStateToProps = state => {
@@ -41,14 +60,14 @@ const mapStateToProps = state => {
 function App(props) {
   useEffect(() => {
     if (props.serviceWorkerUpdated) {
-      toast(<Msg />, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true
-      });
+    toast(<Msg />, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true
+    });
     }
     return () => {};
   }, [props.serviceWorkerUpdated]);
