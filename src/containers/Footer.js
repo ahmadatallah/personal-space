@@ -11,7 +11,6 @@ function Footer() {
     <footer
       mb={1}
       px={2}
-      py={3}
       display="flex"
       alignItems="center"
       width="100%"
