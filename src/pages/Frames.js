@@ -68,12 +68,11 @@ function Frames({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
+        <Div pl={[4, 4, 6]} pr={[4, 4, 6]} mt={[3, 4, 5]}>
           <H1 fontWeight={600} color={textColor}>
             Frames
           </H1>
           <Gallery photos={images} onClick={openLightbox} />
-          <Footer />
         </Div>
         {!loadedAll && (
           <>
@@ -84,45 +83,48 @@ function Frames({ ...props }) {
             <Loading type="spokes" color="currentcolor" />
           </>
         )}
-        <ModalGateway>
-          {viewerIsOpen ? (
-            <Modal
-              onClose={closeLightbox}
-              styles={{
-                positioner: base => ({
-                  ...base,
-                  display: "block",
-                  zIndex: 1000
-                })
-              }}
-            >
-              <Carousel
+        <Div pl={[4, 4, 6]} pr={[4, 4, 6]}>
+          <Footer />
+          <ModalGateway>
+            {viewerIsOpen ? (
+              <Modal
+                onClose={closeLightbox}
                 styles={{
-                  header: base => ({
+                  positioner: base => ({
                     ...base,
-                    opacity: 0.8,
-                    backgroundColor: `black !important`,
-                    height: "90px"
-                  }),
-                  headerClose: base => ({
-                    ...base,
-                    color: "white"
-                  }),
-                  headerFullscreen: base => ({
-                    ...base,
-                    color: "white"
+                    display: "block",
+                    zIndex: 1000
                   })
                 }}
-                currentIndex={currentImage}
-                views={photos.map(x => ({
-                  ...x,
-                  srcset: x.srcSet,
-                  caption: x.title
-                }))}
-              />
-            </Modal>
-          ) : null}
-        </ModalGateway>
+              >
+                <Carousel
+                  styles={{
+                    header: base => ({
+                      ...base,
+                      opacity: 0.8,
+                      backgroundColor: `black !important`,
+                      height: "90px"
+                    }),
+                    headerClose: base => ({
+                      ...base,
+                      color: "white"
+                    }),
+                    headerFullscreen: base => ({
+                      ...base,
+                      color: "white"
+                    })
+                  }}
+                  currentIndex={currentImage}
+                  views={photos.map(x => ({
+                    ...x,
+                    srcset: x.srcSet,
+                    caption: x.title
+                  }))}
+                />
+              </Modal>
+            ) : null}
+          </ModalGateway>
+        </Div>
       </Flex>
     </>
   );
