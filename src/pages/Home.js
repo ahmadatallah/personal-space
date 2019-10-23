@@ -51,11 +51,9 @@ function Home({ ...props }) {
         </Container>
 
         <WritingsContainer />
-      </Flex>
-      <Section mx="auto" px={[3, 4]} maxWidth="64rem">
         <Connect />
-      </Section>
-      <Footer />
+        <Footer />
+      </Flex>
     </ThemeProvider>
   );
 }

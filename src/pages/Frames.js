@@ -73,6 +73,7 @@ function Frames({ ...props }) {
             Frames
           </H1>
           <Gallery photos={images} onClick={openLightbox} />
+          <Footer />
         </Div>
         {!loadedAll && (
           <>
@@ -123,7 +124,6 @@ function Frames({ ...props }) {
           ) : null}
         </ModalGateway>
       </Flex>
-      <Footer />
     </>
   );
 }

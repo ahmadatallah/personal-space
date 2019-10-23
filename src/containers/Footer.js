@@ -9,38 +9,26 @@ import BlockLinkGrow from "../components/BlockLinkGrow.js";
 function Footer() {
   return (
     <footer
-      mb={1}
-      px={2}
       display="flex"
       alignItems="center"
       width="100%"
-      style={{
-        bottom: 0
-      }}
+      fontFamily={theme.typefaces.mono}
     >
-      <Flex
-        fontFamily={theme.typefaces.mono}
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="row"
-        my={0}
-      >
-        <P textAlign="center" fontWeight={600}>
-          {" "}
-          Proudly built with Tachyons, Styled System and React © syncatallah
-          2019 {" •"}
-          <BlockLinkGrow
-            ml={2}
-            fontWeight={700}
-            color="currentcolor"
-            href="/about"
-            title="About"
-            fontFamily={theme.typefaces.mono}
-          >
-            {"About"}
-          </BlockLinkGrow>
-        </P>
-      </Flex>
+      <P textAlign="center" fontFamily={theme.typefaces.mono} fontWeight={600}>
+        {" "}
+        Proudly built with Tachyons, Styled System and React © syncatallah 2019{" "}
+        {" •"}
+        <BlockLinkGrow
+          ml={2}
+          fontWeight={700}
+          color="currentcolor"
+          href="/about"
+          title="About"
+          fontFamily={theme.typefaces.mono}
+        >
+          {"About"}
+        </BlockLinkGrow>
+      </P>
     </footer>
   );
 }
