@@ -10,6 +10,7 @@ import { ThemeProvider, ColorMode } from "theme-ui";
 import Footer from "../containers/Footer";
 import Header from "../containers/Header";
 import WritingsContainer from "../containers/WritingsContainer";
+import Contributions from "../containers/Contributions";
 
 function Home({ ...props }) {
   return (
@@ -19,7 +20,10 @@ function Home({ ...props }) {
       <Section mx="auto" maxWidth="128rem" minWidth="20rem" mt={100}>
         <Container>
           <Div px={[3, 4]}>
-            <H2 fontSize={45} mb={0}> Sync...  </H2>
+            <H2 fontSize={45} mb={0}>
+              {" "}
+              Sync...{" "}
+            </H2>
             <H1 fontSize={80} mt={0} mb={0}>
               Atallah
             </H1>
@@ -38,7 +42,14 @@ function Home({ ...props }) {
       <Section mx="auto" px={[3, 4]} maxWidth="64rem">
         <Connect />
       </Section>
-      <Flex pl={[3, 4, 5]} pr={[4, 4, 6]} py={0} display="grid" justifyContent="center">
+      <Flex
+        pl={[3, 4, 5]}
+        pr={[4, 4, 6]}
+        py={0}
+        display="grid"
+        justifyContent="center"
+      >
+        <Contributions />
         <WritingsContainer />
       </Flex>
       <Footer />
