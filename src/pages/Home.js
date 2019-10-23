@@ -30,7 +30,7 @@ function Home({ ...props }) {
           </Div>
           <H3
             px={[3, 4]}
-            fontWeight={4}
+            fontWeight={600}
             style={{ "font-family": theme.typefaces.mono }}
           >
             Hi there! I am Ahmad Atallah, a software engineer. Interested in
@@ -39,9 +39,6 @@ function Home({ ...props }) {
           </H3>
         </Container>
       </Section>
-      <Section mx="auto" px={[3, 4]} maxWidth="64rem">
-        <Connect />
-      </Section>
       <Flex
         pl={[3, 4, 5]}
         pr={[4, 4, 6]}
@@ -49,9 +46,15 @@ function Home({ ...props }) {
         display="grid"
         justifyContent="center"
       >
-        <Contributions />
+        <Container mb={2}>
+          <Contributions />
+        </Container>
+
         <WritingsContainer />
       </Flex>
+      <Section mx="auto" px={[3, 4]} maxWidth="64rem">
+        <Connect />
+      </Section>
       <Footer />
     </ThemeProvider>
   );

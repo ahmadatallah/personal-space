@@ -27,13 +27,6 @@ function useEveryReloadColorMode({ ...props }) {
       );
     });
 
-    document.querySelectorAll("svg").forEach(tag => {
-      tag.setAttribute(
-        "style",
-        `color: ${theme.colors.modes[currentMode].secondary}`
-      );
-    });
-
     changeTextTheme(theme.colors.modes[currentMode].secondary);
     changeBackgroundTheme(theme.colors.modes[currentMode].background);
     setColorMode(currentMode);

@@ -25,7 +25,7 @@ function Footer() {
         flexDirection="row"
         my={0}
       >
-        <P pt="3%" textAlign="center" fontWeight={600}>
+        <P textAlign="center" fontWeight={600}>
           {" "}
           Proudly built with Tachyons, Styled System and React © syncatallah
           2019 {" •"}
