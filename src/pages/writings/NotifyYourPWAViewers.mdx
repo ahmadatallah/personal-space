@@ -1,11 +1,11 @@
-####  23 Oct, 2019 • 📖☕️ 7 min read
+#### 23 Oct, 2019 • 📖☕️ 7 min read
 
 # Notify A Progressive Web App (PWA) Updates
 
-Offline/Cache-first is one of the main key features in any Progressive Web Apps, but according to 
+Offline/Cache-first is one of the main key features in any Progressive Web Apps, but according to
 [create-react-app docs](https://create-react-app.dev/docs/making-a-progressive-web-app/):
-`"the offline/cache-first behavior is opt-in only. By default, the build process will generate a service worker file, 
-but it will not be registered, so it will not take control of your production web app."`
+"the offline/cache-first behavior is opt-in only. By default, the build process will generate a service worker file,
+but it will not be registered, so it will not take control of your production web app."
 , this will get you in a very disturbing state when your app already built, without registering service worker, and deployed to some bunch of
 people who are using it regulary!. Disturbing because users will not notice your updates unless they explicitly hard reload the browser or
 even close all tabs. That's why I think that registering service worker should be a proactive decision because it will affect the user who
@@ -17,28 +17,50 @@ create-react-app PWA and notify the user with any updates goes live.
 The solution requires a basic knowledge about service worker, `react`, `redux` and `react-redux` the official react bindings for redux.
 
 ## Create React App Insights
-I will reference create react app documentation in this section just to get you familiar with 
+
+I will reference create react app documentation in this section just to get you familiar with
 offline first apps.
 
 - [Faster and reliable](https://create-react-app.dev/docs/making-a-progressive-web-app/#why-opt-in):
 
-    Offline-first Progressive Web Apps are more faster and reliable than traditional apps because it actually caches all your static assets that
-    can be served regardless of your network connectivty. Also, using `manifest.json` file located in
-    your project public directory used to add a mobile app version of the app without any need to install it from the store.
-    Defining your `icon`, `name`, and `start_url` of your project are the main configurations for a mobile-app like view.
+  Offline-first Progressive Web Apps are more faster and reliable than traditional apps because it actually caches all your static assets that
+  can be served regardless of your network connectivty. Also, using `manifest.json` file located in
+  your project public directory used to add a mobile app version of the app without any need to install it from the store.
+  Defining your `icon`, `name`, and `start_url` of your project are the main configurations for a mobile-app like view.
 
 - [Require HTTPS](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
 
-    Service workers require HTTPS and don't apply to `localhost`, not recommended in development environment, and it
-    can only be applied in production environment. So, better to test it by serving the `build` directory using 
-    [`serve`](https://www.npmjs.com/package/serve) npm package
-    ```sh
-        npm install -g serve
-    ```
-- [No Interception with CORS](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
+  Service workers require HTTPS that's why it doesn't apply to `localhost`, not recommended in development environment, and it
+  can only be applied in production environment. So, better to test it by serving the `build` directory using
+  [`serve`](https://www.npmjs.com/package/serve) npm package.
 
-    The generated service worker doesn't intercept any cross-origin resources like HTTP API requests.
+  ```sh
+  npm install -g serve
+  ```
+
+- [No interception with cross-origin resources](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
+
+  The generated service worker doesn't intercept any cross-origin resources like HTTP API requests.
 
 ## Registering service worker
 
-## Accessing application's service worker
+If you decided to go with registering service worker in create react app, you should
+register it in `index.js` by changing `serviceWorker.unregister()` to `serviceWorker.register()`.
+However, this will not gaurantee any updates sent to users as the previous service worker,
+will serve the older content, unless they hard reload the browser or close all opened tabs.
+What we need is to notify the user that the browser should be hard reloaded, in case he don't want to close all opened tabs,
+or even close all tabs opened.
+
+## Notify
+
+This is the last step in our setup which includes adding:
+
+- On update callback to be passed to service worker registeration.
+- Redux store that will contain service worker state.
+- Notification component; I will use [react-toastify](https://www.npmjs.com/package/react-toastify).
+
+### On update callback
+
+### Service worker state
+
+### Notification component

@@ -31,7 +31,12 @@ function Header() {
     >
       <Div>
         <StyledLink to="/">
-          <Avatar src={avatarImg} borderRadius={100} marginTop={2} width={[32, 46]} />
+          <Avatar
+            src={avatarImg}
+            borderRadius={100}
+            marginTop={2}
+            width={[32, 46]}
+          />
         </StyledLink>
       </Div>
       <Flex maxWidth="14rem" flexDirection="row" mr={2}>
