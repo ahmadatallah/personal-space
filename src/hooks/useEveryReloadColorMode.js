@@ -27,10 +27,7 @@ function useEveryReloadColorMode({ ...props }) {
       );
     });
     document.querySelectorAll("code").forEach(a => {
-      a.setAttribute(
-        "style",
-        `color: ${theme.colors.modes[currentMode].gray}`
-      );
+      a.setAttribute("style", `color: ${theme.colors.modes[currentMode].gray}`);
     });
 
     changeTextTheme(theme.colors.modes[currentMode].secondary);
