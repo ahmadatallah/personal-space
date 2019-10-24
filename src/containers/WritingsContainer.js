@@ -39,7 +39,7 @@ function WritingsContainer({ title, href, ...props }) {
           </P>
         </Div>
       </Div>
-      <Div>
+      <Div mb={3}>
         <StyledLink to="/writings/pascal-typescript-example">
           <Link
             title="Pattern Matching Example in TypeScript"
@@ -57,6 +57,26 @@ function WritingsContainer({ title, href, ...props }) {
             5 min read
           </Small>
           <P mt={0}>A "semi-pattern-matching" example in Typescript.</P>
+        </Div>
+      </Div>
+      <Div mb={3}>
+        <StyledLink to="/writings/notify-pwa-updates">
+          <Link
+            title="Notify A Progressive Web App (PWA) Updates"
+            fontFamily={theme.typefaces.mono}
+            fontSize={[2, 3, 3]}
+            fontWeight={[900, 600, 600]}
+          />
+        </StyledLink>
+        <Div ml={[2, 2, 3]}>
+          <Small>
+            23 Oct, 2019{" "}
+            <span role="img" aria-label="min-read">
+              • 📖{" "}
+            </span>
+            7 min read{" "}
+          </Small>
+          <P mt={0}>Notify your Progressive Web App Viewers in React and Redux using create-react-app.</P>
         </Div>
       </Div>
     </>

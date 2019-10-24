@@ -26,6 +26,12 @@ function useEveryReloadColorMode({ ...props }) {
         `color: ${theme.colors.modes[currentMode].secondary}`
       );
     });
+    document.querySelectorAll("code").forEach(a => {
+      a.setAttribute(
+        "style",
+        `color: ${theme.colors.modes[currentMode].gray}`
+      );
+    });
 
     changeTextTheme(theme.colors.modes[currentMode].secondary);
     changeBackgroundTheme(theme.colors.modes[currentMode].background);
