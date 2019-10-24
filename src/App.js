@@ -24,6 +24,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.minimal.css";
 import "./App.css";
+import NotifyYourPWAViewers from "./pages/writings/NotifyYourPWAViewers";
 
 const Msg = ({ closeToast }) => (
   <Flex flexDirection="column" alignItems="start">
@@ -60,14 +61,14 @@ const mapStateToProps = state => {
 function App(props) {
   useEffect(() => {
     if (props.serviceWorkerUpdated) {
-    toast(<Msg />, {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true
-    });
+      toast(<Msg />, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true
+      });
     }
     return () => {};
   }, [props.serviceWorkerUpdated]);
@@ -111,6 +112,10 @@ function App(props) {
             <Route
               path={`/writings/pascal-typescript-example`}
               component={PascalTypeScript}
+            ></Route>
+            <Route
+              path={`/writings/notify-pwa-updates`}
+              component={NotifyYourPWAViewers}
             ></Route>
             <Route path="/about" exact={true} component={About} />
             <Route path="/writings" component={Home} />
