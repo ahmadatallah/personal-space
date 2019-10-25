@@ -7,7 +7,7 @@ Pascal's triangle is an infinite triangle where the numbers at the edges of the 
 each number inside the triangle is the sum of the two numbers above it, and each number outside the edges is zero or not exist.
 I said infinite because it is increasingly growing on the limit you want it to be applied.
 
-```js
+```tsx
 
     1
    1 1
@@ -27,7 +27,7 @@ based on these argument values, it recursivly match to get our pascal value.
 
 For example:
 
-```js
+```tsx
 pascal(1, 0);
 //  expected result = 1
 
@@ -50,7 +50,7 @@ What we want exactly to pattern match four main categories:
 
 therefor we will create `EdgesPattern` which will define these categories:
 
-```js
+```tsx
 interface EdgesPattern {
   LeftEdge: () => number;
   RightEdge: () => number;
@@ -65,7 +65,7 @@ separating behaviour of edges categorization from the actual logic of the proble
 
 So if we want to define `PascalTriangles` class that declare pascal's triangle logic it will be something like this:
 
-```js
+```tsx
 class PascalEdges implements EdgesPattern {
   constructor() {
     // empty constructor
@@ -91,7 +91,7 @@ We will use the previous class to define pascal's triangle logic.
 This will be done by creating a wrapper function that takes an argument of the type `PascalEdges`, our main concern.
 this function will return a function of actual logic applied to solve pascal's triangle.
 
-```js
+```tsx
 function pascal(p: PascalEdges): (row: number, column: number) => number {
   const recursePascal = (row: number, column: number): number => {
     if (column === 0) {
@@ -114,7 +114,7 @@ At the end, to apply the above code blocks all together, we will use function cu
 For example to evaluate pascal(3, 2), we will create an instance of `PascalEdges`, pass it to the pascal wrapper
 function and curry the result function to be invoked with the actual logic arguments, which will be `column` and `row` in our case.
 
-```js
+```tsx
 const pascal_3_2 = pascal(new PascalEdges())(3, 2);
 // expected result = 3
 ```

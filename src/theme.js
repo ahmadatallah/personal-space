@@ -173,7 +173,14 @@ const theme = {
     }
   },
   // MDX Styles
+
   styles: {
+    p: {
+      lineHeight: 1.5,
+      code: {
+        color: "secondary"
+      }
+    },
     h1: {
       color: "secondary",
       mt: 4,
@@ -218,7 +225,10 @@ const theme = {
       borderStyle: "solid",
       borderColor: "secondary",
       borderImage: "initial",
-      filter: "contrast(90%)"
+      filter: "contrast(90%)",
+      code: {
+        color: "secondary"
+      }
     }
   }
 };

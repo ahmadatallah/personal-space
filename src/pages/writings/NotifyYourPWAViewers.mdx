@@ -1,4 +1,4 @@
-#### 23 Oct, 2019 • 📖☕️ 7 min read
+#### 25 Oct, 2019 • 📖📖☕️ 15 min read
 
 # Notify A Progressive Web App (PWA) Updates
 
@@ -55,12 +55,230 @@ or even close all tabs opened.
 
 This is the last step in our setup which includes adding:
 
-- On update callback to be passed to service worker registeration.
 - Redux store that will contain service worker state.
+- On update callback to be passed to service worker registeration.
 - Notification component; I will use [react-toastify](https://www.npmjs.com/package/react-toastify).
-
-### On update callback
 
 ### Service worker state
 
+#### Configure Store
+
+We will handle service worker state across our PWA by configuring a store that run only in production environment.
+There is a common practice concerning the configuration of redux store which says creating store directory into `src`
+home directory. This directory should contain two separate store configurations one for development environment and one for production.
+Here we only need a production configuration that handle the service worker state.
+
+```jsx
+/* connfigure-store.js */
+
+import { createStore } from "redux";
+const configureStore = (initialState = { serviceWorkerUpdated: false }) => {
+  return createStore(/*root reducer*/, initialState);
+};
+
+export default configureStore;
+```
+
+In the code snippet above the `initialState` is just an object with a `serviceWorkerUpdated` state set to `false` and that's it.
+We imported the `createStore` from `redux` passing the `initialState` only for now as we will create the root reducer in the next step.
+
+#### Create service worker reducer
+
+Creating a reducer requires defining actions that aimed to be dispatched for specific input from the app.
+In our case, we want to dispatch an action called `UPDATE_SERVICEWORKER` once there is any waiting service
+worker, informing the user that this app is being served cache-first and there is new content that will
+not be shown unless you closed all browser tabs.
+
+```jsx
+/* servicie-worker-reducer.js */
+
+// CONSTANTS
+export const UPDATE_SERVICEWORKER = "UPDATE_SERVICEWORKER";
+
+export function updateServiceWorker() {
+  return {
+    type: UPDATE_SERVICEWORKER
+  };
+}
+
+export const reducer = (
+  state = {
+    serviceWorkerUpdated: false
+  },
+  action
+) => {
+  switch (action.type) {
+    case UPDATE_SERVICEWORKER: {
+      return {
+        ...state,
+        serviceWorkerUpdated: true
+      };
+    }
+    default:
+      return state;
+  }
+};
+```
+
+If the `UPDATE_SERVICEWORKER` action dispatched, the state of the app will be updated with `serviceWorkerUpdated` = `true`.
+Then, store configurations should be updated passing `service-worker-reducer` as the root reducer.
+
+```jsx
+/* connfigure-store.js */
+
+import { createStore } from "redux";
+import { reducer as rootReducer } from "./service-worker-update";
+
+const configureStore = (initialState = { serviceWorkerUpdated: false }) => {
+  return createStore(rootReducer, initialState);
+};
+```
+
+### On update callback
+
+At a current state, we didn't dispatch any actions yet. The question, here, is: when should service worker update action dispatched!
+Fortunately, there is a service worker implementation shipped with Create React App that has initial control on service worker state changing.
+This implementation will be found in `registerValidSW` method in service worker file shipped with CRA. This method is invoked once you change `serviceWorker.unregister()` to
+`serviceWorker.register()` remember?
+
+This method takes the path of service worker in the project and `config` object which will be used later to carry an update callback function.
+You may ask what's callback function! why I need it, well, this callback function will dispatch the service worker update action,
+and it will be called when there is service worker update installed and waiting to be activated.
+This can be found the code snippet below exported from CRA `serviceWorker.js`.
+
+```jsx
+/* from serviceWorker.js shipped with CRA */
+
+registration.onupdatefound = () => {
+  const installingWorker = registration.installing;
+  if (installingWorker == null) {
+    return;
+  }
+  installingWorker.onstatechange = () => {
+    installingWorker.onstatechange = () => {
+      if (installingWorker.state === "installed") {
+        if (navigator.serviceWorker.controller) {
+          // At this point, the updated precached content has been fetched,
+          // but the previous service worker will still serve  the older
+          // content until all client tabs are closed.
+          console.log(
+            "New content is available and will be used when a ll " +
+              "tabs for this page are closed. See https://bit .ly/CRA-PWA."
+          );
+
+          // Execute callback
+          if (config && config.onUpdate) {
+            config.onUpdate();
+          }
+        } else {
+          // At this point, everything has been precached.
+          // It's the perfect time to display a
+          // "Content is cached for offline use." message.
+          console.log("Content is cached for offline use.");
+
+          // Execute callback
+          if (config && config.onSuccess) {
+            config.onSuccess(registration);
+          }
+        }
+      }
+    };
+  };
+};
+```
+
+You see, we can check on `config` object with `onUpdate` callback.
+Then we invoke it. but what will this function do! .. I think it will dispatch the action, finally! :tada:
+
+```jsx
+const onUpdate = () => {
+  store.dispatch(updateServiceWorker());
+};
+```
+
+After all of this we can add the implementation of the callback function in `index.js`
+and supply a provider that will expose service worker state in the root component.
+We do this by:
+
+- Wrapping the rendering root component with a `Provider` imported from `react-redux` passing the store as props.
+  This will make the store available in all nested components. Intuitively, the store will be available in
+  the whole app components with the `connect()` currying function.
+
+  ```jsx
+  /*from index.js*/
+
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById("root")
+  );
+  ```
+
+- **`mapStateToProps`**
+
+  Once service worker state is exposed in the app it is needed to extract it in the root component.
+  We do this by using `mapStateToProps` with `connect` in the root component.
+  first we will connect the root component with `mapStateToProp` function:
+
+  ```jsx
+  export default connect(mapStateToProps)(App);
+  ```
+
+  Then we will extract the service worker state as app prop:
+
+  ```jsx
+  const mapStateToProps = state => {
+    return {
+      serviceWorkerUpdated: state.serviceWorkerUpdated
+    };
+  };
+  ```
+
+Every thing tends to have an end when the rendering time comes. we need to push a notification every time the app finish
+with rendering all the components proberly and there is an update available. We can get this by using `componentDidUpdate` and `componentDidMount` or even `useEffect` react hooks.
+In this article I will try `useEffect` but it's the same to do it with others.
+
 ### Notification component
+
+At this moment our app has a prop called `serviceWorkerUpdated` and it's a boolean. We need to check it in `useEffect` function.
+If this prop value is `true` then a push notification should be displayed else nothing happend
+
+```jsx
+if (props.serviceWorkerUpdated) {
+  toast(<Msg />, {
+    position: "bottom-right"
+  });
+}
+```
+
+As you can see I am using [react-toastify](https://www.npmjs.com/package/react-toastify). I will not dig into any details here you can find this in their documentation.
+The major thing is the message component that will be rendered to the user:
+
+```jsx
+const Msg = ({ closeToast }) => (
+  <>
+    <p> Update available, Please refresh your browser!</p>
+    <div>
+      <span>From PCs: Press Ctrl + Shift + R </span>
+      <span>From Mobile Phones: Close all your opened tabs</span>
+    </div>
+  </>
+);
+```
+
+According to toastify docs this component will not work unless you define a container for it in the app:
+
+```jsx
+/* toast container as child in your app */
+
+<ToastContainer position="bottom-right" toastClassName="toast-container" />
+```
+
+## Summary
+
+We created the redux store for the main app exposing the service worker state in our app,
+then we dispatch an update action when there is "updates in the content" flag raised from service worker.
+Finally, we extract the state after the root component rendering finished. If there is any updates notify the user else nothing happened.
+
+Source code available [on Github]()

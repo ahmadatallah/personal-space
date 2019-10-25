@@ -6,17 +6,15 @@ import { Div, H2 } from "../../elements";
 import Header from "../../containers/Header";
 import Footer from "../../containers/Footer";
 import Flex from "../../components/Flex";
-import Loading from '../../components/Loading';
-
-import "prismjs/themes/prism-solarizedlight.css";
-import "./pre.css";
-
+import Loading from "../../components/Loading";
+ 
 const Content = lazy(() =>
-  import("!babel-loader!mdx-loader!./NotifyYourPWAViewers.mdx")
+    import("!babel-loader!mdx-loader!./NotifyYourPWAViewers.mdx")
 );
 
+
 function NotifyYourPWAViewers({ ...props }) {
-  return (
+   return (
     <>
       <Header />
       <Div

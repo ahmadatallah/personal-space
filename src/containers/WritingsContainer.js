@@ -70,13 +70,16 @@ function WritingsContainer({ title, href, ...props }) {
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
-            23 Oct, 2019{" "}
+            25 Oct, 2019{" "}
             <span role="img" aria-label="min-read">
-              • 📖{" "}
+              • 📖📖☕️{" "}
             </span>
-            7 min read{" "}
+            15 min read{" "}
           </Small>
-          <P mt={0}>Notify your Progressive Web App Viewers in React and Redux using create-react-app.</P>
+          <P mt={0}>
+            Notify your Progressive Web App Viewers in React and Redux using
+            create-react-app.
+          </P>
         </Div>
       </Div>
     </>
