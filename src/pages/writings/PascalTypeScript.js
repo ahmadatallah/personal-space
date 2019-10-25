@@ -2,14 +2,11 @@
 import jsx from "../../jsx";
 import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
-import { Div, H2} from "../../elements";
+import { Div, H2 } from "../../elements";
 import Header from "../../containers/Header";
 import Footer from "../../containers/Footer";
 import Flex from "../../components/Flex";
-import Loading from '../../components/Loading';
-
-import "prismjs/themes/prism-solarizedlight.css";
-import "./pre.css";
+import Loading from "../../components/Loading";
 
 const Content = lazy(() =>
   import("!babel-loader!mdx-loader!./PascalTypeScript.mdx")

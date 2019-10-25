@@ -1,3 +1,4 @@
+import github from "@theme-ui/prism/presets/github.json";
 const theme = {
   breakpoints: ["30em", "60em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -43,7 +44,8 @@ const theme = {
         secondary: "hsl(180, 50%, 40%)",
         accent: "hsl(120, 100%, 90%)",
         muted: "hsl(120, 20%, 7%)",
-        gray: "hsl(0, 0%, 75%)"
+        gray: "hsl(0, 0%, 75%)",
+        code: "hsla(360, 100%, 100%, 0.5)"
       },
       black: {
         text: "#fff",
@@ -186,9 +188,39 @@ const theme = {
       mb: 2
     },
     h4: {
-      color: "secondary",
+      color: "secondary"
+    },
+    h3: {
+      color: "secondary"
+    },
+    pre: {
+      ...github,
+      boxSizing: "border-box",
+      fontFamily: "monaco, monospace",
+      whiteSpace: "pre",
+      wordWrap: "break-word",
+      wordSpacing: "normal",
+      wordBreak: "normal",
+      overflow: "auto",
+      padding: "1rem",
+      backgroundColor: "background",
+      color: "white",
+      fontFeatureSettings: "normal",
+      textAlign: "left",
+      overflowWrap: "normal",
+      lineHeight: "1.5",
+      marginBottom: "0px",
+      tabSize: 4,
+      background: "secondary",
+      hyphens: "none",
+      borderRadius: "2px",
+      borderWidth: "0.5px",
+      borderStyle: "solid",
+      borderColor: "secondary",
+      borderImage: "initial",
+      filter: "contrast(90%)"
     }
-  },
+  }
 };
 
 export default theme;
