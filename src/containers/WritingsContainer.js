@@ -77,8 +77,7 @@ function WritingsContainer({ title, href, ...props }) {
             15 min read{" "}
           </Small>
           <P mt={0}>
-            Notify your Progressive Web App Viewers in React and Redux using
-            create-react-app.
+            Notify your Offline/Cache-first users in Create React App with service worker.
           </P>
         </Div>
       </Div>
