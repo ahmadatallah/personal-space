@@ -16,7 +16,7 @@ create-react-app PWA and notify the user with any updates goes live.
 
 The solution requires a basic knowledge about service worker, `react`, `redux` and `react-redux` the official react bindings for redux.
 
-## Create React App Insights
+## Create React App insights
 
 I will reference create react app documentation in this section just to get you familiar with
 offline first apps.
@@ -46,8 +46,8 @@ offline first apps.
 
 If you decided to go with registering service worker in create react app, you should
 register it in `index.js` by changing `serviceWorker.unregister()` to `serviceWorker.register()`.
-However, this will not gaurantee any updates sent to users as the previous service worker,
-will serve the older content, unless they hard reload the browser or close all opened tabs.
+However, this will not gaurantee any updates sent to users as the previous service worker
+will serve the older content, unless user hard reloads the browser or close all opened tabs.
 What we need is to notify the user that the browser should be hard reloaded, in case he don't want to close all opened tabs,
 or even close all tabs opened.
 
@@ -61,7 +61,7 @@ This is the last step in our setup which includes adding:
 
 ### Service worker state
 
-#### Configure Store
+#### Configure store
 
 We will handle service worker state across our PWA by configuring a store that run only in production environment.
 There is a common practice concerning the configuration of redux store which says creating store directory into `src`
