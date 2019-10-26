@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import jsx from "../jsx";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import theme from "../theme";
 import { modes } from "../utils/constants";
 import { useColorMode } from "theme-ui";
@@ -13,20 +13,6 @@ function useEveryReloadColorMode({ ...props }) {
     const i = modes.indexOf(colorTheme);
     const n = (i + 1) % modes.length;
     const currentMode = modes[n];
-    document.querySelectorAll("h1").forEach(tag => {
-      tag.setAttribute(
-        "style",
-        `color: ${theme.colors.modes[currentMode].secondary}`
-      );
-    });
-
-    document.querySelectorAll("a").forEach(a => {
-      a.setAttribute(
-        "style",
-        `color: ${theme.colors.modes[currentMode].secondary}`
-      );
-    });
-
     changeTextTheme(theme.colors.modes[currentMode].secondary);
     changeBackgroundTheme(theme.colors.modes[currentMode].background);
     setColorMode(currentMode);
@@ -36,7 +22,7 @@ function useEveryReloadColorMode({ ...props }) {
     populateTheme(colorMode);
   };
 
-  return { colorMode, textColor, backgroundColor, changeTheme };
+  return { colorMode, textColor, backgroundColor, populateTheme, changeTheme };
 }
 
 export default useEveryReloadColorMode;

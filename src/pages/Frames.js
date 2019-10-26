@@ -68,7 +68,7 @@ function Frames({ ...props }) {
         mr="auto"
         ml="auto"
       >
-        <Div pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
+        <Div pl={[4, 4, 6]} pr={[4, 4, 6]} mt={[3, 4, 5]}>
           <H1 fontWeight={600} color={textColor}>
             Frames
           </H1>
