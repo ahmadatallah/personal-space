@@ -8,3 +8,5 @@
 - [x] ~~writings~~
 - [x] ~~readings~~
 - [x] ~~frames~~
+- [ ] Add SEO
+- [ ] Add Disqus
