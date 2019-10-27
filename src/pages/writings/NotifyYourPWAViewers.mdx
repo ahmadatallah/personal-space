@@ -6,10 +6,10 @@ Offline/Cache-first behavior is one of the main key features in any Progressive 
 [create-react-app docs](https://create-react-app.dev/docs/making-a-progressive-web-app/):
 `"the offline/cache-first behavior is opt-in only. By default, the build process will generate a service worker file, but it will not be registered, so it will not take control of your production web app."`,
 this will get you in a very disturbing state when your app is already built without registering service worker, and deployed to a group of
-people who are using it regularly. Disturbing because users will not notice your updates unless they explicitly hard reload the browser or
-even close all tabs. That's why I think that registering service worker should be a proactive decision because it will affect the users who
-almost aren't familiar with offline-first apps. So, if you take a decision to go on with registering service worker, it will be better to
-handle this from the first release of your app then users will get update message everytime your app updated.
+people who are using it regularly. Disturbing because users will not notice your updates if you decided to register the service worker unless
+they explicitly hard reload the browser or even close all tabs. That's why I think that registering service worker should be a proactive decision
+because it will affect the users who almost aren't familiar with offline-first apps. So, if you take a decision to go on with registering service worker,
+it will be better to handle this from the first release of your app then users will get update message everytime your app updated.
 In this article I will discuss how to register service worker correctly in your `create-react-app` Progressive
 Web Apps and notify users with any update goes live.
 
@@ -22,9 +22,9 @@ offline first apps.
 
 - [Faster and reliable](https://create-react-app.dev/docs/making-a-progressive-web-app/#why-opt-in):
 
-  Offline-first Progressive Web Apps are more faster and reliable than traditional apps because it actually caches all your static assets that
-  can be served regardless of your network connectivty. Also, using `manifest.json` file located in
-  your project public directory used to add a mobile app version of the app without any need to install it from the store.
+  Offline-first Progressive Web Apps are more faster and reliable than traditional apps because it actually caches all the static assets that
+  can be served by your app regardless of the network connectivty. Also, using `manifest.json` file located in
+  the project public directory to add a mobile app version of the app without any need to install it from the store.
   Defining your `icon`, `name`, and `start_url` of your project are the main configurations for a mobile-app like view.
 
 - [Require HTTPS](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
@@ -235,7 +235,7 @@ We do this by:
   ```
 
 Everything tends to have an end when the rendering time comes. we need to push a notification every time the app finish
-with rendering all the components proberly and there is an update available. We can get this by using `componentDidUpdate` and `componentDidMount` or even `useEffect` react hooks.
+with rendering all the components proberly and there is an update available. We can get this by using `componentDidUpdate` and `componentDidMount` or even `useEffect` react hook.
 In this article I will try `useEffect` but it's the same to do it with others.
 
 ### Notification component
@@ -247,11 +247,12 @@ If this prop value is `true` then a push notification should be displayed else n
 useEffect(() => {
   if (props.serviceWorkerUpdated) {
     toast(<Msg />, {
-      position: "bottom-right",
+      position: "bottom-right"
     });
   }
 }, [props.serviceWorkerUpdated]);
 ```
+
 I used `props.serviceWorkerUpdated` dependency as a second argument to avoid firing this effect when the service worker state hasn't changed.
 Also, as you can see I am using [react-toastify](https://www.npmjs.com/package/react-toastify). I will not dig into any details here, you can find this in their documentation.
 The major thing is the message component that will be rendered to the user:
