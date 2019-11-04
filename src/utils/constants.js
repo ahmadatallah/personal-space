@@ -68,6 +68,11 @@ import carouselx14x2 from "../assets/images/carousel/0014carousel/0014carousel_e
 import carouselx14x3 from "../assets/images/carousel/0014carousel/0014carousel_emxz5z_c_scale,w_940.jpg"
 import carouselx14x4 from "../assets/images/carousel/0014carousel/0014carousel_emxz5z_c_scale,w_1119.jpg"
 
+import carouselx15x1 from "../assets/images/carousel/0015carousel/0015carousel_j7vp0q_c_scale,w_356.jpg"
+import carouselx15x2 from "../assets/images/carousel/0015carousel/0015carousel_j7vp0q_c_scale,w_785.jpg"
+import carouselx15x3 from "../assets/images/carousel/0015carousel/0015carousel_j7vp0q_c_scale,w_1205.jpg"
+import carouselx15x4 from "../assets/images/carousel/0015carousel/0015carousel_j7vp0q_c_scale,w_1400.jpg"
+
 import carouselx18x1 from "../assets/images/carousel/0018carousel/0018carousel_jvozj2_c_scale,w_497.jpg"
 import carouselx18x2 from "../assets/images/carousel/0018carousel/0018carousel_jvozj2_c_scale,w_604.jpg"
 import carouselx18x3 from "../assets/images/carousel/0018carousel/0018carousel_jvozj2_c_scale,w_661.jpg"
@@ -441,6 +446,18 @@ export const photos = [
     width: 3,
     height: 4,
     alt: 'a passage ...',
+  },
+  {
+    src: require("../assets/images/carousel/0015carousel.jpeg"),
+    srcSet: [
+      `${carouselx15x1} 356w`,
+      `${carouselx15x2} 785w`,
+      `${carouselx15x3} 1205w`,
+      `${carouselx15x4} 1400w`,
+    ],
+    width: 3,
+    height: 4,
+    alt: 'gray tree ...',
   },
   {
     src: require("../assets/images/carousel/0018carousel.jpg"),
