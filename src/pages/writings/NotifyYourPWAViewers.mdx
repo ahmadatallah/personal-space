@@ -20,24 +20,22 @@ The solution requires a basic knowledge about service worker, `react`, `redux` a
 I will reference `Create React App` documentation in this section just to get you familiar with
 offline first apps.
 
-- [Faster and reliable](https://create-react-app.dev/docs/making-a-progressive-web-app/#why-opt-in):
+• [Faster and reliable](https://create-react-app.dev/docs/making-a-progressive-web-app/#why-opt-in):
+Offline-first Progressive Web Apps are more faster and reliable than traditional apps because it actually caches all the static assets that
+can be served by your app regardless of the network connectivty. Also, using `manifest.json` file located in
+the project public directory to add a mobile app version of the app without any need to install it from the store.
+Defining your `icon`, `name`, and `start_url` of your project are the main configurations for a mobile-app like view.
 
-  Offline-first Progressive Web Apps are more faster and reliable than traditional apps because it actually caches all the static assets that
-  can be served by your app regardless of the network connectivty. Also, using `manifest.json` file located in
-  the project public directory to add a mobile app version of the app without any need to install it from the store.
-  Defining your `icon`, `name`, and `start_url` of your project are the main configurations for a mobile-app like view.
+• [Require HTTPS](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
 
-- [Require HTTPS](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
-
-  Service workers require HTTPS. That's why it doesn't apply to `localhost`, not recommended in development environment, and it
-  can only be applied in production environment. So, better to test it by serving the `build` directory using
-  [`serve`](https://www.npmjs.com/package/serve) npm package.
-
-  ```sh
+Service workers require HTTPS. That's why it doesn't apply to `localhost`, not recommended in development environment, and it
+can only be applied in production environment. So, better to test it by serving the `build` directory using
+[`serve`](https://www.npmjs.com/package/serve) npm package.
+```sh
   npm install -g serve
-  ```
+```
 
-- [No interception with cross-origin resources](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
+• [No interception with cross-origin resources](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
 
   The generated service worker doesn't intercept any cross-origin resources like HTTP API requests.
 
@@ -199,40 +197,40 @@ After all of this, we can add the implementation of the callback function in `in
 and supply a provider that will expose the service worker state in the root component.
 We do this by:
 
-- Wrapping the rendering root component with a `Provider` imported from `react-redux` passing the store as props.
-  This will make the store available in all nested components. Intuitively, the store will be available in
-  the whole app components with the `connect()` currying function.
+• Wrapping the rendering root component with a `Provider` imported from `react-redux` passing the store as props.
+This will make the store available in all nested components. Intuitively, the store will be available in
+the whole app components with the `connect()` currying function.
 
-  ```jsx
-  /*from index.js*/
+```jsx
+/*from index.js*/
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById("root")
-  );
-  ```
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
+```
 
-- **`mapStateToProps`**
+• **`mapStateToProps`**
 
-  Once service worker state is exposed in the app, it will be needed to extract it in the root component.
-  We do this by using `mapStateToProps` with `connect` in the root component.
-  First we will connect the root component with `mapStateToProp` function:
+Once service worker state is exposed in the app, it will be needed to extract it in the root component.
+We do this by using `mapStateToProps` with `connect` in the root component.
+First we will connect the root component with `mapStateToProp` function:
 
-  ```jsx
-  export default connect(mapStateToProps)(App);
-  ```
+```jsx
+export default connect(mapStateToProps)(App);
+```
 
-  Then we will extract the service worker state as app prop:
+Then we will extract the service worker state as app prop:
 
-  ```jsx
-  const mapStateToProps = state => {
-    return {
-      serviceWorkerUpdated: state.serviceWorkerUpdated
-    };
+```jsx
+const mapStateToProps = state => {
+  return {
+    serviceWorkerUpdated: state.serviceWorkerUpdated
   };
-  ```
+};
+```
 
 Everything tends to have an end when the rendering time comes. we need to push a notification every time the app finish
 with rendering all the components proberly and there is an update available. We can get this by using `componentDidUpdate` and `componentDidMount` or even `useEffect` react hook.
