@@ -6,9 +6,7 @@ import {
   space,
   width,
   fontSize,
-  fontFamily,
   color,
-  wordWrap,
   borders,
   borderColor,
   borderRadius

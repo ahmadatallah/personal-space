@@ -7,6 +7,7 @@ import Header from "../../containers/Header";
 import Footer from "../../containers/Footer";
 import Flex from "../../components/Flex";
 import Loading from "../../components/Loading";
+import layout from "./layout";
 
 const Content = lazy(() =>
   import("!babel-loader!mdx-loader!./PascalTypeScript.mdx")
@@ -14,7 +15,7 @@ const Content = lazy(() =>
 
 function PascalTypeScript({ ...props }) {
   return (
-    <>
+    <layout>
       <Header />
       <Div
         justifyConent="center"
@@ -40,7 +41,7 @@ function PascalTypeScript({ ...props }) {
         </Suspense>
         <Footer />
       </Div>
-    </>
+    </layout>
   );
 }
 
