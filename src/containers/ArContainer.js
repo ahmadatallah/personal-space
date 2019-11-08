@@ -14,7 +14,7 @@ function ArContainer({ ...props }) {
         {" "}
         كتابات{" "}
       </H1>
-      <Div mb={2}>
+      <Div mb={3}>
         <StyledLink to="/ar/school-of-biomedical-engineering">
           <Link
             title="كلية الهندسة الحيوية والطبية والمنظومات ١"

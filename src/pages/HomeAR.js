@@ -14,9 +14,8 @@ function HomeAR({ ...props }) {
       <Flex
         alignItems="center"
         flexDirection="column"
-        maxWidth="50em"
+        maxWidth="100em"
         minHeight="100%"
-        ml="auto"
         fontFamily={theme.typefaces.helvetica}
         dir="rtl"
       >
