@@ -17,7 +17,7 @@ function Home({ ...props }) {
     <ThemeProvider theme={theme}>
       <ColorMode />
       <Header />
-      <Section mx="auto" maxWidth="128rem" minWidth="20rem" mt={100}>
+      <Section mx={[0, 0, -20]} maxWidth="128rem" minWidth="20rem" mt={100}>
         <Container>
           <Div px={[3, 4]}>
             <H2 fontSize={45} mb={0}>

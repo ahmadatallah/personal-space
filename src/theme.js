@@ -1,4 +1,4 @@
-import github from "@theme-ui/prism/presets/github.json";
+import nightOwl from "@theme-ui/prism/presets/night-owl.json";
 const theme = {
   breakpoints: ["30em", "60em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -88,13 +88,14 @@ const theme = {
         text: "hsl(350, 80%, 10%)",
         background: "hsl(350, 100%, 90%)",
         primary: "hsl(350, 100%, 50%)",
-        secondary: "hsl(210, 30%, 50%)",
+        secondary: "hsl(250,28%,40%)",
         accent: "hsl(280, 100%, 20%)",
         muted: "hsl(350, 100%, 88%)",
         gray: "hsl(350, 40%, 50%)"
       }
     },
     "dark-red": "#e7040f",
+    "owl": '#011627',
     red: "#ff4136",
     "light-red": "#ff725c",
     "washed-red": "#ffdfdf",
@@ -201,7 +202,7 @@ const theme = {
       color: "secondary"
     },
     pre: {
-      ...github,
+      ...nightOwl,
       boxSizing: "border-box",
       fontFamily: "monaco, monospace",
       whiteSpace: "pre",
@@ -210,7 +211,7 @@ const theme = {
       wordBreak: "normal",
       overflow: "auto",
       padding: "1rem",
-      backgroundColor: "background",
+      backgroundColor: "owl",
       color: "white",
       fontFeatureSettings: "normal",
       textAlign: "left",

@@ -18,13 +18,13 @@ import BornRich from "./pages/ar/BornRich";
 import MidnightStory from "./pages/ar/MidnightStory";
 import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
 import PascalTypeScript from "./pages/writings/PascalTypeScript";
+import NotifyYourPWAViewers from "./pages/writings/NotifyYourPWAViewers";
 import Society from "./pages/ar/Society";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.minimal.css";
 import "./App.css";
-import NotifyYourPWAViewers from "./pages/writings/NotifyYourPWAViewers";
 
 const Msg = ({ closeToast }) => (
   <Flex flexDirection="column" alignItems="start">

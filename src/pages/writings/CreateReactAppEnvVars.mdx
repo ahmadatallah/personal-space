@@ -119,20 +119,21 @@ window.__env__ = {
 
 To get all of these running in development, you will need to:
 
-- update `yarn/npm start` command to
+• update `yarn/npm start` command to
 
-  ```bash
-  ./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start
-  ```
+```bash
+./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start
+```
 
-- update all
-  ```js
-  process.env.REACT_APP_KEY;
-  ```
-  to
-  ```js
-  window.__env__.REACT_APP_KEY;
-  ```
+• update all
+
+```js
+process.env.REACT_APP_KEY;
+```
+to
+```js
+window.__env__.REACT_APP_KEY;
+```
 
 #### Setup Tests Environment Variables
 
