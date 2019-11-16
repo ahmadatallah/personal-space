@@ -5,9 +5,9 @@ import theme from "../theme";
 import { Div } from "../elements";
 import Header from "../containers/Header";
 import Flex from "../components/Flex";
-import ArContainer from "../containers/ArContainer";
+import OthersContainer from "../containers/OthersContainer";
 
-function HomeAR({ ...props }) {
+function Others({ ...props }) {
   return (
     <>
       <Header />
@@ -17,14 +17,15 @@ function HomeAR({ ...props }) {
         maxWidth="100em"
         minHeight="100%"
         fontFamily={theme.typefaces.helvetica}
-        dir="rtl"
+        mr="auto"
+        ml="auto"
       >
-        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
-          <ArContainer />
+        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]}  py={5} mt={[3, 4, 5]}>
+          <OthersContainer />
         </Div>
       </Flex>
     </>
   );
 }
 
-export default HomeAR;
+export default Others;
