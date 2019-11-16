@@ -14,13 +14,13 @@ function Others({ ...props }) {
       <Flex
         alignItems="center"
         flexDirection="column"
-        maxWidth="100em"
+        maxWidth="80em"
         minHeight="100%"
         fontFamily={theme.typefaces.helvetica}
         mr="auto"
         ml="auto"
       >
-        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]}  py={5} mt={[3, 4, 5]}>
+        <Div py={5} mt={[3, 4, 5]}>
           <OthersContainer />
         </Div>
       </Flex>

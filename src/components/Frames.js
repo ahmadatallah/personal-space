@@ -9,7 +9,13 @@ import debounce from "../utils/debounce";
 import Gallery from "react-photo-gallery";
 import Loading from "../components/Loading";
 
-function Frames({ title, totalPages, initialLength, photos, disallowScrollLoad }) {
+function Frames({
+  title,
+  totalPages,
+  initialLength,
+  photos,
+  disallowScrollLoad
+}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [pageNum, setPageNum] = useState(1);
   const [loadedAll, setLoadedAll] = useState(false);
@@ -54,6 +60,34 @@ function Frames({ title, totalPages, initialLength, photos, disallowScrollLoad }
       loadMorePhotos();
     }
   };
+
+  const carouselStyle = {
+    footer: base => ({
+      ...base,
+      paddingTop: 30,
+    }),
+    header: base => ({
+      ...base,
+      background: "none !important",
+      paddingBottom: 100,
+      display: "flex !important",
+      justifyContent: "space-around center !important",
+      right: "0",
+      top: "auto !important",
+      left: "30px",
+      "& span": {
+          backgroundColor: 'black !important',
+      }
+    }),
+    headerClose: base => ({
+      ...base
+    }),
+    view: base => ({
+      ...base,
+      overflow: "hidden"
+    })
+  };
+
   return (
     <>
       <H1 fontWeight={600} color={textColor}>
@@ -77,28 +111,12 @@ function Frames({ title, totalPages, initialLength, photos, disallowScrollLoad }
               styles={{
                 positioner: base => ({
                   ...base,
-                  display: "block",
                   zIndex: 1000
                 })
               }}
             >
               <Carousel
-                styles={{
-                  header: base => ({
-                    ...base,
-                    opacity: 0.8,
-                    backgroundColor: `black !important`,
-                    height: "90px"
-                  }),
-                  headerClose: base => ({
-                    ...base,
-                    color: "white"
-                  }),
-                  headerFullscreen: base => ({
-                    ...base,
-                    color: "white"
-                  })
-                }}
+                styles={carouselStyle}
                 currentIndex={currentImage}
                 views={photos.map(x => ({
                   ...x,
