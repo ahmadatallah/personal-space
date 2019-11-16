@@ -7,19 +7,15 @@ import GlobalStyles from "./global-styles";
 import { connect } from "react-redux";
 import Flex from "./components/Flex";
 import About from "./pages/About";
-import Frames from "./pages/Frames";
+import Photography from "./pages/Photography";
 import Home from "./pages/Home";
-import HomeAR from "./pages/HomeAR";
+import Others from "./pages/Others";
 import NotFound from "./pages/NotFound";
 import Readings from "./pages/Readings";
 import Writings from "./pages/Writings";
-import Bio from "./pages/ar/Bio";
-import BornRich from "./pages/ar/BornRich";
-import MidnightStory from "./pages/ar/MidnightStory";
 import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
 import PascalTypeScript from "./pages/writings/PascalTypeScript";
 import NotifyYourPWAViewers from "./pages/writings/NotifyYourPWAViewers";
-import Society from "./pages/ar/Society";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -93,17 +89,7 @@ function App(props) {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/ar" component={HomeAR} />
-            <Route
-              path={`/ar/school-of-biomedical-engineering`}
-              component={Bio}
-            />
-            <Route
-              path={`/ar/sorry-being-born-rich-still-leads-to-success`}
-              component={BornRich}
-            />
-            <Route path={`/ar/happy-society`} component={Society} />
-            <Route path={`/ar/midnight-story`} component={MidnightStory} />
+            <Route exact path="/others" component={Others} />
             <Route path="/writings" exact={true} component={Writings} />
             <Route
               path={`/writings/create-react-app-run-build-envs`}
@@ -120,7 +106,7 @@ function App(props) {
             <Route path="/about" exact={true} component={About} />
             <Route path="/writings" component={Home} />
             <Route path="/readings" exact={true} component={Readings} />
-            <Route path="/frames" exact={true} component={Frames} />
+            <Route path="/frames" exact={true} component={Photography} />
             <Route component={NotFound} />
           </Switch>
         </Router>

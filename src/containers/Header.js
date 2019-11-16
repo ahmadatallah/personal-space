@@ -39,7 +39,7 @@ function Header() {
           />
         </StyledLink>
       </Div>
-      <Flex maxWidth="14rem" flexDirection="row" mr={2}>
+      <Flex maxWidth="14rem" flexDirection="row" mr={3}>
         <Div>
           <StyledLink to="/readings">
             <Link
@@ -70,14 +70,14 @@ function Header() {
             />
           </StyledLink>
 
-          <StyledLink to="/ar">
+          <StyledLink to="/others">
             <Link
-              title="كتابات"
+              title="Others"
               fontSize={0}
               pb={1}
               mr={3}
               fontWeight={700}
-              fontFamily={theme.typefaces.helvetica}
+              fontFamily={theme.typefaces.mono}
             />
           </StyledLink>
         </Div>

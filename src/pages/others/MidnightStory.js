@@ -7,12 +7,13 @@ import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
 import Loading from "../../components/Loading";
 
-const Content = lazy(() => import("!babel-loader!mdx-loader!./Bio.mdx"));
+const Content = lazy(() =>
+  import("!babel-loader!mdx-loader!./MidnightStory.mdx")
+);
 
-function Bio({ ...props }) {
+function BornRich({ ...props }) {
   return (
     <>
-      <Header />
       <Div
         dir="rtl"
         justifyConent="center"
@@ -21,7 +22,7 @@ function Bio({ ...props }) {
         py={2}
         mx="auto"
         fontFamily={theme.typefaces.helvetica}
-        mt={70}
+        mt={40}
       >
         <Suspense
           fallback={
@@ -41,4 +42,4 @@ function Bio({ ...props }) {
   );
 }
 
-export default Bio;
+export default BornRich;

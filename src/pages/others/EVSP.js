@@ -4,31 +4,26 @@ import React, { lazy, Suspense } from "react";
 import theme from "../../theme";
 import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
-import Header from "../../containers/Header";
 import Loading from "../../components/Loading";
+const Content = lazy(() => import("!babel-loader!mdx-loader!./EVSP.mdx"));
 
-const Content = lazy(() => import("!babel-loader!mdx-loader!./Society.mdx"));
-
-function Society({ ...props }) {
+function EVSP({ ...props }) {
   return (
     <>
-      <Header />
       <Div
-        dir="rtl"
         justifyConent="center"
         maxWidth={900}
         px={[4, 4, 5]}
+        fontFamily={theme.typefaces.sansSerif}
         py={2}
         mx="auto"
-        fontFamily={theme.typefaces.helvetica}
-        mt={70}
       >
         <Suspense
           fallback={
             <Flex flexDirection="row" justifyContent="center">
               <H2 fontWeight={300} ml={2}>
                 {" "}
-                قيد التحميل{" "}
+                Loading{" "}
               </H2>
               <Loading type="spokes" color="currentcolor" />
             </Flex>
@@ -41,4 +36,4 @@ function Society({ ...props }) {
   );
 }
 
-export default Society;
+export default EVSP;

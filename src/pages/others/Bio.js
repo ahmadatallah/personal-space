@@ -6,12 +6,12 @@ import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
 import Loading from "../../components/Loading";
-const Content = lazy(() => import("!babel-loader!mdx-loader!./BornRich.mdx"));
 
-function BornRich({ ...props }) {
+const Content = lazy(() => import("!babel-loader!mdx-loader!./Bio.mdx"));
+
+function Bio({ ...props }) {
   return (
     <>
-      <Header />
       <Div
         dir="rtl"
         justifyConent="center"
@@ -20,7 +20,7 @@ function BornRich({ ...props }) {
         py={2}
         mx="auto"
         fontFamily={theme.typefaces.helvetica}
-        mt={70}
+        mt={40}
       >
         <Suspense
           fallback={
@@ -40,4 +40,4 @@ function BornRich({ ...props }) {
   );
 }
 
-export default BornRich;
+export default Bio;
