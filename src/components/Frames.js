@@ -64,23 +64,28 @@ function Frames({
   const carouselStyle = {
     footer: base => ({
       ...base,
-      paddingTop: 30,
+      paddingTop: 30
     }),
     header: base => ({
       ...base,
       background: "none !important",
       paddingBottom: 100,
       display: "flex !important",
-      justifyContent: "space-around center !important",
-      right: "0",
-      top: "auto !important",
-      left: "30px",
+      right: 0,
+      bottom: 50,
       "& span": {
-          backgroundColor: 'black !important',
+        backgroundColor: "rgba(255,255,255,0.2) !important",
+        botom: 0,
+        left: 0
       }
     }),
     headerClose: base => ({
-      ...base
+      ...base,
+      color: "white"
+    }),
+    headerFullscreen: base => ({
+      ...base,
+      color: "white"
     }),
     view: base => ({
       ...base,
