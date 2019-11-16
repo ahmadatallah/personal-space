@@ -70,11 +70,15 @@ function Frames({
       ...base,
       background: "none !important",
       paddingBottom: 100,
+      maxHeight: "100px",
       display: "flex !important",
-      right: 0,
-      bottom: 50,
+      right: 13,
+      top:"30%",
+      bottom: 80,
       "& span": {
         backgroundColor: "rgba(255,255,255,0.2) !important",
+        display: "flex !important",
+        flexDirection: "column",
         botom: 0,
         left: 0
       }
@@ -86,10 +90,6 @@ function Frames({
     headerFullscreen: base => ({
       ...base,
       color: "white"
-    }),
-    view: base => ({
-      ...base,
-      overflow: "hidden"
     })
   };
 
