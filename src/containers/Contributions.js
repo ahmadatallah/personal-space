@@ -18,7 +18,6 @@ function Contributions({ ...props }) {
       </H1>
       <Flex flexDirection="row">
         <BlockLinkGrow
-          py={1}
           mr={2}
           href="https://github.com/swvl"
           title="Swvl"
@@ -30,6 +29,19 @@ function Contributions({ ...props }) {
             src="https://avatars0.githubusercontent.com/u/29146595?s=60&v=4"
           ></Img>
         </BlockLinkGrow>
+        <BlockLinkGrow
+          mr={2}
+          href="https://github.com/blocks/blocks"
+          title="Blocks"
+          backgroundColor="white"
+          borderRadius="50%"
+        >
+          <Img
+            width={50}
+            alt="@blocks github"
+            src="https://avatars0.githubusercontent.com/u/6106365?s=88&v=4"
+          ></Img>
+        </BlockLinkGrow>{" "}
         <BlockLinkGrow
           py={1}
           mr={2}
@@ -83,13 +95,12 @@ function Contributions({ ...props }) {
           ></Img>
         </BlockLinkGrow>
         <BlockLinkGrow
-          py={1}
-          mr={2}
           href="https://github.com/darkreader/darkreader"
           title="Dark Reader"
+          backgroundColor="#455E63"
+          borderRadius="50%"
         >
           <Img
-            borderRadius={50}
             width={50}
             alt="@darkreader github"
             src="https://avatars0.githubusercontent.com/u/38494721?s=60&v=4"
