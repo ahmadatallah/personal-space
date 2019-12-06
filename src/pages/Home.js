@@ -39,21 +39,25 @@ function Home({ ...props }) {
           </H3>
         </Container>
       </Section>
-      <Flex
+      <Section
         pl={[3, 4, 5]}
         pr={[4, 4, 6]}
         py={0}
+        maxWidth="128rem"
+        minWidth="20rem"
         display="grid"
         justifyContent="center"
       >
-        <Container mb={2}>
-          <Contributions />
-        </Container>
+        <Container>
+          <Div mb={2}>
+            <Contributions />
+          </Div>
 
-        <WritingsContainer />
-        <Connect />
-        <Footer />
-      </Flex>
+          <WritingsContainer />
+          <Connect />
+          <Footer />
+        </Container>
+      </Section>
     </ThemeProvider>
   );
 }
