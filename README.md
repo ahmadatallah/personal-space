@@ -9,4 +9,4 @@
 - [x] ~~readings~~
 - [x] ~~frames~~
 - [ ] Add SEO
-- [ ] Add Disqus
+- [ ] Migrate to Gatsby instead of CRA
