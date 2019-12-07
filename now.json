@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "syncatallah-personal-blog",
-  "alias": ["syncatallah.now.sh"],
+  "alias": ["syncatallah.now.sh", "syncatallah.cc"],
   "builds": [
     {
       "src": "package.json",
