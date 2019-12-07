@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "name": "syncatallah-personal-space",
   "alias": ["syncatallah.now.sh", "syncatallah.cc"],
   "routes": [
@@ -10,7 +10,7 @@
       },
       "dest": "/static/$1"
     },
-    { "src": "/favicon@x1.png", "dest": "/favicon@x1.png" },
+    { "src": "/favicon.png", "dest": "/favicon.png" },
     { "src": "/favicon@x2.png", "dest": "/favicon@x2.png" },
     { "src": "/favicon@x3.png", "dest": "/favicon@x3.png" },
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
