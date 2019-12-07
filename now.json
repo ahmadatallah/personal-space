@@ -5,6 +5,9 @@
   "routes": [
     {
       "src": "/static/(.*)",
+      "headers": {
+        "cache-control": "max-age=31536000,s-maxage=31536000,immutable"
+      },
       "dest": "/static/$1"
     },
     { "src": "/favicon.png", "dest": "/favicon.png" },
@@ -20,6 +23,7 @@
     },
     {
       "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=1,stale-while-revalidate" },
       "dest": "/index.html"
     }
   ]
