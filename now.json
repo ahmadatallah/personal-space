@@ -1,21 +1,16 @@
 {
   "version": 2,
-  "name": "syncatallah-personal-blog",
-  "alias": ["syncatallah.now.sh"],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "build" }
-    }
-  ],
+  "name": "syncatallah-personal-space",
+  "alias": ["syncatallah.now.sh", "syncatallah.cc"],
   "routes": [
     {
       "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "headers": {
+        "cache-control": "max-age=31536000,s-maxage=31536000,immutable"
+      },
       "dest": "/static/$1"
     },
-    { "src": "/favicon@x1.png", "dest": "/favicon@x1.png" },
+    { "src": "/favicon.png", "dest": "/favicon.png" },
     { "src": "/favicon@x2.png", "dest": "/favicon@x2.png" },
     { "src": "/favicon@x3.png", "dest": "/favicon@x3.png" },
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },

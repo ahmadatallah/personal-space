@@ -1,26 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import { ThemeProvider, ColorMode } from "theme-ui";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import theme from "./theme";
-import { P, Div, Span } from "./elements";
+import { P, Div, H2, Span } from "./elements";
 import GlobalStyles from "./global-styles";
 import { connect } from "react-redux";
 import Flex from "./components/Flex";
-import About from "./pages/About";
-import Photography from "./pages/Photography";
-import Home from "./pages/Home";
-import Others from "./pages/Others";
-import NotFound from "./pages/NotFound";
-import Readings from "./pages/Readings";
-import Writings from "./pages/Writings";
-import CreateReactAppEnvVars from "./pages/writings/CreateReactAppEnvVars";
-import PascalTypeScript from "./pages/writings/PascalTypeScript";
-import NotifyYourPWAViewers from "./pages/writings/NotifyYourPWAViewers";
 import { ToastContainer, toast } from "react-toastify";
-
+import Loading from "./components/Loading";
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.minimal.css";
 import "./App.css";
+
+const About = lazy(() => import("./pages/About"));
+const Photography = lazy(() => import("./pages/Photography"));
+const Home = lazy(() => import("./pages/Home"));
+const Others = lazy(() => import("./pages/Others"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Readings = lazy(() => import("./pages/Readings"));
+const Writings = lazy(() => import("./pages/Writings"));
+const CreateReactAppEnvVars = lazy(() =>
+  import("./pages/writings/CreateReactAppEnvVars")
+);
+const PascalTypeScript = lazy(() =>
+  import("./pages/writings/PascalTypeScript")
+);
+const NotifyYourPWAViewers = lazy(() =>
+  import("./pages/writings/NotifyYourPWAViewers")
+);
 
 const Msg = ({ closeToast }) => (
   <Flex flexDirection="column" alignItems="start">
@@ -87,28 +94,40 @@ function App(props) {
       />
       <Div fontFamily={theme.typefaces.sansSerif}>
         <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/others" component={Others} />
-            <Route path="/writings" exact={true} component={Writings} />
-            <Route
-              path={`/writings/create-react-app-run-build-envs`}
-              component={CreateReactAppEnvVars}
-            />{" "}
-            <Route
-              path={`/writings/pascal-typescript-example`}
-              component={PascalTypeScript}
-            ></Route>
-            <Route
-              path={`/writings/notify-pwa-updates`}
-              component={NotifyYourPWAViewers}
-            ></Route>
-            <Route path="/about" exact={true} component={About} />
-            <Route path="/writings" component={Home} />
-            <Route path="/readings" exact={true} component={Readings} />
-            <Route path="/frames" exact={true} component={Photography} />
-            <Route component={NotFound} />
-          </Switch>
+          <Suspense
+            fallback={
+              <Flex flexDirection="row" mt="20%" alignItems="center" justifyContent="center">
+                <H2 fontWeight={300} mr={2}>
+                  {" "}
+                  Loading{" "}
+                </H2>
+                <Loading type="spokes" color="currentcolor" />
+              </Flex>
+            }
+          >
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/others" component={Others} />
+              <Route path="/writings" exact={true} component={Writings} />
+              <Route
+                path={`/writings/create-react-app-run-build-envs`}
+                component={CreateReactAppEnvVars}
+              />{" "}
+              <Route
+                path={`/writings/pascal-typescript-example`}
+                component={PascalTypeScript}
+              ></Route>
+              <Route
+                path={`/writings/notify-pwa-updates`}
+                component={NotifyYourPWAViewers}
+              ></Route>
+              <Route path="/about" exact={true} component={About} />
+              <Route path="/writings" component={Home} />
+              <Route path="/readings" exact={true} component={Readings} />
+              <Route path="/frames" exact={true} component={Photography} />
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
         </Router>
       </Div>
     </ThemeProvider>
