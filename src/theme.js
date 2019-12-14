@@ -41,7 +41,7 @@ const theme = {
         text: "#000",
         background: "#fff",
         primary: "hsl(120, 100%, 40%)",
-        secondary: "hsl(327, 100%, 30%)",
+        secondary: "#000",
         accent: "hsl(120, 100%, 90%)",
         muted: "hsl(120, 20%, 7%)",
         gray: "hsl(0, 0%, 75%)",
@@ -88,7 +88,7 @@ const theme = {
         text: "hsl(350, 80%, 10%)",
         background: "hsl(350, 100%, 90%)",
         primary: "hsl(350, 100%, 50%)",
-        secondary: "hsl(250,28%,40%)",
+        secondary: "hsl(350, 80%, 10%)",
         accent: "hsl(280, 100%, 20%)",
         muted: "hsl(350, 100%, 88%)",
         gray: "hsl(350, 40%, 50%)"

@@ -1,20 +1,29 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import { H1, Img } from "../elements";
-import Flex from "../components/Flex";
-import Header from "../containers/Header";
-import theme from "../theme";
-import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
+import jsx from '../jsx';
+import React from 'react';
+import { H1, Section, Img } from '../elements';
+import Flex from '../components/Flex';
+import Header from '../containers/Header';
+import theme from '../theme';
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
 
-import ConfusedTravolta from "../assets/images/confused-travolta.svg";
+import ConfusedTravolta from '../assets/images/confused-travolta.svg';
 function NotFound() {
-  const { textColor } = useEveryReloadColorMode()
+  const { textColor } = useEveryReloadColorMode();
   return (
     <>
-      <Header />
-      <Flex justifyContent="center" flexDirection="column" mt={150}>
-        <H1 color={textColor} fontFamily={theme.typefaces.mono}>
+      <Flex
+        maxWidth="80rem"
+        minWidth="20rem"
+        alignItems="center"
+        ml="auto"
+        mr="auto"
+        pr={3}
+        pl={3}
+        flexDirection="column"
+      >
+        <Header />
+        <H1 color={textColor}>
           404 Not Found
         </H1>
         <Img
@@ -22,8 +31,7 @@ function NotFound() {
           width={219}
           borderRadius="50%"
           src={ConfusedTravolta}
-        >
-        </Img>
+        ></Img>
       </Flex>
     </>
   );
