@@ -24,14 +24,13 @@ function Header() {
       width="100%"
       pt={3}
       pb={3}
-      pr={3}
       style={{
         top: 0,
         height: '80px',
-        zIndex: 100
+        zIndex: 100,
       }}
     >
-      <Flex flexDirection="row" mr={3}>
+      <Flex flexDirection="row" mr={2} minWidth={260}>
         <StyledLink to="/">
           <Avatar
             src={avatarImg}
@@ -44,7 +43,7 @@ function Header() {
         <StyledLink to="/readings">
           <Link
             title="Readings"
-            fontSize={1}
+            fontSize={[0,1,1]}
             mr={3}
             fontWeight={700}
           />
@@ -53,7 +52,7 @@ function Header() {
         <StyledLink to="/writings">
           <Link
             title="Writings"
-            fontSize={1}
+            fontSize={[0,1,1]}
             mr={3}
             fontWeight={700}
           />
@@ -61,7 +60,7 @@ function Header() {
         <StyledLink to="/frames">
           <Link
             title="Frames"
-            fontSize={1}
+            fontSize={[0,1,1]}
             mr={3}
             fontWeight={700}
           />
@@ -70,7 +69,7 @@ function Header() {
         <StyledLink to="/archive">
           <Link
             title="Archive"
-            fontSize={1}
+            fontSize={[0,1,1]}
             pb={1}
             mr={3}
             fontWeight={700}
