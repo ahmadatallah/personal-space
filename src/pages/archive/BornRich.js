@@ -6,17 +6,15 @@ import { Div, H2 } from "../../elements";
 import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
 import Loading from "../../components/Loading";
+const Content = lazy(() => import("!babel-loader!mdx-loader!./BornRich.mdx"));
 
-const Content = lazy(() => import("!babel-loader!mdx-loader!./Bio.mdx"));
-
-function Bio({ ...props }) {
+function BornRich({ ...props }) {
   return (
     <>
       <Div
         dir="rtl"
         justifyConent="center"
-        maxWidth={900}
-        px={[4, 4, 5]}
+        px={[1, 2, 3]}
         py={2}
         mx="auto"
         fontFamily={theme.typefaces.helvetica}
@@ -40,4 +38,4 @@ function Bio({ ...props }) {
   );
 }
 
-export default Bio;
+export default BornRich;

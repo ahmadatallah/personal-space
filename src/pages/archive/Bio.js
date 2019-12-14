@@ -7,16 +7,15 @@ import Flex from "../../components/Flex";
 import Header from "../../containers/Header";
 import Loading from "../../components/Loading";
 
-const Content = lazy(() => import("!babel-loader!mdx-loader!./Society.mdx"));
+const Content = lazy(() => import("!babel-loader!mdx-loader!./Bio.mdx"));
 
-function Society({ ...props }) {
+function Bio({ ...props }) {
   return (
     <>
       <Div
         dir="rtl"
         justifyConent="center"
-        maxWidth={900}
-        px={[4, 4, 5]}
+        px={[1, 2, 3]}
         py={2}
         mx="auto"
         fontFamily={theme.typefaces.helvetica}
@@ -40,4 +39,4 @@ function Society({ ...props }) {
   );
 }
 
-export default Society;
+export default Bio;

@@ -17,9 +17,12 @@ function Photography({ ...props }) {
       minHeight="100%"
       mr="auto"
       ml="auto"
+      minWidth="20rem"
+      pr={3}
+      pl={3}
     >
       <Header />
-      <Div pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
+      <Div pl={[1, 2, 3]} pr={[1, 2, 3]} py={5} mt={1}>
         <Frames
           title="Frames"
           totalPages={2}

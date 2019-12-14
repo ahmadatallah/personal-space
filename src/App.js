@@ -15,7 +15,7 @@ import "./App.css";
 const About = lazy(() => import("./pages/About"));
 const Photography = lazy(() => import("./pages/Photography"));
 const Home = lazy(() => import("./pages/Home"));
-const Others = lazy(() => import("./pages/Others"));
+const Archive = lazy(() => import("./pages/Archive"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Readings = lazy(() => import("./pages/Readings"));
 const Writings = lazy(() => import("./pages/Writings"));
@@ -96,18 +96,12 @@ function App(props) {
         <Router>
           <Suspense
             fallback={
-              <Flex flexDirection="row" mt="20%" alignItems="center" justifyContent="center">
-                <H2 fontWeight={300} mr={2}>
-                  {" "}
-                  Loading{" "}
-                </H2>
-                <Loading type="spokes" color="currentcolor" />
-              </Flex>
+              <></>
             }
           >
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/others" component={Others} />
+              <Route exact path="/archive" component={Archive} />
               <Route path="/writings" exact={true} component={Writings} />
               <Route
                 path={`/writings/create-react-app-run-build-envs`}

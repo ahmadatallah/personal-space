@@ -1,15 +1,14 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import Flex from "../components/Flex";
-import { Div } from "../elements";
-import ReadingsContainer from "../containers/ReadingsContainer";
-import Header from "../containers/Header";
+import jsx from '../jsx';
+import React from 'react';
+import Flex from '../components/Flex';
+import { Div } from '../elements';
+import ReadingsContainer from '../containers/ReadingsContainer';
+import Header from '../containers/Header';
 
 function Readings({ ...props }) {
   return (
     <>
-      <Header />
       <Flex
         alignItems="center"
         flexDirection="column"
@@ -17,8 +16,12 @@ function Readings({ ...props }) {
         minHeight="100%"
         mr="auto"
         ml="auto"
+        minWidth="20rem"
+        pr={3}
+        pl={3}
       >
-        <Div display="grid" pl={[4, 4, 6]} pr={[4, 4, 6]} py={5} mt={[3, 4, 5]}>
+        <Header />
+        <Div display="grid" pl={[1, 2, 4]} pr={[1, 2, 3]} py={5} mt={1}>
           <ReadingsContainer />
         </Div>
       </Flex>

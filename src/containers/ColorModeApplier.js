@@ -9,7 +9,7 @@ function ColorModeApplier({ ...props }) {
   return (
     <ColorModeButton onClick={props.onClick} colorMode={props.mode}>
       <Svg
-        viewBox="0 0 32 32"
+        viewBox="0 0 32 34"
         display="block"
       >
         <circle

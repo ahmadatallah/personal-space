@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
+import theme from '../theme';
 import { Div } from '../elements';
 import Header from '../containers/Header';
 import Flex from '../components/Flex';
-import WritingsContainer from '../containers/WritingsContainer';
+import OthersContainer from '../containers/ArchiveContainer';
 
-function Writings({ ...props }) {
+function Archive({ ...props }) {
   return (
     <>
       <Flex
@@ -21,12 +22,12 @@ function Writings({ ...props }) {
         pl={3}
       >
         <Header />
-        <Div display="grid" pl={[1, 2, 4]} pr={[1, 2, 3]} py={5} mt={1}>
-          <WritingsContainer />
+        <Div pl={[1, 2, 3]} pr={[1, 2, 3]} py={5} mt={1}>
+          <OthersContainer />
         </Div>
       </Flex>
     </>
   );
 }
 
-export default Writings;
+export default Archive;

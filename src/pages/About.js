@@ -1,25 +1,37 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React, { lazy, Suspense } from "react";
-import theme from "../theme";
-import Container from "../components/Container";
-import { H3, H2, Div } from "../elements";
-import Flex from "../components/Flex";
-import Connect from "../containers/Connect";
-import about from "../assets/images/about-img.jpg";
-import Header from "../containers/Header";
+import jsx from '../jsx';
+import React, { lazy, Suspense } from 'react';
+import theme from '../theme';
+import Container from '../components/Container';
+import { H3, H2, Div } from '../elements';
+import Flex from '../components/Flex';
+import Connect from '../containers/Connect';
+import about from '../assets/images/about-img.jpg';
+import Header from '../containers/Header';
 import Loading from '../components/Loading';
 
-const Img = lazy(() => import("../elements/Img"));
+const Img = lazy(() => import('../elements/Img'));
 
 function About() {
   return (
     <>
-      <Header />
-      <Flex justifyContent="center" flexDirection="column" pt={[5, 2, 3]}  mt={70}>
+      <Flex
+        justifyContent="center"
+        flexDirection="column"
+        minWidth="20rem"
+        pr={3}
+        pl={3}
+        alignItems="center"
+        maxWidth="80em"
+        minHeight="100%"
+        mr="auto"
+        ml="auto"
+      >
+        <Header />
         <Div
           display="block"
           mb={[3, 2, 1]}
+          mt={4}
           width={[300, 300, 400]}
           alignItems="center"
         >
@@ -38,7 +50,7 @@ function About() {
           <H3
             px={[3, 4]}
             fontWeight={4}
-            style={{ "font-family": theme.typefaces.mono }}
+            style={{ 'font-family': theme.typefaces.mono }}
           >
             I'm Ahmad Atallah. An egyptian software engineer. Interested in
             functional programming, frontend engineering, and design. What makes

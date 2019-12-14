@@ -36,8 +36,8 @@ const ColorModeButton = styled("button", { shouldForwardProp })(
   borderWidth,
   {
     minWidth: "1.8rem",
-    width: "28px",
-    height: "28px",
+    width: "36px",
+    height: "36px",
     display: "inline-block",
     appearance: "none",
     bg: "transparent",
