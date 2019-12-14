@@ -25,7 +25,7 @@ function Home({ ...props }) {
         ml="auto"
         minWidth="20rem"
         pr={3}
-        pl={3}
+        pl={1}
       >
         <Header />
         <Div>
@@ -39,8 +39,9 @@ function Home({ ...props }) {
             </H1>
           </Div>
           <H3 fontWeight={600} maxWidth="50rem">
-            Hi there! I am Ahmad Atallah, a software engineer at Swvl. Interested in
-            functional programming, frontend engineering, and design.
+            Hi there! I am Ahmad Atallah, a software engineer. Interested in
+            functional programming, frontend engineering, and design. Sync...?
+            because we are all about sync. So, let the data flow!{' '}
           </H3>
         </Div>
         <Contributions />

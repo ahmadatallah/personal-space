@@ -20,7 +20,6 @@ function WritingsContainer({ title, href, ...props }) {
         <StyledLink to="/writings/create-react-app-run-build-envs">
           <Link
             title="Create React App: Run-time vs Build-time Environment Variables"
-            fontFamily={theme.typefaces.mono}
             fontSize={[2, 3, 3]}
             fontWeight={[900, 600, 600]}
           />
@@ -43,7 +42,6 @@ function WritingsContainer({ title, href, ...props }) {
         <StyledLink to="/writings/pascal-typescript-example">
           <Link
             title="Pattern Matching Example in TypeScript"
-            fontFamily={theme.typefaces.mono}
             fontSize={[2, 3, 3]}
             fontWeight={[900, 600, 600]}
           />
@@ -63,7 +61,6 @@ function WritingsContainer({ title, href, ...props }) {
         <StyledLink to="/writings/notify-pwa-updates">
           <Link
             title="Notify A Progressive Web App (PWA) Updates"
-            fontFamily={theme.typefaces.mono}
             fontSize={[2, 3, 3]}
             fontWeight={[900, 600, 600]}
           />
