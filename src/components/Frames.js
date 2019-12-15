@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React, { useState, useCallback, useEffect } from "react";
-import { H1, H2, Div } from "../elements";
+import { A, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
@@ -11,6 +11,7 @@ import Loading from "../components/Loading";
 
 function Frames({
   title,
+  href,
   totalPages,
   initialLength,
   photos,
@@ -95,9 +96,9 @@ function Frames({
 
   return (
     <>
-      <H1 fontWeight={600} color={textColor}>
+      <A fontWeight={600} mb={2} fontSize={30} color={textColor} href={`#${href}`}>
         {title}
-      </H1>
+      </A>
       <Gallery photos={images} onClick={openLightbox} />
       {!loadedAll && !disallowScrollLoad && (
         <Flex>
