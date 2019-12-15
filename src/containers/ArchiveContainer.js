@@ -9,10 +9,12 @@ import BornRich from "../pages/archive/BornRich";
 import MidnightStory from "../pages/archive/MidnightStory";
 import Society from "../pages/archive/Society";
 import EVSP from "../pages/archive/EVSP";
+import Para from "../pages/archive/Para";
 function ArchiveContainer({ ...props }) {
   const { textColor } = useEveryReloadColorMode();
   return (
     <Div mb={3}>
+      <Para />
       <EVSP />
       <MidnightStory />
       <Society />
