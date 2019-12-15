@@ -986,3 +986,48 @@ export const evsp = [
     alt: "Neon Gensis Evanglion x 2001: A Space Odessy 5"
   },
 ];
+
+export const para = [
+  {
+    src: require("../assets/images/para-1.jpg"),
+    width: 3,
+    height: 4,
+    title: "Parasite 2019 dir. Boon Joon Ho",
+    alt: "Parasite 2019 frame 1"
+  },
+  {
+    src: require("../assets/images/para-2.jpg"),
+    width: 3,
+    height: 1,
+    title: "Parasite 2019 dir. Boon Joon Ho",
+    alt: "Parasite 2019 frame 2"
+  },
+  {
+    src: require("../assets/images/para-3.jpg"),
+    width: 5,
+    height: 3,
+    title: "Parasite 2019 dir. Boon Joon Ho",
+    alt: "Parasite 2019 frame 3"
+  },
+  {
+    src: require("../assets/images/para-4.jpg"),
+    width: 5,
+    height: 3,
+    title: "Parasite 2019 dir. Boon Joon Ho",
+    alt: "Parasite 2019 frame 4"
+  },
+  {
+    src: require("../assets/images/para-5.jpg"),
+    width: 4,
+    height: 3,
+    title: "Parasite 2019 dir. Boon Joon Ho",
+    alt: "Parasite 2019 frame 5"
+  },
+  {
+    src: require("../assets/images/para-6.jpg"),
+    width: 2.4,
+    height: 1,
+    title: "Parasite 2019 dir. Boon Joon Ho",
+    alt: "Parasite 2019 frame 6"
+  },
+]
