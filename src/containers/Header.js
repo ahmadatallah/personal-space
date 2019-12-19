@@ -24,10 +24,12 @@ function Header() {
       width="100%"
       pt={3}
       pb={3}
+      pl={3}
+      pr={3}
       style={{
         top: 0,
         height: '80px',
-        zIndex: 100,
+        zIndex: 2000,
       }}
     >
       <Flex flexDirection="row" mr={2} minWidth={260}>
