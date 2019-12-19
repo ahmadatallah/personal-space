@@ -22,7 +22,7 @@ function Photography({ ...props }) {
       pl={3}
     >
       <Header />
-      <Div pl={[1, 2, 3]} pr={[1, 2, 3]} py={2} mt={1}>
+      <Div pl={5} pr={5} py={2} mt={1}>
         <Frames
           title="Frames"
           totalPages={2}

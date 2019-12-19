@@ -13,7 +13,7 @@ import Para from "../pages/archive/Para";
 function ArchiveContainer({ ...props }) {
   const { textColor } = useEveryReloadColorMode();
   return (
-    <Div mb={3}>
+    <Div mb={3} pl={3} pr={3}>
       <Para />
       <EVSP />
       <MidnightStory />

@@ -20,7 +20,7 @@ function ReadingsContainer({ title, href, ...props }) {
   const { textColor } = useEveryReloadColorMode()
 
   return (
-    <>
+    <Div pl={4} pr={4}>
       <H1 fontWeight={600} color={textColor}> Readings </H1>
       <Div mb={3}>
         <LinkIcon href="https://bit.ly/33zdmtc" />
@@ -67,7 +67,7 @@ function ReadingsContainer({ title, href, ...props }) {
           {" "}
         </Link>
       </Div>
-    </>
+    </Div>
   );
 }
 

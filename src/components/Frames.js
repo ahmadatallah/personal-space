@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React, { useState, useCallback, useEffect } from "react";
-import { A, H2, Div } from "../elements";
+import { A, H1, H2, Div } from "../elements";
 import Flex from "../components/Flex";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
@@ -74,7 +74,7 @@ function Frames({
       maxHeight: "100px",
       display: "flex !important",
       right: 13,
-      top:"30%",
+      top: "30%",
       bottom: 80,
       "& span": {
         backgroundColor: "rgba(255,255,255,0.2) !important",
@@ -96,9 +96,21 @@ function Frames({
 
   return (
     <>
-      <A fontWeight={600} mb={2} fontSize={30} color={textColor} href={`#${href}`}>
-        {title}
-      </A>
+      {href ? (
+        <A
+          fontWeight={600}
+          mb={2}
+          fontSize={30}
+          color={textColor}
+          href={`#${href}`}
+        >
+          {title}
+        </A>
+      ) : (
+        <H1 fontWeight={600} color={textColor}>
+          {title}
+        </H1>
+      )}
       <Gallery photos={images} onClick={openLightbox} />
       {!loadedAll && !disallowScrollLoad && (
         <Flex>

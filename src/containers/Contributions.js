@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import jsx from "../jsx";
 import React from "react";
-import { Img, H1 } from "../elements";
+import { Img, H1, Div } from "../elements";
 import theme from "../theme";
 import BlockLinkGrow from "../components/BlockLinkGrow";
 import Flex from "../components/Flex";
@@ -11,7 +11,7 @@ function Contributions({ ...props }) {
   const { textColor } = useEveryReloadColorMode();
 
   return (
-    <>
+    <Div pl={3} pr={3}>
       <H1 fontWeight={600} color={textColor}>
         {" "}
         Contributions{" "}
@@ -107,7 +107,7 @@ function Contributions({ ...props }) {
           ></Img>
         </BlockLinkGrow>
       </Flex>
-    </>
+    </Div>
   );
 }
 

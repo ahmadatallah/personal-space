@@ -11,7 +11,7 @@ function WritingsContainer({ title, href, ...props }) {
   const { textColor } = useEveryReloadColorMode();
 
   return (
-    <>
+    <Div pl={4} pr={4}>
       <H1 fontWeight={600} color={textColor}>
         {" "}
         Writings{" "}
@@ -78,7 +78,7 @@ function WritingsContainer({ title, href, ...props }) {
           </P>
         </Div>
       </Div>
-    </>
+    </Div>
   );
 }
 
