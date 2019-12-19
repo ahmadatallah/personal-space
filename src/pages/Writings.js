@@ -21,7 +21,7 @@ function Writings({ ...props }) {
         pl={3}
       >
         <Header />
-        <Div display="grid" pl={[1, 2, 4]} pr={[1, 2, 3]} py={2} mt={1}>
+        <Div display="grid" pl={5} pr={5} py={2} mt={1}>
           <WritingsContainer />
         </Div>
       </Flex>

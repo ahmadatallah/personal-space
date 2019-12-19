@@ -45,7 +45,9 @@ function Home({ ...props }) {
           </H3>
         </Div>
         <Contributions />
-        <WritingsContainer />
+        <Div pl={3} pr={3}>
+          <WritingsContainer />
+        </Div>
         <Connect />
         <Footer />
       </Section>

@@ -16,15 +16,15 @@ function Connect() {
   return (
     <Div
       ml="auto"
-      px="auto"
       display="flex"
       borderTop="0.5px solid"
       alignItems="center"
       borderColor="secondary"
-      pt={4}
+      pt={3}
+      pr={3}
+      pl={3}
     >
       <BlockLinkGrow
-        py={1}
         mr={2}
         fontWeight={700}
         href="https://github.com/syncatallah"
@@ -33,7 +33,6 @@ function Connect() {
         <GitHub size={24} />
       </BlockLinkGrow>
       <BlockLinkGrow
-        py={1}
         mr={2}
         fontWeight={700}
         href="https://twitter.com/ahmadatallah"
@@ -42,7 +41,6 @@ function Connect() {
         <Twitter size={24} />
       </BlockLinkGrow>
       <BlockLinkGrow
-        py={1}
         mr={2}
         fontWeight={700}
         href="https://www.instagram.com/ahmad.atallah"
@@ -51,7 +49,6 @@ function Connect() {
         <Instagram size={24} />
       </BlockLinkGrow>
       <BlockLinkGrow
-        py={1}
         mr={2}
         fontWeight={700}
         href="https://www.linkedin.com/in/ahmad-atallah/"
@@ -61,7 +58,6 @@ function Connect() {
       </BlockLinkGrow>
 
       <BlockLinkGrow
-        py={1}
         mr={2}
         fontWeight={700}
         href={Resume}
