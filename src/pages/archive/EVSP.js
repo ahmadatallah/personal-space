@@ -12,7 +12,6 @@ function EVSP({ ...props }) {
     <>
       <Div
         justifyConent="center"
-        px={[1, 2, 3]}
         fontFamily={theme.typefaces.sansSerif}
         py={2}
         mx="auto"

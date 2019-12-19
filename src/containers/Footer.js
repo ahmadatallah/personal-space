@@ -13,6 +13,8 @@ function Footer() {
       alignItems="center"
       width="100%"
       fontFamily={theme.typefaces.mono}
+      pl={1}
+      pr={1}
     >
       <P textAlign="center" fontFamily={theme.typefaces.mono} fontWeight={600}>
         {" "}

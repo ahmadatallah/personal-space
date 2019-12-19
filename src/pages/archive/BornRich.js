@@ -14,7 +14,6 @@ function BornRich({ ...props }) {
       <Div
         dir="rtl"
         justifyConent="center"
-        px={[1, 2, 3]}
         py={2}
         mx="auto"
         fontFamily={theme.typefaces.helvetica}

@@ -24,8 +24,8 @@ function NotifyYourPWAViewers({ ...props }) {
         mr="auto"
         ml="auto"
         minWidth="20rem"
-        pr={3}
-        pl={3}
+        pl={[1, 3, 5]}
+        pr={[1, 3, 5]}
       >
         <Header />
       </Section>{' '}

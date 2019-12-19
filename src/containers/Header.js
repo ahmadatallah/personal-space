@@ -29,7 +29,6 @@ function Header() {
       style={{
         top: 0,
         height: '80px',
-        zIndex: 2000,
       }}
     >
       <Flex flexDirection="row" mr={2} minWidth={260}>
