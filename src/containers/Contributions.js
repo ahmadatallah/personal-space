@@ -11,7 +11,7 @@ function Contributions({ ...props }) {
   const { textColor } = useEveryReloadColorMode();
 
   return (
-    <Div pl={3} pr={3}>
+    <>
       <H1 fontWeight={600} color={textColor}>
         {" "}
         Contributions{" "}
@@ -107,7 +107,7 @@ function Contributions({ ...props }) {
           ></Img>
         </BlockLinkGrow>
       </Flex>
-    </Div>
+    </>
   );
 }
 

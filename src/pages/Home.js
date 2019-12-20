@@ -28,8 +28,8 @@ function Home({ ...props }) {
         pl={3}
       >
         <Header />
-        <Div py={2} pl={3} pr={3}>
-          <Div>
+        <Div py={2} pl={[1, 3, 5]} pr={[1, 3, 5]}>
+          <>
             <H2 fontSize={45} mb={0}>
               {" "}
               Sync...{" "}
@@ -37,19 +37,17 @@ function Home({ ...props }) {
             <H1 fontSize={80} mt={0} mb={0}>
               Atallah
             </H1>
-          </Div>
+          </>
           <H3 fontWeight={600} maxWidth="50rem">
             Hi there! I am Ahmad Atallah, a software engineer. Interested in
             functional programming, frontend engineering, and design. Sync...?
             because we are all about sync. So, let the data flow!{" "}
           </H3>
-        </Div>
-        <Contributions />
-        <Div pl={3} pr={3}>
+          <Contributions />
           <WritingsContainer />
+          <Connect />
+          <Footer />
         </Div>
-        <Connect />
-        <Footer />
       </Section>
     </ThemeProvider>
   );

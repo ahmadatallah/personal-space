@@ -21,8 +21,6 @@ function Connect() {
       alignItems="center"
       borderColor="secondary"
       pt={3}
-      pr={3}
-      pl={3}
     >
       <BlockLinkGrow
         mr={2}
