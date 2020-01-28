@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -8,8 +8,8 @@ import {
   textAlign,
   color,
   display,
-  textStyle
-} from "styled-system"
+  textStyle,
+} from 'styled-system';
 
 const Abbr = styled('abbr', { shouldForwardProp })(
   space,
@@ -21,8 +21,8 @@ const Abbr = styled('abbr', { shouldForwardProp })(
   display,
   textStyle,
   {}
-)
+);
 
-Abbr.defaultProps = {}
+Abbr.defaultProps = {};
 
-export default Abbr
+export default Abbr;

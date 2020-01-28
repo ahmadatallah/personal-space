@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React, { useState } from "react";
-import theme from "../theme";
-import { modes } from "../utils/constants";
-import { useColorMode } from "theme-ui";
+import jsx from '../jsx';
+import React, { useState } from 'react';
+import theme from '../theme';
+import { modes } from '../utils/constants';
+import { useColorMode } from 'theme-ui';
 
 function useEveryReloadColorMode({ ...props }) {
   const [colorMode, setColorMode] = useColorMode();

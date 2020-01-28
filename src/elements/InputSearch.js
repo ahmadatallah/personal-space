@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -11,7 +11,7 @@ import {
   borderColor,
   borderRadius,
   color,
-} from 'styled-system'
+} from 'styled-system';
 
 const InputSearch = styled('input', { shouldForwardProp })(
   space,
@@ -24,11 +24,11 @@ const InputSearch = styled('input', { shouldForwardProp })(
   borders,
   borderColor,
   borderRadius,
-  {boxSizing: 'border-box'},
-)
+  { boxSizing: 'border-box' }
+);
 
 InputSearch.defaultProps = {
   type: 'search',
-}
+};
 
-export default InputSearch
+export default InputSearch;

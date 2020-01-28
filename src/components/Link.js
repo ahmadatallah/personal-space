@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import BlockLinkGrow from "./BlockLinkGrow";
+import jsx from '../jsx';
+import React from 'react';
+import BlockLinkGrow from './BlockLinkGrow';
 
 function Link({ title, href, ...props }) {
   return (

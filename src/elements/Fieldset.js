@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -10,7 +10,7 @@ import {
   borders,
   borderColor,
   borderRadius,
-} from 'styled-system'
+} from 'styled-system';
 
 const Fieldset = styled('fieldset', { shouldForwardProp })(
   space,
@@ -24,9 +24,9 @@ const Fieldset = styled('fieldset', { shouldForwardProp })(
   borderRadius,
   {
     boxSizing: 'border-box',
-  },
-)
+  }
+);
 
-Fieldset.defaultProps = {}
+Fieldset.defaultProps = {};
 
-export default Fieldset
+export default Fieldset;

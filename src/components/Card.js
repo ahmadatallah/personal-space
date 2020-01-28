@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React, { lazy, Suspense } from "react";
-import BlockLinkGrow from "./BlockLinkGrow";
-import { H2 } from "../elements";
-import Flex from "./Flex";
+import jsx from '../jsx';
+import React, { lazy, Suspense } from 'react';
+import BlockLinkGrow from './BlockLinkGrow';
+import { H2 } from '../elements';
+import Flex from './Flex';
 import Loading from './Loading';
 
-const Img = lazy(() => import("../elements/Img"));
+const Img = lazy(() => import('../elements/Img'));
 
 const Card = ({
   href,
@@ -35,7 +35,7 @@ const Card = ({
             color="currentcolor"
             fontSize={0}
           >
-            {tag}{" "}
+            {tag}{' '}
           </div>
         )}
         {props.children ? (
@@ -46,8 +46,8 @@ const Card = ({
               fallback={
                 <Flex flexDirection="row" justifyContent="center">
                   <H2 fontWeight={300} mr={2}>
-                    {" "}
-                    Loading{" "}
+                    {' '}
+                    Loading{' '}
                   </H2>
                   <Loading type="spokes" color="currentcolor" />
                 </Flex>
@@ -112,10 +112,10 @@ const Card = ({
 };
 
 Card.defaultProps = {
-  border: "1px solid",
-  borderColor: "black-10",
+  border: '1px solid',
+  borderColor: 'black-10',
   borderRadius: 2,
-  style: { overflow: "hidden" }
+  style: { overflow: 'hidden' },
 };
 
 export default Card;

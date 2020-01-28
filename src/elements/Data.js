@@ -1,11 +1,15 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
-import {space, width, fontSize, color} from 'styled-system'
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
+import { space, width, fontSize, color } from 'styled-system';
 
 const Data = styled('data', { shouldForwardProp })(
-  space, width, fontSize, color, {}
-)
+  space,
+  width,
+  fontSize,
+  color,
+  {}
+);
 
-Data.defaultProps = {}
+Data.defaultProps = {};
 
-export default Data
+export default Data;

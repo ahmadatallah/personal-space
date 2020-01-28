@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   display,
@@ -8,7 +8,7 @@ import {
   fontWeight,
   textAlign,
   color,
-} from 'styled-system'
+} from 'styled-system';
 
 const Summary = styled('summary', { shouldForwardProp })(
   space,
@@ -18,9 +18,9 @@ const Summary = styled('summary', { shouldForwardProp })(
   fontWeight,
   textAlign,
   color,
-  {},
-)
+  {}
+);
 
-Summary.defaultProps = {}
+Summary.defaultProps = {};
 
-export default Summary
+export default Summary;

@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -8,8 +8,8 @@ import {
   color,
   borders,
   borderColor,
-  borderRadius
-} from "styled-system"
+  borderRadius,
+} from 'styled-system';
 
 const Kbd = styled('code', { shouldForwardProp })(
   space,
@@ -21,13 +21,13 @@ const Kbd = styled('code', { shouldForwardProp })(
   borderColor,
   borderRadius,
   {
-    boxSizing: "border-box",
-    fontFamily: "monospace, monospace"
+    boxSizing: 'border-box',
+    fontFamily: 'monospace, monospace',
   }
-)
+);
 
 Kbd.defaultProps = {
-  fontSize: 2
-}
+  fontSize: 2,
+};
 
-export default Kbd
+export default Kbd;

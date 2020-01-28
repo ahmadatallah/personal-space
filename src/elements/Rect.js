@@ -1,15 +1,13 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
-import { color } from "styled-system"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
+import { color } from 'styled-system';
 
-const Rect = styled('rect', { shouldForwardProp })(
-  color, 
-  {
-  boxSizing: "border-box"
-})
+const Rect = styled('rect', { shouldForwardProp })(color, {
+  boxSizing: 'border-box',
+});
 
 Rect.defaultProps = {
-  fill: "currentColor"
-}
+  fill: 'currentColor',
+};
 
-export default Rect
+export default Rect;

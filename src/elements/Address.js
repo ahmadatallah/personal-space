@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   display,
@@ -12,7 +12,7 @@ import {
   borderColor,
   borderRadius,
   textStyle,
-} from 'styled-system'
+} from 'styled-system';
 
 const Address = styled('address', { shouldForwardProp })(
   space,
@@ -26,9 +26,9 @@ const Address = styled('address', { shouldForwardProp })(
   borderColor,
   borderRadius,
   textStyle,
-  {},
-)
+  {}
+);
 
-Address.defaultProps = {}
+Address.defaultProps = {};
 
-export default Address
+export default Address;

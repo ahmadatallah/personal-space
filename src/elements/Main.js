@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -22,7 +22,7 @@ import {
   gridTemplateRows,
   gridTemplateAreas,
   gridArea,
-} from 'styled-system'
+} from 'styled-system';
 
 const Main = styled('main', { shouldForwardProp })(
   space,
@@ -48,11 +48,11 @@ const Main = styled('main', { shouldForwardProp })(
   gridArea,
   {
     boxSizing: 'border-box',
-  },
-)
+  }
+);
 
 Main.defaultProps = {
   width: 1,
-}
+};
 
-export default Main
+export default Main;

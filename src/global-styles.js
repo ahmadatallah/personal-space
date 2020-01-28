@@ -1,10 +1,9 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-import helveticaEOT from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.eot'
-import helveticaWOFF from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.woff'
-import helveticaTTF from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.ttf'
-import helveticaSVG from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.svg'
-
+import helveticaEOT from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.eot';
+import helveticaWOFF from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.woff';
+import helveticaTTF from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.ttf';
+import helveticaSVG from './assets/fonts/helvetica/HelveticaNeueLTArabic-Light.svg';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -26,6 +25,6 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold;
   
   }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

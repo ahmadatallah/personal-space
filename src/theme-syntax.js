@@ -1,97 +1,97 @@
 const theme = {
   plain: {
-    backgroundColor: "#f2f3fe",
-    color: "#000000"
+    backgroundColor: '#f2f3fe',
+    color: '#000000',
   },
   styles: [
     {
-      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      types: ['comment', 'prolog', 'doctype', 'cdata', 'punctuation'],
       style: {
-        color: "#000000"
-      }
+        color: '#000000',
+      },
     },
     {
-      types: ["namespace"],
+      types: ['namespace'],
       style: {
-        opacity: 0.7
-      }
+        opacity: 0.7,
+      },
     },
     {
-      types: ["tag", "operator", "number"],
+      types: ['tag', 'operator', 'number'],
       style: {
-        color: "#000000"
-      }
+        color: '#000000',
+      },
     },
     {
-      types: ["property", "function"],
+      types: ['property', 'function'],
       style: {
-        color: "#9a86fd"
-      }
+        color: '#9a86fd',
+      },
     },
     {
-      types: ["tag-id", "selector", "atrule-id"],
+      types: ['tag-id', 'selector', 'atrule-id'],
       style: {
-        color: "#000000"
-      }
+        color: '#000000',
+      },
     },
     {
-      types: ["attr-name"],
+      types: ['attr-name'],
       style: {
-        color: "#000000"
-      }
+        color: '#000000',
+      },
     },
     {
       types: [
-        "boolean",
-        "string",
-        "entity",
-        "url",
-        "attr-value",
-        "keyword",
-        "control",
-        "directive",
-        "unit",
-        "statement",
-        "regex",
-        "at-rule",
-        "placeholder",
-        "variable"
+        'boolean',
+        'string',
+        'entity',
+        'url',
+        'attr-value',
+        'keyword',
+        'control',
+        'directive',
+        'unit',
+        'statement',
+        'regex',
+        'at-rule',
+        'placeholder',
+        'variable',
       ],
       style: {
-        color: "#000000"
-      }
+        color: '#000000',
+      },
     },
     {
-      types: ["deleted"],
+      types: ['deleted'],
       style: {
-        textDecorationLine: "line-through"
-      }
+        textDecorationLine: 'line-through',
+      },
     },
     {
-      types: ["inserted"],
+      types: ['inserted'],
       style: {
-        textDecorationLine: "underline"
-      }
+        textDecorationLine: 'underline',
+      },
     },
     {
-      types: ["italic"],
+      types: ['italic'],
       style: {
-        fontStyle: "italic"
-      }
+        fontStyle: 'italic',
+      },
     },
     {
-      types: ["important", "bold"],
+      types: ['important', 'bold'],
       style: {
-        fontWeight: "bold"
-      }
+        fontWeight: 'bold',
+      },
     },
     {
-      types: ["important"],
+      types: ['important'],
       style: {
-        color: "#000000"
-      }
-    }
-  ]
+        color: '#000000',
+      },
+    },
+  ],
 };
 
-export default theme
+export default theme;

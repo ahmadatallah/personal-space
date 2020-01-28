@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -10,8 +10,8 @@ import {
   color,
   borders,
   borderColor,
-  borderRadius
-} from "styled-system"
+  borderRadius,
+} from 'styled-system';
 
 const Legend = styled('legend', { shouldForwardProp })(
   space,
@@ -25,16 +25,16 @@ const Legend = styled('legend', { shouldForwardProp })(
   borderColor,
   borderRadius,
   {
-    boxSizing: "border-box",
-    maxWidth: "100%",
-    whiteSpace: "normal"
+    boxSizing: 'border-box',
+    maxWidth: '100%',
+    whiteSpace: 'normal',
   }
-)
+);
 
 Legend.defaultProps = {
-  color: "inherit",
-  display: "table",
-  p: 0
-}
+  color: 'inherit',
+  display: 'table',
+  p: 0,
+};
 
-export default Legend
+export default Legend;

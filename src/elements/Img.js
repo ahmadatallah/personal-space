@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 
 import {
   space,
@@ -11,7 +11,7 @@ import {
   borders,
   borderColor,
   borderRadius,
-} from 'styled-system'
+} from 'styled-system';
 
 const Img = styled('img', { shouldForwardProp })(
   space,
@@ -23,16 +23,14 @@ const Img = styled('img', { shouldForwardProp })(
   borders,
   borderColor,
   borderRadius,
-  {
-
-  },
-)
+  {}
+);
 
 Img.defaultProps = {
   width: 1,
   display: 'block',
   maxWidth: '100%',
-  border: '0 none transparent'
-}
+  border: '0 none transparent',
+};
 
-export default Img
+export default Img;

@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import jsx from "../../jsx";
-import React, { lazy, Suspense } from "react";
-import theme from "../../theme";
-import { Div, H2 } from "../../elements";
-import Flex from "../../components/Flex";
-import Header from "../../containers/Header";
-import Loading from "../../components/Loading";
+import jsx from '../../jsx';
+import React, { lazy, Suspense } from 'react';
+import theme from '../../theme';
+import { Div, H2 } from '../../elements';
+import Flex from '../../components/Flex';
+import Header from '../../containers/Header';
+import Loading from '../../components/Loading';
 
-const Content = lazy(() => import("!babel-loader!mdx-loader!./Bio.mdx"));
+const Content = lazy(() => import('!babel-loader!mdx-loader!./Bio.mdx'));
 
 function Bio({ ...props }) {
   return (
@@ -24,8 +24,8 @@ function Bio({ ...props }) {
           fallback={
             <Flex flexDirection="row" justifyContent="center">
               <H2 fontWeight={300} ml={2}>
-                {" "}
-                قيد التحميل{" "}
+                {' '}
+                قيد التحميل{' '}
               </H2>
               <Loading type="spokes" color="currentcolor" />
             </Flex>

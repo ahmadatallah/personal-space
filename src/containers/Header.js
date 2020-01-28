@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import Avatar from "../components/Avatar";
-import avatarImg from "../assets/images/avatar.png";
-import ColorModeApplier from "./ColorModeApplier";
-import { Div, Header as header } from "../elements";
-import theme from "../theme";
-import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
-import Link from "../components/Link";
-import StyledLink from "../components/StyledLink";
-import Flex from "../components/Flex";
+import jsx from '../jsx';
+import React from 'react';
+import Avatar from '../components/Avatar';
+import avatarImg from '../assets/images/avatar.png';
+import ColorModeApplier from './ColorModeApplier';
+import { Div, Header as header } from '../elements';
+import theme from '../theme';
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import Link from '../components/Link';
+import StyledLink from '../components/StyledLink';
+import Flex from '../components/Flex';
 
 function Header() {
   const { colorMode, changeTheme } = useEveryReloadColorMode();
@@ -28,7 +28,7 @@ function Header() {
       pr={[1, 3, 5]}
       style={{
         top: 0,
-        height: "80px"
+        height: '80px',
       }}
     >
       <Flex flexDirection="row" mr={2} minWidth={260}>

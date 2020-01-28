@@ -1,11 +1,14 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
-import {space, display, width} from 'styled-system'
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
+import { space, display, width } from 'styled-system';
 
 const Select = styled('select', { shouldForwardProp })(
-  space, display, width, {}
-)
+  space,
+  display,
+  width,
+  {}
+);
 
-Select.defaultProps = {}
+Select.defaultProps = {};
 
-export default Select
+export default Select;

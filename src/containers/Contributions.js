@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import { Img, H1, Div } from "../elements";
-import theme from "../theme";
-import BlockLinkGrow from "../components/BlockLinkGrow";
-import Flex from "../components/Flex";
-import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
+import jsx from '../jsx';
+import React from 'react';
+import { Img, H1, Div } from '../elements';
+import theme from '../theme';
+import BlockLinkGrow from '../components/BlockLinkGrow';
+import Flex from '../components/Flex';
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
 
 function Contributions({ ...props }) {
   const { textColor } = useEveryReloadColorMode();
@@ -13,15 +13,11 @@ function Contributions({ ...props }) {
   return (
     <>
       <H1 fontWeight={600} color={textColor}>
-        {" "}
-        Contributions{" "}
+        {' '}
+        Contributions{' '}
       </H1>
       <Flex flexDirection="row">
-        <BlockLinkGrow
-          mr={2}
-          href="https://github.com/swvl"
-          title="Swvl"
-        >
+        <BlockLinkGrow mr={2} href="https://github.com/swvl" title="Swvl">
           <Img
             borderRadius={50}
             width={50}
@@ -41,7 +37,7 @@ function Contributions({ ...props }) {
             alt="@blocks github"
             src="https://avatars0.githubusercontent.com/u/6106365?s=88&v=4"
           ></Img>
-        </BlockLinkGrow>{" "}
+        </BlockLinkGrow>{' '}
         <BlockLinkGrow
           py={1}
           mr={2}
@@ -54,7 +50,7 @@ function Contributions({ ...props }) {
             alt="@reach-ui github"
             src="https://avatars3.githubusercontent.com/u/38740568?s=60&v=4"
           ></Img>
-        </BlockLinkGrow>{" "}
+        </BlockLinkGrow>{' '}
         <BlockLinkGrow
           py={1}
           mr={2}
@@ -67,7 +63,7 @@ function Contributions({ ...props }) {
             alt="@gatsbyjs github"
             src="https://avatars3.githubusercontent.com/u/12551863?s=60&v=4"
           ></Img>
-        </BlockLinkGrow>{" "}
+        </BlockLinkGrow>{' '}
         <BlockLinkGrow
           py={1}
           mr={2}
@@ -80,7 +76,7 @@ function Contributions({ ...props }) {
             alt="@tachyons-css github"
             src="https://avatars0.githubusercontent.com/u/15205635?s=60&v=4"
           ></Img>
-        </BlockLinkGrow>{" "}
+        </BlockLinkGrow>{' '}
         <BlockLinkGrow
           py={1}
           mr={2}

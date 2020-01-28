@@ -41,7 +41,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "lint": "eslint --fix --cache ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -59,6 +60,15 @@
     ]
   },
   "devDependencies": {
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.1",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

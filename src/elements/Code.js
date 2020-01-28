@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import shouldForwardProp from "@styled-system/should-forward-prop";
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -8,10 +8,10 @@ import {
   color,
   borders,
   borderColor,
-  borderRadius
-} from "styled-system";
+  borderRadius,
+} from 'styled-system';
 
-const Code = styled("code", { shouldForwardProp })(
+const Code = styled('code', { shouldForwardProp })(
   space,
   width,
   display,
@@ -21,13 +21,13 @@ const Code = styled("code", { shouldForwardProp })(
   borderColor,
   borderRadius,
   {
-    boxSizing: "border-box",
-    fontFamily: "monospace, monospace"
+    boxSizing: 'border-box',
+    fontFamily: 'monospace, monospace',
   }
 );
 
 Code.defaultProps = {
-  backgroundColor: "secondary"
+  backgroundColor: 'secondary',
 };
 
 export default Code;

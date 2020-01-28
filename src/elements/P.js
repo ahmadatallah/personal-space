@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -15,7 +15,7 @@ import {
   borders,
   borderColor,
   borderRadius,
-} from 'styled-system'
+} from 'styled-system';
 
 const P = styled('p', { shouldForwardProp })(
   space,
@@ -34,12 +34,12 @@ const P = styled('p', { shouldForwardProp })(
   borderRadius,
   {
     boxSizing: 'border-box',
-  },
-)
+  }
+);
 
 P.defaultProps = {
   maxWidth: '90em', // Sets text to maximum ~80 characters wide
   lineHeight: 1.8,
-}
+};
 
-export default P
+export default P;

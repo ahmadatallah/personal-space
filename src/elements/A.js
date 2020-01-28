@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 
 import {
   space,
@@ -16,8 +16,8 @@ import {
   borders,
   borderColor,
   borderRadius,
-  textStyle
-} from "styled-system"
+  textStyle,
+} from 'styled-system';
 
 const A = styled('a', { shouldForwardProp })(
   space,
@@ -36,18 +36,18 @@ const A = styled('a', { shouldForwardProp })(
   borderColor,
   borderRadius,
   {
-    boxSizing: "border-box",
-    textDecoration: "none",
-    ":hover": {
-      cursor: "pointer"
-    }
+    boxSizing: 'border-box',
+    textDecoration: 'none',
+    ':hover': {
+      cursor: 'pointer',
+    },
   }
-)
+);
 
 A.defaultProps = {
-  display: "inline-block",
-  bg: "transparent",
-  color: "secondary"
-}
+  display: 'inline-block',
+  bg: 'transparent',
+  color: 'secondary',
+};
 
-export default A
+export default A;

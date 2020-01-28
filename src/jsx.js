@@ -1,5 +1,5 @@
-import React from "react";
-import * as components from "./elements";
+import React from 'react';
+import * as components from './elements';
 
 const elements = {};
 Object.keys(components).forEach(key => {

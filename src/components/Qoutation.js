@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
+import jsx from '../jsx';
+import React from 'react';
 
-function Qoutation({href}) {
+function Qoutation({ href }) {
   return (
     <svg
       version="1.1"
@@ -14,15 +14,15 @@ function Qoutation({href}) {
       minHeight="235px"
       width="100%"
       viewBox="-240 -150 720.226 500.226"
-      style={{ "enable-background": "new 0 0 255.226 255.226" }}
-      onClick= {() => window.location.href = href }
+      style={{ 'enable-background': 'new 0 0 255.226 255.226' }}
+      onClick={() => (window.location.href = href)}
     >
       <g>
         <g>
           <g>
             <g>
               <path
-                style={{ fill: "currentcolor" }}
+                style={{ fill: 'currentcolor' }}
                 d="M76.532,27.975l-7.405-5.244l-0.254-0.191l-0.477-0.191l-5.403-2.574l0.159,0.381
 					c-5.117-2.098-10.488-3.591-16.336-3.591C20.945,16.565,0,38.336,0,65.192s20.976,48.627,46.816,48.627
 					c8.295,0,15.955-2.415,22.724-6.356c-2.32,25.998-15.415,63.915-63.406,102.594c-6.706,5.403-7.946,15.446-2.733,22.407
@@ -30,7 +30,7 @@ function Qoutation({href}) {
 					c3.369-41.699-9.28-63.629-20.849-75.07L76.532,27.975z"
               />
               <path
-                style={{ fill: "currentcolor" }}
+                style={{ fill: 'currentcolor' }}
                 d="M233.76,31.28l-3.242-3.305l-7.374-5.244l-0.254-0.191l-0.509-0.191l-5.403-2.574l0.159,0.381
 					c-5.117-2.098-10.52-3.591-16.368-3.591c-25.839,0-46.752,21.771-46.752,48.627s20.913,48.627,46.816,48.627
 					c8.295,0,15.955-2.415,22.724-6.356c-2.288,25.998-15.383,63.915-63.374,102.594c-6.738,5.403-7.946,15.446-2.733,22.407

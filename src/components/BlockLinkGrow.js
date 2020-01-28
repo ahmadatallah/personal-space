@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import shouldForwardProp from "@styled-system/should-forward-prop";
-import theme from "../theme";
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
+import theme from '../theme';
 
 import {
   space,
@@ -18,10 +18,10 @@ import {
   borderColor,
   borderRadius,
   borderWidth,
-  textStyle
-} from "styled-system";
+  textStyle,
+} from 'styled-system';
 
-const BlockLinkGrow = styled("a", { shouldForwardProp })(
+const BlockLinkGrow = styled('a', { shouldForwardProp })(
   space,
   width,
   maxWidth,
@@ -39,23 +39,23 @@ const BlockLinkGrow = styled("a", { shouldForwardProp })(
   borderRadius,
   borderWidth,
   {
-    boxSizing: "border-box",
-    backfaceVisibility: "hidden",
+    boxSizing: 'border-box',
+    backfaceVisibility: 'hidden',
     opacity: 0.75,
     textDecoration: 'none',
-    transition: "transform 0.25s ease-out",
-    ":hover": {
-      cursor: "pointer",
+    transition: 'transform 0.25s ease-out',
+    ':hover': {
+      cursor: 'pointer',
       opacity: 0.5,
-      transition: "scale(1.05)",
-    }
+      transition: 'scale(1.05)',
+    },
   }
 );
 
 BlockLinkGrow.defaultProps = {
-  bg: "transparent",
-  cursor: "pointer",
-  color: "secondary"
+  bg: 'transparent',
+  cursor: 'pointer',
+  color: 'secondary',
 };
 
 export default BlockLinkGrow;
