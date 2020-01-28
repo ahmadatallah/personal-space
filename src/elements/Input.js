@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -11,7 +11,7 @@ import {
   borderColor,
   borderRadius,
   color,
-} from 'styled-system'
+} from 'styled-system';
 
 const Input = styled('input', { shouldForwardProp })(
   space,
@@ -26,10 +26,9 @@ const Input = styled('input', { shouldForwardProp })(
   borderRadius,
   {
     boxSizing: 'border-box',
-  },
-)
+  }
+);
 
-Input.defaultProps = {}
+Input.defaultProps = {};
 
-
-export default Input
+export default Input;

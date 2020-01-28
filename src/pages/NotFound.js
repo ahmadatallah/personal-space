@@ -23,9 +23,7 @@ function NotFound() {
         flexDirection="column"
       >
         <Header />
-        <H1 color={textColor}>
-          404 Not Found
-        </H1>
+        <H1 color={textColor}>404 Not Found</H1>
         <Img
           height={219}
           width={219}

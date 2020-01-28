@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -10,8 +10,8 @@ import {
   borders,
   borderColor,
   borderRadius,
-  color
-} from "styled-system"
+  color,
+} from 'styled-system';
 
 const InputEmail = styled('input', { shouldForwardProp })(
   space,
@@ -25,12 +25,12 @@ const InputEmail = styled('input', { shouldForwardProp })(
   borderColor,
   borderRadius,
   {
-    boxSizing: "border-box"
+    boxSizing: 'border-box',
   }
-)
+);
 
 InputEmail.defaultProps = {
-  type: "email"
-}
+  type: 'email',
+};
 
-export default InputEmail
+export default InputEmail;

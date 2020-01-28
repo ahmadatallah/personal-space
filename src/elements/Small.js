@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -8,7 +8,7 @@ import {
   lineHeight,
   textStyle,
   color,
-} from 'styled-system'
+} from 'styled-system';
 
 const Small = styled('small', { shouldForwardProp })(
   space,
@@ -18,9 +18,9 @@ const Small = styled('small', { shouldForwardProp })(
   lineHeight,
   textStyle,
   color,
-  {},
-)
+  {}
+);
 
-Small.defaultProps = {}
+Small.defaultProps = {};
 
-export default Small
+export default Small;

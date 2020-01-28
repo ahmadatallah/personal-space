@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import jsx from "../../jsx";
-import React, { lazy, Suspense } from "react";
-import theme from "../../theme";
-import { Div, Section, H2 } from "../../elements";
-import Header from "../../containers/Header";
-import Footer from "../../containers/Footer";
-import Flex from "../../components/Flex";
-import Loading from "../../components/Loading";
-import layout from "./layout";
+import jsx from '../../jsx';
+import React, { lazy, Suspense } from 'react';
+import theme from '../../theme';
+import { Div, Section, H2 } from '../../elements';
+import Header from '../../containers/Header';
+import Footer from '../../containers/Footer';
+import Flex from '../../components/Flex';
+import Loading from '../../components/Loading';
+import layout from './layout';
 
 const Content = lazy(() =>
-  import("!babel-loader!mdx-loader!./PascalTypeScript.mdx")
+  import('!babel-loader!mdx-loader!./PascalTypeScript.mdx')
 );
 
 function PascalTypeScript({ ...props }) {
@@ -28,7 +28,7 @@ function PascalTypeScript({ ...props }) {
         pr={[1, 3, 5]}
       >
         <Header />
-      </Section>{" "}
+      </Section>{' '}
       <Div
         justifyConent="center"
         maxWidth={900}
@@ -42,8 +42,8 @@ function PascalTypeScript({ ...props }) {
           fallback={
             <Flex flexDirection="row" justifyContent="center">
               <H2 fontWeight={300} mr={2}>
-                {" "}
-                Loading{" "}
+                {' '}
+                Loading{' '}
               </H2>
               <Loading type="spokes" color="currentcolor" />
             </Flex>

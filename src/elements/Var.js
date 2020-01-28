@@ -1,14 +1,18 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
-import {space, width, fontSize, color} from 'styled-system'
-import theme from '../theme'
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
+import { space, width, fontSize, color } from 'styled-system';
+import theme from '../theme';
 
 const Var = styled('var', { shouldForwardProp })(
-  space, width, fontSize, color, 
+  space,
+  width,
+  fontSize,
+  color,
   {
-  fontFamily: 'monaco, monospace',
-})
+    fontFamily: 'monaco, monospace',
+  }
+);
 
-Var.defaultProps = {}
+Var.defaultProps = {};
 
-export default Var
+export default Var;

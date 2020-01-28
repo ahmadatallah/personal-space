@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   display,
   space,
@@ -8,8 +8,8 @@ import {
   fontSize,
   color,
   borders,
-  borderRadius
-} from "styled-system"
+  borderRadius,
+} from 'styled-system';
 
 const Textarea = styled('textarea', { shouldForwardProp })(
   display,
@@ -21,10 +21,10 @@ const Textarea = styled('textarea', { shouldForwardProp })(
   borders,
   borderRadius,
   {
-    overflow: "auto"
+    overflow: 'auto',
   }
-)
+);
 
-Textarea.defaultProps = {}
+Textarea.defaultProps = {};
 
-export default Textarea
+export default Textarea;

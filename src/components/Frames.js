@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React, { useState, useCallback, useEffect } from "react";
-import { A, H1, H2, Div } from "../elements";
-import Flex from "../components/Flex";
-import Carousel, { Modal, ModalGateway } from "react-images";
-import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
-import debounce from "../utils/debounce";
-import Gallery from "react-photo-gallery";
-import Loading from "../components/Loading";
+import { jsx } from 'theme-ui';
+import React, { useState, useCallback, useEffect } from 'react';
+import { A, H1, H2, Div } from '../elements';
+import Flex from '../components/Flex';
+import Carousel, { Modal, ModalGateway } from 'react-images';
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import debounce from '../utils/debounce';
+import Gallery from 'react-photo-gallery';
+import Loading from '../components/Loading';
 
 function Frames({
   title,
@@ -15,7 +15,7 @@ function Frames({
   totalPages,
   initialLength,
   photos,
-  disallowScrollLoad
+  disallowScrollLoad,
 }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [pageNum, setPageNum] = useState(1);
@@ -47,8 +47,8 @@ function Frames({
 
   useEffect(() => {
     if (!disallowScrollLoad) {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
     }
   });
 
@@ -65,33 +65,33 @@ function Frames({
   const carouselStyle = {
     footer: base => ({
       ...base,
-      paddingTop: 30
+      paddingTop: 30,
     }),
     header: base => ({
       ...base,
-      background: "none !important",
+      background: 'none !important',
       paddingBottom: 100,
-      maxHeight: "100px",
-      display: "flex !important",
+      maxHeight: '100px',
+      display: 'flex !important',
       right: 13,
-      top: "30%",
+      top: '30%',
       bottom: 80,
-      "& span": {
-        backgroundColor: "rgba(255,255,255,0.2) !important",
-        display: "flex !important",
-        flexDirection: "column",
+      '& span': {
+        backgroundColor: 'rgba(255,255,255,0.2) !important',
+        display: 'flex !important',
+        flexDirection: 'column',
         botom: 0,
-        left: 0
-      }
+        left: 0,
+      },
     }),
     headerClose: base => ({
       ...base,
-      color: "white"
+      color: 'white',
     }),
     headerFullscreen: base => ({
       ...base,
-      color: "white"
-    })
+      color: 'white',
+    }),
   };
 
   return (
@@ -115,8 +115,8 @@ function Frames({
       {!loadedAll && !disallowScrollLoad && (
         <Flex>
           <H2 fontWeight={300} mr={2}>
-            {" "}
-            Loading{" "}
+            {' '}
+            Loading{' '}
           </H2>
           <Loading type="spokes" color="currentcolor" />
         </Flex>
@@ -129,8 +129,8 @@ function Frames({
               styles={{
                 positioner: base => ({
                   ...base,
-                  zIndex: 100
-                })
+                  zIndex: 100,
+                }),
               }}
             >
               <Carousel
@@ -139,7 +139,7 @@ function Frames({
                 views={photos.map(x => ({
                   ...x,
                   srcset: x.srcSet,
-                  caption: x.title
+                  caption: x.title,
                 }))}
               />
             </Modal>

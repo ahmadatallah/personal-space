@@ -1,6 +1,6 @@
-import React from "react";
-import theme from "../theme";
-import Div from "../elements/Div";
+import React from 'react';
+import theme from '../theme';
+import Div from '../elements/Div';
 
 const Container = ({ innerBg, innerWidth, ...props }) => {
   return (
@@ -13,8 +13,8 @@ const Container = ({ innerBg, innerWidth, ...props }) => {
 };
 
 Container.defaultProps = {
-  innerWidth: theme.containerWidth ? theme.containerWidth : "64rem",
-  innerBg: "transparent"
+  innerWidth: theme.containerWidth ? theme.containerWidth : '64rem',
+  innerBg: 'transparent',
 };
 
 export default Container;

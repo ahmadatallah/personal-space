@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -14,7 +14,7 @@ import {
   borderColor,
   borderRadius,
   textStyle,
-} from 'styled-system'
+} from 'styled-system';
 
 const Button = styled('button', { shouldForwardProp })(
   space,
@@ -36,15 +36,15 @@ const Button = styled('button', { shouldForwardProp })(
     overflow: 'visible',
     textTransform: 'none',
     webkitAppearance: 'button',
-    whiteSpace: 'nowrap'
-  },
-)
+    whiteSpace: 'nowrap',
+  }
+);
 
 Button.defaultProps = {
   fontSize: '100%',
   lineHeight: 1.25,
   m: 0,
   textAlign: 'center',
-}
+};
 
-export default Button
+export default Button;

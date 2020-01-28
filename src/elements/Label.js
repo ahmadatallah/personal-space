@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -11,7 +11,7 @@ import {
   textAlign,
   textStyle,
   color,
-} from 'styled-system'
+} from 'styled-system';
 
 const Label = styled('label', { shouldForwardProp })(
   space,
@@ -24,9 +24,9 @@ const Label = styled('label', { shouldForwardProp })(
   textAlign,
   textStyle,
   color,
-  {},
-)
+  {}
+);
 
-Label.defaultProps = {}
+Label.defaultProps = {};
 
-export default Label
+export default Label;

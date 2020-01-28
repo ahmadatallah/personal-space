@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import theme from "../theme";
-import Link from "../components/Link";
-import StyledLink from "../components/StyledLink";
-import { H1, Div, Small, P } from "../elements";
-import useEveryReloadColorMode from "../hooks/useEveryReloadColorMode";
+import jsx from '../jsx';
+import React from 'react';
+import theme from '../theme';
+import Link from '../components/Link';
+import StyledLink from '../components/StyledLink';
+import { H1, Div, Small, P } from '../elements';
+import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
 
 function WritingsContainer({ title, href, ...props }) {
   const { textColor } = useEveryReloadColorMode();
@@ -13,8 +13,8 @@ function WritingsContainer({ title, href, ...props }) {
   return (
     <>
       <H1 fontWeight={600} color={textColor}>
-        {" "}
-        Writings{" "}
+        {' '}
+        Writings{' '}
       </H1>
       <Div mb={3}>
         <StyledLink to="/writings/create-react-app-run-build-envs">
@@ -26,9 +26,9 @@ function WritingsContainer({ title, href, ...props }) {
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
-            13 Aug, 2019{" "}
+            13 Aug, 2019{' '}
             <span role="img" aria-label="min-read">
-              • 📖☕️{" "}
+              • 📖☕️{' '}
             </span>
             7 min read
           </Small>
@@ -48,9 +48,9 @@ function WritingsContainer({ title, href, ...props }) {
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
-            8 Sep, 2019{" "}
+            8 Sep, 2019{' '}
             <span role="img" aria-label="min-read">
-              • 📖{" "}
+              • 📖{' '}
             </span>
             5 min read
           </Small>
@@ -67,14 +67,15 @@ function WritingsContainer({ title, href, ...props }) {
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
-            25 Oct, 2019{" "}
+            25 Oct, 2019{' '}
             <span role="img" aria-label="min-read">
-              • 📖📖☕️{" "}
+              • 📖📖☕️{' '}
             </span>
-            15 min read{" "}
+            15 min read{' '}
           </Small>
           <P mt={0}>
-            Notify your Offline/Cache-first users in Create React App with service worker.
+            Notify your Offline/Cache-first users in Create React App with
+            service worker.
           </P>
         </Div>
       </Div>

@@ -1,17 +1,14 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import ColorModeButton from "../components/ColorModeButton";
-import { Svg, Path } from "../elements";
-import theme from "../theme";
+import jsx from '../jsx';
+import React from 'react';
+import ColorModeButton from '../components/ColorModeButton';
+import { Svg, Path } from '../elements';
+import theme from '../theme';
 
 function ColorModeApplier({ ...props }) {
   return (
     <ColorModeButton onClick={props.onClick} colorMode={props.mode}>
-      <Svg
-        viewBox="0 0 32 34"
-        display="block"
-      >
+      <Svg viewBox="0 0 32 34" display="block">
         <circle
           cx="16"
           cy="16"

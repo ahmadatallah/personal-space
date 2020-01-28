@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React from "react";
-import Header from "../containers/Header";
-import { Div } from "../elements";
-import Flex from "../components/Flex";
-import Frames from "../components/Frames";
-import { photos } from "../utils/constants";
-import Footer from "../containers/Footer";
+import { jsx } from 'theme-ui';
+import React from 'react';
+import Header from '../containers/Header';
+import { Div } from '../elements';
+import Flex from '../components/Flex';
+import Frames from '../components/Frames';
+import { photos } from '../utils/constants';
+import Footer from '../containers/Footer';
 
 function Photography({ ...props }) {
   return (

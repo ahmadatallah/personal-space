@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import shouldForwardProp from "@styled-system/should-forward-prop";
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 
 import {
   space,
@@ -15,10 +15,10 @@ import {
   borders,
   borderColor,
   borderRadius,
-  textStyle
-} from "styled-system";
+  textStyle,
+} from 'styled-system';
 
-const Avatar = styled("img", { shouldForwardProp })(
+const Avatar = styled('img', { shouldForwardProp })(
   space,
   width,
   maxWidth,
@@ -34,16 +34,16 @@ const Avatar = styled("img", { shouldForwardProp })(
   borderColor,
   borderRadius,
   {
-    boxSizing: "border-box",
-    textDecoration: "none",
+    boxSizing: 'border-box',
+    textDecoration: 'none',
     opacity: 1,
-    transition: "opacity .25s ease-in"
+    transition: 'opacity .25s ease-in',
   }
 );
 
 Avatar.defaultProps = {
-  display: "block",
-  bg: "transparent"
+  display: 'block',
+  bg: 'transparent',
 };
 
 export default Avatar;

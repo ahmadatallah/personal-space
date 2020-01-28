@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import jsx from "../../jsx";
-import React, { lazy, Suspense } from "react";
-import theme from "../../theme";
-import { Div, H2 } from "../../elements";
-import Flex from "../../components/Flex";
-import Header from "../../containers/Header";
-import Loading from "../../components/Loading";
-const Content = lazy(() => import("!babel-loader!mdx-loader!./BornRich.mdx"));
+import jsx from '../../jsx';
+import React, { lazy, Suspense } from 'react';
+import theme from '../../theme';
+import { Div, H2 } from '../../elements';
+import Flex from '../../components/Flex';
+import Header from '../../containers/Header';
+import Loading from '../../components/Loading';
+const Content = lazy(() => import('!babel-loader!mdx-loader!./BornRich.mdx'));
 
 function BornRich({ ...props }) {
   return (
@@ -23,8 +23,8 @@ function BornRich({ ...props }) {
           fallback={
             <Flex flexDirection="row" justifyContent="center">
               <H2 fontWeight={300} ml={2}>
-                {" "}
-                قيد التحميل{" "}
+                {' '}
+                قيد التحميل{' '}
               </H2>
               <Loading type="spokes" color="currentcolor" />
             </Flex>

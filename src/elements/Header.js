@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -25,7 +25,7 @@ import {
   gridTemplateRows,
   gridTemplateAreas,
   gridArea,
-} from 'styled-system'
+} from 'styled-system';
 
 const Header = styled('header', { shouldForwardProp })(
   space,
@@ -53,11 +53,11 @@ const Header = styled('header', { shouldForwardProp })(
   gridArea,
   {
     boxSizing: 'border-box',
-  },
-)
+  }
+);
 
 Header.defaultProps = {
   backgroundColor: 'background',
-}
+};
 
-export default Header
+export default Header;

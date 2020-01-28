@@ -1,17 +1,17 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect';
 
 // CONSTANTS
-export const UPDATE_SERVICEWORKER = "UPDATE_SERVICEWORKER";
+export const UPDATE_SERVICEWORKER = 'UPDATE_SERVICEWORKER';
 
 export function updateServiceWorker() {
   return {
-    type: UPDATE_SERVICEWORKER
+    type: UPDATE_SERVICEWORKER,
   };
 }
 
 export const reducer = (
   state = {
-    serviceWorkerUpdated: false
+    serviceWorkerUpdated: false,
   },
   action
 ) => {
@@ -19,7 +19,7 @@ export const reducer = (
     case UPDATE_SERVICEWORKER: {
       return {
         ...state,
-        serviceWorkerUpdated: true
+        serviceWorkerUpdated: true,
       };
     }
     default:

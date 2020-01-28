@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -13,7 +13,7 @@ import {
   color,
   borders,
   borderRadius,
-} from 'styled-system'
+} from 'styled-system';
 
 const Span = styled('span', { shouldForwardProp })(
   space,
@@ -28,11 +28,11 @@ const Span = styled('span', { shouldForwardProp })(
   color,
   borders,
   borderRadius,
-  {},
-)
+  {}
+);
 
-Span.defaultProps = { 
-  color: 'inherit'
-}
+Span.defaultProps = {
+  color: 'inherit',
+};
 
-export default Span
+export default Span;

@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import jsx from "../jsx";
-import React from "react";
-import BlockLinkGrow from "../components/BlockLinkGrow";
-import { Div } from "../elements";
-import Resume from "../external/Resume.pdf";
+import jsx from '../jsx';
+import React from 'react';
+import BlockLinkGrow from '../components/BlockLinkGrow';
+import { Div } from '../elements';
+import Resume from '../external/Resume.pdf';
 
 import {
   FaTwitter as Twitter,
   FaGithub as GitHub,
   FaInstagram as Instagram,
-  FaLinkedin as Linkedin
-} from "react-icons/fa";
+  FaLinkedin as Linkedin,
+} from 'react-icons/fa';
 
 function Connect() {
   return (

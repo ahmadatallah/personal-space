@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import shouldForwardProp from "@styled-system/should-forward-prop"
+import styled from '@emotion/styled';
+import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
@@ -10,8 +10,8 @@ import {
   borders,
   borderColor,
   borderRadius,
-  color
-} from "styled-system"
+  color,
+} from 'styled-system';
 
 const InputUrl = styled('input', { shouldForwardProp })(
   space,
@@ -25,10 +25,10 @@ const InputUrl = styled('input', { shouldForwardProp })(
   borderColor,
   borderRadius,
   {}
-)
+);
 
 InputUrl.defaultProps = {
-  type: "url"
-}
+  type: 'url',
+};
 
-export default InputUrl
+export default InputUrl;
