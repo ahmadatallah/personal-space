@@ -7,14 +7,7 @@ import Link from '../components/Link';
 import BlockLinkGrow from '../components/BlockLinkGrow';
 import { IoIosLink } from 'react-icons/io';
 import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
-
-const LinkIcon = ({ href }) => {
-  return (
-    <BlockLinkGrow href={href}>
-      <IoIosLink size={22} />
-    </BlockLinkGrow>
-  );
-};
+import ReadingLink from '../components/ReadingLink';
 
 function ReadingsContainer({ title, href, ...props }) {
   const { textColor } = useEveryReloadColorMode();
@@ -25,51 +18,27 @@ function ReadingsContainer({ title, href, ...props }) {
         {' '}
         Readings{' '}
       </H1>
-      <Div mb={3}>
-        <LinkIcon href="https://bit.ly/33zdmtc" />
-        <Link
-          title="No, I have no side code projects to show you"
-          href="https://bit.ly/33zdmtc"
-          fontSize={[2, 3, 3]}
-          fontWeight={[700, 600, 600]}
-        >
-          {' '}
-        </Link>
-      </Div>
-      <Div mb={3}>
-        <LinkIcon href="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html" />
+      <ReadingLink
+        title="No, I have no side code projects to show you"
+        link="https://bit.ly/33zdmtc"
+      />
+      <ReadingLink
+        title="Mapping a universe of open source software"
+        link="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
+      />
+      <ReadingLink
+        title="React as a UI runtime"
+        link="https://overreacted.io/react-as-a-ui-runtime/"
+      />
+      <ReadingLink
+        title="Category Theory for Programmers: The Preface"
+        link="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
+      />
 
-        <Link
-          title="Mapping a universe of open source software"
-          href="https://www.tweag.io/posts/2019-02-06-mapping-open-source.html"
-          fontSize={[2, 3, 3]}
-          fontWeight={[700, 600, 600]}
-        >
-          {' '}
-        </Link>
-      </Div>
-      <Div mb={3}>
-        <LinkIcon href="https://overreacted.io/react-as-a-ui-runtime/" />
-        <Link
-          title="React as a UI runtime"
-          href="https://overreacted.io/react-as-a-ui-runtime/"
-          fontSize={[2, 3, 3]}
-          fontWeight={[700, 600, 600]}
-        >
-          {' '}
-        </Link>
-      </Div>
-      <Div mb={3}>
-        <LinkIcon href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/" />
-        <Link
-          title="Category Theory for Programmers: The Preface"
-          href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
-          fontSize={[2, 3, 3]}
-          fontWeight={[700, 600, 600]}
-        >
-          {' '}
-        </Link>
-      </Div>
+      <ReadingLink
+        title="Algorithms interviews: theory vs. practice"
+        link="https://danluu.com/algorithms-interviews/"
+      />
     </>
   );
 }
