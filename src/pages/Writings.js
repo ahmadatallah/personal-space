@@ -4,7 +4,6 @@ import React from 'react';
 import { Div } from '../elements';
 import Header from '../containers/Header';
 import Flex from '../components/Flex';
-import Footer from '../containers/Footer';
 import WritingsContainer from '../containers/WritingsContainer';
 
 function Writings({ ...props }) {

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import theme from '../../theme';
 import { Div, Section, H2 } from '../../elements';
 import Header from '../../containers/Header';

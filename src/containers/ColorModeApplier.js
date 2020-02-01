@@ -7,7 +7,12 @@ import theme from '../theme';
 
 function ColorModeApplier({ ...props }) {
   return (
-    <ColorModeButton onClick={props.onClick} colorMode={props.mode}>
+    <ColorModeButton
+      onClick={props.onClick}
+      colorMode={props.mode}
+      role="button"
+      aria-label="Color Mode"
+    >
       <Svg viewBox="0 0 32 34" display="block">
         <circle
           cx="16"

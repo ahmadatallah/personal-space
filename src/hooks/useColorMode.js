@@ -1,11 +1,9 @@
-/** @jsx jsx */
-import jsx from '../jsx';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import theme from '../theme';
 import { modes } from '../utils/constants';
 import { useColorMode } from 'theme-ui';
 
-function useEveryReloadColorMode({ ...props }) {
+function useColorModeHook({ ...props }) {
   const [colorMode, setColorMode] = useColorMode();
   const [textColor, changeTextTheme] = useState();
   const [backgroundColor, changeBackgroundTheme] = useState();
@@ -25,4 +23,4 @@ function useEveryReloadColorMode({ ...props }) {
   return { colorMode, textColor, backgroundColor, populateTheme, changeTheme };
 }
 
-export default useEveryReloadColorMode;
+export default useColorModeHook;

@@ -1,16 +1,12 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import theme from '../theme';
-import { H1, Div } from '../elements';
-import Link from '../components/Link';
-import BlockLinkGrow from '../components/BlockLinkGrow';
-import { IoIosLink } from 'react-icons/io';
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import { H1 } from '../elements';
+import useColorMode from '../hooks/useColorMode';
 import ReadingLink from '../components/ReadingLink';
 
 function ReadingsContainer({ title, href, ...props }) {
-  const { textColor } = useEveryReloadColorMode();
+  const { textColor } = useColorMode();
 
   return (
     <>

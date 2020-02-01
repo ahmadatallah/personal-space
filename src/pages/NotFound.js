@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import { H1, Section, Img } from '../elements';
+import { H1, Img, Div } from '../elements';
 import Flex from '../components/Flex';
 import Header from '../containers/Header';
-import theme from '../theme';
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import useColorMode from '../hooks/useColorMode';
 
 import ConfusedTravolta from '../assets/images/confused-travolta.svg';
+import { Container } from 'theme-ui';
 function NotFound() {
-  const { textColor } = useEveryReloadColorMode();
+  const { textColor } = useColorMode();
   return (
     <>
       <Flex
@@ -23,13 +23,22 @@ function NotFound() {
         flexDirection="column"
       >
         <Header />
-        <H1 color={textColor}>404 Not Found</H1>
-        <Img
-          height={219}
-          width={219}
-          borderRadius="50%"
-          src={ConfusedTravolta}
-        ></Img>
+        <Container
+          ma="auto"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <H1 textAlign="center" color={textColor}>
+            404 Not Found
+          </H1>
+          <Img
+            height={[300, 400, 500]}
+            borderRadius="50%"
+            alt="confused travolta aka not found"
+            src={ConfusedTravolta}
+          ></Img>
+        </Container>
       </Flex>
     </>
   );

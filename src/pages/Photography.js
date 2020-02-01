@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import React from 'react';
 import Header from '../containers/Header';
 import { Div } from '../elements';
 import Flex from '../components/Flex';

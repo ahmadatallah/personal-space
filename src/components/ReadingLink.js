@@ -3,24 +3,23 @@ import jsx from '../jsx';
 import React from 'react';
 import { Div } from '../elements';
 import Link from '../components/Link';
-import BlockLinkGrow from '../components/BlockLinkGrow';
 import { IoIosLink } from 'react-icons/io';
+import useColorMode from '../hooks/useColorMode';
 
-const LinkIcon = ({ href }) => {
-  return (
-    <BlockLinkGrow href={href}>
-      <IoIosLink size={22} />
-    </BlockLinkGrow>
-  );
+const LinkIcon = ({ color }) => {
+  return <IoIosLink size={22} color={color} />;
 };
 
 function ReadingLink({ title, link, ...props }) {
+  const { textColor } = useColorMode();
+
   return (
     <Div mb={3}>
-      <LinkIcon href={link} />
+      <LinkIcon color={textColor} />
       <Link
         title={title}
         href={link}
+        aria-label={title.toLowerCase()}
         fontSize={[2, 3, 3]}
         fontWeight={[700, 600, 600]}
       >

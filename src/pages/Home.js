@@ -2,9 +2,7 @@
 import jsx from '../jsx';
 import React from 'react';
 import theme from '../theme';
-import Container from '../components/Container';
 import { H1, H2, Section, H3, Div } from '../elements';
-import Flex from '../components/Flex';
 import Connect from '../containers/Connect';
 import { ThemeProvider, ColorMode } from 'theme-ui';
 import Footer from '../containers/Footer';

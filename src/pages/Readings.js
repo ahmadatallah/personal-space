@@ -6,7 +6,7 @@ import { Div } from '../elements';
 import ReadingsContainer from '../containers/ReadingsContainer';
 import Header from '../containers/Header';
 
-function Readings({ ...props }) {
+function Readings() {
   return (
     <>
       <Flex
