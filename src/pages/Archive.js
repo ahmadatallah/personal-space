@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import theme from '../theme';
 import { Div } from '../elements';
 import Header from '../containers/Header';
 import Flex from '../components/Flex';

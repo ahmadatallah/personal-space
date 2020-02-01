@@ -2,7 +2,6 @@
 import jsx from '../jsx';
 import React from 'react';
 import theme from '../theme';
-import Flex from '../components/Flex';
 import { P } from '../elements';
 import BlockLinkGrow from '../components/BlockLinkGrow.js';
 

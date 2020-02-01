@@ -9,6 +9,8 @@ import configureStore from './store/configure-store';
 
 const store = configureStore();
 
+// skipped when there is a solution for service worker with nowjs
+// eslint-disable-next-line no-unused-vars
 const onUpdate = () => {
   store.dispatch(updateServiceWorker());
 };

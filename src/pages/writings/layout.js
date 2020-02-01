@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
-import React from 'react';
 import { ThemeProvider } from 'theme-ui';
 import Prism from '@theme-ui/prism';
 import theme from '../../theme';

@@ -11,7 +11,6 @@ import {
   textAlign,
   color,
   borders,
-  borderTop,
   borderColor,
   gridGap,
   gridColumnGap,

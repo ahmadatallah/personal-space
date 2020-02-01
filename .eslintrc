@@ -1,8 +1,19 @@
 {
-  "extends": "react-app",
-  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "extends": [
+    "react-app"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["prettier", "react"],
   "rules": {
     "prettier/prettier": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+    "react/react-in-jsx-scope": "error",
     "quotes": [2, "single", {
       "avoidEscape": true
     }],

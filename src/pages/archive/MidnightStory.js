@@ -4,7 +4,6 @@ import React, { lazy, Suspense } from 'react';
 import theme from '../../theme';
 import { Div, H2 } from '../../elements';
 import Flex from '../../components/Flex';
-import Header from '../../containers/Header';
 import Loading from '../../components/Loading';
 
 const Content = lazy(() =>

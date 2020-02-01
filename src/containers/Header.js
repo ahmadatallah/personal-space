@@ -4,15 +4,14 @@ import React from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.png';
 import ColorModeApplier from './ColorModeApplier';
-import { Div, Header as header } from '../elements';
-import theme from '../theme';
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import { Header as header } from '../elements';
+import useColorMode from '../hooks/useColorMode';
 import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
 import Flex from '../components/Flex';
 
 function Header() {
-  const { colorMode, changeTheme } = useEveryReloadColorMode();
+  const { colorMode, changeTheme } = useColorMode();
 
   return (
     <header
@@ -33,7 +32,14 @@ function Header() {
     >
       <Flex flexDirection="row" mr={2} minWidth={260}>
         <StyledLink to="/">
-          <Avatar src={avatarImg} borderRadius={100} mt={2} mr={1} width={46} />
+          <Avatar
+            alt="avatar"
+            src={avatarImg}
+            borderRadius={100}
+            mt={2}
+            mr={1}
+            width={46}
+          />
         </StyledLink>
         <StyledLink to="/readings">
           <Link title="Readings" fontSize={[0, 1, 1]} mr={3} fontWeight={700} />

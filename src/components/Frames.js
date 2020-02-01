@@ -4,7 +4,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { A, H1, H2, Div } from '../elements';
 import Flex from '../components/Flex';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import useColorMode from '../hooks/useColorMode';
 import debounce from '../utils/debounce';
 import Gallery from 'react-photo-gallery';
 import Loading from '../components/Loading';
@@ -21,7 +21,7 @@ function Frames({
   const [pageNum, setPageNum] = useState(1);
   const [loadedAll, setLoadedAll] = useState(false);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const { textColor } = useEveryReloadColorMode();
+  const { textColor } = useColorMode();
 
   // TODO handle this initial value based on innerWidth
   const [images, setImages] = useState(photos.slice(0, initialLength));

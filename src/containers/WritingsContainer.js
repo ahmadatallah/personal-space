@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import theme from '../theme';
 import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
 import { H1, Div, Small, P } from '../elements';
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import useColorMode from '../hooks/useColorMode';
 
 function WritingsContainer({ title, href, ...props }) {
-  const { textColor } = useEveryReloadColorMode();
+  const { textColor } = useColorMode();
 
   return (
     <>

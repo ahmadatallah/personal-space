@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import { Img, H1, Div } from '../elements';
-import theme from '../theme';
+import { Img, H1 } from '../elements';
 import BlockLinkGrow from '../components/BlockLinkGrow';
 import Flex from '../components/Flex';
-import useEveryReloadColorMode from '../hooks/useEveryReloadColorMode';
+import useColorMode from '../hooks/useColorMode';
 
 function Contributions({ ...props }) {
-  const { textColor } = useEveryReloadColorMode();
+  const { textColor } = useColorMode();
 
   return (
     <>

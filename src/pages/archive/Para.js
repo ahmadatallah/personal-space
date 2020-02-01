@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
 import React, { lazy, Suspense } from 'react';
-import theme from '../../theme';
 import { Div, H2 } from '../../elements';
 import Flex from '../../components/Flex';
 import Loading from '../../components/Loading';
