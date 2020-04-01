@@ -1,17 +1,20 @@
 /** @jsx jsx */
 import jsx from '../jsx';
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.png';
 import ColorModeApplier from './ColorModeApplier';
-import { Header as header } from '../elements';
 import useColorMode from '../hooks/useColorMode';
 import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
 import Flex from '../components/Flex';
 
 function Header() {
-  const { colorMode, changeTheme } = useColorMode();
+  const { colorMode, populateTheme, changeTheme } = useColorMode();
+  useLayoutEffect(() => {
+    populateTheme(colorMode);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <header
@@ -30,15 +33,18 @@ function Header() {
         height: '80px',
       }}
     >
-      <Flex flexDirection="row" mr={2} minWidth={260}>
+      <Flex flexDirection="row" alignItems="center" mr={2} minWidth={260}>
         <StyledLink to="/">
           <Avatar
             alt="avatar"
+            id="avatar"
             src={avatarImg}
-            borderRadius={100}
-            mt={2}
+            borderRadius="20%"
+            borderColor="secondary"
+            borderStyle="solid"
+            borderWidth="2px"
             mr={1}
-            width={46}
+            width={50}
           />
         </StyledLink>
         <StyledLink to="/readings">

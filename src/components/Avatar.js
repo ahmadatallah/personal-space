@@ -4,6 +4,7 @@ import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
   space,
   width,
+  height,
   maxWidth,
   display,
   alignItems,
@@ -12,8 +13,9 @@ import {
   fontWeight,
   textAlign,
   color,
-  borders,
+  borderStyle,
   borderColor,
+  borderWidth,
   borderRadius,
   textStyle,
 } from 'styled-system';
@@ -21,6 +23,7 @@ import {
 const Avatar = styled('img', { shouldForwardProp })(
   space,
   width,
+  height,
   maxWidth,
   display,
   fontSize,
@@ -30,9 +33,11 @@ const Avatar = styled('img', { shouldForwardProp })(
   color,
   alignItems,
   justifyContent,
-  borders,
-  borderColor,
   borderRadius,
+  borderColor,
+  borderStyle,
+  borderWidth,
+  borderStyle,
   {
     boxSizing: 'border-box',
     textDecoration: 'none',
