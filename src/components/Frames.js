@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useLayoutEffect } from 'react';
 import { A, H1, H2, Div } from '../elements';
 import Flex from '../components/Flex';
 import Carousel, { Modal, ModalGateway } from 'react-images';
@@ -45,22 +45,21 @@ function Frames({
     setPageNum(pageNum + 1);
   }, 200);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      let scrollY =
+        window.scrollY ||
+        window.pageYOffset ||
+        document.documentElement.scrollTop;
+      if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
+        loadMorePhotos();
+      }
+    };
     if (!disallowScrollLoad) {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }
-  });
-
-  const handleScroll = () => {
-    let scrollY =
-      window.scrollY ||
-      window.pageYOffset ||
-      document.documentElement.scrollTop;
-    if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
-      loadMorePhotos();
-    }
-  };
+  }, [disallowScrollLoad, loadMorePhotos]);
 
   const carouselStyle = {
     footer: base => ({
