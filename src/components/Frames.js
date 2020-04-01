@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import React, { useState, useCallback, useLayoutEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { A, H1, H2, Div } from '../elements';
 import Flex from '../components/Flex';
 import Carousel, { Modal, ModalGateway } from 'react-images';
@@ -45,7 +45,7 @@ function Frames({
     setPageNum(pageNum + 1);
   }, 200);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       let scrollY =
         window.scrollY ||
