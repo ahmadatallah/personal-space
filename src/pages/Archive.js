@@ -4,7 +4,7 @@ import React from 'react';
 import { Div } from '../elements';
 import Header from '../containers/Header';
 import Flex from '../components/Flex';
-import OthersContainer from '../containers/ArchiveContainer';
+import ArchiveContainer from '../containers/ArchiveContainer';
 
 function Archive({ ...props }) {
   return (
@@ -21,8 +21,8 @@ function Archive({ ...props }) {
         pl={3}
       >
         <Header />
-        <Div pl={[1, 2, 3]} pr={[1, 2, 3]} py={2} mt={1}>
-          <OthersContainer />
+        <Div display="grid" pl={[1, 3, 5]} pr={[1, 3, 5]} py={2} mt={1}>
+          <ArchiveContainer />
         </Div>
       </Flex>
     </>
