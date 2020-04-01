@@ -8,7 +8,6 @@ import Loading from '../../components/Loading';
 const Content = lazy(() =>
   import('!babel-loader!mdx-loader!./DesertOctopus.mdx')
 );
-
 function DesertOctopus({ ...props }) {
   return (
     <>
@@ -20,7 +19,11 @@ function DesertOctopus({ ...props }) {
       >
         <Suspense
           fallback={
-            <Flex flexDirection="row" justifyContent="center">
+            <Flex
+              display="not-none"
+              flexDirection="row"
+              justifyContent="center"
+            >
               <H2 fontWeight={300} ml={2}>
                 {' '}
                 Loading{' '}
