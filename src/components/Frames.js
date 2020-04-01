@@ -61,9 +61,6 @@ function Frames({
     }
   }, [disallowScrollLoad, loadMorePhotos]);
 
-  useEffect(() => {
-    console.log('sss');
-  }, [viewerIsOpen]);
   const carouselStyle = {
     footer: base => ({
       ...base,

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import jsx from '../jsx';
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.png';
 import ColorModeApplier from './ColorModeApplier';
@@ -11,7 +11,7 @@ import Flex from '../components/Flex';
 
 function Header() {
   const { colorMode, populateTheme, changeTheme } = useColorMode();
-  useLayoutEffect(() => {
+  useEffect(() => {
     populateTheme(colorMode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
