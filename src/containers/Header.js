@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import jsx from '../jsx';
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.png';
 import ColorModeApplier from './ColorModeApplier';
+import HeaderElement from '../elements/Header';
 import useColorMode from '../hooks/useColorMode';
 import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
@@ -11,13 +12,12 @@ import Flex from '../components/Flex';
 
 function Header() {
   const { colorMode, populateTheme, changeTheme } = useColorMode();
-  useEffect(() => {
+  useLayoutEffect(() => {
     populateTheme(colorMode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
-    <header
+    <HeaderElement
       display="flex"
       alignItems="center"
       mr="auto"
@@ -69,7 +69,7 @@ function Header() {
         </StyledLink>
       </Flex>
       <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
-    </header>
+    </HeaderElement>
   );
 }
 

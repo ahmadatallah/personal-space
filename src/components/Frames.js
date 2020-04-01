@@ -128,7 +128,7 @@ function Frames({
               styles={{
                 positioner: base => ({
                   ...base,
-                  zIndex: 100,
+                  zIndex: 1200,
                 }),
               }}
             >
