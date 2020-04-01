@@ -1,12 +1,4 @@
-# Syncatallah Personal Space | https://syncatallah.cc
+### Personal Space | https://syncatallah.cc
+Hi there, This is my personal space where I share things like readings, writings, frames I take in daily life and random thoughts. 
 
-## TODO 
-- [x] ~~Add themes~~
-- [x] ~~Add fonts~~
-- [x] ~~about~~
-- [x] ~~arabic writings page~~
-- [x] ~~writings~~
-- [x] ~~readings~~
-- [x] ~~frames~~
-- [ ] Add SEO
-- [ ] Migrate to Gatsby instead of CRA
+I don't write well. but I take photos a lot.
