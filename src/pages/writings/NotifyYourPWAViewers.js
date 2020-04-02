@@ -2,7 +2,7 @@
 import jsx from '../../jsx';
 import { lazy, Suspense } from 'react';
 import theme from '../../theme';
-import { Div, Section, H2 } from '../../elements';
+import { Div, H2 } from '../../elements';
 import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
 import Flex from '../../components/Flex';
@@ -16,7 +16,7 @@ const Content = lazy(() =>
 function NotifyYourPWAViewers({ ...props }) {
   return (
     <layout>
-      <Section
+      <Flex
         alignItems="center"
         flexDirection="column"
         maxWidth="80em"
@@ -24,35 +24,34 @@ function NotifyYourPWAViewers({ ...props }) {
         mr="auto"
         ml="auto"
         minWidth="20rem"
-        pl={[1, 3, 5]}
-        pr={[1, 3, 5]}
+        pr={3}
+        pl={3}
       >
         <Header />
-      </Section>{' '}
-      <Div
-        justifyConent="center"
-        maxWidth={900}
-        px={[4, 3, 5]}
-        py={2}
-        mx="auto"
-        fontFamily={theme.typefaces.sansSerif}
-        mt={30}
-      >
-        <Suspense
-          fallback={
-            <Flex flexDirection="row" justifyContent="center">
-              <H2 fontWeight={300} mr={2}>
-                {' '}
-                Loading{' '}
-              </H2>
-              <Loading type="spokes" color="currentcolor" />
-            </Flex>
-          }
+        <Div
+          justifyConent="center"
+          maxWidth={900}
+          px={[2, 2, 4]}
+          mx="auto"
+          fontFamily={theme.typefaces.sansSerif}
+          mt={30}
         >
-          <Content />
-        </Suspense>
-        <Footer />
-      </Div>
+          <Suspense
+            fallback={
+              <Flex flexDirection="row" justifyContent="center">
+                <H2 fontWeight={300} mr={2}>
+                  {' '}
+                  Loading{' '}
+                </H2>
+                <Loading type="spokes" color="currentcolor" />
+              </Flex>
+            }
+          >
+            <Content />
+          </Suspense>
+          <Footer />
+        </Div>
+      </Flex>
     </layout>
   );
 }

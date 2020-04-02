@@ -4,6 +4,7 @@ import React, { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.png';
 import ColorModeApplier from './ColorModeApplier';
+import HeaderElement from '../elements/Header';
 import useColorMode from '../hooks/useColorMode';
 import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
@@ -15,9 +16,8 @@ function Header() {
     populateTheme(colorMode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return (
-    <header
+    <HeaderElement
       display="flex"
       alignItems="center"
       mr="auto"
@@ -69,7 +69,7 @@ function Header() {
         </StyledLink>
       </Flex>
       <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
-    </header>
+    </HeaderElement>
   );
 }
 

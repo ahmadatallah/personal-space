@@ -46,21 +46,20 @@ function Frames({
   }, 200);
 
   useEffect(() => {
+    const handleScroll = () => {
+      let scrollY =
+        window.scrollY ||
+        window.pageYOffset ||
+        document.documentElement.scrollTop;
+      if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
+        loadMorePhotos();
+      }
+    };
     if (!disallowScrollLoad) {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }
-  });
-
-  const handleScroll = () => {
-    let scrollY =
-      window.scrollY ||
-      window.pageYOffset ||
-      document.documentElement.scrollTop;
-    if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
-      loadMorePhotos();
-    }
-  };
+  }, [disallowScrollLoad, loadMorePhotos]);
 
   const carouselStyle = {
     footer: base => ({
@@ -129,7 +128,7 @@ function Frames({
               styles={{
                 positioner: base => ({
                   ...base,
-                  zIndex: 100,
+                  zIndex: 1200,
                 }),
               }}
             >

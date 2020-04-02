@@ -1039,3 +1039,13 @@ export const para = [
     alt: 'Parasite 2019 frame 6',
   },
 ];
+
+export const desertOctopus = [
+  {
+    src: require('../assets/images/desert-octopus.jpeg'),
+    width: 2,
+    height: 1,
+    title: 'Desert Octopus',
+    alt: 'desert-octopus',
+  },
+];
