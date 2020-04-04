@@ -78,6 +78,29 @@ function WritingsContainer({ title, href, ...props }) {
           </P>
         </Div>
       </Div>
+      <Div mb={3}>
+        <StyledLink to="/writings/change-theme-with-use-layout-effect">
+          <Link
+            title="Navigate then Change The Theme; An Experiment to useLayoutEffect React
+            Hook"
+            fontSize={[2, 3, 3]}
+            fontWeight={[900, 600, 600]}
+          />
+        </StyledLink>
+        <Div ml={[2, 2, 3]}>
+          <Small>
+            04 Apr, 2020
+            <span role="img" aria-label="min-read">
+              • ⚗️⚗️{' '}
+            </span>
+            5 min read
+          </Small>
+          <P mt={0}>
+            A proven example on how useLayoutEffect React hook can prevent app
+            flickering.
+          </P>
+        </Div>
+      </Div>
     </>
   );
 }
