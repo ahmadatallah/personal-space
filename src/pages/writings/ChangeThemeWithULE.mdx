@@ -1,0 +1,146 @@
+import Frames from '../../components/Frames';
+import { useEffectResults } from '../../utils/constants';
+
+#### 04 Apr, 2019 • 📖☕️ 5 min read
+
+# Navigate then Change The Theme; An Experiment to useLayoutEffect React Hook
+
+In a brief, useLayoutEffect React hook can prevent flash of unstyled content (FOUC) by
+blocking the page till the new styles applied. Blocking the content by a synchronous process
+happens after all DOM mutation. This synchronous process includes reading the layout
+from the DOM, rerendering, and, as React [docs](https://reactjs.org/docs/hooks-reference.html#uselayouteffect) says,
+flushing the scheduled updated before the browser has a chance to paint.
+
+<Frames
+  photos={[useEffectResults[0]]}
+  totalPages={0}
+  initialLength={8}
+  disallowScrollLoad={true}
+/>
+
+## Theme configuration
+
+Before digging into the example that visulize this process in action,
+we need to define a set of color modes that will change respectivly on every navigation.
+I will use [theme-ui](https://theme-ui.com/) a ui library for creating user interfaces
+based on a global theme configuration. It allows you to easily reference theme values
+throughout the entire application.
+
+For creating color modes there is a hook from theme-ui called [`useColorMode`](https://theme-ui.com/guides/color-mode-toggles) that
+toggle or even cycle through a set of color modes defined in the theme file.
+
+For the example we will use two color modes light and dark:
+
+```js
+/* theme.js */
+{
+...
+  colors: {
+    modes: {
+      light: {
+        text: '#000',
+        background: '#fff',
+        primary: 'hsl(120, 100%, 40%)',
+        secondary: '#000',
+        accent: 'hsl(120, 100%, 90%)',
+        muted: 'hsl(120, 20%, 7%)',
+        gray: 'hsl(0, 0%, 75%)',
+        code: 'hsla(360, 100%, 100%, 0.5)',
+      },
+      dark: {
+        text: '#fff',
+        background: 'hsl(180, 5%, 15%)',
+        primary: 'hsl(180, 100%, 57%)',
+        secondary: 'hsl(50, 100%, 57%)',
+        accent: 'hsl(310, 100%, 57%)',
+        muted: 'hsl(180, 5%, 5%)',
+        gray: 'hsl(180, 0%, 70%)',
+      },
+      ...
+      // you can define more modes here
+    },
+  }
+...
+}
+```
+
+we will cycle through the modes by a function as below:
+
+```js
+export default function useColorModes({ ...props }) {
+  const [colorMode, setColorMode] = useColorMode();
+  const modes = ['light', 'dark'];
+
+  const applyMode = currentMode => {
+    const i = modes.indexOf(currentMode);
+    const n = (i + 1) % modes.length;
+    const nextMode = modes[n];
+    setColorMode(nextMode);
+  };
+
+  // return current color mode and applier function for the next mode
+  return { colorMode, applyMode };
+}
+```
+
+## useLayoutEffect vs useEffect
+
+Now, we will take these theme configuration in action.
+we will see the difference between `useLayoutEffect` and `useEffect` when trying to toggle between these modes.
+
+According to React docs, useLayoutEffect is the same as useEffect except it synchronously fires after all DOM mutation
+this will block the content in our case while toggling between modes and flush the updates before even the browser paint any content on the page.
+
+`useLayoutEffect` and `useEffect` takes a function as a first argument that run and apply the side effect after the render is committed.
+As a second argument it takes an array of dependencies that on changing them the effectful function runs.
+Be cautious when using dependencies because it might lead to endless number of renders.
+
+Note: the function from the first argument returns undefined if you don't return anything from it which may cause memory leaks.
+Better to clean up things by explicitly returning a cleanup function for your effect.
+You can read React [docs](https://reactjs.org/docs/hooks-reference.html#useeffect) for detailed information.
+
+## Applying color modes with useLayoutEffect
+
+Finally we will apply both useLayoutEffect and useEffect according to the code snippet below:
+
+```jsx
+import { ThemeProvider, ColorMode } from 'theme-ui';
+import React, { useLayoutEffect, useEffect } from 'React';
+import useColorModes from './userColorModes';
+
+function App() {
+  const { colorMode, applyMode } = useColorModes();
+  // or Even useEffect;
+  useLayoutEffect(() => {
+    applyMode(colorMode);
+    // passing zero length dependencies array makes the effect to happen one time
+  }, []);
+  return (
+    <ThemeProvider theme={theme}>
+      <ColorMode />
+      <div>Some content</div>
+    </ThemeProvider>
+  );
+}
+```
+
+## The difference
+
+Here is the difference imported from dev tools profiler and slowed to one frame per second.
+Each transition is per click and to a different article.
+
+the **first** one when using `useLayoutEffect` we can see the transition is sharp no
+flicker between the color modes. The **second** when using `useEffect` the transition
+caused a flicker you will notice switching between articles is not sharp like in the first.
+
+**Try to focus on each gif and compare results later, don't focus on both of them at one time.**
+
+<Frames
+  photos={useEffectResults}
+  totalPages={0}
+  initialLength={8}
+  disallowScrollLoad={true}
+/>
+
+Fortunately, You can try this experiment on production now after you read this article. I am using `useLayoutEffect`
+to cycle through the color modes. Just navigate between the website content and you will see!

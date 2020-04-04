@@ -278,6 +278,7 @@ import carouselx94x3 from '../assets/images/carousel/0094carousel/0094carousel_v
 import carouselx94x4 from '../assets/images/carousel/0094carousel/0094carousel_va6faf_c_scale,w_1400.jpg';
 
 export const modes = ['light', 'black', 'dark', 'deep', 'hack', 'pink'];
+
 export const photos = [
   {
     src: require('../assets/images/carousel/0001carousel.jpg'),
@@ -1047,5 +1048,20 @@ export const desertOctopus = [
     height: 1,
     title: 'Desert Octopus',
     alt: 'desert-octopus',
+  },
+];
+
+export const useEffectResults = [
+  {
+    src: require('../assets/gifs/useLayoutEffectslow-Profile-20200404T081308.gif'),
+    width: 1,
+    height: 0.8,
+    alt: 'result in useLayoutEffect',
+  },
+  {
+    src: require('../assets/gifs/useEffectslowProfile-20200404T081601.gif'),
+    width: 1,
+    height: 0.8,
+    alt: 'result in useEffect',
   },
 ];

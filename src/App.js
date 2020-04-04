@@ -28,6 +28,10 @@ const NotifyYourPWAViewers = lazy(() =>
   import('./pages/writings/NotifyYourPWAViewers')
 );
 
+const ChangeThemeWithULE = lazy(() =>
+  import('./pages/writings/ChangeThemeWithULE')
+);
+
 const Msg = ({ closeToast }) => (
   <Flex flexDirection="column" alignItems="start">
     <P
@@ -109,6 +113,10 @@ function App(props) {
               <Route
                 path={'/writings/notify-pwa-updates'}
                 component={NotifyYourPWAViewers}
+              ></Route>
+              <Route
+                path={'/writings/change-theme-with-use-layout-effect'}
+                component={ChangeThemeWithULE}
               ></Route>
               <Route path="/about" exact={true} component={About} />
               <Route path="/writings" component={Home} />
