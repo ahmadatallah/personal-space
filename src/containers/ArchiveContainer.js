@@ -10,6 +10,7 @@ import Society from '../pages/archive/Society';
 import EVSP from '../pages/archive/EVSP';
 import Para from '../pages/archive/Para';
 import DesertOctopus from '../pages/archive/DesertOctopus';
+import ZerodBQarunLake from '../pages/archive/ZerodBQarunLake';
 
 function ArchiveContainer({ ...props }) {
   const { textColor } = useColorMode();
@@ -20,6 +21,7 @@ function ArchiveContainer({ ...props }) {
         {' '}
         Archive{' '}
       </H1>
+      <ZerodBQarunLake />
       <DesertOctopus />
       <Para />
       <EVSP />
