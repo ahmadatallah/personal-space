@@ -1051,6 +1051,107 @@ export const desertOctopus = [
   },
 ];
 
+export const zerodBQarunLake = [
+  {
+    src: require('../assets/images/zdql-8.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'Sunrise',
+    alt: 'Sunrise',
+  },
+  {
+    src: require('../assets/images/zdql-1.jpeg'),
+    width: 2,
+    height: 3,
+    title: 'Black desert',
+    alt: 'Black desert',
+  },
+  {
+    src: require('../assets/images/zdql-3.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'Warm lake',
+    alt: 'Warm lake',
+  },
+  {
+    src: require('../assets/images/zdql-7.jpeg'),
+    width: 4,
+    height: 3,
+    title: 'Friends',
+    alt: 'Friends',
+  },
+  {
+    src: require('../assets/images/zdql-5.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'Lamp on the shore',
+    alt: 'Lamp on the shore',
+  },
+  {
+    src: require('../assets/images/zdql-6.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'Friends 2',
+    alt: 'Friends 2',
+  },
+  {
+    src: require('../assets/images/zdql-2.jpeg'),
+    width: 4,
+    height: 3,
+    title: 'Throw rocks in the void',
+    alt: 'Throw rocks in the void',
+  },
+  {
+    src: require('../assets/images/zdql-12.jpeg'),
+    width: 1,
+    height: 1,
+    title: 'Lake birds',
+    alt: 'Lake birds',
+  },
+  {
+    src: require('../assets/images/zdql-10.jpeg'),
+    width: 4,
+    height: 3,
+    title: 'A man on trapeze',
+    alt: 'A man on trapeze',
+  },
+  {
+    src: require('../assets/images/zdql-11.jpeg'),
+    width: 4,
+    height: 3,
+    title: 'A camp',
+    alt: 'A camp',
+  },
+  {
+    src: require('../assets/images/zdql-14.jpeg'),
+    width: 2,
+    height: 1,
+    title: 'Reflection',
+    alt: 'Reflection',
+  },
+  {
+    src: require('../assets/images/zdql-9.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'A trapeze on the lake',
+    alt: 'A trapeze on the lake',
+  },
+  {
+    src: require('../assets/images/zdql-4.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'A trapeze in the camp',
+    alt: 'A trapeze in the camp',
+  },
+  {
+    src: require('../assets/images/zdql-13.jpeg'),
+    width: 3,
+    height: 2,
+    title: 'A skyline',
+    alt: 'A skyline',
+  },
+];
+
 export const useEffectResults = [
   {
     src: require('../assets/gifs/useLayoutEffectslow-Profile-20200404T081308.gif'),
