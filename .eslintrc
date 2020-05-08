@@ -22,5 +22,6 @@
   "globals": {
     "workbox": true,
     "importScripts": true,
+    "window": true
   }
 }
