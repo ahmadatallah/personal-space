@@ -1,5 +1,4 @@
 /* eslint-disable no-restricted-globals */
-import { createWindow } from 'domino';
 if ('function' === typeof importScripts) {
   importScripts(
     'https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js'
@@ -18,7 +17,6 @@ if ('function' === typeof importScripts) {
     // manually overriding the skipWaiting();
     self.addEventListener('install', event => {
       self.skipWaiting();
-      const window = createWindow(`${process.env.PUBLIC_URL}/index.html`);
       window.location.reload();
     });
 

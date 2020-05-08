@@ -21,7 +21,6 @@
   },
   "globals": {
     "workbox": true,
-    "importScripts": true,
-    "self": true
+    "importScripts": true
   }
 }

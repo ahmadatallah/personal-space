@@ -8,7 +8,7 @@ const buildSW = () => {
     .injectManifest({
       swSrc: 'src/sw-custom.js', // custom sw rule
 
-      swDest: 'build/sw.js', // sw output file (auto-generated
+      swDest: 'build/sw.js', // sw output file (auto-generated)
 
       globDirectory: 'build',
 
