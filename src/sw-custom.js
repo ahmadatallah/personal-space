@@ -9,7 +9,7 @@ if ('function' === typeof importScripts) {
     console.log('Workbox is loaded');
 
     // Disable logging
-    workbox.setConfig({ debug: false });
+    workbox.setConfig({ debug: true });
 
     //`generateSW` and `generateSWString` provide the option
     // to force update an exiting service worker.
@@ -17,7 +17,6 @@ if ('function' === typeof importScripts) {
     // manually overriding the skipWaiting();
     self.addEventListener('install', event => {
       self.skipWaiting();
-      window.location.reload();
     });
 
     // Manual injection point for manifest files.
