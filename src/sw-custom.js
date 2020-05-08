@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 if ('function' === typeof importScripts) {
   importScripts(
     'https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js'
@@ -14,9 +15,9 @@ if ('function' === typeof importScripts) {
     // to force update an exiting service worker.
     // Since we're using `injectManifest` to build SW,
     // manually overriding the skipWaiting();
-    this.addEventListener('install', event => {
-      this.skipWaiting();
-      window.location.reload();
+    self.addEventListener('install', event => {
+      self.skipWaiting();
+      self.location.reload();
     });
 
     // Manual injection point for manifest files.
