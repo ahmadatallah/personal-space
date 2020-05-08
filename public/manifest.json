@@ -14,8 +14,8 @@
     }
   ],
   "start_url": "/",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "theme_color": "#000",
+  "background_color": "#000",
   "display": "standalone",
   "Scope": "/",
   "splash_pages": null
