@@ -28,6 +28,8 @@
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
     { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
+    { "src": "/sw.js", "dest": "/sw.js" },
+
     {
       "src": "/service-worker.js",
       "headers": { "cache-control": "s-maxage=0" },
