@@ -13,7 +13,10 @@
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
     { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
     { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" },
-    { "src": "/android-chrome-192x192", "dest": "/android-chrome-192x192" },
+    {
+      "src": "/android-chrome-192x192.png",
+      "dest": "/android-chrome-192x192.png"
+    },
     {
       "src": "/android-chrome-512x512.png",
       "dest": "/android-chrome-512x512.png"
