@@ -14,6 +14,7 @@ const buildSW = () => {
       globDirectory: 'build',
 
       globPatterns: ['**/*.{js,css,html,jpg,jpeg,png,svg}'],
+      globIgnores: ['**/node_modules/**/*', 'static/media/*.jpg'],
 
       maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
     })
