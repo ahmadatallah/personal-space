@@ -4120,11 +4120,6 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-domino@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/domino/-/domino-2.1.5.tgz#4aa08e395d496c463c3afee1cd0f7173f63eacb5"
-  integrity sha512-vMDo7f6ogUV9PkzmxXLiXzJkJZqU09Le4C40mj+HmAGS/2FPmdetoNOQZXpu2kekn0GJKvtwKMAVoruTj60Xww==
-
 domutils@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.5.1.tgz#dcd8488a26f563d61079e48c9f7b7e32373682cf"

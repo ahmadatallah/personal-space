@@ -1,5 +1,4 @@
 const workboxBuild = require('workbox-build');
-require('domino');
 
 const buildSW = () => {
   // The build is expected to fail if the
