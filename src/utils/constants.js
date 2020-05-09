@@ -301,59 +301,59 @@ import zdql4x3 from '../assets/images/zdql/zdql-4_qgrtja_c_scale,w_1994.jpg';
 import zdql4x4 from '../assets/images/zdql/zdql-4_qgrtja_c_scale,w_2433.jpg';
 import zdql4x5 from '../assets/images/zdql/zdql-4_qgrtja_c_scale,w_2830.jpg';
 
-import zdql5x1 from '../assets/images/zdql-5_fwmj6g_c_scale,w_100.jpg';
-import zdql5x2 from '../assets/images/zdql-5_fwmj6g_c_scale,w_1491.jpg';
-import zdql5x3 from '../assets/images/zdql-5_fwmj6g_c_scale,w_2084.jpg';
-import zdql5x4 from '../assets/images/zdql-5_fwmj6g_c_scale,w_2459.jpg';
-import zdql5x5 from '../assets/images/zdql-5_fwmj6g_c_scale,w_2830.jpg';
+import zdql5x1 from '../assets/images/zdql/zdql-5_fwmj6g_c_scale,w_100.jpg';
+import zdql5x2 from '../assets/images/zdql/zdql-5_fwmj6g_c_scale,w_1491.jpg';
+import zdql5x3 from '../assets/images/zdql/zdql-5_fwmj6g_c_scale,w_2084.jpg';
+import zdql5x4 from '../assets/images/zdql/zdql-5_fwmj6g_c_scale,w_2459.jpg';
+import zdql5x5 from '../assets/images/zdql/zdql-5_fwmj6g_c_scale,w_2830.jpg';
 
-import zdql6x1 from '../assets/images/zdql-6_kkoctr_c_scale,w_100.jpg';
-import zdql6x2 from '../assets/images/zdql-6_kkoctr_c_scale,w_1465.jpg';
-import zdql6x3 from '../assets/images/zdql-6_kkoctr_c_scale,w_2061.jpg';
-import zdql6x4 from '../assets/images/zdql-6_kkoctr_c_scale,w_2453.jpg';
-import zdql6x5 from '../assets/images/zdql-6_kkoctr_c_scale,w_2830.jpg';
+import zdql6x1 from '../assets/images/zdql/zdql-6_kkoctr_c_scale,w_100.jpg';
+import zdql6x2 from '../assets/images/zdql/zdql-6_kkoctr_c_scale,w_1465.jpg';
+import zdql6x3 from '../assets/images/zdql/zdql-6_kkoctr_c_scale,w_2061.jpg';
+import zdql6x4 from '../assets/images/zdql/zdql-6_kkoctr_c_scale,w_2453.jpg';
+import zdql6x5 from '../assets/images/zdql/zdql-6_kkoctr_c_scale,w_2830.jpg';
 
-import zdql7x1 from '../assets/images/zdql-7_wdq705_c_scale,w_200.jpg';
-import zdql7x2 from '../assets/images/zdql-7_wdq705_c_scale,w_772.jpg';
-import zdql7x3 from '../assets/images/zdql-7_wdq705_c_scale,w_1035.jpg';
-import zdql7x4 from '../assets/images/zdql-7_wdq705_c_scale,w_1247.jpg';
-import zdql7x5 from '../assets/images/zdql-7_wdq705_c_scale,w_1400.jpg';
+import zdql7x1 from '../assets/images/zdql/zdql-7_wdq705_c_scale,w_200.jpg';
+import zdql7x2 from '../assets/images/zdql/zdql-7_wdq705_c_scale,w_772.jpg';
+import zdql7x3 from '../assets/images/zdql/zdql-7_wdq705_c_scale,w_1035.jpg';
+import zdql7x4 from '../assets/images/zdql/zdql-7_wdq705_c_scale,w_1247.jpg';
+import zdql7x5 from '../assets/images/zdql/zdql-7_wdq705_c_scale,w_1400.jpg';
 
-import zdql9x1 from '../assets/images/zdql-9_pdhsdf_c_scale,w_190.jpg';
-import zdql9x2 from '../assets/images/zdql-9_pdhsdf_c_scale,w_1447.jpg';
-import zdql9x3 from '../assets/images/zdql-9_pdhsdf_c_scale,w_2155.jpg';
-import zdql9x4 from '../assets/images/zdql-9_pdhsdf_c_scale,w_2761.jpg';
-import zdql9x5 from '../assets/images/zdql-9_pdhsdf_c_scale,w_3260.jpg';
+import zdql9x1 from '../assets/images/zdql/zdql-9_pdhsdf_c_scale,w_190.jpg';
+import zdql9x2 from '../assets/images/zdql/zdql-9_pdhsdf_c_scale,w_1447.jpg';
+import zdql9x3 from '../assets/images/zdql/zdql-9_pdhsdf_c_scale,w_2155.jpg';
+import zdql9x4 from '../assets/images/zdql/zdql-9_pdhsdf_c_scale,w_2761.jpg';
+import zdql9x5 from '../assets/images/zdql/zdql-9_pdhsdf_c_scale,w_3260.jpg';
 
-import zdql10x1 from '../assets/images/zdql-10_rxgpke_c_scale,w_190.jpg';
-import zdql10x2 from '../assets/images/zdql-10_rxgpke_c_scale,w_1406.jpg';
-import zdql10x3 from '../assets/images/zdzdql-10_rxgpke_c_scale,w_2064.jpg';
-import zdql10x4 from '../assets/images/zdzdql-10_rxgpke_c_scale,w_2643.jpg';
-import zdql10x5 from '../assets/images/zdzdql-10_rxgpke_c_scale,w_3080.jpg';
+import zdql10x1 from '../assets/images/zdql/zdql-10_rxgpke_c_scale,w_190.jpg';
+import zdql10x2 from '../assets/images/zdql/zdql-10_rxgpke_c_scale,w_1406.jpg';
+import zdql10x3 from '../assets/images/zdql/zdql-10_rxgpke_c_scale,w_2064.jpg';
+import zdql10x4 from '../assets/images/zdql/zdql-10_rxgpke_c_scale,w_2643.jpg';
+import zdql10x5 from '../assets/images/zdql/zdql-10_rxgpke_c_scale,w_3080.jpg';
 
-import zdql11x1 from '../assets/images/zdql-11_exadba_c_scale,w_190.jpg';
-import zdql11x2 from '../assets/images/zdql-11_exadba_c_scale,w_1168.jpg';
-import zdql11x3 from '../assets/images/zdql-11_exadba_c_scale,w_1793.jpg';
-import zdql11x4 from '../assets/images/zdql-11_exadba_c_scale,w_2281.jpg';
-import zdql11x5 from '../assets/images/zdql-11_exadba_c_scale,w_2750.jpg';
+import zdql11x1 from '../assets/images/zdql/zdql-11_exadba_c_scale,w_190.jpg';
+import zdql11x2 from '../assets/images/zdql/zdql-11_exadba_c_scale,w_1168.jpg';
+import zdql11x3 from '../assets/images/zdql/zdql-11_exadba_c_scale,w_1793.jpg';
+import zdql11x4 from '../assets/images/zdql/zdql-11_exadba_c_scale,w_2281.jpg';
+import zdql11x5 from '../assets/images/zdql/zdql-11_exadba_c_scale,w_2750.jpg';
 
-import zdql12x1 from '../assets/images/zdql-12_dw3w61_c_scale,w_190.jpg';
-import zdql12x2 from '../assets/images/zdql-12_dw3w61_c_scale,w_1407.jpg';
-import zdql12x3 from '../assets/images/zdql-12_dw3w61_c_scale,w_2102.jpg';
-import zdql12x4 from '../assets/images/zdql-12_dw3w61_c_scale,w_2676.jpg';
-import zdql12x5 from '../assets/images/zdql-12_dw3w61_c_scale,w_3170.jpg';
+import zdql12x1 from '../assets/images/zdql/zdql-12_dw3w61_c_scale,w_190.jpg';
+import zdql12x2 from '../assets/images/zdql/zdql-12_dw3w61_c_scale,w_1407.jpg';
+import zdql12x3 from '../assets/images/zdql/zdql-12_dw3w61_c_scale,w_2102.jpg';
+import zdql12x4 from '../assets/images/zdql/zdql-12_dw3w61_c_scale,w_2676.jpg';
+import zdql12x5 from '../assets/images/zdql/zdql-12_dw3w61_c_scale,w_3170.jpg';
 
-import zdql13x1 from '../assets/images/zdql-13_ykmjgk_c_scale,w_190.jpg';
-import zdql13x2 from '../assets/images/zdql-13_ykmjgk_c_scale,w_1400.jpg';
-import zdql13x3 from '../assets/images/zdql-13_ykmjgk_c_scale,w_2099.jpg';
-import zdql13x4 from '../assets/images/zdql-13_ykmjgk_c_scale,w_2674.jpg';
-import zdql13x5 from '../assets/images/zdql-13_ykmjgk_c_scale,w_3170.jpg';
+import zdql13x1 from '../assets/images/zdql/zdql-13_ykmjgk_c_scale,w_190.jpg';
+import zdql13x2 from '../assets/images/zdql/zdql-13_ykmjgk_c_scale,w_1400.jpg';
+import zdql13x3 from '../assets/images/zdql/zdql-13_ykmjgk_c_scale,w_2099.jpg';
+import zdql13x4 from '../assets/images/zdql/zdql-13_ykmjgk_c_scale,w_2674.jpg';
+import zdql13x5 from '../assets/images/zdql/zdql-13_ykmjgk_c_scale,w_3170.jpg';
 
-import zdql14x1 from '../assets/images/zdql-14_cghpnd_c_scale,w_200.jpg';
-import zdql14x2 from '../assets/images/zdql-14_cghpnd_c_scale,w_689.jpg';
-import zdql14x3 from '../assets/images/zdql-14_cghpnd_c_scale,w_1009.jpg';
-import zdql14x4 from '../assets/images/zdql-14_cghpnd_c_scale,w_1234.jpg';
-import zdql14x5 from '../assets/images/zdql-14_cghpnd_c_scale,w_1400.jpg';
+import zdql14x1 from '../assets/images/zdql/zdql-14_cghpnd_c_scale,w_200.jpg';
+import zdql14x2 from '../assets/images/zdql/zdql-14_cghpnd_c_scale,w_689.jpg';
+import zdql14x3 from '../assets/images/zdql/zdql-14_cghpnd_c_scale,w_1009.jpg';
+import zdql14x4 from '../assets/images/zdql/zdql-14_cghpnd_c_scale,w_1234.jpg';
+import zdql14x5 from '../assets/images/zdql/zdql-14_cghpnd_c_scale,w_1400.jpg';
 
 export const modes = ['light', 'black', 'dark', 'deep', 'hack', 'pink'];
 
