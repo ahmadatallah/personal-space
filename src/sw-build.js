@@ -1,5 +1,4 @@
 const workboxBuild = require('workbox-build');
-require('domino');
 
 const buildSW = () => {
   // The build is expected to fail if the
@@ -13,7 +12,7 @@ const buildSW = () => {
 
       globDirectory: 'build',
 
-      globPatterns: ['**/*.{js,css,html,jpg,jpeg,png,svg}'],
+      globPatterns: ['**/*.{js,css,html}'],
 
       maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
     })
