@@ -18,5 +18,9 @@
       "avoidEscape": true
     }],
     "camelcase": ["error", { "properties": "never"}]
+  },
+  "globals": {
+    "workbox": true,
+    "importScripts": true
   }
 }

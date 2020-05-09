@@ -10,21 +10,28 @@
       },
       "dest": "/static/$1"
     },
-    { "src": "/icon-72x72.png", "dest": "/icon-72x72.png" },
-    { "src": "/icon-96x96.png", "dest": "/icon-96x96.png" },
-    { "src": "/icon-128x128.png", "dest": "/icon-128x128.png" },
-    { "src": "/icon-144x144.png", "dest": "/icon-144x144.png" },
-    { "src": "/icon-152x152.png", "dest": "/icon-152x152.png" },
-    { "src": "/icon-192x192.png", "dest": "/icon-192x192.png" },
-    { "src": "/icon-384x384.png", "dest": "/icon-384x384.png" },
-    { "src": "/icon-512x512.png", "dest": "/icon-512x512.png" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
+    { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" },
+    {
+      "src": "/android-chrome-192x192.png",
+      "dest": "/android-chrome-192x192.png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "dest": "/android-chrome-512x512.png"
+    },
+    { "src": "/apple-touch-icon.png", "dest": "/apple-touch-icon.png" },
+    { "src": "/mstile-150x150.png", "dest": "/mstile-150x150.png" },
+    { "src": "/safari-pinned-tab.svg", "dest": "/safari-pinned-tab.svg" },
+    { "src": "/browserconfig.xml", "dest": "/browserconfig.xml" },
     { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
     { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
     {
-      "src": "/service-worker.js",
+      "src": "/sw.js",
       "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/service-worker.js"
+      "dest": "/sw.js"
     },
     {
       "src": "/(.*)",

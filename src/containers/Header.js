@@ -2,7 +2,7 @@
 import jsx from '../jsx';
 import React, { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
-import avatarImg from '../assets/images/avatar.png';
+import avatarImg from '../assets/images/avatar.jpg';
 import ColorModeApplier from './ColorModeApplier';
 import HeaderElement from '../elements/Header';
 import useColorMode from '../hooks/useColorMode';
@@ -39,7 +39,7 @@ function Header() {
             alt="avatar"
             id="avatar"
             src={avatarImg}
-            borderRadius="20%"
+            borderRadius="50%"
             borderColor="secondary"
             borderStyle="solid"
             borderWidth="2px"
