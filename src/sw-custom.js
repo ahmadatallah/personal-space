@@ -9,7 +9,7 @@ if ('function' === typeof importScripts) {
     console.log('Workbox is loaded');
 
     // Disable logging
-    workbox.setConfig({ debug: true });
+    workbox.setConfig({ debug: false });
 
     //`generateSW` and `generateSWString` provide the option
     // to force update an exiting service worker.
