@@ -1,13 +1,11 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import theme from '../../theme';
-import { Div, H2 } from '../../elements';
-import Flex from '../../components/Flex';
-import Loading from '../../components/Loading';
-const Content = lazy(() =>
-  import('!babel-loader!mdx-loader!./ZerodBQarunLake.mdx')
-);
+import { Div, H2, Span } from '../../elements';
+import Frames from '../../components/Frames';
+import { zerodBQarunLake } from '../../utils/constants.js';
+
 function ZerodBQarunLake({ ...props }) {
   return (
     <>
@@ -17,23 +15,16 @@ function ZerodBQarunLake({ ...props }) {
         py={2}
         mx="auto"
       >
-        <Suspense
-          fallback={
-            <Flex
-              display="not-none"
-              flexDirection="row"
-              justifyContent="center"
-            >
-              <H2 fontWeight={300} ml={2}>
-                {' '}
-                Loading{' '}
-              </H2>
-              <Loading type="spokes" color="currentcolor" />
-            </Flex>
-          }
-        >
-          <Content />
-        </Suspense>
+        <H2 color="secondary">26 Apr, 2020</H2>
+        <Frames
+          photos={zerodBQarunLake}
+          title="Zero Decibel Qarun Lake, Egypt 2020"
+          href="zdB-qarun-lake"
+          totalPages={0}
+          initialLength={20}
+          disallowScrollLoad={true}
+        />
+        <Span>Qarun lake photoset, a zero decibel place in Egypt.</Span>
       </Div>
     </>
   );
