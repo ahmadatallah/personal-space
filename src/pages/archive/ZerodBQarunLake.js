@@ -24,7 +24,9 @@ function ZerodBQarunLake({ ...props }) {
           initialLength={20}
           disallowScrollLoad={true}
         />
-        <Span>Qarun lake photoset, a zero decibel place in Egypt.</Span>
+        <Div my={3}>
+          <Span>Qarun lake photoset, a zero decibel place in Egypt.</Span>
+        </Div>
       </Div>
     </>
   );
