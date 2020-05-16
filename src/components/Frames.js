@@ -96,6 +96,7 @@ function Frames({
       ...base,
       '& img': {
         maxHeight: '80vh',
+        maxWidth: '80vw',
         borderColor: '#fff',
         borderStyle: 'solid',
         borderRadius: '255px 15px 225px 15px/15px 225px 15px 255p',
