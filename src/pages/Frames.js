@@ -4,11 +4,8 @@ import React from 'react';
 import Header from '../containers/Header';
 import { Div } from '../elements';
 import Flex from '../components/Flex';
-import Frames from '../components/Frames';
-import { photos } from '../utils/constants';
-import Footer from '../containers/Footer';
-
-function Photography({ ...props }) {
+import { Frames as FramesContainer } from '../containers/Frames';
+function Frames({ ...props }) {
   return (
     <Flex
       alignItems="center"
@@ -23,16 +20,10 @@ function Photography({ ...props }) {
     >
       <Header />
       <Div pl={[1, 3, 5]} pr={[1, 3, 5]} py={2} mt={1}>
-        <Frames
-          title="Frames"
-          totalPages={2}
-          initialLength={45}
-          photos={photos}
-        />
-        <Footer />
+        <FramesContainer />
       </Div>
     </Flex>
   );
 }
 
-export default Photography;
+export default Frames;

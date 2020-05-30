@@ -7,7 +7,7 @@ import Connect from '../containers/Connect';
 import { ThemeProvider, ColorMode } from 'theme-ui';
 import Footer from '../containers/Footer';
 import Header from '../containers/Header';
-import WritingsContainer from '../containers/WritingsContainer';
+import { Writings as WritingsContainer } from '../containers/Writings';
 import Contributions from '../containers/Contributions';
 
 function Home({ ...props }) {
@@ -28,18 +28,15 @@ function Home({ ...props }) {
         <Header />
         <Div py={2} pl={[1, 3, 5]} pr={[1, 3, 5]}>
           <>
-            <H2 fontSize={45} mb={0}>
-              {' '}
-              Sync...{' '}
-            </H2>
-            <H1 fontSize={80} mt={0} mb={0}>
-              Atallah
+            <H1 fontSize={[4, 5, 6]} mt={0} mb={0}>
+              Atallahsan
             </H1>
           </>
           <H3 fontWeight={600} maxWidth="50rem">
             Hi there! I am Ahmad Atallah, a software engineer. Interested in
-            functional programming, frontend engineering, and design. Sync...?
-            because we are all about sync. So, let the data flow!{' '}
+            functional programming, frontend engineering, and design. This is my
+            personal space where I share things like readings, writings, frames
+            I take in daily life and random thoughts.
           </H3>
           <Contributions />
           <WritingsContainer />

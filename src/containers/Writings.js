@@ -1,21 +1,32 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
+import { IoIosLink } from 'react-icons/io';
 import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
 import { H1, Div, Small, P } from '../elements';
 import useColorMode from '../hooks/useColorMode';
+import BlockLinkGrow from '../components/BlockLinkGrow';
 
-function WritingsContainer({ title, href, ...props }) {
+const LinkIcon = ({ color }) => {
+  return (
+    <BlockLinkGrow>
+      <IoIosLink size={22} />
+    </BlockLinkGrow>
+  );
+};
+
+export function Writings({ title, href, ...props }) {
   const { textColor } = useColorMode();
 
   return (
     <>
-      <H1 fontWeight={600} color={textColor}>
+      <H1 fontWeight={600} fontSize={4} color={textColor}>
         {' '}
         Writings{' '}
       </H1>
       <Div mb={3}>
+        <LinkIcon />
         <StyledLink to="/writings/create-react-app-run-build-envs">
           <Link
             title="Create React App: Run-time vs Build-time Environment Variables"
@@ -38,6 +49,7 @@ function WritingsContainer({ title, href, ...props }) {
         </Div>
       </Div>
       <Div mb={3}>
+        <LinkIcon />
         <StyledLink to="/writings/pascal-typescript-example">
           <Link
             title="Pattern Matching Example in TypeScript"
@@ -57,6 +69,7 @@ function WritingsContainer({ title, href, ...props }) {
         </Div>
       </Div>
       <Div mb={3}>
+        <LinkIcon />
         <StyledLink to="/writings/notify-pwa-updates">
           <Link
             title="Notify A Progressive Web App (PWA) Updates"
@@ -79,6 +92,7 @@ function WritingsContainer({ title, href, ...props }) {
         </Div>
       </Div>
       <Div mb={3}>
+        <LinkIcon />
         <StyledLink to="/writings/change-theme-with-use-layout-effect">
           <Link
             title="Navigate then Change The Theme; An Experiment to useLayoutEffect React
@@ -104,5 +118,3 @@ function WritingsContainer({ title, href, ...props }) {
     </>
   );
 }
-
-export default WritingsContainer;

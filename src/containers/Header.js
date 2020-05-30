@@ -48,20 +48,20 @@ function Header() {
           />
         </StyledLink>
         <StyledLink to="/readings">
-          <Link title="Readings" fontSize={[0, 1, 1]} mr={3} fontWeight={700} />
+          <Link title="Readings" fontSize={[0, 1, 2]} mr={3} fontWeight={700} />
         </StyledLink>
 
         <StyledLink to="/writings">
-          <Link title="Writings" fontSize={[0, 1, 1]} mr={3} fontWeight={700} />
+          <Link title="Writings" fontSize={[0, 1, 2]} mr={3} fontWeight={700} />
         </StyledLink>
         <StyledLink to="/frames">
-          <Link title="Frames" fontSize={[0, 1, 1]} mr={3} fontWeight={700} />
+          <Link title="Frames" fontSize={[0, 1, 2]} mr={3} fontWeight={700} />
         </StyledLink>
 
         <StyledLink to="/archive">
           <Link
             title="Archive"
-            fontSize={[0, 1, 1]}
+            fontSize={[0, 1, 2]}
             pb={1}
             mr={3}
             fontWeight={700}
