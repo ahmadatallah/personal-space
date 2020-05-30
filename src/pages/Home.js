@@ -28,7 +28,7 @@ function Home({ ...props }) {
         <Header />
         <Div py={2} pl={[1, 3, 5]} pr={[1, 3, 5]}>
           <>
-            <H1 fontSize={[4, 5, 6]} mt={0} mb={0}>
+            <H1 fontSize={5} mt={0} mb={0}>
               Atallahsan
             </H1>
           </>
