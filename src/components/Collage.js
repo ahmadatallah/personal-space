@@ -7,7 +7,8 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import useColorMode from '../hooks/useColorMode';
 import debounce from '../utils/debounce';
 import Gallery from 'react-photo-gallery';
-import Loading from './Loading';
+import Loading from '../components/Loading';
+import Frame from '../assets/images/frame.png';
 
 function Collage({
   title,
@@ -90,6 +91,18 @@ function Collage({
     headerFullscreen: base => ({
       ...base,
       color: 'white',
+    }),
+    view: base => ({
+      ...base,
+      '& img': {
+        maxHeight: '80vh',
+        maxWidth: '90vw',
+        borderColor: '#fff',
+        borderStyle: 'solid',
+        borderRadius: '255px 15px 225px 15px/15px 225px 15px 255p',
+        borderWidth: '58px 58px 58px 58px',
+        borderImage: `url(${Frame}) 63 61 62 61 stretch stretch`,
+      },
     }),
   };
 
