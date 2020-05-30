@@ -4,18 +4,20 @@ import React from 'react';
 import { Div } from '../elements';
 import Link from '../components/Link';
 import { IoIosLink } from 'react-icons/io';
-import useColorMode from '../hooks/useColorMode';
+import BlockLinkGrow from '../components/BlockLinkGrow';
 
-const LinkIcon = ({ color }) => {
-  return <IoIosLink size={22} color={color} />;
+const LinkIcon = () => {
+  return (
+    <BlockLinkGrow>
+      <IoIosLink size={22} />
+    </BlockLinkGrow>
+  );
 };
 
 function ReadingLink({ title, link, ...props }) {
-  const { textColor } = useColorMode();
-
   return (
     <Div mb={3}>
-      <LinkIcon color={textColor} />
+      <LinkIcon />
       <Link
         title={title}
         href={link}

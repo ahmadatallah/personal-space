@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.minimal.css';
 import './App.css';
 
 const About = lazy(() => import('./pages/About'));
-const Photography = lazy(() => import('./pages/Photography'));
+const Frames = lazy(() => import('./pages/Frames'));
 const Home = lazy(() => import('./pages/Home'));
 const Archive = lazy(() => import('./pages/Archive'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -121,7 +121,7 @@ function App(props) {
               <Route path="/about" exact={true} component={About} />
               <Route path="/writings" component={Home} />
               <Route path="/readings" exact={true} component={Readings} />
-              <Route path="/frames" exact={true} component={Photography} />
+              <Route path="/frames" exact={true} component={Frames} />
               <Route component={NotFound} />
             </Switch>
           </Suspense>

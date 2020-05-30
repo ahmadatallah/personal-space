@@ -11,17 +11,30 @@ function Contributions({ ...props }) {
 
   return (
     <>
-      <H1 fontWeight={600} color={textColor}>
+      <H1 fontWeight={600} fontSize={4} color={textColor}>
         {' '}
-        Contributions{' '}
+        Work & Contributions{' '}
       </H1>
       <Flex flexDirection="row">
         <BlockLinkGrow mr={2} href="https://github.com/swvl" title="Swvl">
           <Img
-            borderRadius={50}
+            borderRadius="50%"
             width={50}
             alt="@swvl github"
             src="https://avatars0.githubusercontent.com/u/29146595?s=60&v=4"
+          ></Img>
+        </BlockLinkGrow>
+        <BlockLinkGrow
+          mr={2}
+          href="https://github.com/Qobraio"
+          title="Qobra"
+          borderRadius="50%"
+        >
+          <Img
+            borderRadius={50}
+            width={50}
+            alt="@qobra github"
+            src="https://avatars0.githubusercontent.com/u/59341846?s=200&v=4"
           ></Img>
         </BlockLinkGrow>
         <BlockLinkGrow
@@ -90,15 +103,28 @@ function Contributions({ ...props }) {
           ></Img>
         </BlockLinkGrow>
         <BlockLinkGrow
+          pt="2px"
+          mr={2}
           href="https://github.com/darkreader/darkreader"
           title="Dark Reader"
           backgroundColor="#455E63"
           borderRadius="50%"
+          width={52}
         >
           <Img
-            width={50}
             alt="@darkreader github"
             src="https://avatars0.githubusercontent.com/u/38494721?s=60&v=4"
+          ></Img>
+        </BlockLinkGrow>
+        <BlockLinkGrow
+          href="https://github.com/Hacker0x01/react-datepicker"
+          title="HackerOne"
+        >
+          <Img
+            borderRadius={50}
+            width={50}
+            alt="@hackerone github"
+            src="https://avatars1.githubusercontent.com/u/3014877?s=200&v=4"
           ></Img>
         </BlockLinkGrow>
       </Flex>

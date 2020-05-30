@@ -12,12 +12,12 @@ import Para from '../pages/archive/Para';
 import DesertOctopus from '../pages/archive/DesertOctopus';
 import ZerodBQarunLake from '../pages/archive/ZerodBQarunLake';
 
-function ArchiveContainer({ ...props }) {
+export function Archive({ ...props }) {
   const { textColor } = useColorMode();
 
   return (
     <>
-      <H1 fontWeight={600} color={textColor}>
+      <H1 fontWeight={600} fontSize={4} color={textColor}>
         {' '}
         Archive{' '}
       </H1>
@@ -32,5 +32,3 @@ function ArchiveContainer({ ...props }) {
     </>
   );
 }
-
-export default ArchiveContainer;
