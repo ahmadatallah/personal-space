@@ -4,7 +4,7 @@ import React from 'react';
 import { Div } from '../elements';
 import Header from '../containers/Header';
 import Flex from '../components/Flex';
-import ArchiveContainer from '../containers/ArchiveContainer';
+import { Archive as ArchiveContainer } from '../containers/Archive';
 
 function Archive({ ...props }) {
   return (

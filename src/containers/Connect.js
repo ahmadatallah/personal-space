@@ -25,8 +25,8 @@ function Connect() {
       <BlockLinkGrow
         mr={2}
         fontWeight={700}
-        href="https://github.com/syncatallah"
-        title="Syncatallah"
+        href="https://github.com/ahmadatallah"
+        title="ahmadatallah@github"
       >
         <GitHub size={24} />
       </BlockLinkGrow>
@@ -34,7 +34,7 @@ function Connect() {
         mr={2}
         fontWeight={700}
         href="https://twitter.com/ahmadatallah"
-        title="ahmadatallah"
+        title="ahmadatallah@twitter"
       >
         <Twitter size={24} />
       </BlockLinkGrow>
@@ -42,7 +42,7 @@ function Connect() {
         mr={2}
         fontWeight={700}
         href="https://www.instagram.com/ahmad.atallah"
-        title="ahmad.atallah"
+        title="ahmad.atallah@instagram"
       >
         <Instagram size={24} />
       </BlockLinkGrow>
@@ -50,7 +50,7 @@ function Connect() {
         mr={2}
         fontWeight={700}
         href="https://www.linkedin.com/in/ahmad-atallah/"
-        title="ahmad.atallah"
+        title="ahmad.atallah@linkedin"
       >
         <Linkedin size={24} />
       </BlockLinkGrow>

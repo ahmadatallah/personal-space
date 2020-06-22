@@ -3,7 +3,7 @@ import jsx from '../../jsx';
 import React from 'react';
 import theme from '../../theme';
 import { Div, H2, Span } from '../../elements';
-import Frames from '../../components/Frames';
+import Collage from '../../components/Collage';
 import { zerodBQarunLake } from '../../utils/constants.js';
 
 function ZerodBQarunLake({ ...props }) {
@@ -16,7 +16,7 @@ function ZerodBQarunLake({ ...props }) {
         mx="auto"
       >
         <H2 color="secondary">26 Apr, 2020</H2>
-        <Frames
+        <Collage
           photos={zerodBQarunLake}
           title="Zero Decibel Qarun Lake, Egypt 2020"
           href="zdB-qarun-lake"

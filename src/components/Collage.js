@@ -2,14 +2,15 @@
 import { jsx } from 'theme-ui';
 import React, { useState, useCallback, useEffect } from 'react';
 import { A, H1, H2, Div } from '../elements';
-import Flex from '../components/Flex';
+import Flex from './Flex';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import useColorMode from '../hooks/useColorMode';
 import debounce from '../utils/debounce';
 import Gallery from 'react-photo-gallery';
 import Loading from '../components/Loading';
+import Frame from '../assets/images/frame.png';
 
-function Frames({
+function Collage({
   title,
   href,
   totalPages,
@@ -91,6 +92,18 @@ function Frames({
       ...base,
       color: 'white',
     }),
+    view: base => ({
+      ...base,
+      '& img': {
+        maxHeight: '80vh',
+        maxWidth: '90vw',
+        borderColor: '#fff',
+        borderStyle: 'solid',
+        borderRadius: '255px 15px 225px 15px/15px 225px 15px 255p',
+        borderWidth: '58px 58px 58px 58px',
+        borderImage: `url(${Frame}) 63 61 62 61 stretch stretch`,
+      },
+    }),
   };
 
   return (
@@ -99,7 +112,7 @@ function Frames({
         <A
           fontWeight={600}
           mb={2}
-          fontSize={30}
+          fontSize={[2, 3, 4]}
           color={textColor}
           href={`#${href}`}
         >
@@ -149,4 +162,4 @@ function Frames({
   );
 }
 
-export default Frames;
+export default Collage;

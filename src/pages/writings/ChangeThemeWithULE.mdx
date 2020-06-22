@@ -1,4 +1,4 @@
-import Frames from '../../components/Frames';
+import Collage from '../../components/Collage';
 import { useEffectResults } from '../../utils/constants';
 
 #### 04 Apr, 2019 • ⚗️⚗️ 5 min read
@@ -11,7 +11,7 @@ happens after all DOM mutations. This synchronous process includes reading the l
 from the DOM, rerendering, and, as React [docs](https://reactjs.org/docs/hooks-reference.html#uselayouteffect) says,
 flushing the scheduled updated before the browser has a chance to paint.
 
-<Frames
+<Collage
   photos={[useEffectResults[0]]}
   totalPages={0}
   initialLength={8}
@@ -135,7 +135,7 @@ caused a flicker you will notice switching between articles is not sharp like in
 
 **Try to focus on each gif and compare results later, don't focus on both of them at one time.**
 
-<Frames
+<Collage
   photos={useEffectResults}
   totalPages={0}
   initialLength={8}

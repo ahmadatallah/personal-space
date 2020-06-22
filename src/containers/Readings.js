@@ -5,12 +5,12 @@ import { H1 } from '../elements';
 import useColorMode from '../hooks/useColorMode';
 import ReadingLink from '../components/ReadingLink';
 
-function ReadingsContainer({ title, href, ...props }) {
+export function Readings({ title, href, ...props }) {
   const { textColor } = useColorMode();
 
   return (
     <>
-      <H1 fontWeight={600} color={textColor}>
+      <H1 fontWeight={600} fontSize={4} color={textColor}>
         {' '}
         Readings{' '}
       </H1>
@@ -38,5 +38,3 @@ function ReadingsContainer({ title, href, ...props }) {
     </>
   );
 }
-
-export default ReadingsContainer;

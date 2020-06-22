@@ -3,7 +3,7 @@ import jsx from '../jsx';
 import React from 'react';
 import Flex from '../components/Flex';
 import { Div } from '../elements';
-import ReadingsContainer from '../containers/ReadingsContainer';
+import { Readings as ReadingsContainer } from '../containers/Readings';
 import Header from '../containers/Header';
 
 function Readings() {

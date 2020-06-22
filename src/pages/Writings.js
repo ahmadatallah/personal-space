@@ -4,7 +4,7 @@ import React from 'react';
 import { Div } from '../elements';
 import Header from '../containers/Header';
 import Flex from '../components/Flex';
-import WritingsContainer from '../containers/WritingsContainer';
+import { Writings as WritingsContainer } from '../containers/Writings';
 
 function Writings({ ...props }) {
   return (
