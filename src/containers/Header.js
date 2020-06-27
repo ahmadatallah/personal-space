@@ -33,10 +33,10 @@ function Header() {
     >
       <Div
         display="flex"
-        mr={2}
         flexDirection="row"
         alignItems="center"
         minWidth={260}
+        mr={3}
       >
         <StyledLink to="/">
           <Avatar
@@ -51,24 +51,35 @@ function Header() {
             width={40}
           />
         </StyledLink>
-        <Flex flexDirection={['column', 'row', 'row']} alignItems="center">
-          <StyledLink to="/readings">
-            <Text variant="headergrow">Readings</Text>
-          </StyledLink>
+        <Flex
+          flexWrap="nowrap"
+          flexDirection={['row-reverse', 'row']}
+          alignItems="center"
+        >
+          <Flex flexDirection={['column', 'row', 'row']} alignItems="flex-end">
+            <StyledLink to="/readings">
+              <Text variant="headergrow">Readings</Text>
+            </StyledLink>
 
-          <StyledLink to="/writings">
-            <Text variant="headergrow">Writings</Text>
-          </StyledLink>
-          <StyledLink to="/frames">
-            <Text variant="headergrow">Frames</Text>
-          </StyledLink>
+            <StyledLink to="/writings">
+              <Text variant="headergrow">Writings</Text>
+            </StyledLink>
+            <StyledLink to="/frames">
+              <Text variant="headergrow">Frames</Text>
+            </StyledLink>
 
-          <StyledLink to="/archive">
-            <Text variant="headergrow">Archive</Text>
-          </StyledLink>
+            <StyledLink to="/archive">
+              <Text variant="headergrow">Archive</Text>
+            </StyledLink>
+          </Flex>
+          <Div width="36px">
+            <ColorModeApplier
+              mode={colorMode}
+              onClick={changeTheme.bind(this)}
+            />
+          </Div>
         </Flex>
       </Div>
-      <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
     </HeaderElement>
   );
 }
