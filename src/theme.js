@@ -1,6 +1,7 @@
 import nightOwl from '@theme-ui/prism/presets/night-owl.json';
 const theme = {
-  // initialColorModeName: 'dark',
+  initialColorModeName: 'dark',
+  useColorSchemeMediaQuery: true,
   breakpoints: ['30em', '60em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 36, 48, 80, 96, 128],
