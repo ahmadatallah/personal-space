@@ -4,6 +4,9 @@ import React from 'react';
 import BlockLinkGrow from '../components/BlockLinkGrow';
 import { Div } from '../elements';
 import Resume from '../external/Resume.pdf';
+import Avatar from '../components/Avatar';
+import avatarImg from '../assets/images/avatar.jpg';
+import StyledLink from '../components/StyledLink';
 
 import {
   FaTwitter as Twitter,
@@ -15,13 +18,24 @@ import {
 function Connect() {
   return (
     <Div
-      ml="auto"
       display="flex"
-      borderTop="0.5px solid"
       alignItems="center"
+      justifyContent="center"
       borderColor="secondary"
-      pt={3}
+      ml="auto"
+      mr="auto"
+      p={3}
     >
+      <StyledLink to="/">
+        <Avatar
+          alt="avatar"
+          id="avatar"
+          src={avatarImg}
+          borderRadius="50%"
+          mr={2}
+          width={40}
+        />
+      </StyledLink>
       <BlockLinkGrow
         mr={2}
         fontWeight={700}

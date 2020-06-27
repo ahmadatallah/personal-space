@@ -55,8 +55,4 @@ const Header = styled('header', { shouldForwardProp })(
   }
 );
 
-Header.defaultProps = {
-  backgroundColor: 'background',
-};
-
 export default Header;

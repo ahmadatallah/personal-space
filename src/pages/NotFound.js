@@ -4,6 +4,7 @@ import React from 'react';
 import { H1, Img, Div } from '../elements';
 import Flex from '../components/Flex';
 import Header from '../containers/Header';
+import Footer from '../containers/Footer';
 import useColorMode from '../hooks/useColorMode';
 
 import ConfusedTravolta from '../assets/images/confused-travolta.svg';
@@ -18,8 +19,8 @@ function NotFound() {
         alignItems="center"
         ml="auto"
         mr="auto"
-        pr={3}
-        pl={3}
+        pl={4}
+        pr={4}
         flexDirection="column"
       >
         <Header />
@@ -33,12 +34,13 @@ function NotFound() {
             404 Not Found
           </H1>
           <Img
-            height={[300, 400, 500]}
+            height={[300, 300, 400]}
             borderRadius="50%"
             alt="confused travolta aka not found"
             src={ConfusedTravolta}
           ></Img>
         </Container>
+        <Footer />
       </Flex>
     </>
   );

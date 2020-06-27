@@ -1,14 +1,15 @@
 /** @jsx jsx */
 import jsx from '../jsx';
-import React, { useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.jpg';
 import ColorModeApplier from './ColorModeApplier';
 import HeaderElement from '../elements/Header';
 import useColorMode from '../hooks/useColorMode';
-import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
 import Flex from '../components/Flex';
+import { Text } from 'theme-ui';
+import { Div } from '../elements';
 
 function Header() {
   const { colorMode, populateTheme, changeTheme } = useColorMode();
@@ -20,20 +21,23 @@ function Header() {
     <HeaderElement
       display="flex"
       alignItems="center"
+      flexDirection="column"
       mr="auto"
       ml="auto"
       justifyContent="space-around"
       width="100%"
-      pt={3}
-      pb={3}
-      pl={[1, 3, 5]}
-      pr={[1, 3, 5]}
-      style={{
-        top: 0,
-        height: '80px',
-      }}
+      pl={4}
+      pr={4}
+      py={2}
+      mt={3}
     >
-      <Flex flexDirection="row" alignItems="center" mr={2} minWidth={260}>
+      <Div
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+        minWidth={260}
+        mr={3}
+      >
         <StyledLink to="/">
           <Avatar
             alt="avatar"
@@ -43,32 +47,39 @@ function Header() {
             borderColor="secondary"
             borderStyle="solid"
             borderWidth="2px"
-            mr={1}
-            width={50}
+            mr={2}
+            width={40}
           />
         </StyledLink>
-        <StyledLink to="/readings">
-          <Link title="Readings" fontSize={[0, 1, 2]} mr={3} fontWeight={700} />
-        </StyledLink>
+        <Flex
+          flexWrap="nowrap"
+          flexDirection={['row-reverse', 'row']}
+          alignItems="center"
+        >
+          <Flex flexDirection={['column', 'row', 'row']} alignItems="flex-end">
+            <StyledLink to="/readings">
+              <Text variant="headergrow">Readings</Text>
+            </StyledLink>
 
-        <StyledLink to="/writings">
-          <Link title="Writings" fontSize={[0, 1, 2]} mr={3} fontWeight={700} />
-        </StyledLink>
-        <StyledLink to="/frames">
-          <Link title="Frames" fontSize={[0, 1, 2]} mr={3} fontWeight={700} />
-        </StyledLink>
+            <StyledLink to="/writings">
+              <Text variant="headergrow">Writings</Text>
+            </StyledLink>
+            <StyledLink to="/frames">
+              <Text variant="headergrow">Frames</Text>
+            </StyledLink>
 
-        <StyledLink to="/archive">
-          <Link
-            title="Archive"
-            fontSize={[0, 1, 2]}
-            pb={1}
-            mr={3}
-            fontWeight={700}
-          />
-        </StyledLink>
-      </Flex>
-      <ColorModeApplier mode={colorMode} onClick={changeTheme.bind(this)} />
+            <StyledLink to="/archive">
+              <Text variant="headergrow">Archive</Text>
+            </StyledLink>
+          </Flex>
+          <Div width="36px">
+            <ColorModeApplier
+              mode={colorMode}
+              onClick={changeTheme.bind(this)}
+            />
+          </Div>
+        </Flex>
+      </Div>
     </HeaderElement>
   );
 }

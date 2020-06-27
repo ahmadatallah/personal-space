@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import { H1 } from '../elements';
+import { H1, Div } from '../elements';
 import useColorMode from '../hooks/useColorMode';
 import ReadingLink from '../components/ReadingLink';
 
@@ -9,7 +9,7 @@ export function Readings({ title, href, ...props }) {
   const { textColor } = useColorMode();
 
   return (
-    <>
+    <Div mb={[0, 2, '12.9rem']}>
       <H1 fontWeight={600} fontSize={4} color={textColor}>
         {' '}
         Readings{' '}
@@ -35,6 +35,6 @@ export function Readings({ title, href, ...props }) {
         title="Algorithms interviews: theory vs. practice"
         link="https://danluu.com/algorithms-interviews/"
       />
-    </>
+    </Div>
   );
 }

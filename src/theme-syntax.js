@@ -1,4 +1,4 @@
-const theme = {
+const themeSyntax = {
   plain: {
     backgroundColor: '#f2f3fe',
     color: '#000000',
@@ -94,4 +94,4 @@ const theme = {
   ],
 };
 
-export default theme;
+export default themeSyntax;

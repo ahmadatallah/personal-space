@@ -3,9 +3,10 @@ import jsx from '../jsx';
 import React from 'react';
 import ColorModeButton from '../components/ColorModeButton';
 import { Svg, Path } from '../elements';
-import theme from '../theme';
+import { useThemeUI } from 'theme-ui';
 
 function ColorModeApplier({ ...props }) {
+  const { theme } = useThemeUI();
   return (
     <ColorModeButton
       onClick={props.onClick}
@@ -13,13 +14,13 @@ function ColorModeApplier({ ...props }) {
       role="button"
       aria-label="Color Mode"
     >
-      <Svg viewBox="0 0 32 34" display="block">
+      <Svg viewBox="0 0 32 32" display="block" width="24" height="24">
         <circle
           cx="16"
           cy="16"
           r="14"
           fill="none"
-          stroke={theme.colors.modes[props.mode].secondary}
+          stroke="currentcolor"
           strokeWidth="4"
         />
         <Path

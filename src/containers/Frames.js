@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui';
 import React from 'react';
 import Collage from '../components/Collage';
 import { photos } from '../utils/constants';
-import Footer from './Footer';
 
 export function Frames({ ...props }) {
   return (
@@ -14,7 +13,6 @@ export function Frames({ ...props }) {
         initialLength={45}
         photos={photos}
       />
-      <Footer />
     </>
   );
 }

@@ -1,5 +1,8 @@
+/** @jsx jsx */
+import jsx from '../jsx';
 import styled from '@emotion/styled';
 import shouldForwardProp from '@styled-system/should-forward-prop';
+import { useThemeUI } from 'theme-ui';
 
 import {
   space,
@@ -20,7 +23,7 @@ import {
   textStyle,
 } from 'styled-system';
 
-const BlockLinkGrow = styled('a', { shouldForwardProp })(
+const StyledA = styled('a', { shouldForwardProp })(
   space,
   width,
   maxWidth,
@@ -37,24 +40,28 @@ const BlockLinkGrow = styled('a', { shouldForwardProp })(
   borderColor,
   borderRadius,
   borderWidth,
-  {
+  props => ({
     boxSizing: 'border-box',
     backfaceVisibility: 'hidden',
-    opacity: 0.75,
     textDecoration: 'none',
     transition: 'transform 0.25s ease-out',
     ':hover': {
       cursor: 'pointer',
-      opacity: 0.5,
       transition: 'scale(1.05)',
+      color: props.theme.colors.modes[props.colorMode].secondary,
     },
-  }
+  })
 );
+
+const BlockLinkGrow = ({ ...props }) => {
+  const { colorMode, theme } = useThemeUI();
+  return <StyledA {...props} theme={theme} colorMode={colorMode} />;
+};
 
 BlockLinkGrow.defaultProps = {
   bg: 'transparent',
   cursor: 'pointer',
-  color: 'secondary',
+  color: 'text',
 };
 
 export default BlockLinkGrow;

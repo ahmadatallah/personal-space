@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React, { lazy, Suspense } from 'react';
-import theme from '../theme';
+import { useThemeUI } from 'theme-ui';
 import Container from '../components/Container';
 import { H3, H2, Div } from '../elements';
 import Flex from '../components/Flex';
@@ -13,6 +13,7 @@ import Loading from '../components/Loading';
 const Img = lazy(() => import('../elements/Img'));
 
 function About() {
+  const { theme } = useThemeUI();
   return (
     <>
       <Flex
@@ -47,11 +48,7 @@ function About() {
           </Suspense>
         </Div>
         <Div mx="auto" maxWidth="64rem">
-          <H3
-            px={[3, 4]}
-            fontWeight={4}
-            style={{ 'font-family': theme.typefaces.mono }}
-          >
+          <H3 px={[3, 4]} fontWeight={4}>
             I'm Ahmad Atallah. An egyptian software engineer. Interested in
             functional programming, frontend engineering, and design. What makes
             me alive is doing things I'm interested in, like previously

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
 import { lazy, Suspense } from 'react';
-import theme from '../../theme';
 import { Div, H2 } from '../../elements';
 import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
@@ -16,25 +15,16 @@ function CreateReactAppEnvVars({ ...props }) {
   return (
     <layout>
       <Flex
-        alignItems="center"
+        alignItems="left"
         flexDirection="column"
         maxWidth="80em"
+        minWidth="20rem"
         minHeight="100%"
         mr="auto"
         ml="auto"
-        minWidth="20rem"
-        pr={3}
-        pl={3}
       >
         <Header />
-        <Div
-          justifyConent="center"
-          maxWidth={900}
-          px={[2, 2, 4]}
-          mx="auto"
-          fontFamily={theme.typefaces.sansSerif}
-          mt={30}
-        >
+        <Div display="grid" pl={4} pr={4} py={2} mt={1} width={[1, 2 / 3]}>
           <Suspense
             fallback={
               <Flex flexDirection="row" justifyContent="center">
@@ -48,8 +38,8 @@ function CreateReactAppEnvVars({ ...props }) {
           >
             <Content />
           </Suspense>
-          <Footer />
         </Div>
+        <Footer />
       </Flex>
     </layout>
   );
