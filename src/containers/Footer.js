@@ -8,6 +8,7 @@ function Footer() {
     <footer width="100%">
       <Div
         display="flex"
+        textAlign="center"
         flexWrap="wrap"
         justifyContent={['center', 'space-between']}
         alignItems="center"

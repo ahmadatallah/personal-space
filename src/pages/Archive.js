@@ -10,7 +10,7 @@ import { Archive as ArchiveContainer } from '../containers/Archive';
 function Archive({ ...props }) {
   return (
     <Flex
-      alignItems="center"
+      alignItems="left"
       flexDirection="column"
       maxWidth="80em"
       minWidth="20rem"
@@ -19,10 +19,10 @@ function Archive({ ...props }) {
       ml="auto"
     >
       <Header />
-      <Div display="grid" pl={[1, 3, 4]} pr={[1, 3, 4]} py={2} mt={1}>
+      <Div display="grid" pl={4} pr={4} py={2} mt={1} width={[1, 2 / 3]}>
         <ArchiveContainer />
-        <Footer />
       </Div>
+      <Footer />
     </Flex>
   );
 }

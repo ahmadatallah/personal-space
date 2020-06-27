@@ -18,7 +18,7 @@ function Frames({ ...props }) {
       ml="auto"
     >
       <Header />
-      <Div display="grid" pl={[1, 3, 4]} pr={[1, 3, 4]} py={2} mt={1}>
+      <Div display="grid" pl={4} pr={4} py={2} mt={1}>
         <FramesContainer />
         <Footer />
       </Div>

@@ -17,7 +17,7 @@ function CreateReactAppEnvVars({ ...props }) {
   return (
     <layout>
       <Flex
-        alignItems="center"
+        alignItems="left"
         flexDirection="column"
         maxWidth="80em"
         minHeight="100%"
@@ -28,14 +28,7 @@ function CreateReactAppEnvVars({ ...props }) {
         pl={3}
       >
         <Header />
-        <Div
-          justifyConent="center"
-          maxWidth={900}
-          px={[2, 2, 4]}
-          mx="auto"
-          fontFamily={theme.typefaces.sansSerif}
-          mt={30}
-        >
+        <Div display="grid" pl={4} pr={4} py={2} mt={1} width={[1, 2 / 3]}>
           <Suspense
             fallback={
               <Flex flexDirection="row" justifyContent="center">

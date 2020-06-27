@@ -19,8 +19,8 @@ function NotFound() {
         alignItems="center"
         ml="auto"
         mr="auto"
-        pr={3}
-        pl={3}
+        pl={4}
+        pr={4}
         flexDirection="column"
       >
         <Header />

@@ -7,6 +7,7 @@ import StyledLink from '../components/StyledLink';
 import { H1, Div, Small, P } from '../elements';
 import useColorMode from '../hooks/useColorMode';
 import BlockLinkGrow from '../components/BlockLinkGrow';
+import { Text } from 'theme-ui';
 
 const LinkIcon = ({ color }) => {
   return (
@@ -26,13 +27,10 @@ export function Writings({ title, href, ...props }) {
         Writings{' '}
       </H1>
       <Div mb={3}>
-        <LinkIcon />
         <StyledLink to="/writings/create-react-app-run-build-envs">
-          <Link
-            title="Create React App: Run-time vs Build-time Environment Variables"
-            fontSize={[2, 3, 3]}
-            fontWeight={[900, 600, 600]}
-          />
+          <Text variant="grow">
+            Create React App: Run-time vs Build-time Environment Variables
+          </Text>
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
@@ -49,13 +47,8 @@ export function Writings({ title, href, ...props }) {
         </Div>
       </Div>
       <Div mb={3}>
-        <LinkIcon />
         <StyledLink to="/writings/pascal-typescript-example">
-          <Link
-            title="Pattern Matching Example in TypeScript"
-            fontSize={[2, 3, 3]}
-            fontWeight={[900, 600, 600]}
-          />
+          <Text variant="grow">Pattern Matching Example in TypeScript </Text>
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
@@ -69,13 +62,8 @@ export function Writings({ title, href, ...props }) {
         </Div>
       </Div>
       <Div mb={3}>
-        <LinkIcon />
         <StyledLink to="/writings/notify-pwa-updates">
-          <Link
-            title="Notify A Progressive Web App (PWA) Updates"
-            fontSize={[2, 3, 3]}
-            fontWeight={[900, 600, 600]}
-          />
+          <Text variant="grow">Notify A Progressive Web App (PWA) Updates</Text>
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>
@@ -92,14 +80,11 @@ export function Writings({ title, href, ...props }) {
         </Div>
       </Div>
       <Div mb={3}>
-        <LinkIcon />
         <StyledLink to="/writings/change-theme-with-use-layout-effect">
-          <Link
-            title="Navigate then Change The Theme; An Experiment to useLayoutEffect React
-            Hook"
-            fontSize={[2, 3, 3]}
-            fontWeight={[900, 600, 600]}
-          />
+          <Text variant="grow">
+            Navigate then Change The Theme; An Experiment to useLayoutEffect
+            React Hook
+          </Text>
         </StyledLink>
         <Div ml={[2, 2, 3]}>
           <Small>

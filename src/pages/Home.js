@@ -19,7 +19,7 @@ function Home({ ...props }) {
       ml="auto"
     >
       <Header />
-      <Div py={2} mt={4} pl={[1, 3, 4]} pr={[1, 3, 4]}>
+      <Div py={2} mt={4} pl={4} pr={4}>
         <H1 fontSize={4} mt={0} mb={3}>
           Atallahsan
         </H1>
