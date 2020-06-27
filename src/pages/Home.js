@@ -1,50 +1,41 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import theme from '../theme';
-import { H1, H2, Section, H3, Div } from '../elements';
-import Connect from '../containers/Connect';
-import { ThemeProvider, ColorMode } from 'theme-ui';
+import { H1, Section, H3, Div } from '../elements';
 import Footer from '../containers/Footer';
 import Header from '../containers/Header';
-import { Writings as WritingsContainer } from '../containers/Writings';
 import Contributions from '../containers/Contributions';
+import { Projects } from '../containers/Projects';
 
 function Home({ ...props }) {
   return (
-    <ThemeProvider theme={theme}>
-      <ColorMode />
-      <Section
-        alignItems="center"
-        flexDirection="column"
-        maxWidth="80em"
-        minHeight="100%"
-        mr="auto"
-        ml="auto"
-        minWidth="20rem"
-        pr={3}
-        pl={3}
-      >
-        <Header />
-        <Div py={2} pl={[1, 3, 5]} pr={[1, 3, 5]}>
-          <>
-            <H1 fontSize={5} mt={0} mb={0}>
-              Atallahsan
-            </H1>
-          </>
-          <H3 fontWeight={600} maxWidth="50rem">
-            Hi there! I am Ahmad Atallah, a software engineer. Interested in
-            functional programming, frontend engineering, and design. This is my
-            personal space where I share things like readings, writings, frames
-            I take in daily life and random thoughts.
-          </H3>
-          <Contributions />
-          <WritingsContainer />
-          <Connect />
-          <Footer />
-        </Div>
-      </Section>
-    </ThemeProvider>
+    <Section
+      alignItems="center"
+      flexDirection="column"
+      maxWidth="80em"
+      minWidth="20rem"
+      minHeight="100%"
+      mr="auto"
+      ml="auto"
+    >
+      <Header />
+      <Div py={2} mt={4} pl={[1, 3, 4]} pr={[1, 3, 4]}>
+        <H1 fontSize={4} mt={0} mb={3}>
+          Atallahsan
+        </H1>
+        <H1 fontSize={4} mt={0} mb={0}>
+          Ahmad Atallah
+        </H1>
+        <H3 fontWeight={600} maxWidth="50rem" mb={4}>
+          Software engineer who's doing mostly frontend stuff. Here, you are on
+          my personal space where I share things like readings, writings, frames
+          I take in daily life and random thoughts.
+        </H3>
+        <Contributions />
+        <Projects />
+        <Footer />
+      </Div>
+    </Section>
   );
 }
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import theme from '../theme';
 import { modes } from '../utils/constants';
-import { useColorMode } from 'theme-ui';
+import { useColorMode, useThemeUI } from 'theme-ui';
 
 function useColorModeHook({ ...props }) {
   const [colorMode, setColorMode] = useColorMode();
   const [textColor, changeTextTheme] = useState();
+  const { theme } = useThemeUI();
   const [backgroundColor, changeBackgroundTheme] = useState();
   const populateTheme = colorTheme => {
     const i = modes.indexOf(colorTheme);

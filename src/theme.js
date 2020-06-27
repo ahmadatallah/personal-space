@@ -1,5 +1,6 @@
 import nightOwl from '@theme-ui/prism/presets/night-owl.json';
 const theme = {
+  // initialColorModeName: 'dark',
   breakpoints: ['30em', '60em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 36, 48, 80, 96, 128],
@@ -14,10 +15,31 @@ const theme = {
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "avenir next", avenir, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
     mono: 'Consolas, monaco, monospace',
   },
-  textStyles: {
+  text: {
     caps: {
       textTransform: 'uppercase',
       letterSpacing: '0.1em',
+    },
+    headergrow: {
+      textTransform: 'uppercase',
+      letterSpacing: ['0.1em', '0.2em', '0.2em'],
+      fontWeight: '700',
+      marginRight: [1, 2, 3],
+      color: 'text',
+      fontSize: '14px',
+      ':hover': {
+        color: 'secondary',
+      },
+    },
+    grow: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+      fontWeight: '700',
+      color: 'text',
+      fontSize: '18px',
+      ':hover': {
+        color: 'secondary',
+      },
     },
     'tracked-tight': {
       letterSpacing: '-0.05em',
@@ -40,8 +62,8 @@ const theme = {
       light: {
         text: '#000',
         background: '#fff',
-        primary: 'hsl(120, 100%, 40%)',
-        secondary: '#000',
+        primary: 'hsl(260, 100%, 57%)',
+        secondary: 'hsl(240, 100%, 57%)',
         accent: 'hsl(120, 100%, 90%)',
         muted: 'hsl(120, 20%, 7%)',
         gray: 'hsl(0, 0%, 75%)',
@@ -59,8 +81,8 @@ const theme = {
       dark: {
         text: '#fff',
         background: 'hsl(180, 5%, 15%)',
-        primary: 'hsl(180, 100%, 57%)',
-        secondary: 'hsl(50, 100%, 57%)',
+        primary: 'hsl(50, 100%, 57%)',
+        secondary: 'hsl(180, 100%, 57%)',
         accent: 'hsl(310, 100%, 57%)',
         muted: 'hsl(180, 5%, 5%)',
         gray: 'hsl(180, 0%, 70%)',
@@ -87,8 +109,8 @@ const theme = {
       pink: {
         text: 'hsl(350, 80%, 10%)',
         background: 'hsl(350, 100%, 90%)',
-        primary: 'hsl(350, 100%, 50%)',
-        secondary: 'hsl(350, 80%, 10%)',
+        secondary: 'hsl(350, 100%, 50%)',
+        primary: 'hsl(350, 80%, 10%)',
         accent: 'hsl(280, 100%, 20%)',
         muted: 'hsl(350, 100%, 88%)',
         gray: 'hsl(350, 40%, 50%)',
@@ -173,8 +195,8 @@ const theme = {
       borderRadius: 'default',
     },
   },
-  // MDX Styles
 
+  // MDX Styles
   styles: {
     p: {
       lineHeight: 1.5,
@@ -189,6 +211,11 @@ const theme = {
     },
     a: {
       color: 'secondary',
+      ':hover': {
+        cursor: 'pointer',
+        transition: 'scale(1.05)',
+        color: 'secondary',
+      },
     },
     h2: {
       color: 'secondary',

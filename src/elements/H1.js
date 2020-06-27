@@ -40,7 +40,7 @@ const H1 = styled('h1', { shouldForwardProp })(
 );
 
 H1.defaultProps = {
-  color: 'secondary',
+  color: 'text',
 };
 
 export default H1;

@@ -1,33 +1,24 @@
 /** @jsx jsx */
 import jsx from '../jsx';
-import React from 'react';
-import theme from '../theme';
-import { P } from '../elements';
-import BlockLinkGrow from '../components/BlockLinkGrow.js';
+import { Div, Span } from '../elements';
+import Connect from './Connect';
 
 function Footer() {
   return (
-    <footer
-      display="flex"
-      alignItems="center"
-      width="100%"
-      fontFamily={theme.typefaces.mono}
-    >
-      <P fontFamily={theme.typefaces.mono} fontWeight={600}>
-        {' '}
-        Proudly built with Tachyons, Styled System and React © syncatallah 2019{' '}
-        {' •'}
-        <BlockLinkGrow
-          ml={2}
-          fontWeight={700}
-          color="currentcolor"
-          href="/about"
-          title="About"
-          fontFamily={theme.typefaces.mono}
-        >
-          {'About'}
-        </BlockLinkGrow>
-      </P>
+    <footer width="100%">
+      <Div
+        display="flex"
+        flexWrap="wrap"
+        justifyContent={['center', 'space-between']}
+        alignItems="center"
+        fontWeight={600}
+      >
+        <Connect />
+        <Span m={2} textAlign="center">
+          Proudly built with Tachyons, Styled System and React
+        </Span>
+        <Span>© 2020 Ahmad Atallah</Span>
+      </Div>
     </footer>
   );
 }

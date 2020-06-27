@@ -1,9 +1,8 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { ThemeProvider, ColorMode } from 'theme-ui';
+import { ThemeProvider } from 'theme-ui';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import theme from './theme';
 import { P, Div, Span } from './elements';
-import GlobalStyles from './global-styles';
 import { connect } from 'react-redux';
 import Flex from './components/Flex';
 import { ToastContainer, toast } from 'react-toastify';
@@ -59,11 +58,13 @@ const Msg = ({ closeToast }) => (
     </Flex>
   </Flex>
 );
+
 const mapStateToProps = state => {
   return {
     serviceWorkerUpdated: state.serviceWorkerUpdated,
   };
 };
+
 function App(props) {
   useEffect(() => {
     if (props.serviceWorkerUpdated) {
@@ -80,8 +81,6 @@ function App(props) {
   }, [props.serviceWorkerUpdated]);
   return (
     <ThemeProvider theme={theme}>
-      <ColorMode />
-      <GlobalStyles />
       <ToastContainer
         position="bottom-right"
         autoClose={3000}
