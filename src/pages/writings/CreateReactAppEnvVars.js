@@ -24,8 +24,6 @@ function CreateReactAppEnvVars({ ...props }) {
         mr="auto"
         ml="auto"
         minWidth="20rem"
-        pr={3}
-        pl={3}
       >
         <Header />
         <Div display="grid" pl={4} pr={4} py={2} mt={1} width={[1, 2 / 3]}>

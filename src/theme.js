@@ -23,9 +23,11 @@ const theme = {
     },
     headergrow: {
       textTransform: 'uppercase',
-      letterSpacing: ['0.1em', '0.2em', '0.2em'],
+      letterSpacing: '0.2em',
       fontWeight: '700',
-      marginRight: [1, 2, 3],
+      marginRight: [0, 3, 3],
+      marginTop: 2,
+      marginBottom: 2,
       color: 'text',
       fontSize: '14px',
       ':hover': {
