@@ -11,6 +11,7 @@ import EVSP from '../pages/archive/EVSP';
 import Para from '../pages/archive/Para';
 import DesertOctopus from '../pages/archive/DesertOctopus';
 import ZerodBQarunLake from '../pages/archive/ZerodBQarunLake';
+import SoyCuba from '../pages/archive/SoyCuba';
 
 export function Archive({ ...props }) {
   const { textColor } = useColorMode();
@@ -21,6 +22,7 @@ export function Archive({ ...props }) {
         {' '}
         Archive{' '}
       </H1>
+      <SoyCuba />
       <ZerodBQarunLake />
       <DesertOctopus />
       <Para />
