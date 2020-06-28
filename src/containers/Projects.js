@@ -16,7 +16,7 @@ export function Projects({ title, href, ...props }) {
         Projects{' '}
       </H1>
       <Div mb={3} width={[1, 1 / 2, 1 / 3]}>
-        <BlockLinkGrow href="https://tachyons-styled-react-ts.now.sh/">
+        <BlockLinkGrow href="https://tachyons-styled-tsx.now.sh/">
           <Text variant="grow">tachyons styled tsx</Text>
         </BlockLinkGrow>
         <P>
