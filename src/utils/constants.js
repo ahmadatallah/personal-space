@@ -24,6 +24,72 @@ import carouselx5x2 from '../assets/images/carousel/0005carousel/0005carousel_ap
 import carouselx5x3 from '../assets/images/carousel/0005carousel/0005carousel_apqqdt_c_scale,w_906.jpg';
 import carouselx5x4 from '../assets/images/carousel/0005carousel/0005carousel_apqqdt_c_scale,w_1033.jpg';
 
+import carouselx5v2x1 from '../assets/images/carousel/0005_2carousel/0005_2carousel_dmzsdr_c_scale,w_200.jpg';
+import carouselx5v2x2 from '../assets/images/carousel/0005_2carousel/0005_2carousel_dmzsdr_c_scale,w_721.jpg';
+import carouselx5v2x3 from '../assets/images/carousel/0005_2carousel/0005_2carousel_dmzsdr_c_scale,w_1043.jpg';
+import carouselx5v2x4 from '../assets/images/carousel/0005_2carousel/0005_2carousel_dmzsdr_c_scale,w_1296.jpg';
+import carouselx5v2x5 from '../assets/images/carousel/0005_2carousel/0005_2carousel_dmzsdr_c_scale,w_1400.jpg';
+
+import carouselx5v3x1 from '../assets/images/carousel/0005_3carousel/0005_3carousel_yeqveq_c_scale,w_200.jpg';
+import carouselx5v3x2 from '../assets/images/carousel/0005_3carousel/0005_3carousel_yeqveq_c_scale,w_744.jpg';
+import carouselx5v3x3 from '../assets/images/carousel/0005_3carousel/0005_3carousel_yeqveq_c_scale,w_1096.jpg';
+import carouselx5v3x4 from '../assets/images/carousel/0005_3carousel/0005_3carousel_yeqveq_c_scale,w_1298.jpg';
+import carouselx5v3x5 from '../assets/images/carousel/0005_3carousel/0005_3carousel_yeqveq_c_scale,w_1400.jpg';
+
+import carouselx5v4x1 from '../assets/images/carousel/0005_4carousel/0005_4carousel_h4hg4h_c_scale,w_200.jpg';
+import carouselx5v4x2 from '../assets/images/carousel/0005_4carousel/0005_4carousel_h4hg4h_c_scale,w_666.jpg';
+import carouselx5v4x3 from '../assets/images/carousel/0005_4carousel/0005_4carousel_h4hg4h_c_scale,w_951.jpg';
+import carouselx5v4x4 from '../assets/images/carousel/0005_4carousel/0005_4carousel_h4hg4h_c_scale,w_1201.jpg';
+import carouselx5v4x5 from '../assets/images/carousel/0005_4carousel/0005_4carousel_h4hg4h_c_scale,w_1400.jpg';
+
+import carouselx5v5x1 from '../assets/images/carousel/0005_5carousel/0005_5carousel_rthf7s_c_scale,w_200.jpg';
+import carouselx5v5x2 from '../assets/images/carousel/0005_5carousel/0005_5carousel_rthf7s_c_scale,w_734.jpg';
+import carouselx5v5x3 from '../assets/images/carousel/0005_5carousel/0005_5carousel_rthf7s_c_scale,w_1067.jpg';
+import carouselx5v5x4 from '../assets/images/carousel/0005_5carousel/0005_5carousel_rthf7s_c_scale,w_1284.jpg';
+import carouselx5v5x5 from '../assets/images/carousel/0005_5carousel/0005_5carousel_rthf7s_c_scale,w_1400.jpg';
+
+import carouselx5v6x1 from '../assets/images/carousel/0005_6carousel/0005_6carousel_t4vrw1_c_scale,w_200.jpg';
+import carouselx5v6x2 from '../assets/images/carousel/0005_6carousel/0005_6carousel_t4vrw1_c_scale,w_687.jpg';
+import carouselx5v6x3 from '../assets/images/carousel/0005_6carousel/0005_6carousel_t4vrw1_c_scale,w_907.jpg';
+import carouselx5v6x4 from '../assets/images/carousel/0005_6carousel/0005_6carousel_t4vrw1_c_scale,w_1003.jpg';
+import carouselx5v6x5 from '../assets/images/carousel/0005_6carousel/0005_6carousel_t4vrw1_c_scale,w_1040.jpg';
+
+import carouselx5v7x1 from '../assets/images/carousel/0005_7carousel/0005_7carousel_k0189s_c_scale,w_200.jpg';
+import carouselx5v7x2 from '../assets/images/carousel/0005_7carousel/0005_7carousel_k0189s_c_scale,w_706.jpg';
+import carouselx5v7x3 from '../assets/images/carousel/0005_7carousel/0005_7carousel_k0189s_c_scale,w_1026.jpg';
+import carouselx5v7x4 from '../assets/images/carousel/0005_7carousel/0005_7carousel_k0189s_c_scale,w_1254.jpg';
+import carouselx5v7x5 from '../assets/images/carousel/0005_7carousel/0005_7carousel_k0189s_c_scale,w_1400.jpg';
+
+import carouselx5v8x1 from '../assets/images/carousel/0005_8carousel/0005_8carousel_kg8xvi_c_scale,w_200.jpg';
+import carouselx5v8x2 from '../assets/images/carousel/0005_8carousel/0005_8carousel_kg8xvi_c_scale,w_768.jpg';
+import carouselx5v8x3 from '../assets/images/carousel/0005_8carousel/0005_8carousel_kg8xvi_c_scale,w_1073.jpg';
+import carouselx5v8x4 from '../assets/images/carousel/0005_8carousel/0005_8carousel_kg8xvi_c_scale,w_1281.jpg';
+import carouselx5v8x5 from '../assets/images/carousel/0005_8carousel/0005_8carousel_kg8xvi_c_scale,w_1400.jpg';
+
+import carouselx5v9x1 from '../assets/images/carousel/0005_9carousel/0005_9carousel_nw8q9c_c_scale,w_200.jpg';
+import carouselx5v9x2 from '../assets/images/carousel/0005_9carousel/0005_9carousel_nw8q9c_c_scale,w_646.jpg';
+import carouselx5v9x3 from '../assets/images/carousel/0005_9carousel/0005_9carousel_nw8q9c_c_scale,w_936.jpg';
+import carouselx5v9x4 from '../assets/images/carousel/0005_9carousel/0005_9carousel_nw8q9c_c_scale,w_1199.jpg';
+import carouselx5v9x5 from '../assets/images/carousel/0005_9carousel/0005_9carousel_nw8q9c_c_scale,w_1400.jpg';
+
+import carouselx5v10x1 from '../assets/images/carousel/0005_10carousel/0005_10carousel_pxxqvd_c_scale,w_200.jpg';
+import carouselx5v10x2 from '../assets/images/carousel/0005_10carousel/0005_10carousel_pxxqvd_c_scale,w_648.jpg';
+import carouselx5v10x3 from '../assets/images/carousel/0005_10carousel/0005_10carousel_pxxqvd_c_scale,w_940.jpg';
+import carouselx5v10x4 from '../assets/images/carousel/0005_10carousel/0005_10carousel_pxxqvd_c_scale,w_1187.jpg';
+import carouselx5v10x5 from '../assets/images/carousel/0005_10carousel/0005_10carousel_pxxqvd_c_scale,w_1400.jpg';
+
+import carouselx5v11x1 from '../assets/images/carousel/0005_11carousel/0005_11carousel_nzngtd_c_scale,w_200.jpg';
+import carouselx5v11x2 from '../assets/images/carousel/0005_11carousel/0005_11carousel_nzngtd_c_scale,w_753.jpg';
+import carouselx5v11x3 from '../assets/images/carousel/0005_11carousel/0005_11carousel_nzngtd_c_scale,w_1083.jpg';
+import carouselx5v11x4 from '../assets/images/carousel/0005_11carousel/0005_11carousel_nzngtd_c_scale,w_1333.jpg';
+import carouselx5v11x5 from '../assets/images/carousel/0005_11carousel/0005_11carousel_nzngtd_c_scale,w_1400.jpg';
+
+import carouselx5v12x1 from '../assets/images/carousel/0005_12carousel/0005_12carousel_rtjnwo_c_scale,w_200.jpg';
+import carouselx5v12x2 from '../assets/images/carousel/0005_12carousel/0005_12carousel_rtjnwo_c_scale,w_663.jpg';
+import carouselx5v12x3 from '../assets/images/carousel/0005_12carousel/0005_12carousel_rtjnwo_c_scale,w_949.jpg';
+import carouselx5v12x4 from '../assets/images/carousel/0005_12carousel/0005_12carousel_rtjnwo_c_scale,w_1199.jpg';
+import carouselx5v12x5 from '../assets/images/carousel/0005_12carousel/0005_12carousel_rtjnwo_c_scale,w_1400.jpg';
+
 import carouselx6x1 from '../assets/images/carousel/0006carousel/0006carousel_ffgksn_c_scale,w_387.jpg';
 import carouselx6x2 from '../assets/images/carousel/0006carousel/0006carousel_ffgksn_c_scale,w_648.jpg';
 import carouselx6x3 from '../assets/images/carousel/0006carousel/0006carousel_ffgksn_c_scale,w_947.jpg';
@@ -420,6 +486,159 @@ export const photos = [
     alt: 'like neurons ...',
   },
   {
+    src: require('../assets/images/carousel/0005_2carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v2x1} 200w`,
+      `${carouselx5v2x2} 744w`,
+      `${carouselx5v2x3} 1096w`,
+      `${carouselx5v2x4} 1298w`,
+      `${carouselx5v2x5} 1400w`,
+    ],
+    width: 5,
+    height: 3,
+    alt: 'Sand on front of sea',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_3carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v3x1} 200w`,
+      `${carouselx5v3x2} 721w`,
+      `${carouselx5v3x3} 1043w`,
+      `${carouselx5v3x4} 1296w`,
+      `${carouselx5v3x5} 1400w`,
+    ],
+    width: 4,
+    height: 3,
+    alt: 'Three shadows on the ground',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_4carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v4x1} 200w`,
+      `${carouselx5v4x2} 600w`,
+      `${carouselx5v4x3} 951w`,
+      `${carouselx5v4x4} 1201w`,
+      `${carouselx5v4x5} 1400w`,
+    ],
+    width: 4,
+    height: 3,
+    alt: 'Vortex sky',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_5carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v5x1} 200w`,
+      `${carouselx5v5x2} 734w`,
+      `${carouselx5v5x3} 1067w`,
+      `${carouselx5v5x4} 1284w`,
+      `${carouselx5v5x5} 1400w`,
+    ],
+    width: 5,
+    height: 3,
+    alt: 'Vintage road',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_6carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v6x1} 200w`,
+      `${carouselx5v6x2} 687w`,
+      `${carouselx5v6x3} 907w`,
+      `${carouselx5v6x4} 1003w`,
+      `${carouselx5v6x5} 1040w`,
+    ],
+    width: 1,
+    height: 1,
+    alt: 'Green bird',
+  },
+  {
+    src: require('../assets/images/carousel/0005_7carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v7x1} 200w`,
+      `${carouselx5v7x2} 706w`,
+      `${carouselx5v7x3} 1026w`,
+      `${carouselx5v7x4} 1254w`,
+      `${carouselx5v7x5} 1400w`,
+    ],
+    width: 3,
+    height: 4,
+    alt: 'Purple sky and black shadow',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_8carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v8x1} 200w`,
+      `${carouselx5v8x2} 768w`,
+      `${carouselx5v8x3} 1073w`,
+      `${carouselx5v8x4} 1281w`,
+      `${carouselx5v8x5} 1400w`,
+    ],
+    width: 4,
+    height: 3,
+    alt: 'breeze and trees',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_9carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v9x1} 200w`,
+      `${carouselx5v9x2} 646w`,
+      `${carouselx5v9x3} 936w`,
+      `${carouselx5v9x4} 1199w`,
+      `${carouselx5v9x5} 1400w`,
+    ],
+    width: 4,
+    height: 3,
+    alt: 'Blue sky',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_10carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v10x1} 200w`,
+      `${carouselx5v10x2} 648w`,
+      `${carouselx5v10x3} 940w`,
+      `${carouselx5v10x4} 1187w`,
+      `${carouselx5v10x5} 1400w`,
+    ],
+    width: 4,
+    height: 3,
+    alt: 'Uprooted green tree',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_11carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v11x1} 200w`,
+      `${carouselx5v11x2} 753w`,
+      `${carouselx5v11x3} 1083w`,
+      `${carouselx5v11x4} 1333w`,
+      `${carouselx5v11x5} 1400w`,
+    ],
+    width: 5,
+    height: 3,
+    alt: 'Three shadows, but a monism',
+  },
+
+  {
+    src: require('../assets/images/carousel/0005_12carousel.jpeg'),
+    srcSet: [
+      `${carouselx5v12x1} 200w`,
+      `${carouselx5v12x2} 663w`,
+      `${carouselx5v12x3} 949w`,
+      `${carouselx5v12x4} 1199w`,
+      `${carouselx5v12x5} 1400w`,
+    ],
+    width: 3,
+    height: 4,
+    alt: 'Three legs shadows',
+  },
+
+  {
     src: require('../assets/images/carousel/0006carousel.jpg'),
     srcSet: [
       `${carouselx6x1} 387w`,
@@ -427,8 +646,8 @@ export const photos = [
       `${carouselx6x3} 947w`,
       `${carouselx6x4} 1213w`,
     ],
-    width: 3,
-    height: 4,
+    width: 4,
+    height: 5,
     alt: 'man below a tree ...',
   },
   {
@@ -1315,6 +1534,120 @@ export const zerodBQarunLake = [
   },
 ];
 
+export const soyCuba = [
+  {
+    src: require('../assets/images/sc/sc-1.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 1',
+    alt: 'Soy cuba frame 1',
+  },
+  {
+    src: require('../assets/images/sc/sc-2.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 2',
+    alt: 'Soy cuba frame 2',
+  },
+  {
+    src: require('../assets/images/sc/sc-3.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 3',
+    alt: 'Soy cuba frame 3',
+  },
+  {
+    src: require('../assets/images/sc/sc-4.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 4',
+    alt: 'Soy cuba frame 4',
+  },
+  {
+    src: require('../assets/images/sc/sc-5.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 5',
+    alt: 'Soy cuba frame 5',
+  },
+  {
+    src: require('../assets/images/sc/sc-6.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 6',
+    alt: 'Soy cuba frame 6',
+  },
+  {
+    src: require('../assets/images/sc/sc-7.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 7',
+    alt: 'Soy cuba frame 7',
+  },
+  {
+    src: require('../assets/images/sc/sc-8.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 8',
+    alt: 'Soy cuba frame 8',
+  },
+  {
+    src: require('../assets/images/sc/sc-9.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 9',
+    alt: 'Soy cuba frame 9',
+  },
+  {
+    src: require('../assets/images/sc/sc-10.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 10',
+    alt: 'Soy cuba frame 10',
+  },
+  {
+    src: require('../assets/images/sc/sc-11.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 11',
+    alt: 'Soy cuba frame 11',
+  },
+  {
+    src: require('../assets/images/sc/sc-12.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 12',
+    alt: 'Soy cuba frame 12',
+  },
+  {
+    src: require('../assets/images/sc/sc-13.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 13',
+    alt: 'Soy cuba frame 13',
+  },
+  {
+    src: require('../assets/images/sc/sc-14.png'),
+    srcSet: [],
+    width: 7,
+    height: 4,
+    title: 'Soy Cuba 14',
+    alt: 'Soy cuba frame 14',
+  },
+];
 export const useEffectResults = [
   {
     src: require('../assets/gifs/useLayoutEffectslow-Profile-20200404T081308.gif'),
