@@ -47,7 +47,7 @@ const StyledA = styled('a', { shouldForwardProp })(
     transition: 'transform 0.25s ease-out',
     ':hover': {
       cursor: 'pointer',
-      transition: 'scale(1.05)',
+      transform: 'scale(1.22)',
       color: props.theme.colors.modes[props.colorMode].secondary,
     },
   })

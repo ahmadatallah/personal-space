@@ -21,7 +21,7 @@ function Contributions({ ...props }) {
             borderRadius="50%"
             width={40}
             alt="@swvl github"
-            src="https://avatars0.githubusercontent.com/u/29146595?s=60&v=4"
+            src="https://vercel.com/api/www/avatar/924e96be0b95f89d7ddfcdb1d25ac3dc7a366be2?s=204"
           ></Img>
         </BlockLinkGrow>
         <BlockLinkGrow
