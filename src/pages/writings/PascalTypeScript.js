@@ -39,8 +39,8 @@ function PascalTypeScript({ ...props }) {
           >
             <Content />
           </Suspense>
-          <Footer />
         </Div>
+        <Footer />
       </Flex>
     </layout>
   );

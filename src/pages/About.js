@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React, { lazy, Suspense } from 'react';
-import { useThemeUI } from 'theme-ui';
+import { Text } from 'theme-ui';
 import Container from '../components/Container';
 import { H3, H2, Div } from '../elements';
 import Flex from '../components/Flex';
@@ -13,7 +13,6 @@ import Loading from '../components/Loading';
 const Img = lazy(() => import('../elements/Img'));
 
 function About() {
-  const { theme } = useThemeUI();
   return (
     <>
       <Flex
@@ -48,17 +47,17 @@ function About() {
           </Suspense>
         </Div>
         <Div mx="auto" maxWidth="64rem">
-          <H3 px={[3, 4]} fontWeight={4}>
-            I'm Ahmad Atallah. An egyptian software engineer. Interested in
-            functional programming, frontend engineering, and design. What makes
-            me alive is doing things I'm interested in, like previously
-            mentioned, and the willing to learn more and fastly. I like taking
-            visual photos. Photos that I pass by in my daily life; every single
-            day. Noam Chomsky once said: "When you walk around, you're talking
-            to yourself. You can't stop. I mean, it takes a real act of will not
-            to talk to yourself, and what you're doing is thinking" and I find
-            this is about the actual state of my mind all the time.
-          </H3>
+          <Text py={2} px={[3, 4]} fontWeight={4}>
+            I'm Ahmad Atallah. An egyptian software engineer who's doing mostly
+            frontend stuff. Also, I'm interested in functional programming, and
+            design. I do minimal things that's why terseness is something I
+            prefer, and so, I have the willing to learn more and fast. I like
+            taking visual photos. Photos that I pass by in my daily life; every
+            single day. Noam Chomsky once said: "When you walk around, you're
+            talking to yourself. You can't stop. I mean, it takes a real act of
+            will not to talk to yourself, and what you're doing is thinking",
+            and I find this is about the actual state of my mind all the time.
+          </Text>
         </Div>
         <Container mx="auto" px={[3, 4]} maxWidth="64rem">
           <Connect />

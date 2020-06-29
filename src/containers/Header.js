@@ -4,7 +4,7 @@ import { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.jpg';
 import ColorModeApplier from './ColorModeApplier';
-import HeaderElement from '../elements/Header';
+import H from '../elements/Header';
 import useColorMode from '../hooks/useColorMode';
 import StyledLink from '../components/StyledLink';
 import Flex from '../components/Flex';
@@ -18,7 +18,7 @@ function Header() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <HeaderElement
+    <H
       display="flex"
       alignItems="center"
       flexDirection="column"
@@ -53,10 +53,13 @@ function Header() {
         </StyledLink>
         <Flex
           flexWrap="nowrap"
-          flexDirection={['row-reverse', 'row']}
+          flexDirection={['row-reverse', 'row-reversed', 'row']}
           alignItems="center"
         >
-          <Flex flexDirection={['column', 'row', 'row']} alignItems="flex-end">
+          <Flex
+            flexDirection={['column', 'column', 'row']}
+            alignItems="flex-end"
+          >
             <StyledLink to="/readings">
               <Text variant="headergrow">Readings</Text>
             </StyledLink>
@@ -71,6 +74,9 @@ function Header() {
             <StyledLink to="/archive">
               <Text variant="headergrow">Archive</Text>
             </StyledLink>
+            <StyledLink to="/about">
+              <Text variant="headergrow">About</Text>
+            </StyledLink>
           </Flex>
           <Div width="36px">
             <ColorModeApplier
@@ -80,7 +86,7 @@ function Header() {
           </Div>
         </Flex>
       </Div>
-    </HeaderElement>
+    </H>
   );
 }
 
