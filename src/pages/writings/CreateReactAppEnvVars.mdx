@@ -55,24 +55,23 @@ I will extract the env vars in `.env` file into a new javascript config file usi
 
 set -e
 
-# Recreate config file
+# Define env-config path
+env_config_path=./env-config.js
 
-rm -rf ./env-config.js
-touch ./env-config.js
+
+# Recreate config file
+rm -rf $env_config_path
+touch $env_config_path
 
 # Add assignment
-
-echo "window._env_ = {" >> ./env-config.js
+echo "window._env_ = {" >> $env_config_path
 
 # Read each line in .env file
-
 # Each line represents key=value pairs
-
 while read -r line || [[ -n "$line" ]];
 do
 
   # Split env variables by character `=`
-
   if printf '%s\n' "$line" | grep -q -e '='; then
 
        varname=$(printf '%s\n' "$line" | sed -e 's/=.*//')
@@ -82,19 +81,16 @@ do
   fi
 
   # Read value of current variable if exists as Environment variable
-
   value=$(printf '%s\n' "${!varname}")
 
   # Otherwise use value from .env file
-
   [[ -z $value ]] && value=${varvalue}
 
   # Append configuration property to JS file
-
-  echo "  $varname: \"$value\"," >> ./env-config.js
+  echo "  $varname: \"$value\"," >> $env_config_path
 done < .env
 
-echo "}" >> ./env-config.js
+echo "}" >> $env_config_path
 ```
 
 <br></br>
