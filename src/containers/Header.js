@@ -44,9 +44,6 @@ function Header() {
             id="avatar"
             src={avatarImg}
             borderRadius="50%"
-            borderColor="secondary"
-            borderStyle="solid"
-            borderWidth="2px"
             mr={2}
             width={40}
           />

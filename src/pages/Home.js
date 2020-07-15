@@ -20,9 +20,34 @@ function Home({ ...props }) {
     >
       <Header />
       <Div py={2} mt={4} pl={4} pr={4}>
-        <H1 fontSize={4} mt={0} mb={3}>
-          Atallahsan
-        </H1>
+        <svg
+          viewBox="0 0 213.783 66.675"
+          width={['90mm, 90mm, 90mm']}
+          height={['20mm', '20mm', '20mm']}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="layer1"
+            transform="matrix(1, 0, 0, 1, -95.033485, -104.180313)"
+          >
+            <g
+              transform="matrix(0.26458333,0,0,0.26458333,66.458486,45.728502)"
+              id="letter"
+              aria-label="A A"
+            >
+              <path
+                id="path181744"
+                d="M 404,91 V 46 h 9 v -9 h 9 v -9 h 27 v 9 h 9 v 9 h 9 V 91 H 449 V 73 h -27 v 18 z m 18,-27 h 27 V 46 h -9 v -9 h -9 v 9 h -9 z"
+                transform="matrix(4,0,0,4,-1508,108.92024)"
+              />
+              <path
+                id="path181746"
+                d="M 548,91 V 46 h 9 v -9 h 9 v -9 h 27 v 9 h 9 v 9 h 9 V 91 H 593 V 73 h -27 v 18 z m 18,-27 h 27 V 46 h -9 v -9 h -9 v 9 h -9 z"
+                transform="matrix(4,0,0,4,-1528,108.92024)"
+              />
+            </g>
+          </g>
+        </svg>
         <H1 fontSize={4} mt={0} mb={0}>
           Ahmad Atallah
         </H1>
