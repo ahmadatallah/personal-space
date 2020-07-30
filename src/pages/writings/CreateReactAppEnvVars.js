@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
 import { lazy, Suspense } from 'react';
+import { Spinner } from 'theme-ui';
 import { Div, H2 } from '../../elements';
 import Header from '../../containers/Header';
 import Footer from '../../containers/Footer';
 import Flex from '../../components/Flex';
-import Loading from '../../components/Loading';
 import layout from './layout';
 
 const Content = lazy(() =>
@@ -33,7 +33,7 @@ function CreateReactAppEnvVars({ ...props }) {
                   {' '}
                   Loading{' '}
                 </H2>
-                <Loading type="spokes" color="currentcolor" />
+                <Spinner type="spokes" color="currentcolor" />
               </Flex>
             }
           >

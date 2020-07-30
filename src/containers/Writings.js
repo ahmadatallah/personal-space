@@ -36,14 +36,10 @@ export function Writings({ title, href, ...props }) {
           <Small>
             13 Aug, 2019{' '}
             <span role="img" aria-label="min-read">
-              • 📖☕️{' '}
+              •{' '}
             </span>
             7 min read
           </Small>
-          <P mt={0}>
-            Set create-react-app custom environment variables in build, and run
-            time environments without ejecting default configuration.
-          </P>
         </Div>
       </Div>
       <Div mb={3}>
@@ -54,11 +50,10 @@ export function Writings({ title, href, ...props }) {
           <Small>
             8 Sep, 2019{' '}
             <span role="img" aria-label="min-read">
-              • 📖{' '}
+              •{' '}
             </span>
             5 min read
           </Small>
-          <P mt={0}>A "semi-pattern-matching" example in Typescript.</P>
         </Div>
       </Div>
       <Div mb={3}>
@@ -69,14 +64,10 @@ export function Writings({ title, href, ...props }) {
           <Small>
             25 Oct, 2019{' '}
             <span role="img" aria-label="min-read">
-              • 📖📖☕️{' '}
+              •{' '}
             </span>
             15 min read{' '}
           </Small>
-          <P mt={0}>
-            Notify your Offline/Cache-first users in Create React App with
-            service worker.
-          </P>
         </Div>
       </Div>
       <Div mb={3}>
@@ -90,14 +81,10 @@ export function Writings({ title, href, ...props }) {
           <Small>
             04 Apr, 2020
             <span role="img" aria-label="min-read">
-              • ⚗️⚗️{' '}
+              •{' '}
             </span>
             5 min read
           </Small>
-          <P mt={0}>
-            A proven example on how useLayoutEffect React hook can prevent app
-            flickering.
-          </P>
         </Div>
       </Div>
     </>

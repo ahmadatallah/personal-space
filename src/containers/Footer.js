@@ -10,8 +10,10 @@ function Footer() {
         display="flex"
         textAlign="center"
         flexWrap="wrap"
-        justifyContent={['center', 'space-between']}
+        justifyContent="center"
         alignItems="center"
+        paddingLeft="100px"
+        paddingRight="100px"
         fontWeight={600}
       >
         <Connect />

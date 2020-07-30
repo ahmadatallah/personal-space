@@ -7,7 +7,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import useColorMode from '../hooks/useColorMode';
 import debounce from '../utils/debounce';
 import Gallery from 'react-photo-gallery';
-import Loading from '../components/Loading';
+import { Spinner } from 'theme-ui';
 import Frame from '../assets/images/frame.png';
 import { useThemeUI } from 'theme-ui';
 
@@ -176,7 +176,7 @@ function Collage({
             {' '}
             Loading{' '}
           </H2>
-          <Loading type="spokes" color="currentcolor" />
+          <Spinner type="spokes" color="currentcolor" />
         </Flex>
       )}
       <Div>

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
 import React, { lazy, Suspense } from 'react';
+import { Spinner } from 'theme-ui';
 import { Div, H2 } from '../../elements';
 import Flex from '../../components/Flex';
-import Loading from '../../components/Loading';
 const Content = lazy(() => import('!babel-loader!mdx-loader!./Para.mdx'));
 
 function EVSP({ ...props }) {
@@ -17,7 +17,7 @@ function EVSP({ ...props }) {
                 {' '}
                 Loading{' '}
               </H2>
-              <Loading type="spokes" color="currentcolor" />
+              <Spinner type="spokes" color="currentcolor" />
             </Flex>
           }
         >

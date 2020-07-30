@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React, { lazy, Suspense } from 'react';
-import { Text } from 'theme-ui';
+import { Text, Spinner } from 'theme-ui';
 import Container from '../components/Container';
-import { H3, H2, Div } from '../elements';
+import { H2, Div } from '../elements';
 import Flex from '../components/Flex';
 import Connect from '../containers/Connect';
 import about from '../assets/images/about-img.jpg';
 import Header from '../containers/Header';
-import Loading from '../components/Loading';
 
 const Img = lazy(() => import('../elements/Img'));
 
@@ -39,7 +38,7 @@ function About() {
             fallback={
               <Flex flexDirection="column" justifyContent="center" mx="auto">
                 <H2 fontWeight={300}> Loading </H2>
-                <Loading type="spokes" color="currentcolor" />
+                <Spinner type="spokes" color="currentcolor" />
               </Flex>
             }
           >

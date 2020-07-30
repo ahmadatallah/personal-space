@@ -4,7 +4,7 @@ import React, { lazy, Suspense } from 'react';
 import BlockLinkGrow from './BlockLinkGrow';
 import { H2 } from '../elements';
 import Flex from './Flex';
-import Loading from './Loading';
+import { Spinner } from 'theme-ui';
 
 const Img = lazy(() => import('../elements/Img'));
 
@@ -49,7 +49,7 @@ const Card = ({
                     {' '}
                     Loading{' '}
                   </H2>
-                  <Loading type="spokes" color="currentcolor" />
+                  <Spinner type="spokes" color="currentcolor" />
                 </Flex>
               }
             >
