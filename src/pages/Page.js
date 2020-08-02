@@ -5,7 +5,7 @@ import avatar from '../assets/images/avatar.jpg';
 function Page({
   title,
   path,
-  preview = `https://syncatallah.cc${avatar}`,
+  preview = `https://syncatallah.cc/static/media/avatar.72902b0b.jpg`,
   children,
   ...props
 }) {

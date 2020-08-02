@@ -13,7 +13,11 @@ const Img = lazy(() => import('../elements/Img'));
 
 function About() {
   return (
-    <Page title="Home" path="about" preview={`https://syncatallah.cc${about}`}>
+    <Page
+      title="Home"
+      path="about"
+      preview="https://syncatallah.cc/static/media/about-img.589f3ca2.jpg"
+    >
       <Flex
         justifyContent="center"
         flexDirection="column"

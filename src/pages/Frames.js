@@ -14,7 +14,7 @@ function Frames({ ...props }) {
     <Page
       title="Frames"
       path="frames"
-      preview={`https://syncatallah.cc${frame}`}
+      preview="https://syncatallah.cc/static/media/0002carousel.d450fbe3.jpg"
     >
       <Flex
         alignItems="center"
