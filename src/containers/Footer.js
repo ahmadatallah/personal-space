@@ -12,15 +12,15 @@ function Footer() {
         flexWrap="wrap"
         justifyContent="center"
         alignItems="center"
-        paddingLeft="100px"
-        paddingRight="100px"
         fontWeight={600}
       >
         <Connect />
-        <Span m={2} textAlign="center">
-          Proudly built with Tachyons, Styled System and React
-        </Span>
-        <Span>© 2020 Ahmad Atallah</Span>
+        <Div mb={4}>
+          <Span textAlign="center">
+            Proudly built with Tachyons, Styled System and React
+            <br />© 2020 Ahmad Atallah
+          </Span>
+        </Div>
       </Div>
     </footer>
   );

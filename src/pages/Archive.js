@@ -21,8 +21,8 @@ function Archive({ ...props }) {
       <Header />
       <Div display="grid" pl={4} pr={4} py={2} mt={1} width={[1, 2 / 3]}>
         <ArchiveContainer />
+        <Footer />
       </Div>
-      <Footer />
     </Flex>
   );
 }

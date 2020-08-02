@@ -2,12 +2,11 @@
 import jsx from '../jsx';
 import React, { lazy, Suspense } from 'react';
 import { Text, Spinner } from 'theme-ui';
-import Container from '../components/Container';
 import { H2, Div } from '../elements';
 import Flex from '../components/Flex';
-import Connect from '../containers/Connect';
 import about from '../assets/images/about-img.jpg';
 import Header from '../containers/Header';
+import Footer from '../containers/Footer';
 
 const Img = lazy(() => import('../elements/Img'));
 
@@ -58,9 +57,7 @@ function About() {
             and I find this is about the actual state of my mind all the time.
           </Text>
         </Div>
-        <Container mx="auto" px={[3, 4]} maxWidth="64rem">
-          <Connect />
-        </Container>
+        <Footer />
       </Flex>
     </>
   );
