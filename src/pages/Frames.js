@@ -1,28 +1,33 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
+import Page from './Page';
 import Header from '../containers/Header';
 import Footer from '../containers/Footer';
 import { Div } from '../elements';
 import Flex from '../components/Flex';
 import { Frames as FramesContainer } from '../containers/Frames';
+import frame from '../assets/images/carousel/0002carousel.jpg';
+
 function Frames({ ...props }) {
   return (
-    <Flex
-      alignItems="center"
-      flexDirection="column"
-      maxWidth="80em"
-      minWidth="20rem"
-      minHeight="100%"
-      mr="auto"
-      ml="auto"
-    >
-      <Header />
-      <Div display="grid" pl={4} pr={4} py={2} mt={1}>
-        <FramesContainer />
-        <Footer />
-      </Div>
-    </Flex>
+    <Page title="Frames" path="frames" preview={frame}>
+      <Flex
+        alignItems="center"
+        flexDirection="column"
+        maxWidth="80em"
+        minWidth="20rem"
+        minHeight="100%"
+        mr="auto"
+        ml="auto"
+      >
+        <Header />
+        <Div display="grid" pl={4} pr={4} py={2} mt={1}>
+          <FramesContainer />
+          <Footer />
+        </Div>
+      </Flex>
+    </Page>
   );
 }
 

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React, { lazy, Suspense } from 'react';
+import Page from './Page';
 import { Text, Spinner } from 'theme-ui';
 import { H2, Div } from '../elements';
 import Flex from '../components/Flex';
@@ -12,7 +13,7 @@ const Img = lazy(() => import('../elements/Img'));
 
 function About() {
   return (
-    <>
+    <Page title="Home" path="about" preview={about}>
       <Flex
         justifyContent="center"
         flexDirection="column"
@@ -59,7 +60,7 @@ function About() {
         </Div>
         <Footer />
       </Flex>
-    </>
+    </Page>
   );
 }
 
