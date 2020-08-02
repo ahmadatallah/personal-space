@@ -7,11 +7,10 @@ import Footer from '../containers/Footer';
 import Header from '../containers/Header';
 import Contributions from '../containers/Contributions';
 import { Projects } from '../containers/Projects';
-import avatar from '../assets/images/avatar.jpg';
 
 function Home({ ...props }) {
   return (
-    <Page title="Home" path="" preview={avatar}>
+    <Page title="Home" path="">
       <Section
         alignItems="center"
         flexDirection="column"

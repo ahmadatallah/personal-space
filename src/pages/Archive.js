@@ -11,7 +11,11 @@ import lastPost from '../assets/images/flip-your-eye/lunar-2.jpg';
 
 function Archive({ ...props }) {
   return (
-    <Page title="Archive" path="archive" preview={lastPost}>
+    <Page
+      title="Archive"
+      path="archive"
+      preview={`https://syncatallah.cc${lastPost}`}
+    >
       <Flex
         alignItems="left"
         flexDirection="column"

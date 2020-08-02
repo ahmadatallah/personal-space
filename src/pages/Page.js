@@ -1,7 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import avatar from '../assets/images/avatar.jpg';
 
-function Page({ title, path, preview, children, ...props }) {
+function Page({
+  title,
+  path,
+  preview = `https://syncatallah.cc${avatar}`,
+  children,
+  ...props
+}) {
   return (
     <>
       <Helmet

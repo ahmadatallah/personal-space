@@ -11,7 +11,11 @@ import frame from '../assets/images/carousel/0002carousel.jpg';
 
 function Frames({ ...props }) {
   return (
-    <Page title="Frames" path="frames" preview={frame}>
+    <Page
+      title="Frames"
+      path="frames"
+      preview={`https://syncatallah.cc${frame}`}
+    >
       <Flex
         alignItems="center"
         flexDirection="column"
