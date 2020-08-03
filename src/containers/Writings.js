@@ -6,16 +6,7 @@ import Link from '../components/Link';
 import StyledLink from '../components/StyledLink';
 import { H1, Div, Small, P } from '../elements';
 import useColorMode from '../hooks/useColorMode';
-import BlockLinkGrow from '../components/BlockLinkGrow';
 import { Text } from 'theme-ui';
-
-const LinkIcon = ({ color }) => {
-  return (
-    <BlockLinkGrow>
-      <IoIosLink size={22} />
-    </BlockLinkGrow>
-  );
-};
 
 export function Writings({ title, href, ...props }) {
   const { textColor } = useColorMode();

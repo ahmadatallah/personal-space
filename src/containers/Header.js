@@ -13,10 +13,6 @@ import { Div } from '../elements';
 
 function Header() {
   const { colorMode, populateTheme, changeTheme } = useColorMode();
-  useLayoutEffect(() => {
-    populateTheme(colorMode);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <H
       display="flex"

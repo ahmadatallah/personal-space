@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import styled from '@emotion/styled';
 import shouldForwardProp from '@styled-system/should-forward-prop';
 import {
@@ -14,14 +16,7 @@ import {
   borderWidth,
 } from 'styled-system';
 
-const ColorModeButton = styled('button', { shouldForwardProp })(
-  ({ theme, colorMode }) => ({
-    ':hover,:focus': {
-      color: theme.colors.modes[colorMode].secondary,
-      boxShadow: '0 0 0 3px',
-      outline: 'none',
-    },
-  }),
+const StyledButton = styled('button', { shouldForwardProp })(
   space,
   width,
   minWidth,
@@ -35,8 +30,6 @@ const ColorModeButton = styled('button', { shouldForwardProp })(
   borderWidth,
   {
     minWidth: '1.8rem',
-    width: '36px',
-    height: '36px',
     display: 'inline-block',
     appearance: 'none',
     bg: 'transparent',
@@ -47,6 +40,21 @@ const ColorModeButton = styled('button', { shouldForwardProp })(
     margin: '0px',
   }
 );
+
+const ColorModeButton = ({ ...props }) => {
+  return (
+    <StyledButton
+      sx={{
+        ':hover,:focus': {
+          color: 'secondary',
+          boxShadow: '0 0 0 3px',
+          outline: 'none',
+        },
+      }}
+      {...props}
+    />
+  );
+};
 
 ColorModeButton.defaultProps = {
   bg: 'transparent',
