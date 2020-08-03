@@ -16,6 +16,11 @@ function Page({
         defaultTitle={title}
         defer={false}
       >
+        {/* multiple meta elements */}
+        <meta charset="utf-8" />
+        <meta property="og:image" content={preview} />
+        <meta property="og:url" content="https://syncatallah.cc/" />
+
         {/* html attributes */}
         <html lang="en" amp />
 
@@ -26,11 +31,6 @@ function Page({
         <title itemProp="name" lang="en">
           {title}
         </title>
-
-        {/* multiple meta elements */}
-        <meta charset="utf-8" />
-        <meta property="og:image" content={preview} />
-        <meta property="og:url" content="https://syncatallah.cc/" />
       </Helmet>
       {children}
     </>
