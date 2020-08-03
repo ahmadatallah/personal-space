@@ -38,8 +38,8 @@ function CreateReactAppEnvVars({ ...props }) {
           >
             <Content />
           </Suspense>
+          <Footer />
         </Div>
-        <Footer />
       </Flex>
     </layout>
   );
