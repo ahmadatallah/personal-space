@@ -30,7 +30,7 @@ function Page({
         {/* multiple meta elements */}
         <meta charset="utf-8" />
         <meta property="og:image" content={preview} />
-        <meta property="og:url" content={`https://syncatallah.cc/${path}`} />
+        <meta property="og:url" content="https://syncatallah.cc/" />
       </Helmet>
       {children}
     </>
