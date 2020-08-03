@@ -19,7 +19,7 @@ function Page({
         {/* multiple meta elements */}
         <meta charset="utf-8" />
         <meta property="og:image" content={preview} />
-        <meta property="og:url" content="https://syncatallah.cc/" />
+        <meta property="og:url" content={`https://syncatallah.cc/${path}`} />
 
         {/* html attributes */}
         <html lang="en" amp />
