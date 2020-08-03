@@ -38,7 +38,6 @@
     "build-sw": "node ./src/sw-build.js",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw",
-    "postbuild": "react-snap",
     "now-build": "npm run build",
     "lint": "eslint --fix --cache src/"
   },
@@ -62,19 +61,12 @@
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.1",
     "prettier": "1.19.1",
-    "pretty-quick": "^2.0.1",
-    "react-snap": "^1.23.0"
+    "pretty-quick": "^2.0.1"
   },
   "husky": {
     "hooks": {
       "lint": "eslint --fix --cache src/",
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "reactSnap": {
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
   }
 }

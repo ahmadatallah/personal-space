@@ -7,7 +7,6 @@ import Footer from '../containers/Footer';
 import { Div } from '../elements';
 import Flex from '../components/Flex';
 import { Frames as FramesContainer } from '../containers/Frames';
-import frame from '../assets/images/carousel/0002carousel.jpg';
 
 function Frames({ ...props }) {
   return (
