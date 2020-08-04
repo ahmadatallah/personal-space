@@ -10,10 +10,11 @@
   },
   "plugins": ["prettier", "react"],
   "rules": {
+    //...
+    "react/jsx-uses-react": 2,
     "prettier/prettier": "error",
-    "react/jsx-uses-vars": "error",
-    "react/jsx-uses-react": "error",
-    "react/react-in-jsx-scope": "error",
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
     "quotes": [2, "single", {
       "avoidEscape": true
     }],

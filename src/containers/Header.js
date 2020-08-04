@@ -1,18 +1,17 @@
 /** @jsx jsx */
 import jsx from '../jsx';
-import { useLayoutEffect } from 'react';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.jpg';
 import ColorModeApplier from './ColorModeApplier';
 import H from '../elements/Header';
 import useColorMode from '../hooks/useColorMode';
-import StyledLink from '../components/StyledLink';
+import { StyledLink } from '../components/Link';
 import Flex from '../components/Flex';
 import { Text } from 'theme-ui';
 import { Div } from '../elements';
 
 function Header() {
-  const { colorMode, populateTheme, changeTheme } = useColorMode();
+  const { colorMode, changeTheme } = useColorMode();
   return (
     <H
       display="flex"

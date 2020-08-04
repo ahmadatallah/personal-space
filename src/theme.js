@@ -13,7 +13,7 @@ const theme = {
     helvetica: 'Helvetica, sans-serif',
     serif: 'athelas, georgia, times, serif',
     sansSerif:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "avenir next", avenir, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
+      'system-ui, -apple-system, sans-serif, BlinkMacSystemFont, "Segoe UI", "avenir next", avenir, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial',
     mono: 'Consolas, monaco, monospace',
   },
   text: {

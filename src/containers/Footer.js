@@ -17,7 +17,7 @@ function Footer() {
         <Connect />
         <Div mb={4}>
           <Span textAlign="center">
-            Proudly built with Tachyons, Styled System and React
+            Proudly built with Emotion, Tachyons, Styled System and React
             <br />© 2020 Ahmad Atallah
           </Span>
         </Div>

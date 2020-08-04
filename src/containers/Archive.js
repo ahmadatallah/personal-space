@@ -2,7 +2,7 @@
 import jsx from '../jsx';
 import React from 'react';
 import Bio from '../pages/archive/Bio';
-import { H1, Div } from '../elements';
+import { H1 } from '../elements';
 import BornRich from '../pages/archive/BornRich';
 import useColorMode from '../hooks/useColorMode';
 import MidnightStory from '../pages/archive/MidnightStory';

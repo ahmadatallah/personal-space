@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import { H1, Img, Div } from '../elements';
+import { H1, Img } from '../elements';
 import Flex from '../components/Flex';
 import Header from '../containers/Header';
 import Footer from '../containers/Footer';

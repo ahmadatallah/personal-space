@@ -1,20 +1,28 @@
 /** @jsx jsx */
 import jsx from '../jsx';
 import React from 'react';
-import BlockLinkGrow from './BlockLinkGrow';
+import { Link as RouterLink } from 'react-router-dom';
+import { Text } from 'theme-ui';
+import styled from '@emotion/styled';
 
-function Link({ title, href, ...props }) {
+export const StyledLink = styled(RouterLink)`
+  text-decoration: none;
+`;
+
+function Link({ title, to, ...props }) {
   return (
-    <BlockLinkGrow
-      fontSize={[1, 2, 3]}
-      mx={1}
-      my={2}
-      fontWeight={400}
-      href={href}
-      {...props}
-    >
-      {title}
-    </BlockLinkGrow>
+    <StyledLink to={to}>
+      <Text
+        sx={{
+          fontSize: '1.5em',
+          mb: '1rem',
+          mt: '1rem',
+        }}
+        variant="grow"
+      >
+        {title}
+      </Text>
+    </StyledLink>
   );
 }
 

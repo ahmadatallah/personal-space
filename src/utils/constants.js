@@ -1,4 +1,3 @@
-import { lazy } from 'react';
 import carouselx1x1 from '../assets/images/carousel/0001carousel/0001carousel_bx7yf7_c_scale,w_498.jpg';
 import carouselx1x2 from '../assets/images/carousel/0001carousel/0001carousel_bx7yf7_c_scale,w_873.jpg';
 import carouselx1x3 from '../assets/images/carousel/0001carousel/0001carousel_bx7yf7_c_scale,w_1153.jpg';

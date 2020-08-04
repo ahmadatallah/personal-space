@@ -46,7 +46,7 @@ function About() {
               </Flex>
             }
           >
-            <Img src={about} />
+            <Img src={about} alt="my portrait picture" />
           </Suspense>
         </Div>
         <Div mx="auto" maxWidth="64rem">

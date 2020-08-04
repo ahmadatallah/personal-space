@@ -7,7 +7,6 @@ import Header from '../containers/Header';
 import Footer from '../containers/Footer';
 import Flex from '../components/Flex';
 import { Archive as ArchiveContainer } from '../containers/Archive';
-import lastPost from '../assets/images/flip-your-eye/lunar-2.jpg';
 
 function Archive({ ...props }) {
   return (

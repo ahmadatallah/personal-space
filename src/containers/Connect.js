@@ -6,7 +6,7 @@ import { Div } from '../elements';
 import Resume from '../external/Resume.pdf';
 import Avatar from '../components/Avatar';
 import avatarImg from '../assets/images/avatar.jpg';
-import StyledLink from '../components/StyledLink';
+import { StyledLink } from '../components/Link';
 
 import {
   FaTwitter as Twitter,

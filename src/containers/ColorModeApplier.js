@@ -3,10 +3,8 @@ import jsx from '../jsx';
 import React from 'react';
 import ColorModeButton from '../components/ColorModeButton';
 import { Svg, Path } from '../elements';
-import { useThemeUI } from 'theme-ui';
 
 function ColorModeApplier({ ...props }) {
-  const { theme } = useThemeUI();
   return (
     <ColorModeButton
       onClick={props.onClick}

@@ -1,12 +1,10 @@
 /** @jsx jsx */
-import jsx from '../jsx';
+import { jsx } from 'theme-ui';
 import React from 'react';
-import { IoIosLink } from 'react-icons/io';
-import Link from '../components/Link';
-import StyledLink from '../components/StyledLink';
-import { H1, Div, Small, P } from '../elements';
+import { H1, Div, Small } from '../elements';
 import useColorMode from '../hooks/useColorMode';
-import { Text } from 'theme-ui';
+import Link from '../components/Link';
+import MetaText from '../components/MetaText';
 
 export function Writings({ title, href, ...props }) {
   const { textColor } = useColorMode();
@@ -14,69 +12,35 @@ export function Writings({ title, href, ...props }) {
   return (
     <>
       <H1 fontWeight={600} fontSize={4} color={textColor}>
-        {' '}
-        Writings{' '}
+        Writings
       </H1>
       <Div mb={3}>
-        <StyledLink to="/writings/create-react-app-run-build-envs">
-          <Text variant="grow">
-            Create React App: Run-time vs Build-time Environment Variables
-          </Text>
-        </StyledLink>
-        <Div ml={[2, 2, 3]}>
-          <Small>
-            13 Aug, 2019{' '}
-            <span role="img" aria-label="min-read">
-              •{' '}
-            </span>
-            7 min read
-          </Small>
-        </Div>
+        <Link
+          to="/writings/change-theme-with-use-layout-effect"
+          title="Navigate then Change The Theme; An Experiment to useLayoutEffect React Hook"
+        />
+        <MetaText text="04 Apr, 2020 • 5 min read" />
       </Div>
       <Div mb={3}>
-        <StyledLink to="/writings/pascal-typescript-example">
-          <Text variant="grow">Pattern Matching Example in TypeScript </Text>
-        </StyledLink>
-        <Div ml={[2, 2, 3]}>
-          <Small>
-            8 Sep, 2019{' '}
-            <span role="img" aria-label="min-read">
-              •{' '}
-            </span>
-            5 min read
-          </Small>
-        </Div>
+        <Link
+          to="/writings/notify-pwa-updates"
+          title="Notify A Progressive Web App (PWA) Updates"
+        />
+        <MetaText text="25 Oct, 2019 • 15 min read" />
       </Div>
       <Div mb={3}>
-        <StyledLink to="/writings/notify-pwa-updates">
-          <Text variant="grow">Notify A Progressive Web App (PWA) Updates</Text>
-        </StyledLink>
-        <Div ml={[2, 2, 3]}>
-          <Small>
-            25 Oct, 2019{' '}
-            <span role="img" aria-label="min-read">
-              •{' '}
-            </span>
-            15 min read{' '}
-          </Small>
-        </Div>
+        <Link
+          to="/writings/pascal-typescript-example"
+          title="Pattern Matching Example in TypeScript"
+        />
+        <MetaText text="8 Sep, 2019 • 5 min read" />
       </Div>
       <Div mb={3}>
-        <StyledLink to="/writings/change-theme-with-use-layout-effect">
-          <Text variant="grow">
-            Navigate then Change The Theme; An Experiment to useLayoutEffect
-            React Hook
-          </Text>
-        </StyledLink>
-        <Div ml={[2, 2, 3]}>
-          <Small>
-            04 Apr, 2020
-            <span role="img" aria-label="min-read">
-              •{' '}
-            </span>
-            5 min read
-          </Small>
-        </Div>
+        <Link
+          to="/writings/create-react-app-run-build-envs"
+          title="Create React App: Run-time vs Build-time Environment Variables"
+        />
+        <MetaText text="13 Aug, 2019 • 7 min read" />
       </Div>
     </>
   );

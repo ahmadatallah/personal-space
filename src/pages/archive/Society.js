@@ -1,39 +1,20 @@
 /** @jsx jsx */
 import jsx from '../../jsx';
-import React, { lazy, Suspense } from 'react';
-import { Spinner } from 'theme-ui';
-import theme from '../../theme';
-import { Div, H2 } from '../../elements';
-import Flex from '../../components/Flex';
+import { lazy } from 'react';
+import { useThemeUI } from 'theme-ui';
+import Layout from './Layout';
+import { Div } from '../../elements';
 
 const Content = lazy(() => import('!babel-loader!mdx-loader!./Society.mdx'));
 
 function Society({ ...props }) {
+  const { theme } = useThemeUI();
   return (
-    <>
-      <Div
-        dir="rtl"
-        justifyConent="center"
-        py={2}
-        mx="auto"
-        fontFamily={theme.typefaces.helvetica}
-        mt={40}
-      >
-        <Suspense
-          fallback={
-            <Flex flexDirection="row" justifyContent="center">
-              <H2 fontWeight={300} ml={2}>
-                {' '}
-                قيد التحميل{' '}
-              </H2>
-              <Spinner type="spokes" color="currentcolor" />
-            </Flex>
-          }
-        >
-          <Content />
-        </Suspense>
+    <Layout>
+      <Div dir="rtl" fontFamily={theme.typefaces.helvetica}>
+        <Content />
       </Div>
-    </>
+    </Layout>
   );
 }
 
