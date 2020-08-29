@@ -19,13 +19,10 @@ function About() {
       preview="https://syncatallah.cc/static/media/about-img.589f3ca2.jpg"
     >
       <Flex
-        justifyContent="center"
-        flexDirection="column"
-        minWidth="20rem"
-        pr={3}
-        pl={3}
         alignItems="center"
+        flexDirection="column"
         maxWidth="80em"
+        minWidth="20rem"
         minHeight="100%"
         mr="auto"
         ml="auto"
