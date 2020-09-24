@@ -132,6 +132,7 @@ function Collage({
       <Div
         css={{
           ...getStyles('view', props),
+          marginTop: '80px',
         }}
       >
         <img
