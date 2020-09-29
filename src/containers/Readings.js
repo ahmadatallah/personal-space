@@ -35,6 +35,11 @@ export function Readings({ title, href, ...props }) {
         title="Algorithms interviews: theory vs. practice"
         link="https://danluu.com/algorithms-interviews/"
       />
+
+      <ReadingLink
+        title="The case for giving up"
+        link="https://samkriss.com/2019/12/19/the-case-for-giving-up/"
+      />
     </Div>
   );
 }
