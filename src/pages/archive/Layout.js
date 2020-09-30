@@ -5,7 +5,7 @@ import Flex from '../../components/Flex';
 import { Div, H2 } from '../../elements';
 import { Spinner } from 'theme-ui';
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <Div justifyConent="center" py={2} mx="auto">
     <Suspense
       fallback={
@@ -21,3 +21,5 @@ export default ({ children }) => (
     </Suspense>
   </Div>
 );
+
+export default Layout;

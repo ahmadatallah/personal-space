@@ -26,9 +26,9 @@ function Home({ ...props }) {
             Ahmad Atallah
           </H1>
           <H3 fontWeight={600} maxWidth="50rem" mb={4}>
-            Software engineer who's doing mostly frontend stuff. Here, you are
-            on my personal space where I share things like readings, writings,
-            frames I take in daily life and random thoughts.
+            Software engineer who&apos;s doing mostly frontend stuff. Here, you
+            are on my personal space where I share things like readings,
+            writings, frames I take in daily life and random thoughts.
           </H3>
           <Contributions />
           <Projects />

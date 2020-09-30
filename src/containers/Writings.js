@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-import { H1, Div, Small } from '../elements';
+import { H1, Div } from '../elements';
 import useColorMode from '../hooks/useColorMode';
 import Link from '../components/Link';
 import MetaText from '../components/MetaText';

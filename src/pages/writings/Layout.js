@@ -7,7 +7,7 @@ import { Div, H2 } from '../../elements';
 import Footer from '../../containers/Footer';
 import { Spinner } from 'theme-ui';
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <Flex
     alignItems="left"
     flexDirection="column"
@@ -36,3 +36,5 @@ export default ({ children }) => (
     </Div>
   </Flex>
 );
+
+export default Layout;

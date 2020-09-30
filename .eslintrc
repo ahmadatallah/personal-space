@@ -1,8 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "react-app"
-  ],
+  "extends": ["plugin:react/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -11,17 +9,27 @@
   "plugins": ["prettier", "react"],
   "rules": {
     //...
-    "react/jsx-uses-react": 2,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/prop-types": 0,
     "prettier/prettier": "error",
-    "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
-    "quotes": [2, "single", {
-      "avoidEscape": true
-    }],
-    "camelcase": ["error", { "properties": "never"}]
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "camelcase": ["error", { "properties": "never" }]
   },
   "globals": {
     "workbox": true,
     "importScripts": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

@@ -48,15 +48,15 @@ function About() {
         </Div>
         <Div mx="auto" maxWidth="64rem">
           <Text py={2} px={[3, 4]} fontWeight={4}>
-            I'm Ahmad Atallah. An egyptian software engineer who's doing mostly
-            frontend stuff. Also, I'm interested in functional programming, and
-            design. I do minimal things that's why terseness is something I
-            prefer, and so, I have the willing to learn more and fast. I like
-            taking visual photos. Photos that I pass by in my daily life; every
-            single day. Noam Chomsky once said: "When you walk around, you're
-            talking to yourself. You can't stop. I mean, it takes a real act of
-            will not to talk to yourself, and what you're doing is thinking",
-            and I find this is about the actual state of my mind all the time.
+            I&apos;m Ahmad Atallah. An egyptian software engineer who&apos;s
+            doing mostly frontend stuff. Also, I&apos;m interested in functional
+            programming, and design. I do minimal things that&apos;s why
+            terseness is something I prefer. I like taking visual photos. Photos
+            that I pass by in my daily life; every single day. Noam Chomsky once
+            said: &quot;When you walk around, you&apos;re talking to yourself.
+            You can&apos;t stop. I mean, it takes a real act of will not to talk
+            to yourself, and what you&apos;re doing is thinking&quot;, and I
+            find this is about the actual state of my mind all the time.
           </Text>
         </Div>
         <Footer />
