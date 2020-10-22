@@ -112,11 +112,14 @@ function Contributions({ ...props }) {
           width={42}
         >
           <Img
+            borderRadius={50}
+            width={40}
             alt="@darkreader github"
             src="https://avatars0.githubusercontent.com/u/38494721?s=60&v=4"
           ></Img>
         </BlockLinkGrow>
         <BlockLinkGrow
+          mr={2}
           href="https://github.com/Hacker0x01/react-datepicker"
           title="HackerOne"
         >
@@ -125,6 +128,22 @@ function Contributions({ ...props }) {
             width={40}
             alt="@hackerone github"
             src="https://avatars1.githubusercontent.com/u/3014877?s=200&v=4"
+          ></Img>
+        </BlockLinkGrow>
+        <BlockLinkGrow
+          pt="2px"
+          href="https://github.com/storybookjs/design-system"
+          title="Dark Reader"
+          backgroundColor="#CD324C"
+          borderRadius="50%"
+          width={42}
+        >
+          <Img
+            borderRadius={50}
+            width={40}
+            ml="2px"
+            alt="@storybook github"
+            src="https://avatars0.githubusercontent.com/u/22632046?s=200&v=4"
           ></Img>
         </BlockLinkGrow>
       </Flex>
