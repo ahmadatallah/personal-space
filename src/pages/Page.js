@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 function Page({
   title,
   path,
-  preview = 'https://syncatallah.cc/static/media/avatar.72902b0b.jpg',
+  preview = 'https://atallahsan.cc/static/media/avatar.72902b0b.jpg',
   children,
   ...props
 }) {
@@ -18,7 +18,7 @@ function Page({
         {/* multiple meta elements */}
         <meta charset="utf-8" />
         <meta property="og:image" content={preview} />
-        <meta property="og:url" content={`https://syncatallah.cc/${path}`} />
+        <meta property="og:url" content={`https://atallahsan.cc/${path}`} />
 
         {/* html attributes */}
         <html lang="en" amp />

@@ -13,7 +13,7 @@ function Archive({ ...props }) {
     <Page
       title="Archive"
       path="archive"
-      preview="https://syncatallah.cc/static/media/lunar-2.8ed2c9e8.jpg"
+      preview="https://atallahsan.cc/static/media/lunar-2.8ed2c9e8.jpg"
     >
       <Flex
         alignItems="left"

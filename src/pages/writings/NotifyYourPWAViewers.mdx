@@ -31,13 +31,14 @@ Defining your `icon`, `name`, and `start_url` of your project are the main confi
 Service workers require HTTPS. That's why it doesn't apply to `localhost`, not recommended in development environment, and it
 can only be applied in production environment. So, better to test it by serving the `build` directory using
 [`serve`](https://www.npmjs.com/package/serve) npm package.
+
 ```sh
   npm install -g serve
 ```
 
 • [No interception with cross-origin resources](https://create-react-app.dev/docs/making-a-progressive-web-app/#offline-first-considerations):
 
-  The generated service worker doesn't intercept any cross-origin resources like HTTP API requests.
+The generated service worker doesn't intercept any cross-origin resources like HTTP API requests.
 
 ## Registering service worker
 
@@ -90,17 +91,17 @@ not be shown unless you closed all browser tabs.
 /* service-worker-reducer.js */
 
 // CONSTANTS
-export const UPDATE_SERVICEWORKER = "UPDATE_SERVICEWORKER";
+export const UPDATE_SERVICEWORKER = 'UPDATE_SERVICEWORKER';
 
 export function updateServiceWorker() {
   return {
-    type: UPDATE_SERVICEWORKER
+    type: UPDATE_SERVICEWORKER,
   };
 }
 
 export const reducer = (
   state = {
-    serviceWorkerUpdated: false
+    serviceWorkerUpdated: false,
   },
   action
 ) => {
@@ -108,7 +109,7 @@ export const reducer = (
     case UPDATE_SERVICEWORKER: {
       return {
         ...state,
-        serviceWorkerUpdated: true
+        serviceWorkerUpdated: true,
       };
     }
     default:
@@ -123,8 +124,8 @@ Then, store configurations should be updated passing `service-worker-reducer` as
 ```jsx
 /* configure-store.js */
 
-import { createStore } from "redux";
-import { reducer as rootReducer } from "./service-worker-update";
+import { createStore } from 'redux';
+import { reducer as rootReducer } from './service-worker-update';
 
 const configureStore = (initialState = { serviceWorkerUpdated: false }) => {
   return createStore(rootReducer, initialState);
@@ -153,14 +154,14 @@ registration.onupdatefound = () => {
   }
   installingWorker.onstatechange = () => {
     installingWorker.onstatechange = () => {
-      if (installingWorker.state === "installed") {
+      if (installingWorker.state === 'installed') {
         if (navigator.serviceWorker.controller) {
           // At this point, the updated precached content has been fetched,
           // but the previous service worker will still serve  the older
           // content until all client tabs are closed.
           console.log(
-            "New content is available and will be used when a ll " +
-              "tabs for this page are closed. See https://bit .ly/CRA-PWA."
+            'New content is available and will be used when a ll ' +
+              'tabs for this page are closed. See https://bit .ly/CRA-PWA.'
           );
 
           // Execute callback
@@ -171,7 +172,7 @@ registration.onupdatefound = () => {
           // At this point, everything has been precached.
           // It's the perfect time to display a
           // "Content is cached for offline use." message.
-          console.log("Content is cached for offline use.");
+          console.log('Content is cached for offline use.');
 
           // Execute callback
           if (config && config.onSuccess) {
@@ -208,7 +209,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
@@ -227,7 +228,7 @@ Then we will extract the service worker state as app prop:
 ```jsx
 const mapStateToProps = state => {
   return {
-    serviceWorkerUpdated: state.serviceWorkerUpdated
+    serviceWorkerUpdated: state.serviceWorkerUpdated,
   };
 };
 ```
@@ -245,7 +246,7 @@ If this prop value is `true` then a push notification should be displayed else n
 useEffect(() => {
   if (props.serviceWorkerUpdated) {
     toast(<Msg />, {
-      position: "bottom-right"
+      position: 'bottom-right',
     });
   }
 }, [props.serviceWorkerUpdated]);
@@ -281,4 +282,4 @@ We've created the redux store for the main app exposing the service worker state
 then dispatched an update action when there is "updates in the content" flag raised from service worker.
 Finally, we've extracted this state after the root component rendering finished. If there is any update notify the user else nothing happened.
 
-Source code available [on Github](https://github.com/syncatallah/pwasw)
+Source code available [on Github](https://github.com/atallahsan/pwasw)

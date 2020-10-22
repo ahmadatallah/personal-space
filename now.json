@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "syncatallah-personal-space",
-  "alias": ["syncatallah.now.sh", "syncatallah.cc"],
+  "name": "atallahsan-personal-space",
+  "alias": ["atallahsan.now.sh", "atallahsan.cc"],
   "routes": [
     {
       "src": "/static/(.*)",

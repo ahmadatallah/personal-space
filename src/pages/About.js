@@ -16,7 +16,7 @@ function About() {
     <Page
       title="Home"
       path="about"
-      preview="https://syncatallah.cc/static/media/about-img.589f3ca2.jpg"
+      preview="https://atallahsan.cc/static/media/about-img.589f3ca2.jpg"
     >
       <Flex
         alignItems="center"
