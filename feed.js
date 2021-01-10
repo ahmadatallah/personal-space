@@ -64,7 +64,6 @@ module.exports = {
         }
       }
     `,
-<<<<<<< HEAD
       output: `rss-archive.xml`,
     },
     {
@@ -121,9 +120,6 @@ module.exports = {
       }
     `,
       output: `rss-writings.xml`,
-=======
-      output: `rss.xml`,
->>>>>>> Migrate to gatsby
     },
   ],
 };

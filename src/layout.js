@@ -81,11 +81,8 @@ export default props => {
   };
   const title = props.pageContext?.frontmatter?.title;
   let date = props.pageContext?.frontmatter?.date;
-<<<<<<< HEAD
   const minRead = props.pageContext?.frontmatter?.minRead;
 
-=======
->>>>>>> Migrate to gatsby
   if (date)
     date = new Date(date).toLocaleDateString('en-US', {
       timeZone: 'UTC',
@@ -163,7 +160,6 @@ export default props => {
           }}
         >
           {draft && <Draft />}
-<<<<<<< HEAD
           {title && <Text as="h1">{title}</Text>}
 
           <div
@@ -175,19 +171,6 @@ export default props => {
             {date && date} {minRead && `- ${minRead} min read`}
           </div>
 
-=======
-          {title && <Text>{title}</Text>}
-          {date && (
-            <div
-              sx={{
-                variant: 'text.small',
-                fontWeight: 'bold',
-              }}
-            >
-              {date}
-            </div>
-          )}
->>>>>>> Migrate to gatsby
           {props.children}
         </div>
       </main>
