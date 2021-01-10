@@ -28,9 +28,39 @@
     { "src": "/browserconfig.xml", "dest": "/browserconfig.xml" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
     {
-      "src": "/(.*)",
+      "src": "/",
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/index.html"
+    },
+    {
+      "src": "/404",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/404/index.html"
+    },
+    {
+      "src": "/about",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/about/index.html"
+    },
+    {
+      "src": "/archive/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/index.html"
+    },
+    {
+      "src": "/writings/(.*)",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/writings/index.html"
+    },
+    {
+      "src": "/readings",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/readings/index.html"
+    },
+    {
+      "src": "/frames",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/frames/index.html"
     }
   ]
 }
