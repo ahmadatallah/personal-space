@@ -1,0 +1,31 @@
+import { Container } from '../blocks';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+
+export default Container;
+
+export const query = graphql`
+  query {
+    file(name: { eq: "about-img" }) {
+      childImageSharp {
+        fixed(width: 400, height: 530) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
+
+# About
+
+<Img fixed={props.data.file.childImageSharp.fixed} />
+
+I&apos;m Ahmad Atallah. An egyptian software engineer who&apos;s
+doing mostly frontend stuff. Also, I&apos;m interested in functional
+programming, and design. I do minimal things that&apos;s why
+terseness is something I prefer. I like taking visual photos. Photos
+that I pass by in my daily life; every single day. Noam Chomsky once
+said: &quot;When you walk around, you&apos;re talking to yourself.
+You can&apos;t stop. I mean, it takes a real act of will not to talk
+to yourself, and what you&apos;re doing is thinking&quot;, and I
+find this is about the actual state of my mind all the time.

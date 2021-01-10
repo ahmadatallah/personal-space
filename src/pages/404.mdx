@@ -1,0 +1,18 @@
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+import { Container } from '../blocks';
+
+export default Container;
+
+export const query = graphql`
+  query {
+    file(name: { eq: "confused-travolta" }) {
+      extension
+      publicURL
+    }
+  }
+`;
+
+# 404 Page not found
+
+<img src={props.data.file.publicURL} />

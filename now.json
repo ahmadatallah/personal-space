@@ -11,6 +11,7 @@
       "dest": "/static/$1"
     },
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/avatar.jpg", "dest": "/avatar.jpg" },
     { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
     { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" },
     {
@@ -25,14 +26,7 @@
     { "src": "/mstile-150x150.png", "dest": "/mstile-150x150.png" },
     { "src": "/safari-pinned-tab.svg", "dest": "/safari-pinned-tab.svg" },
     { "src": "/browserconfig.xml", "dest": "/browserconfig.xml" },
-    { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "/manifest.json", "dest": "/manifest.json" },
-    { "src": "/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
-    {
-      "src": "/sw.js",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/sw.js"
-    },
     {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=0" },
