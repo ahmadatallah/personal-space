@@ -1,23 +1,23 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import get from "lodash.get";
-import SEO from "./components/seo";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import get from 'lodash.get';
+import SEO from './components/seo';
 
-import Layout from "./layout";
+import Layout from './layout';
 
 const Page = props => {
-  let title = "Atallahsan";
+  let title = 'Atallahsan';
   const postTitle = get(
     props.data,
-    "post.title",
-    get(props, "pageContext.frontmatter.title")
+    'post.title',
+    get(props, 'pageContext.frontmatter.title')
   );
   const description =
     get(
       props.data,
-      "post.excerpt",
-      get(props, "pageContext.frontmatter.excerpt")
-    ) || "Personal space | Ahmad Atallah";
+      'post.excerpt',
+      get(props, 'pageContext.frontmatter.excerpt')
+    ) || 'Personal space | Ahmad Atallah';
 
   if (postTitle) {
     title = `${postTitle} | ${title}`;
@@ -28,7 +28,7 @@ const Page = props => {
       <SEO title="Atallahsan" />
       <Helmet
         htmlAttributes={{
-          lang: "en-us",
+          lang: 'en-us',
         }}
       >
         <link
@@ -61,7 +61,6 @@ const Page = props => {
         <link rel="manifest" href="https://atallahsan.cc/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="twitter:site" content="@atallahsan" />
-        <meta name="og:image" content="https://atallahsan.cc/avatar.jpg" />
         <title>{title}</title>
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />
