@@ -81,6 +81,8 @@ export default props => {
   };
   const title = props.pageContext?.frontmatter?.title;
   let date = props.pageContext?.frontmatter?.date;
+  const minRead = props.pageContext?.frontmatter?.minRead;
+
   if (date)
     date = new Date(date).toLocaleDateString('en-US', {
       timeZone: 'UTC',
@@ -158,17 +160,17 @@ export default props => {
           }}
         >
           {draft && <Draft />}
-          {title && <Text>{title}</Text>}
-          {date && (
-            <div
-              sx={{
-                variant: 'text.small',
-                fontWeight: 'bold',
-              }}
-            >
-              {date}
-            </div>
-          )}
+          {title && <Text as="h1">{title}</Text>}
+
+          <div
+            sx={{
+              variant: 'text.small',
+              fontWeight: 'bold',
+            }}
+          >
+            {date && date} {minRead && `- ${minRead} min read`}
+          </div>
+
           {props.children}
         </div>
       </main>

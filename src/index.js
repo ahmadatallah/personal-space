@@ -32,17 +32,36 @@ const Page = props => {
         }}
       >
         <link
-          rel="icon"
-          type="image/png"
-          href="https://atallahsan.cc/favicon.png"
+          rel="apple-touch-icon-precomposed"
+          href="https://atallahsan.cc/apple-touch-icon.png"
         />
         <link
-          rel="apple-touch-icon-precomposed"
-          href="https://atallahsan.cc/avatar.png"
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://atallahsan.cc/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://atallahsan.cc/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://atallahsan.cc/favicon-16x16.png"
+        />
+        <link
+          rel="mask-icon"
+          href="https://atallahsan.cc/safari-pinned-tab.svg"
+          color="#5bbad5"
         />
         <link rel="canonical" href={props.location.href} />
+        <link rel="manifest" href="https://atallahsan.cc/manifest.json" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="twitter:site" content="@atallahsan" />
-        <meta name="og:image" content="https://atallahsan.cc/avatar.png" />
+        <meta name="og:image" content="https://atallahsan.cc/avatar.jpg" />
         <title>{title}</title>
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />

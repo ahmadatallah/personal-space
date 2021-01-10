@@ -4,8 +4,6 @@ date: 2019-10-25
 minRead: 15
 ---
 
-# Notify A Progressive Web App (PWA) Updates
-
 Offline/Cache-first behavior is one of the main key features in any Progressive Web Apps, but according to
 [create-react-app docs](https://create-react-app.dev/docs/making-a-progressive-web-app/):
 "the offline/cache-first behavior is opt-in only. By default, the build process will generate a service worker file, but it will not be registered, so it will not take control of your production web app.",
@@ -180,7 +178,7 @@ registration.onupdatefound = () => {
 
           // Execute callback
           if (config && config.onSuccess) {
-          // highlight-end
+            // highlight-end
             config.onSuccess(registration);
           }
         }
