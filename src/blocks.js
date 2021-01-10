@@ -9,8 +9,9 @@ export const Banner = props => (
       ul: {
         listStyle: 'none',
         display: 'flex',
+        flexWrap: 'wrap',
         p: 0,
-        m: 0,
+        m: 'auto',
       },
       li: {
         mr: 3,
