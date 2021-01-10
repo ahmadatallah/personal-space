@@ -1,6 +1,7 @@
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { Container } from '../blocks';
+import SEO from '../components/seo';
 
 export default Container;
 
@@ -15,4 +16,5 @@ export const query = graphql`
 
 # 404 Page not found
 
+<SEO title="404" />
 <img src={props.data.file.publicURL} />

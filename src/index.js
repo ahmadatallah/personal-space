@@ -6,7 +6,7 @@ import SEO from './components/seo';
 import Layout from './layout';
 
 const Page = props => {
-  let title = 'Atallahsan';
+  let title = 'Home';
   const postTitle = get(
     props.data,
     'post.title',
@@ -20,12 +20,12 @@ const Page = props => {
     ) || 'Personal space | Ahmad Atallah';
 
   if (postTitle) {
-    title = `${postTitle} | ${title}`;
+    title = postTitle;
   }
 
   return (
     <>
-      <SEO title="Atallahsan" />
+      <SEO title="Home" />
       <Helmet
         htmlAttributes={{
           lang: 'en-us',

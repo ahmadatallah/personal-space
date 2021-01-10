@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, Text } from 'theme-ui';
+import React from 'react';
 import { graphql, Link } from 'gatsby';
+import SEO from '../../components/seo';
 import '@browniebroke/gatsby-image-gallery/dist/style.css';
 
 export const query = graphql`
@@ -32,6 +34,8 @@ export default props => {
   const posts = props.data.pages.nodes;
 
   return (
+    <>
+    <SEO title="Writings" />
     <ul
       sx={{
         maxWidth: 'container',
@@ -59,5 +63,6 @@ export default props => {
         </li>
       ))}
     </ul>
+    </>
   );
 };

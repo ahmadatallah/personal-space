@@ -1,4 +1,5 @@
 import Gallery from '@browniebroke/gatsby-image-gallery';
+import SEO from '../components/seo';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -25,10 +26,11 @@ export const query = graphql`
   }
 `;
 
+<SEO title="Frames" />
 <Gallery
-  images={props.data.images.edges.map(({ node }) => ({
-    ...node.childImageSharp,
-    caption: node.name,
-    thumbAlt: node.name,
-  }))}
+images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+}))}
 />
