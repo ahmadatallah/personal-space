@@ -3,11 +3,6 @@ title: Notify A Progressive Web App (PWA) Updates
 date: 2019-10-25
 minRead: 15
 ---
-<<<<<<< HEAD:src/pages/writings/notify-a-pwa-updates.md
-=======
-
-# Notify A Progressive Web App (PWA) Updates
->>>>>>> Migrate to gatsby:src/pages/writings/NotifyYourPWAViewers.mdx
 
 Offline/Cache-first behavior is one of the main key features in any Progressive Web Apps, but according to
 [create-react-app docs](https://create-react-app.dev/docs/making-a-progressive-web-app/):
@@ -183,11 +178,7 @@ registration.onupdatefound = () => {
 
           // Execute callback
           if (config && config.onSuccess) {
-<<<<<<< HEAD:src/pages/writings/notify-a-pwa-updates.md
             // highlight-end
-=======
-          // highlight-end
->>>>>>> Migrate to gatsby:src/pages/writings/NotifyYourPWAViewers.mdx
             config.onSuccess(registration);
           }
         }
