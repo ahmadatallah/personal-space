@@ -177,7 +177,6 @@ export default props => {
       <footer
         sx={{
           px: 3,
-          py: 5,
           width: '100%',
           maxWidth: 'wide',
           mx: 'auto',
