@@ -60,8 +60,8 @@ const Page = props => {
         <link rel="canonical" href={props.location.href} />
         <link rel="manifest" href="https://atallahsan.cc/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="twitter:site" content="@atallahsan" />
         <meta name="og:image" content="https://atallahsan.cc/avatar.jpg" />
+        <meta name="twitter:site" content="@atallahsan" />
         <title>{title}</title>
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />

@@ -18,10 +18,9 @@ Story 1
 
 <Gallery images={props.data.images.edges.map(({ node }) => ({
 ...node.childImageSharp,
-// Use original name as caption.
-// The `originalName` is queried inside the `thumb` field,
-// but the `Gallery` component expects `caption` at the top level.
-caption: node.childImageSharp.thumb.originalName,
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name
 })).slice(4, 8)} />
 
 Story 2
