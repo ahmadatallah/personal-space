@@ -1,0 +1,57 @@
+---
+title: 'Soy Cuba, Where You Feel You Belong'
+date: 2020-06-28
+---
+
+import Gallery from '@browniebroke/gatsby-image-gallery'
+import { graphql } from "gatsby";
+
+export const query = graphql`query soyCuba { images: allFile( filter: { relativeDirectory: { eq: "soy-cuba" } } sort: { fields: name } ) { edges { node { childImageSharp { thumb: fluid(maxWidth: 500, maxHeight: 270) { ...GatsbyImageSharpFluid originalName } full: fluid(maxWidth: 1024) { ...GatsbyImageSharpFluid } }, name } } } }`
+
+<Gallery images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+})).slice(0, 2)} />
+
+"Soy Cuba. Once, Christopher Columbus landed here. He wrote in his diary: "This is the most beautiful land ever seen by human eyes." Thank you, Senior Columbus. When you saw me for the first time, I was singing and laughing. I waved the fronds of my palms to greet your sails. I thought your ships brought happiness. I am Cuba. Ships took my sugar, and left me tears. Strange thing... sugar, Senior Columbus. It contains so many tears, but it is sweet..."
+
+<Gallery images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+})).slice(2, 5)} />
+
+"Soy Cuba. Why are you running away? You came here to have fun? Go ahead, have fun! Is this a happy picture? Don't avert your eyes. Look! I am Cuba. For you, I am the casino, the bar, the hotels. But the hands of these children and old people, are also me."
+
+<Gallery images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+})).slice(5, 8)} />
+
+"Soy Cuba. Sometimes it seems to me that the sap of my palm trees are full of blood. Sometimes it seems to me that the murmuring sounds... around us are not the ocean but choked-back tears of the people. Who answers for this blood? Who is responsible for these tears?"
+
+<Gallery images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+})).slice(8, 10)} />
+
+"Soy Cuba. There are two paths for people when they are born. The path of slavery - it crushes and decays. And the path of the star - it illuminates but kills. You will choose the star. Your path will be hard, and it will be marked by blood. But in the name of justice wherever a single person goes, thousands more will rise up. And when there are no more people, then the stones will rise up. I am Cuba. When men are born, there are two paths. You will choose the star... The path will be hard, and it will be marked by blood."
+
+<Gallery images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+})).slice(10, 12)} />
+
+"Soy Cuba. These are the people about whom legends will be told. From all parts, they are coming to the mountains of the Sierra Maestra. They are going to fight."
+
+<Gallery images={props.data.images.edges.map(({ node }) => ({
+...node.childImageSharp,
+caption: node.name,
+thumbAlt: node.name,
+})).slice(12, 14)} />
+
+"Soy Cuba. Your hands have gotten used to farming tools. But now a rifle is in your hands. You are not shooting to kill. You are firing at the past. You are firing to protect your future."
