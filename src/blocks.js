@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-export const Banner = props => (
+export const Banner = (props) => (
   <div
     sx={{
       pb: [2, 3, 4],
@@ -36,7 +36,7 @@ export const Container = ({ wide, ...props }) => (
   </div>
 );
 
-export const Tiles = props => (
+export const Tiles = (props) => (
   <div
     sx={{
       ul: {
@@ -67,7 +67,7 @@ export const Tiles = props => (
   </div>
 );
 
-export const List = props => (
+export const List = (props) => (
   <div
     sx={{
       ul: {

@@ -29,7 +29,7 @@ export const query = graphql`
   }
 `;
 
-export default props => {
+export default (props) => {
   const posts = props.data.pages.nodes;
 
   return (
@@ -43,7 +43,7 @@ export default props => {
           margin: 0,
         }}
       >
-        {posts.map(post => (
+        {posts.map((post) => (
           <li key={post.id}>
             <Text as="h2" sx={{ my: 3 }}>
               <Link

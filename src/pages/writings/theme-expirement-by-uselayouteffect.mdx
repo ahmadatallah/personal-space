@@ -4,14 +4,16 @@ date: 2020-04-04
 minRead: 5
 ---
 
-import Gallery from '@browniebroke/gatsby-image-gallery'
-import { graphql } from "gatsby";
-import { List } from '../../blocks'
+import Gallery from '@browniebroke/gatsby-image-gallery';
+import { graphql } from 'gatsby';
+import { List } from '../../blocks';
 
 export const query = graphql`
   query themeExpirement {
     images: allFile(
-      filter: { relativeDirectory: { eq: "theme-expirement-by-uselayouteffect" } }
+      filter: {
+        relativeDirectory: { eq: "theme-expirement-by-uselayouteffect" }
+      }
       sort: { fields: name }
     ) {
       edges {
@@ -21,8 +23,7 @@ export const query = graphql`
       }
     }
   }
-`
-
+`;
 
 In a brief, useLayoutEffect React hook can prevent flash of unstyled content (FOUC) by
 blocking the page till the new styles applied. Blocking the content by a synchronous process
@@ -42,7 +43,6 @@ For creating color modes, there is a hook from theme-ui called [`useColorMode`](
 toggle or even cycle through a set of color modes defined in the theme file.
 
 For the example we will use two color modes light and dark:
-
 
 ```js
 {
@@ -76,7 +76,7 @@ For the example we will use two color modes light and dark:
   }
   ...
 }
- 
+
 ```
 
 we will cycle through the modes by a function as below:
@@ -88,7 +88,7 @@ export default function useColorModes({ ...props }) {
   const modes = ['light', 'dark'];
 
   // highlight-start
-  const applyMode = currentMode => {
+  const applyMode = (currentMode) => {
     const i = modes.indexOf(currentMode);
     const n = (i + 1) % modes.length;
     const nextMode = modes[n];
@@ -128,7 +128,7 @@ import useColorModes from './userColorModes';
 
 function App() {
   const { colorMode, applyMode } = useColorModes();
-  
+
   // highlight-start
   // replace with useEffect to see the difference
   useLayoutEffect(() => {
@@ -161,11 +161,11 @@ caused a flicker you will notice switching between articles is not sharp like in
   sx={{
     py: 3,
     fontSize: 0,
-  }}>
+  }}
+>
   <img src={props.data.images.edges[0].node.publicURL} />
   <img src={props.data.images.edges[1].node.publicURL} />
 </List>
-
 
 Fortunately, You can try this experiment on production now after you read this article. I am using `useLayoutEffect`
 to cycle through the color modes. Just navigate between the website content and you will see!

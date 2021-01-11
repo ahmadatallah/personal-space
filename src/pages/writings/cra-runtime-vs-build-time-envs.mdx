@@ -108,7 +108,7 @@ into your `public/index.html`. Finally this is how the file will look like:
 
 ```js
 window.__env__ = {
-  REACT_APP_KEY: value
+  REACT_APP_KEY: value,
 };
 ```
 
@@ -127,7 +127,9 @@ To get all of these running in development, you will need to:
 ```js
 process.env.REACT_APP_KEY;
 ```
+
 by
+
 ```js
 window.__env__.REACT_APP_KEY;
 ```
@@ -143,7 +145,7 @@ into your `setupTests.js` like below:
 ```js
 window.__env__ = {
   // highlight-start
-  REACT_APP_KEY: process.env.REACT_APP_KEY
+  REACT_APP_KEY: process.env.REACT_APP_KEY,
   // highlight-end
 };
 ```

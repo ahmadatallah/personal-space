@@ -1,17 +1,21 @@
+---
+title: 'Desert Octopus, Egypt'
+date: 2020-04-01
+---
+
 import Gallery from '@browniebroke/gatsby-image-gallery';
-import SEO from '../components/seo';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  query frames {
+  query desertOctopus {
     images: allFile(
-      filter: { relativeDirectory: { eq: "frames" } }
+      filter: { relativeDirectory: { eq: "desert-octopus" } }
       sort: { fields: name }
     ) {
       edges {
         node {
           childImageSharp {
-            thumb: fluid(maxWidth: 400, maxHeight: 400) {
+            thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid
               originalName
             }
@@ -26,7 +30,6 @@ export const query = graphql`
   }
 `;
 
-<SEO title="Frames" />
 <Gallery
   images={props.data.images.edges.map(({ node }) => ({
     ...node.childImageSharp,
@@ -34,3 +37,5 @@ export const query = graphql`
     thumbAlt: node.name,
   }))}
 />
+
+Two photos of Pyramid of Amenemhat III A.K.A The Black Pyramid [wiki](<https://en.wikipedia.org/wiki/Pyramid_of_Amenemhat_III_(Dahshur)>).

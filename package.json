@@ -39,6 +39,7 @@
     "clean": "gatsby clean",
     "serve": "gatsby serve -H 0.0.0.0",
     "now-build": "npm run build",
+    "pretty": "prettier --write .",
     "lint": "eslint --fix --cache src/"
   },
   "eslintConfig": {
@@ -47,7 +48,7 @@
   "devDependencies": {
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.1",
-    "prettier": "1.19.1",
+    "prettier": "^2.2.1",
     "pretty-quick": "^2.0.1"
   },
   "husky": {

@@ -3,16 +3,40 @@ title: 'Parasite 2019, dir. Boon Joon Ho'
 date: 2019-12-15
 ---
 
-import Gallery from '@browniebroke/gatsby-image-gallery'
-import { graphql } from "gatsby";
+import Gallery from '@browniebroke/gatsby-image-gallery';
+import { graphql } from 'gatsby';
 
-export const query = graphql`query parasite { images: allFile( filter: { relativeDirectory: { eq: "parasite" } } sort: { fields: name } ) { edges { node { childImageSharp { thumb: fluid(maxWidth: 270, maxHeight: 270) { ...GatsbyImageSharpFluid originalName } full: fluid(maxWidth: 1024) { ...GatsbyImageSharpFluid } }, name } } } }`
+export const query = graphql`
+  query parasite {
+    images: allFile(
+      filter: { relativeDirectory: { eq: "parasite" } }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            thumb: fluid(maxWidth: 270, maxHeight: 270) {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
+            full: fluid(maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          name
+        }
+      }
+    }
+  }
+`;
 
-<Gallery images={props.data.images.edges.map(({ node }) => ({
-...node.childImageSharp,
-caption: node.name,
-thumbAlt: node.name,
-}))} />
+<Gallery
+  images={props.data.images.edges.map(({ node }) => ({
+    ...node.childImageSharp,
+    caption: node.name,
+    thumbAlt: node.name,
+  }))}
+/>
 
 First, I watched [Oldboy 2003](https://www.rottentomatoes.com/m/oldboy) for Park Chan-wook, I find it quite mind blowing to watch a story like this.
 I thought I will never watch something like this again, but, I found more and more from Korean cinema. I don't know exactly how to describe this kind of films,

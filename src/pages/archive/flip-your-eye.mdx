@@ -1,17 +1,21 @@
+---
+title: 'Flip Your Eye'
+date: 2019-11-16
+---
+
 import Gallery from '@browniebroke/gatsby-image-gallery';
-import SEO from '../components/seo';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  query frames {
+  query flip {
     images: allFile(
-      filter: { relativeDirectory: { eq: "frames" } }
+      filter: { relativeDirectory: { eq: "flip-your-eye" } }
       sort: { fields: name }
     ) {
       edges {
         node {
           childImageSharp {
-            thumb: fluid(maxWidth: 400, maxHeight: 400) {
+            thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid
               originalName
             }
@@ -26,7 +30,6 @@ export const query = graphql`
   }
 `;
 
-<SEO title="Frames" />
 <Gallery
   images={props.data.images.edges.map(({ node }) => ({
     ...node.childImageSharp,

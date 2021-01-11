@@ -14,15 +14,13 @@ exports.onCreatePage = async ({ page, actions }) => {
 
   const src = await readFile(page.component, 'utf8');
   const post = gm(src, {
-    excerpt: file => {
+    excerpt: (file) => {
       const [first] = file.content.split('\n\n');
       file.excerpt = first;
     },
   });
 
-  const compiler = remark()
-    .use(remark.mdx)
-    .use(remark.html);
+  const compiler = remark().use(remark.mdx).use(remark.html);
 
   const html = await compiler.process(post.content);
   const excerpt = await compiler.process(post.excerpt);

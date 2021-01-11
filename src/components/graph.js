@@ -6,10 +6,10 @@ const Grid = ({ size, height = 24 }) => {
   const y = Array.from({ length: height }).map((n, i) => `M0 ${i} H32`);
   return (
     <g fill="none" stroke="rgba(255, 0, 0, .25)" strokeWidth={1 / 32}>
-      {x.map(d => (
+      {x.map((d) => (
         <path key={d} d={d} />
       ))}
-      {y.map(d => (
+      {y.map((d) => (
         <path key={d} d={d} />
       ))}
     </g>

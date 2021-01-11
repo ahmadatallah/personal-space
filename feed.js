@@ -14,7 +14,7 @@ module.exports = {
   feeds: [
     {
       serialize: ({ query: { site, allSitePage } }) => {
-        return allSitePage.nodes.map(page => ({
+        return allSitePage.nodes.map((page) => ({
           ...page.context.frontmatter,
           description: page.context.frontmatter.excerpt,
           url: site.siteMetadata.siteUrl + page.path,
@@ -68,7 +68,7 @@ module.exports = {
     },
     {
       serialize: ({ query: { site, allSitePage } }) => {
-        return allSitePage.nodes.map(page => ({
+        return allSitePage.nodes.map((page) => ({
           ...page.context.frontmatter,
           description: page.context.frontmatter.excerpt,
           url: site.siteMetadata.siteUrl + page.path,

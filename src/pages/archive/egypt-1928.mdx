@@ -1,17 +1,21 @@
+---
+title: 'Egypt 1928'
+date: 2021-01-05
+---
+
 import Gallery from '@browniebroke/gatsby-image-gallery';
-import SEO from '../components/seo';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  query frames {
+  query egypt1928 {
     images: allFile(
-      filter: { relativeDirectory: { eq: "frames" } }
+      filter: { relativeDirectory: { eq: "egypt-1928" } }
       sort: { fields: name }
     ) {
       edges {
         node {
           childImageSharp {
-            thumb: fluid(maxWidth: 400, maxHeight: 400) {
+            thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid
               originalName
             }
@@ -26,7 +30,6 @@ export const query = graphql`
   }
 `;
 
-<SEO title="Frames" />
 <Gallery
   images={props.data.images.edges.map(({ node }) => ({
     ...node.childImageSharp,
@@ -34,3 +37,5 @@ export const query = graphql`
     thumbAlt: node.name,
   }))}
 />
+
+Photoset of Egypt 2021 in one of Giza's villages.

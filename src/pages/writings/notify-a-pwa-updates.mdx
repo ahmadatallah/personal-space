@@ -229,7 +229,7 @@ export default connect(mapStateToProps)(App);
 Then we will extract the service worker state as app prop:
 
 ```jsx
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     serviceWorkerUpdated: state.serviceWorkerUpdated,
   };

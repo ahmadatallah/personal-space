@@ -5,7 +5,7 @@ import SEO from './components/seo';
 
 import Layout from './layout';
 
-const Page = props => {
+const Page = (props) => {
   let title = 'Home';
   const postTitle = get(
     props.data,

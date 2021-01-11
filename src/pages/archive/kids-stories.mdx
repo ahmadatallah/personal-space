@@ -1,11 +1,15 @@
+---
+title: 'Kids Stories'
+date: 2020-12-09
+---
+
 import Gallery from '@browniebroke/gatsby-image-gallery';
-import SEO from '../components/seo';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  query frames {
+  query kidsStories {
     images: allFile(
-      filter: { relativeDirectory: { eq: "frames" } }
+      filter: { relativeDirectory: { eq: "kids-stories" } }
       sort: { fields: name }
     ) {
       edges {
@@ -26,11 +30,27 @@ export const query = graphql`
   }
 `;
 
-<SEO title="Frames" />
 <Gallery
-  images={props.data.images.edges.map(({ node }) => ({
-    ...node.childImageSharp,
-    caption: node.name,
-    thumbAlt: node.name,
-  }))}
+  images={props.data.images.edges
+    .map(({ node }) => ({
+      ...node.childImageSharp,
+      caption: node.name,
+      thumbAlt: node.name,
+    }))
+    .slice(0, 4)}
 />
+
+Story 1
+
+<Gallery
+  images={props.data.images.edges
+    .map(({ node }) => ({
+      ...node.childImageSharp,
+      ...node.childImageSharp,
+      caption: node.name,
+      thumbAlt: node.name,
+    }))
+    .slice(4, 8)}
+/>
+
+Story 2

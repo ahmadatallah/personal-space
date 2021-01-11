@@ -1,0 +1,4 @@
+# Ignore artifacts:
+public
+.cache
+node_modules
