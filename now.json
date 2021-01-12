@@ -43,14 +43,94 @@
       "dest": "/about/index.html"
     },
     {
-      "src": "/archive/(.*)",
+      "src": "/archive/",
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/archive/index.html"
     },
     {
-      "src": "/writings/(.*)",
+      "src": "/archive/desert-octopus",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/desert-octopus/index.html"
+    },
+    {
+      "src": "/archive/desert-octopus",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/desert-octopus/index.html"
+    },
+    {
+      "src": "/archive/egypt-1928",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/egypt-1928/index.html"
+    },
+    {
+      "src": "/archive/flip-your-eye",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/flip-your-eye/index.html"
+    },
+    {
+      "src": "/archive/hal9000-generative-art",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/hal9000-generative-art/index.html"
+    },
+    {
+      "src": "/archive/joy-division-generative-art",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/joy-division-generative-art/index.html"
+    },
+    {
+      "src": "/archive/kids-stories",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/kids-stories/index.html"
+    },
+    {
+      "src": "/archive/nge-space-odyssey-parallels",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/nge-space-odyssey-parallels/index.html"
+    },
+    {
+      "src": "/archive/notes",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/notes/index.html"
+    },
+    {
+      "src": "/archive/parasite",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/parasite/index.html"
+    },
+    {
+      "src": "/archive/soy-cuba",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/soy-cuba/index.html"
+    },
+    {
+      "src": "/archive/zero-decibel-qarun-lake",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/zero-decibel-qarun-lake/index.html"
+    },
+    {
+      "src": "/writings",
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/writings/index.html"
+    },
+    {
+      "src": "/writings/cra-runtime-vs-build-time-envs",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/writings/cra-runtime-vs-build-time-envs/index.html"
+    },
+    {
+      "src": "/writings/notify-a-pwa-updates",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/writings/notify-a-pwa-updates/index.html"
+    },
+    {
+      "src": "/writings/pattern-matching-example-in-ts",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/writings/pattern-matching-example-in-ts/index.html"
+    },
+    {
+      "src": "/writings/theme-expirement-by-uselayouteffect",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/writings/theme-expirement-by-uselayouteffect/index.html"
     },
     {
       "src": "/readings",
