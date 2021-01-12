@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx, Text } from 'theme-ui';
 import React from 'react';
-import SEO from '../../components/seo';
 import { graphql, Link } from 'gatsby';
-import '@browniebroke/gatsby-image-gallery/dist/style.css';
+import SEO from '../../components/seo';
 
 export const query = graphql`
   query ArchivePages {
