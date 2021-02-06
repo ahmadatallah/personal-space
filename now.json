@@ -88,6 +88,11 @@
       "dest": "/archive/nge-space-odyssey-parallels/index.html"
     },
     {
+      "src": "/archive/red-room-generative-art",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/archive/red-room-generative-art/index.html"
+    },
+    {
       "src": "/archive/notes",
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/archive/notes/index.html"
