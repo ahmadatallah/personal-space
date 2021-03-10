@@ -123,11 +123,6 @@
       "dest": "/writings/cra-runtime-vs-build-time-envs/index.html"
     },
     {
-      "src": "/writings/notify-a-pwa-updates",
-      "headers": { "cache-control": "s-maxage=0" },
-      "dest": "/writings/notify-a-pwa-updates/index.html"
-    },
-    {
       "src": "/writings/pattern-matching-example-in-ts",
       "headers": { "cache-control": "s-maxage=0" },
       "dest": "/writings/pattern-matching-example-in-ts/index.html"
