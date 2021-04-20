@@ -15,6 +15,7 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-extract-image-colors',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {

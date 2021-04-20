@@ -14,6 +14,7 @@
     "gatsby": "^2.30.1",
     "gatsby-image": "^2.9.0",
     "gatsby-plugin-catch-links": "^2.3.5",
+    "gatsby-plugin-extract-image-colors": "^0.0.14",
     "gatsby-plugin-feed": "^2.5.4",
     "gatsby-plugin-google-analytics": "^2.3.3",
     "gatsby-plugin-google-fonts": "^1.0.1",

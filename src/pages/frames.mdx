@@ -11,7 +11,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            thumb: fluid(maxWidth: 400, maxHeight: 400) {
+            thumb: fluid(maxWidth: 400, maxHeight: 350) {
               ...GatsbyImageSharpFluid
               originalName
             }
