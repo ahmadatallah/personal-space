@@ -104,17 +104,24 @@ export default (props) => {
     <div
       sx={{
         variant: 'styles.root',
-        minHeight: '100vh',
         display: 'flex',
+        height: '100%',
         flexDirection: 'column',
       }}
     >
       <header
         sx={{
           width: '100%',
+          height: '50px',
+          backdropFilter: 'blur(5px)',
+          flexShrink: 0,
           display: 'flex',
+          position: 'sticky',
+          top: '0',
+          backgroundColor: 'muted',
           alignItems: 'center',
-          maxWidth: 'wide',
+          justifyContent: 'center',
+          zIndex: 1000,
           mx: 'auto',
           px: 3,
           py: 4,
@@ -143,7 +150,6 @@ export default (props) => {
         >
           Archive
         </NavLink>
-        <div sx={{ mx: 'auto' }} />
         <ColorButton mode={mode} onClick={cycleMode} />
       </header>
       <main
