@@ -155,6 +155,41 @@
       "dest": "/archive/soy-cuba/index.html"
     },
     {
+      "src": "/archive/neon-night",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/neon-night/index.html"
+    },
+    {
+      "src": "/archive/burullus-island",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/burullus-island/index.html"
+    },
+    {
+      "src": "/archive/the-office",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/the-office/index.html"
+    },
+    {
+      "src": "/archive/poor-easter",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/poor-easter/index.html"
+    },
+    {
+      "src": "/archive/burn-trees",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/burn-trees/index.html"
+    },
+    {
       "src": "/archive/zero-decibel-qarun-lake",
       "headers": {
         "cache-control": "s-maxage=0"
