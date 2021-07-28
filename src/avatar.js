@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Avatar } from 'theme-ui';
+import AvatarImage from './images/avatar.png';
 
 export default ({ size = 64, ...props }) => (
   <div
@@ -15,7 +16,7 @@ export default ({ size = 64, ...props }) => (
     <Avatar
       alt="avatar"
       id="avatar"
-      src="https://live.staticflickr.com/65535/50815637242_10c60d8c08_c.jpg"
+      src={AvatarImage}
       borderRadius="50%"
       mr={2}
       size={size}

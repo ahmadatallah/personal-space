@@ -10,10 +10,22 @@
       },
       "dest": "/static/$1"
     },
-    { "src": "/favicon.ico", "dest": "/favicon.ico" },
-    { "src": "/avatar.jpg", "dest": "/avatar.jpg" },
-    { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
-    { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/avatar.png",
+      "dest": "/avatar.png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "dest": "/favicon-16x16.png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "dest": "/favicon-32x32.png"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "dest": "/android-chrome-192x192.png"
@@ -22,124 +34,208 @@
       "src": "/android-chrome-512x512.png",
       "dest": "/android-chrome-512x512.png"
     },
-    { "src": "/apple-touch-icon.png", "dest": "/apple-touch-icon.png" },
-    { "src": "/mstile-150x150.png", "dest": "/mstile-150x150.png" },
-    { "src": "/safari-pinned-tab.svg", "dest": "/safari-pinned-tab.svg" },
-    { "src": "/browserconfig.xml", "dest": "/browserconfig.xml" },
-    { "src": "/manifest.json", "dest": "/manifest.json" },
+    {
+      "src": "/apple-touch-icon.png",
+      "dest": "/apple-touch-icon.png"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
     {
       "src": "/",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/index.html"
     },
     {
       "src": "/404",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/404/index.html"
     },
     {
       "src": "/about",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/about/index.html"
     },
     {
       "src": "/archive/",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/index.html"
     },
     {
       "src": "/archive/desert-octopus",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/desert-octopus/index.html"
     },
     {
       "src": "/archive/desert-octopus",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/desert-octopus/index.html"
     },
     {
       "src": "/archive/egypt-1928",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/egypt-1928/index.html"
     },
     {
       "src": "/archive/flip-your-eye",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/flip-your-eye/index.html"
     },
     {
       "src": "/archive/hal9000-generative-art",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/hal9000-generative-art/index.html"
     },
     {
       "src": "/archive/joy-division-generative-art",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/joy-division-generative-art/index.html"
     },
     {
       "src": "/archive/kids-stories",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/kids-stories/index.html"
     },
     {
       "src": "/archive/nge-space-odyssey-parallels",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/nge-space-odyssey-parallels/index.html"
     },
     {
       "src": "/archive/red-room-generative-art",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/red-room-generative-art/index.html"
     },
     {
       "src": "/archive/notes",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/notes/index.html"
     },
     {
       "src": "/archive/parasite",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/parasite/index.html"
     },
     {
       "src": "/archive/soy-cuba",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/soy-cuba/index.html"
     },
     {
+      "src": "/archive/neon-night",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/neon-night/index.html"
+    },
+    {
+      "src": "/archive/burullus-island",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/burullus-island/index.html"
+    },
+    {
+      "src": "/archive/the-office",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/the-office/index.html"
+    },
+    {
+      "src": "/archive/poor-easter",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/poor-easter/index.html"
+    },
+    {
+      "src": "/archive/burn-trees",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
+      "dest": "/archive/burn-trees/index.html"
+    },
+    {
       "src": "/archive/zero-decibel-qarun-lake",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/archive/zero-decibel-qarun-lake/index.html"
     },
     {
       "src": "/writings",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/writings/index.html"
     },
     {
       "src": "/writings/cra-runtime-vs-build-time-envs",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/writings/cra-runtime-vs-build-time-envs/index.html"
     },
     {
       "src": "/writings/pattern-matching-example-in-ts",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/writings/pattern-matching-example-in-ts/index.html"
     },
     {
       "src": "/writings/theme-expirement-by-uselayouteffect",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/writings/theme-expirement-by-uselayouteffect/index.html"
     },
     {
       "src": "/readings",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/readings/index.html"
     },
     {
       "src": "/frames",
-      "headers": { "cache-control": "s-maxage=0" },
+      "headers": {
+        "cache-control": "s-maxage=0"
+      },
       "dest": "/frames/index.html"
     }
   ]

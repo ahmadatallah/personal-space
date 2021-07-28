@@ -1,0 +1,41 @@
+---
+title: 'Poor Easter'
+date: 2021-05-15
+---
+
+import Gallery from '@browniebroke/gatsby-image-gallery';
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+  query poorEaster {
+    images: allFile(
+      filter: { relativeDirectory: { eq: "poor-easter" } }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            thumb: fluid(maxWidth: 500, maxHeight: 300) {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
+            full: fluid(maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          name
+        }
+      }
+    }
+  }
+`;
+
+<Gallery
+  images={props.data.images.edges.map(({ node }) => ({
+    ...node.childImageSharp,
+    caption: node.name,
+    thumbAlt: node.name,
+  }))}
+/>
+
+Easter story from south Giza, Egypt.
