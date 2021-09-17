@@ -7,6 +7,7 @@ import {
   FaTwitter as Twitter,
   FaGithub as GitHub,
   FaInstagram as Instagram,
+  FaEnvelope as Email,
 } from 'react-icons/fa';
 
 const modes = ['light', 'black', 'dark', 'deep', 'hack', 'pink'];
@@ -205,17 +206,27 @@ export default (props) => {
             sx={{
               variant: 'styles.navitem',
               ml: 2,
-              mr: 3,
             }}
           >
             <Twitter size={24} />
+          </a>
+          <a
+            href="mailto:hi@atallahsan.cc"
+            title="Email"
+            sx={{
+              variant: 'styles.navitem',
+              ml: 2,
+              mr: 2,
+            }}
+          >
+            <Email size={24} />
           </a>
           <a
             href="https://github.com/ahmadatallah"
             title="GitHub"
             sx={{
               variant: 'styles.navitem',
-              mr: 3,
+              mr: 2,
             }}
           >
             <GitHub size={24} />
@@ -225,7 +236,7 @@ export default (props) => {
             title="Instagram"
             sx={{
               variant: 'styles.navitem',
-              mr: 3,
+              mr: 2,
             }}
           >
             <Instagram size={24} />
