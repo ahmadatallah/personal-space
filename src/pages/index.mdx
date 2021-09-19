@@ -1,4 +1,5 @@
-import { Tiles, Container, List, Banner } from '../blocks';
+import { Tiles, Container, List, Banner, Card, CardWrapper } from '../blocks';
+import { Cards } from '../components/card';
 import { Text } from 'theme-ui';
 
 export const wide = true;
@@ -7,7 +8,7 @@ export const wide = true;
 
 # He/Him <br/> Ahmad Atallah
 
-Software engineer at [Swvl][].
+Sr. frontend engineer at [Swvl][].
 Based in Cairo, Egypt
 
 - [Archive](/archive)
@@ -19,12 +20,17 @@ Based in Cairo, Egypt
 
 </Banner>
 
+## Recent Posts
+
+<Cards />
+
 ## Projects
 
 <Tiles>
 
 - ## [Tachyons Styled React][]
-  Bring Tachyons, implemented with Emotion and Styled System, into your React app with types in mind.
+
+- ## [Swvl Design System][]
 
 </Tiles>
 
@@ -51,3 +57,4 @@ Based in Cairo, Egypt
 
 [swvl]: https://swvl.com
 [tachyons styled react]: https://tachyons-styled-tsx.now.sh/
+[swvl design system]: https://swvl.com
