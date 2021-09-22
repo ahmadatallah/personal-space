@@ -7,9 +7,16 @@ export default Container;
 
 export const query = graphql`
   query {
-    file(name: { eq: "about-img" }) {
+    main: file(name: { eq: "about-img" }) {
       childImageSharp {
-        fixed(width: 400, height: 530) {
+        fixed(width: 600, height: 400) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    pp: file(name: { eq: "about-pp" }) {
+      childImageSharp {
+        fixed(width: 600, height: 400) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -20,14 +27,17 @@ export const query = graphql`
 # About
 
 <SEO title="About" />
-<Img fixed={props.data.file.childImageSharp.fixed} />
+<Img fixed={props.data.main.childImageSharp.fixed} />
 
 I&apos;m Ahmad Atallah. An egyptian software engineer who&apos;s
-doing mostly frontend stuff. Also, I&apos;m interested in functional
-programming, and design. I do minimal things that&apos;s why
-terseness is something I prefer. I like taking visual photos. Photos
+doing mostly frontend stuff. Also, interested in functional
+programming, and generative design. I like taking visual photos. Photos
 that I pass by in my daily life; every single day. Noam Chomsky once
 said: &quot;When you walk around, you&apos;re talking to yourself.
 You can&apos;t stop. I mean, it takes a real act of will not to talk
 to yourself, and what you&apos;re doing is thinking&quot;, and I
 find this is about the actual state of my mind all the time.
+
+<Img fixed={props.data.pp.childImageSharp.fixed} />
+
+Not to forget, I'm table tennis player &#x1F3D3;

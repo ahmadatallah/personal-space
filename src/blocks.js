@@ -4,7 +4,7 @@ import { jsx, useThemeUI } from 'theme-ui';
 export const Banner = (props) => (
   <div
     sx={{
-      pb: [2, 3, 4],
+      pb: [1, 2, 3],
       fontWeight: 'bold',
       ul: {
         listStyle: 'none',
@@ -44,7 +44,7 @@ export const Tiles = (props) => (
         p: 0,
         m: 0,
         display: 'grid',
-        gridGap: 4,
+        gridGap: [0, 2, 2],
         gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
       },
       h2: {
@@ -59,6 +59,9 @@ export const Tiles = (props) => (
       },
       a: {
         variant: 'styles.navlink',
+      },
+      h3: {
+        my: 1,
       },
       ...props.sx,
     }}
@@ -82,7 +85,8 @@ export const List = (props) => (
         variant: 'styles.navlink',
         fontWeight: 'bold',
       },
-      ...props.sx,
+      py: 1,
+      fontSize: 1,
     }}
   >
     {props.children}
@@ -90,45 +94,47 @@ export const List = (props) => (
 );
 
 export const CardWrapper = (props) => (
-  <ul
+  <div
     sx={{
-      listStyle: 'none',
       padding: 0,
-      margin: 0,
+      mt: 3,
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(20ch, 2fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(20ch, 1fr))',
       gridGap: '1.5rem',
       maxWidth: '100vw',
-      width: '100ch',
-      pr: '4rem',
+      width: '100%',
     }}
   >
     {props.children}
-  </ul>
+  </div>
 );
 
 export const Card = (props) => {
   const theme = useThemeUI();
   return (
-    <li
+    <div
       sx={{
-        '--card-gradient': 'rgba(0, 0, 0, 0.1)',
-        '--card-gradient': `rgba(0, 0, 0, 0.8), ${theme.theme.colors.secondary}`,
-        '--card-blend-mode': 'overlay',
+        '--card-gradient': `rgba(0, 0, 0, 0.7), ${theme.theme.colors.secondary}`,
+        '--card-blend-mode': 'hard-light',
         borderRadius: '0.5rem',
         boxShadow: '0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45)',
         pb: '1rem',
         width: '100%',
         backgroundImage:
-          'linear-gradient(var(--card-gradient), white max(9.5rem, 27vh))',
+          'linear-gradient(var(--card-gradient), white max(10rem, 27vh))',
         overflow: 'hidden',
+        backgroundColor: 'white',
         div: {
           img: {
             borderRadius: '0.5rem 0.5rem 0 0',
             width: '100%',
             '-o-object-fit': 'cover',
             'object-fit': 'cover',
-            maxHeight: 'max(2rem, 30vh)',
+            maxHeight: [
+              'max(2rem, 40vh)',
+              'max(2rem, 30vh)',
+              'max(2rem, 30vh)',
+            ],
             aspectRatio: 4 / 3,
             mixBlendMode: 'var(--card-blend-mode)',
           },
@@ -147,6 +153,6 @@ export const Card = (props) => {
       {...props}
     >
       {props.children}
-    </li>
+    </div>
   );
 };

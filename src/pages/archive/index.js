@@ -28,7 +28,7 @@ export const query = graphql`
   }
 `;
 
-export default (props) => {
+const Archive = (props) => {
   const posts = props.data.pages.nodes;
 
   return (
@@ -44,7 +44,7 @@ export default (props) => {
       >
         {posts.map((post) => (
           <li key={post.id}>
-            <Text as="h2" sx={{ my: 3 }}>
+            <Text as="h2" sx={{ mt: 4, mb: 0 }}>
               <Link
                 to={post.path}
                 sx={{
@@ -63,3 +63,5 @@ export default (props) => {
     </>
   );
 };
+
+export default Archive;
