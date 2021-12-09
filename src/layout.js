@@ -137,7 +137,7 @@ export default (props) => {
             mr: 3,
           }}
         >
-          <Avatar size={32} sx={{ mr: 2 }} />
+          <Avatar size={32} sx={{ mr: 3 }} />
           Atallahsan
         </NavLink>
         <NavLink

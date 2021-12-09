@@ -110,19 +110,16 @@ export const CardWrapper = (props) => (
 );
 
 export const Card = (props) => {
-  const theme = useThemeUI();
+  const { theme } = useThemeUI();
   return (
     <div
       sx={{
-        '--card-gradient': `rgba(0, 0, 0, 0.7), ${theme.theme.colors.secondary}`,
-        '--card-blend-mode': 'hard-light',
         borderRadius: '0.5rem',
-        boxShadow: '0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45)',
+        boxShadow: `0px 0px 4px 0px ${theme.colors.primary}, 0px 0px 16px 0px ${theme.colors.secondary}, -2px -1px 13px 0px ${theme.colors.highlight}, -8px 0px 17px 0px ${theme.colors.accent}`,
         pb: '1rem',
         width: '100%',
-        backgroundImage:
-          'linear-gradient(var(--card-gradient), white max(10rem, 27vh))',
         overflow: 'hidden',
+        mx: 3,
         backgroundColor: 'white',
         div: {
           img: {
@@ -130,18 +127,11 @@ export const Card = (props) => {
             width: '100%',
             '-o-object-fit': 'cover',
             'object-fit': 'cover',
-            maxHeight: [
-              'max(2rem, 40vh)',
-              'max(2rem, 30vh)',
-              'max(2rem, 30vh)',
-            ],
-            aspectRatio: 4 / 3,
-            mixBlendMode: 'var(--card-blend-mode)',
           },
         },
         h3: {
           mt: '1rem',
-          mx: '1rem',
+          mx: '1.2rem',
           color: '#000',
           fontSize: '1.0rem',
         },
