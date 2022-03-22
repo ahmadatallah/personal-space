@@ -3,23 +3,29 @@ import SEO from '../components/seo';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
-  query frames {
-    images: allFile(
-      filter: { relativeDirectory: { eq: "frames" } }
-      sort: { fields: name }
-    ) {
+  query {
+    allInstaNode {
       edges {
         node {
-          childImageSharp {
-            thumb: fluid(maxWidth: 400, maxHeight: 350) {
-              ...GatsbyImageSharpFluid
-              originalName
-            }
-            full: fluid(maxWidth: 1024) {
-              ...GatsbyImageSharpFluid
+          id
+          likes
+          comments
+          mediaType
+          preview
+          original
+          timestamp
+          caption
+          localFile {
+            childImageSharp {
+              thumb: fluid(maxWidth: 500, maxHeight: 400) {
+                ...GatsbyImageSharpFluid
+                originalName
+              }
+              full: fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
-          name
         }
       }
     }
@@ -27,10 +33,26 @@ export const query = graphql`
 `;
 
 <SEO title="Frames" />
+
+<h1>
+  Latest{' '}
+  {
+    props.data.allInstaNode.edges.filter(
+      ({ node }) => node.mediaType === 'GraphSidecar'
+    ).length
+  }
+</h1>
+
+Find more at [Instagram][]
+
 <Gallery
-  images={props.data.images.edges.map(({ node }) => ({
-    ...node.childImageSharp,
-    caption: node.name,
-    thumbAlt: node.name,
-  }))}
+  images={props.data.allInstaNode.edges
+    .filter(({ node }) => node.mediaType === 'GraphSidecar')
+    .map(({ node }) => ({
+      ...node.localFile.childImageSharp,
+      caption: node.caption,
+      thumbAlt: node.name,
+    }))}
 />
+
+[instagram]: https://www.instagram.com/ahmad.atallah/

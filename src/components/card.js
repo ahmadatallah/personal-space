@@ -14,8 +14,7 @@ export const Cards = () => {
           }
         }
       }
-
-      card2: file(name: { eq: "red - shadows on beach" }) {
+      card2: file(name: { eq: "hall9000-generative" }) {
         childImageSharp {
           fluid(maxWidth: 1024) {
             ...GatsbyImageSharpFluid
@@ -38,6 +37,14 @@ export const Cards = () => {
           }
         }
       }
+
+      card5: file(name: { eq: "joy-division-generative-art-white" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -45,16 +52,33 @@ export const Cards = () => {
   const image2 = result.card2.childImageSharp.fluid;
   const image3 = result.card3.childImageSharp.fluid;
   const image4 = result.card4.childImageSharp.fluid;
+  const image5 = result.card5.childImageSharp.fluid;
+
+  const CardHandler = ({ ...props }) => (
+    <NavLink
+      className="card"
+      sx={{
+        variant: 'styles.navitem',
+        ':hover': {
+          transform: 'translateY(-30px)',
+          transition: '0.1s ease-out',
+          cursor: 'pointer',
+          zIndex: 1000,
+        },
+        ':hover ~ .card': {
+          transform: 'translateX(150px)',
+          transition: '0.1s ease-out',
+        },
+        transition: '0.1s ease-out',
+        position: 'relative',
+      }}
+      {...props}
+    />
+  );
 
   return (
     <CardWrapper>
-      <NavLink
-        sx={{
-          variant: 'styles.navitem',
-        }}
-        as={Link}
-        to="/archive/window-xp-palette/"
-      >
+      <CardHandler as={Link} to="/archive/window-xp-palette/">
         <Card>
           <Image style={{ height: '170px' }} fluid={image1} />
           <h3>Windows XP, Generative Art</h3>
@@ -62,29 +86,26 @@ export const Cards = () => {
             Archive
           </small>
         </Card>
-      </NavLink>
-      <NavLink
-        sx={{
-          variant: 'styles.navitem',
-        }}
-        as={Link}
-        to="/frames/"
-      >
+      </CardHandler>
+      <CardHandler as={Link} to="/archive/hal9000-generative-art/">
         <Card>
           <Image style={{ height: '170px' }} fluid={image2} />
-          <h3>When the Sun Hits</h3>
+          <h3>Hal9000 Generative Art</h3>
           <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Frames
+            Archive
           </small>
         </Card>
-      </NavLink>
-      <NavLink
-        sx={{
-          variant: 'styles.navitem',
-        }}
-        as={Link}
-        to="/archive/on-some-faraway-beach/"
-      >
+      </CardHandler>
+      <CardHandler as={Link} to="/archive/joy-division-generative-art/">
+        <Card>
+          <Image style={{ height: '170px' }} fluid={image5} />
+          <h3>Unknown Pleasure Generative Art</h3>
+          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
+            Archive
+          </small>
+        </Card>
+      </CardHandler>
+      <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
         <Card>
           <Image style={{ height: '170px' }} fluid={image3} />
           <h3>On Some Faraway Beach</h3>
@@ -92,14 +113,8 @@ export const Cards = () => {
             Archive
           </small>
         </Card>
-      </NavLink>
-      <NavLink
-        sx={{
-          variant: 'styles.navitem',
-        }}
-        as={Link}
-        to="/archive/red-room-generative-art/"
-      >
+      </CardHandler>
+      <CardHandler as={Link} to="/archive/red-room-generative-art/">
         <Card>
           <Image style={{ height: '170px' }} fluid={image4} />
           <h3>Red Room, Generative Art</h3>
@@ -107,7 +122,7 @@ export const Cards = () => {
             Archive
           </small>
         </Card>
-      </NavLink>
+      </CardHandler>
     </CardWrapper>
   );
 };

@@ -97,12 +97,12 @@ export const CardWrapper = (props) => (
   <div
     sx={{
       padding: 0,
-      mt: 3,
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(20ch, 1fr))',
-      gridGap: '1.5rem',
-      maxWidth: '100vw',
-      width: '100%',
+      mt: 5,
+      ml: 4,
+      height: '300px',
+      width: '600px',
+      left: 'calc(50% - 300px)',
+      display: 'flex',
     }}
   >
     {props.children}
@@ -113,13 +113,16 @@ export const Card = (props) => {
   const { theme } = useThemeUI();
   return (
     <div
+      className="card"
       sx={{
         borderRadius: '0.5rem',
-        boxShadow: `0px 0px 4px 0px ${theme.colors.primary}, 0px 0px 16px 0px ${theme.colors.secondary}, -2px -1px 13px 0px ${theme.colors.highlight}, -8px 0px 17px 0px ${theme.colors.accent}`,
+        boxShadow: `-10px 0px 10px ${theme.colors.primary}, -30px 0px 5px ${theme.colors.accent}`,
         pb: '1rem',
+        transition: '0.4s ease-out',
         width: '100%',
+        position: 'relative',
+        minWidth: '300px',
         overflow: 'hidden',
-        mx: 3,
         backgroundColor: 'white',
         div: {
           img: {
@@ -129,15 +132,12 @@ export const Card = (props) => {
             'object-fit': 'cover',
           },
         },
+
         h3: {
           mt: '1rem',
           mx: '1.2rem',
           color: '#000',
           fontSize: '1.0rem',
-        },
-        ':hover': {
-          '--card-blend-mode': 'none',
-          cursor: 'pointer',
         },
       }}
       {...props}
