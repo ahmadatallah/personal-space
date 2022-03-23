@@ -98,11 +98,11 @@ export const CardWrapper = (props) => (
     sx={{
       padding: 0,
       mt: 5,
-      ml: 4,
-      height: '300px',
-      width: '600px',
-      left: 'calc(50% - 300px)',
-      display: 'flex',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(20ch, 1fr))',
+      gridGap: '1.5rem',
+      maxWidth: '100vw',
+      width: '100%',
     }}
   >
     {props.children}
@@ -118,10 +118,12 @@ export const Card = (props) => {
         borderRadius: '0.5rem',
         boxShadow: `-10px 0px 10px ${theme.colors.primary}, -30px 0px 5px ${theme.colors.accent}`,
         pb: '1rem',
-        transition: '0.4s ease-out',
         width: '100%',
-        position: 'relative',
-        minWidth: '300px',
+        mx: 3,
+        maxHeight: '200px',
+        display: 'flex',
+        flexDirection: 'column',
+        minWidth: '200px',
         overflow: 'hidden',
         backgroundColor: 'white',
         div: {
@@ -138,6 +140,11 @@ export const Card = (props) => {
           mx: '1.2rem',
           color: '#000',
           fontSize: '1.0rem',
+        },
+        transition: 'all .2s ease-in-out',
+        ':hover': {
+          transform: 'scale(1.1)',
+          zIndex: 100,
         },
       }}
       {...props}

@@ -47,12 +47,6 @@ module.exports = {
         path: `${__dirname}/src/externals`,
       },
     },
-    {
-      resolve: 'gatsby-source-instagram',
-      options: {
-        username: '1460724974',
-      },
-    },
 
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

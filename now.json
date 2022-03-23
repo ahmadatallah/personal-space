@@ -230,13 +230,6 @@
         "cache-control": "s-maxage=0"
       },
       "dest": "/readings/index.html"
-    },
-    {
-      "src": "/frames",
-      "headers": {
-        "cache-control": "s-maxage=0"
-      },
-      "dest": "/frames/index.html"
     }
   ]
 }
