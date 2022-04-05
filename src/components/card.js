@@ -38,7 +38,7 @@ export const Cards = () => {
         }
       }
 
-      card5: file(name: { eq: "joy-division-generative-art-white" }) {
+      card5: file(name: { eq: "angel" }) {
         childImageSharp {
           fluid(maxWidth: 1024) {
             ...GatsbyImageSharpFluid
@@ -88,17 +88,6 @@ export const Cards = () => {
           </small>
         </Card>
       </CardHandler>
-      <CardHandler as={Link} to="/archive/joy-division-generative-art/">
-        <Card>
-          <Image style={{ height: '170px' }} fluid={image5} />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Unknown Pleasure
-          </label>
-          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Archive
-          </small>
-        </Card>
-      </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
         <Card>
           <Image style={{ height: '170px' }} fluid={image3} />
@@ -115,6 +104,17 @@ export const Cards = () => {
           <Image style={{ height: '170px' }} fluid={image4} />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Red Room
+          </label>
+          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
+            Archive
+          </small>
+        </Card>
+      </CardHandler>
+      <CardHandler as={Link} to="/archive/made-from-tiny-boxes/">
+        <Card>
+          <Image style={{ height: '170px' }} fluid={image5} />
+          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
+            Made from Tiny Boxes
           </label>
           <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
             Archive

@@ -1,0 +1,41 @@
+---
+title: 'Made from Tiny Boxes'
+date: 2022-04-05
+---
+
+import Gallery from '@browniebroke/gatsby-image-gallery';
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+  query madeFromTinyBoxes {
+    images: allFile(
+      filter: { relativeDirectory: { eq: "made-from-tiny-boxes" } }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            thumb: fluid(maxWidth: 500, maxHeight: 300) {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
+            full: fluid(maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          name
+        }
+      }
+    }
+  }
+`;
+
+<Gallery
+  images={props.data.images.edges.map(({ node }) => ({
+    ...node.childImageSharp,
+    caption: node.name,
+    thumbAlt: node.name,
+  }))}
+/>
+
+Some tiny photos I took from Miniatur Wunderland, Hamburg.
