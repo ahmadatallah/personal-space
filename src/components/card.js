@@ -2,57 +2,47 @@
 import { jsx, NavLink } from 'theme-ui';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { CardWrapper, Card } from '../blocks';
-import Image from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const Cards = () => {
   const result = useStaticQuery(graphql`
     {
       card1: file(name: { eq: "window-xp-palette-2" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
       card2: file(name: { eq: "hall9000-generative" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
       card3: file(name: { eq: "girl" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
       card4: file(name: { eq: "red room - black" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
       card5: file(name: { eq: "angel" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
     }
   `);
 
-  const image1 = result.card1.childImageSharp.fluid;
-  const image2 = result.card2.childImageSharp.fluid;
-  const image3 = result.card3.childImageSharp.fluid;
-  const image4 = result.card4.childImageSharp.fluid;
-  const image5 = result.card5.childImageSharp.fluid;
+  const image1 = result.card1.childImageSharp.gatsbyImageData;
+  const image2 = result.card2.childImageSharp.gatsbyImageData;
+  const image3 = result.card3.childImageSharp.gatsbyImageData;
+  const image4 = result.card4.childImageSharp.gatsbyImageData;
+  const image5 = result.card5.childImageSharp.gatsbyImageData;
 
   const CardHandler = ({ ...props }) => (
     <NavLink
@@ -68,7 +58,7 @@ export const Cards = () => {
     <CardWrapper>
       <CardHandler as={Link} to="/archive/window-xp-palette/">
         <Card>
-          <Image style={{ height: '170px' }} fluid={image1} />
+          <GatsbyImage style={{ height: '170px' }} image={image1} />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Windows XP
           </label>
@@ -79,7 +69,7 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/hal9000-generative-art/">
         <Card>
-          <Image style={{ height: '170px' }} fluid={image2} />
+          <GatsbyImage style={{ height: '170px' }} image={image2} />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Hal9000
           </label>
@@ -90,7 +80,7 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
         <Card>
-          <Image style={{ height: '170px' }} fluid={image3} />
+          <GatsbyImage style={{ height: '170px' }} image={image3} />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             On Some Faraway Beach
           </label>
@@ -101,7 +91,7 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/red-room-generative-art/">
         <Card>
-          <Image style={{ height: '170px' }} fluid={image4} />
+          <GatsbyImage style={{ height: '170px' }} image={image4} />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Red Room
           </label>
@@ -112,7 +102,7 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/made-from-tiny-boxes/">
         <Card>
-          <Image style={{ height: '170px' }} fluid={image5} />
+          <GatsbyImage style={{ height: '170px' }} image={image5} />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Made from Tiny Boxes
           </label>

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, useColorMode, NavLink, Text } from 'theme-ui';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import '@browniebroke/gatsby-image-gallery/dist/style.css';
 import Avatar from './avatar';
 import {
   FaTwitter as Twitter,

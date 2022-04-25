@@ -15,17 +15,9 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            thumb: fluid(maxWidth: 360, maxHeight: 480) {
-              ...GatsbyImageSharpFluid
-              originalName
-            }
-            full: fluid(maxWidth: 1024) {
-              ...GatsbyImageSharpFluid
-            }
-            fixed(width: 400, height: 530) {
-              ...GatsbyImageSharpFixed
-              originalName
-            }
+            thumb: gatsbyImageData(layout: CONSTRAINED, width: 360)
+            full: gatsbyImageData(layout: FULL_WIDTH)
+            fixed: gatsbyImageData(layout: CONSTRAINED, width: 400)
           }
           name
         }

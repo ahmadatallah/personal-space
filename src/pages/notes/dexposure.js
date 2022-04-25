@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
-import Image from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import background from './background.svg';
 
 const Dexposure = () => {
@@ -9,9 +9,7 @@ const Dexposure = () => {
     {
       dexposure: file(name: { eq: "base" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: CONSTRAINED, width: 423)
         }
       }
     }
@@ -30,8 +28,8 @@ const Dexposure = () => {
         position: 'relative',
       }}
     >
-      <Image
-        fluid={result.dexposure.childImageSharp.fluid}
+      <GatsbyImage
+        image={result.dexposure.childImageSharp.gatsbyImageData}
         imgStyle={{
           width: '300px',
           height: '300px',

@@ -1,4 +1,4 @@
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import { Container } from '../blocks';
 import SEO from '../components/seo';
@@ -9,16 +9,12 @@ export const query = graphql`
   query {
     main: file(name: { eq: "about-img" }) {
       childImageSharp {
-        fluid(maxWidth: 500, quality: 100, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 500)
       }
     }
     pp: file(name: { eq: "about-pp" }) {
       childImageSharp {
-        fluid(maxWidth: 500, quality: 100, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 500)
       }
     }
   }
@@ -27,7 +23,7 @@ export const query = graphql`
 # About
 
 <SEO title="About" />
-<Img fluid={props.data.main.childImageSharp.fluid} />
+<GatsbyImage image={props.data.main.childImageSharp.gatsbyImageData} />
 
 I&apos;m Ahmad Atallah. An egyptian software engineer who&apos;s
 doing mostly frontend stuff. Also, interested in functional
@@ -38,6 +34,6 @@ You can&apos;t stop. I mean, it takes a real act of will not to talk
 to yourself, and what you&apos;re doing is thinking&quot;, and I
 find this is about the actual state of my mind all the time.
 
-<Img fluid={props.data.pp.childImageSharp.fluid} />
+<GatsbyImage image={props.data.pp.childImageSharp.gatsbyImageData} />
 
 Not to forget, I'm table tennis player &#x1F3D3;

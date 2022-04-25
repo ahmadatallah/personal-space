@@ -29,7 +29,7 @@ export const query = graphql`
 `;
 
 const Archive = (props) => {
-  const posts = props.data.pages.nodes;
+  const posts = props?.data?.pages?.nodes;
 
   return (
     <>
@@ -42,7 +42,7 @@ const Archive = (props) => {
           margin: 0,
         }}
       >
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <li key={post.id}>
             <Text as="h2" sx={{ mt: 4, mb: 0 }}>
               <Link
