@@ -35,3 +35,24 @@ exports.onCreatePage = async ({ page, actions }) => {
   actions.deletePage(page);
   actions.createPage(next);
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type SitePage implements Node {
+      context: Context
+    }
+
+    type Context  {
+      frontmatter: Frontmatter
+    }
+    
+    type Frontmatter {
+      title: String
+      date: Date
+      draft: Boolean
+      minRead: String
+    }
+  `;
+  createTypes(typeDefs);
+};

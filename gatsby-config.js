@@ -15,7 +15,6 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-extract-image-colors',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
@@ -43,6 +42,27 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'archive',
+        path: `${__dirname}/src/pages/archive`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'writings',
+        path: `${__dirname}/src/pages/writings`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'others',
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'notes',
         path: `${__dirname}/src/pages/notes`,
       },
@@ -54,8 +74,28 @@ module.exports = {
         path: `${__dirname}/src/externals`,
       },
     },
-
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-shiki-twoslash',
+            options: {
+              theme: 'nord',
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          placeholder: `dominantColor`,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    'gatsby-plugin-image',
   ],
 };

@@ -13,6 +13,7 @@ module.exports = {
   `,
   feeds: [
     {
+      title: 'all site page',
       serialize: ({ query: { site, allSitePage } }) => {
         return allSitePage.nodes.map((page) => ({
           ...page.context.frontmatter,
@@ -67,6 +68,7 @@ module.exports = {
       output: `rss-archive.xml`,
     },
     {
+      title: 'all site page',
       serialize: ({ query: { site, allSitePage } }) => {
         return allSitePage.nodes.map((page) => ({
           ...page.context.frontmatter,
