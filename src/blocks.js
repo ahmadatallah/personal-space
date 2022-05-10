@@ -118,7 +118,6 @@ export const Card = (props) => {
         borderRadius: '0.5rem',
         boxShadow: `-10px 0px 10px ${theme.colors.primary}, -30px 0px 5px ${theme.colors.accent}`,
         pb: '1rem',
-        width: '100%',
         mx: 3,
         maxHeight: '200px',
         display: 'flex',
@@ -145,6 +144,9 @@ export const Card = (props) => {
         ':hover': {
           transform: 'scale(1.1)',
           zIndex: 100,
+        },
+        label: {
+          maxWidth: '184px',
         },
       }}
       {...props}

@@ -12,11 +12,6 @@ export const query = graphql`
         gatsbyImageData(layout: CONSTRAINED, width: 500)
       }
     }
-    pp: file(name: { eq: "about-pp" }) {
-      childImageSharp {
-        gatsbyImageData(layout: CONSTRAINED, width: 500)
-      }
-    }
   }
 `;
 
@@ -27,13 +22,11 @@ export const query = graphql`
 
 I&apos;m Ahmad Atallah. An egyptian software engineer who&apos;s
 doing mostly frontend stuff. Also, interested in functional
-programming, and generative design. I like taking visual photos. Photos
+programming, and generative art. I like taking visual photos. Photos
 that I pass by in my daily life; every single day. Noam Chomsky once
 said: &quot;When you walk around, you&apos;re talking to yourself.
 You can&apos;t stop. I mean, it takes a real act of will not to talk
 to yourself, and what you&apos;re doing is thinking&quot;, and I
 find this is about the actual state of my mind all the time.
-
-<GatsbyImage image={props.data.pp.childImageSharp.gatsbyImageData} />
 
 Not to forget, I'm table tennis player &#x1F3D3;

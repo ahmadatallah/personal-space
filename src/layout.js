@@ -133,11 +133,9 @@ export default (props) => {
           sx={{
             variant: 'styles.navitem',
             fontSize: 0,
-            mr: 3,
           }}
         >
-          <Avatar size={32} sx={{ mr: 3 }} />
-          Atallahsan
+          <Avatar />
         </NavLink>
         <NavLink
           as={Link}
@@ -196,15 +194,14 @@ export default (props) => {
             justifyContent: 'center',
           }}
         >
-          <Link to="/avatar" title="About the avatar">
-            <Avatar size={40} />
-          </Link>
+          <NavLink as={Link} to="/" title="About the avatar">
+            <Avatar />
+          </NavLink>
           <a
             href="https://twitter.com/ahmadatallah"
             title="Twitter"
             sx={{
               variant: 'styles.navitem',
-              ml: 2,
             }}
           >
             <Twitter size={24} />
