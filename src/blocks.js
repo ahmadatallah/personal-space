@@ -116,9 +116,9 @@ export const Card = (props) => {
       className="card"
       sx={{
         borderRadius: '0.5rem',
-        boxShadow: `-10px 0px 10px ${theme.colors.primary}, -30px 0px 5px ${theme.colors.accent}`,
+        boxShadow: `-2px 0px 10px ${theme.colors.primary}, -20px 0px 5px ${theme.colors.accent}`,
         pb: '1rem',
-        mx: 3,
+        ml: 3,
         maxHeight: '200px',
         display: 'flex',
         flexDirection: 'column',

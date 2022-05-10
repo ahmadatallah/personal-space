@@ -11,14 +11,6 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/avatar.png",
-      "dest": "/avatar.png"
-    },
-    {
       "src": "/favicon-16x16.png",
       "dest": "/favicon-16x16.png"
     },
@@ -41,6 +33,14 @@
     {
       "src": "/manifest.json",
       "dest": "/manifest.json"
+    },
+    {
+      "src": "/site.webmanifest",
+      "dest": "/site.webmanifest"
+    },
+    {
+      "src": "/browserconfig",
+      "dest": "/browserconfig"
     },
     {
       "src": "/",

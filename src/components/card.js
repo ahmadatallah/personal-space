@@ -48,6 +48,7 @@ export const Cards = () => {
     <NavLink
       className="card"
       sx={{
+        justifyContent: 'center',
         variant: 'styles.navitem',
       }}
       {...props}
