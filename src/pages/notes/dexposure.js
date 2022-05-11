@@ -30,7 +30,7 @@ const Dexposure = () => {
     >
       <GatsbyImage
         image={result.dexposure.childImageSharp.gatsbyImageData}
-        imgStyle={{
+        style={{
           width: '300px',
           height: '300px',
           position: 'absolute',
@@ -38,7 +38,7 @@ const Dexposure = () => {
           mixBlendMode: 'darken',
           bottom: '50%',
           left: '270px',
-          transform: 'translateY(80%)',
+          transform: 'translateY(20%)',
           zIndex: 2,
         }}
       />
