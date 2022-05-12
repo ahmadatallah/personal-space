@@ -129,6 +129,17 @@ export default (props) => {
       >
         <NavLink
           as={Link}
+          to="/archive"
+          sx={{
+            variant: 'styles.navitem',
+            fontSize: 0,
+            mr: 1,
+          }}
+        >
+          Archive
+        </NavLink>
+        <NavLink
+          as={Link}
           to="/"
           sx={{
             variant: 'styles.navitem',
@@ -136,17 +147,6 @@ export default (props) => {
           }}
         >
           <Avatar />
-        </NavLink>
-        <NavLink
-          as={Link}
-          to="/archive"
-          sx={{
-            variant: 'styles.navitem',
-            fontSize: 0,
-            mr: 3,
-          }}
-        >
-          Archive
         </NavLink>
         <ColorButton mode={mode} onClick={cycleMode} />
       </header>
@@ -194,9 +194,6 @@ export default (props) => {
             justifyContent: 'center',
           }}
         >
-          <NavLink as={Link} to="/" title="About the avatar">
-            <Avatar />
-          </NavLink>
           <a
             href="https://twitter.com/ahmadatallah"
             title="Twitter"
@@ -246,6 +243,9 @@ export default (props) => {
           >
             Resume
           </a>
+          <NavLink as={Link} to="/" title="About the avatar">
+            <Avatar />
+          </NavLink>
         </div>
         <div
           sx={{
@@ -255,16 +255,6 @@ export default (props) => {
             fontSize: 0,
           }}
         >
-          <NavLink
-            as={Link}
-            to="/"
-            sx={{
-              variant: 'styles.navitem',
-              mr: 3,
-            }}
-          >
-            atallahsan
-          </NavLink>
           <NavLink
             as={Link}
             to="/archive"
