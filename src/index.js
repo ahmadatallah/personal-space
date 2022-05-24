@@ -25,6 +25,10 @@ const Page = (props) => {
   return (
     <>
       <SEO title="Home" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400"
+      />
       <Layout {...props}>{props.children}</Layout>
     </>
   );

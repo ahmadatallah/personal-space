@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, useThemeUI } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import background from './background.svg';
 
 const Dexposure = () => {
+  const { theme } = useThemeUI();
   const result = useStaticQuery(graphql`
     {
       dexposure: file(name: { eq: "base" }) {
@@ -18,10 +19,12 @@ const Dexposure = () => {
   return (
     <div
       sx={{
-        height: '1000px',
-        width: '100%',
-        p: '2',
-        backgroundColor: 'white',
+        height: '550px',
+        width: '50%',
+        mt: 4,
+        borderRadius: '10px',
+        boxShadow: `-2px 0px 10px ${theme.colors.primary}, -20px 0px 5px ${theme.colors.accent}`,
+        mx: 'auto',
         background: `url(${background})`,
         backgroundSize: 'contain',
         backgroundRepeat: 'repeat',
@@ -31,13 +34,12 @@ const Dexposure = () => {
       <GatsbyImage
         image={result.dexposure.childImageSharp.gatsbyImageData}
         style={{
-          width: '300px',
-          height: '300px',
+          width: '200px',
+          height: '200px',
           position: 'absolute',
           borderRadius: '50%',
-          mixBlendMode: 'darken',
-          bottom: '50%',
-          left: '270px',
+          bottom: '42%',
+          left: '180px',
           transform: 'translateY(20%)',
           zIndex: 2,
         }}

@@ -60,7 +60,7 @@ export default {
     },
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body: 'Reem Kufi, system-ui, sans-serif',
     monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {
