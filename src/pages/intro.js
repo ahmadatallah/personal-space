@@ -35,10 +35,10 @@ const TextShadow = (props) => {
     <Fragment>
       <div
         sx={{
-          bg: 'rgba(0, 0, 0, 0.5)',
+          bg: 'muted',
           display: 'flex',
           flexDirection: 'column',
-          p: 4,
+          p: [3, 4, 5],
         }}
       >
         <div
@@ -56,7 +56,8 @@ const TextShadow = (props) => {
           <GatsbyImage
             image={result.main.childImageSharp.gatsbyImageData}
             sx={{
-              my: 5,
+              my: 4,
+              mr: [2, 1, 0],
               marginTop: '20px',
               borderRadius: '10px',
               boxShadow: `2px 2px 0px ${theme.colors.secondary}, 4px 4px 0px ${theme.colors.primary}, 8px 8px 0px ${theme.colors.background}, 10px 10px 0px ${theme.colors.background}, 12px 12px 0px ${theme.colors.primary}, 14px 14px 0px ${theme.colors.secondary}`,
@@ -68,7 +69,7 @@ const TextShadow = (props) => {
             sx={{
               lineHeight: '1.5',
               letterSpacing: '0',
-              color: 'hsl(0,0%,100%)',
+              color: 'text',
               fontSize: [1, 2, 3],
               height: 'auto',
               mb: 2,
@@ -87,7 +88,8 @@ const TextShadow = (props) => {
               to="/archive"
               sx={{
                 variant: 'styles.navitem',
-                fontSize: ['12px', '14px', '16px'],
+                fontSize: ['10px', '12px', '14px'],
+                borderBottom: 'solid 1px',
                 mx: 1,
               }}
             >
@@ -98,94 +100,87 @@ const TextShadow = (props) => {
               as={Link}
               to="/notes"
               sx={{
-                fontSize: ['12px', '14px', '16px'],
+                fontSize: ['10px', '12px', '14px'],
                 ml: 1,
+                borderBottom: 'solid 1px',
                 variant: 'styles.navitem',
               }}
             >
               Notes
             </NavLink>
             .
-            <div
+            <br />
+            I'm also, privately active on
+            <a
+              href="https://twitter.com/ahmadatallah"
+              title="Twitter"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
+                variant: 'styles.navitem',
+                ml: [1, 1, 2],
+                mr: 1,
+                fontSize: ['10px', '12px', '14px'],
+                borderBottom: 'solid 1px',
               }}
             >
-              I'm also privately active on
-              <a
-                href="https://twitter.com/ahmadatallah"
-                title="Twitter"
-                sx={{
-                  variant: 'styles.navitem',
-                  mx: 2,
-                }}
-              >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="https://github.com/ahmadatallah"
-                title="GitHub"
-                sx={{
-                  variant: 'styles.navitem',
-                  mr: 2,
-                }}
-              >
-                <GitHub size={20} />
-              </a>
-              <a
-                href="https://www.instagram.com/ahmad.atallah/"
-                title="Instagram"
-                sx={{
-                  variant: 'styles.navitem',
-                  mr: 2,
-                }}
-              >
-                <Instagram size={20} />
-              </a>
-              .
-            </div>
-            <div
+              Twitter
+            </a>
+            ,
+            <a
+              href="https://github.com/ahmadatallah"
+              title="GitHub"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
+                variant: 'styles.navitem',
+                mx: 1,
+                fontSize: ['10px', '12px', '14px'],
+                borderBottom: 'solid 1px',
               }}
             >
-              You can contact me via E-mail at{' '}
-              <a
-                href="mailto:hi@atallahsan.cc"
-                title="Email"
-                sx={{
-                  variant: 'styles.navitem',
-                  fontSize: ['12px', '14px', '16px'],
-                  ml: [0, 1, 1],
-                }}
-              >
-                me@atallahsan.cc
-              </a>
-            </div>
-            <div
+              GitHub
+            </a>
+            and,
+            <a
+              href="https://www.instagram.com/ahmad.atallah/"
+              title="Instagram"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
+                variant: 'styles.navitem',
+                ml: 2,
+                fontSize: ['10px', '12px', '14px'],
+                borderBottom: 'solid 1px',
               }}
             >
-              The last of the unimportance you can do here is checking my
-              <a
-                href={result.pdf.publicURL}
-                title="Resume"
-                sx={{
-                  variant: 'styles.navitem',
-                  fontSize: ['12px', '14px', '16px'],
-                  ml: 1,
-                }}
-              >
-                Resume
-              </a>
-            </div>
+              Instagram
+            </a>
+            .
+            <br />
+            You can contact me via E-mail at{' '}
+            <a
+              href="mailto:hi@atallahsan.cc"
+              title="Email"
+              sx={{
+                variant: 'styles.navitem',
+                fontSize: ['10px', '12px', '14px'],
+                ml: [0, 1, 1],
+                borderBottom: 'solid 1px',
+              }}
+            >
+              me@atallahsan.cc
+            </a>
+            .
+            <br />
+            The last of the unimportance you can do here is checking my
+            <a
+              href={result.pdf.publicURL}
+              title="Resume"
+              sx={{
+                variant: 'styles.navitem',
+                fontSize: ['10px', '12px', '14px'],
+                borderBottom: 'solid 1px',
+                ml: 1,
+              }}
+            >
+              Resume
+            </a>
+            .
           </div>
         </div>
       </div>

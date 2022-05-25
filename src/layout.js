@@ -192,6 +192,7 @@ export default (props) => {
             py: 4,
             display: 'flex',
             justifyContent: 'center',
+            flexWrap: 'wrap',
           }}
         >
           <a

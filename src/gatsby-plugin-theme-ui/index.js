@@ -8,7 +8,7 @@ export default {
     primary: 'hsl(260, 100%, 57%)',
     secondary: 'hsl(222, 68%, 49%)',
     accent: 'hsl(280, 100%, 57%)',
-    muted: 'hsla(240,33,98, 40%)',
+    muted: 'hsl(180, 14%, 64%, 50%)',
     gray: '#555',
     highlight: '#022a4b',
     modes: {
@@ -18,7 +18,7 @@ export default {
         primary: '#0ff',
         secondary: 'hsl(173, 36%, 50%)',
         accent: '#f0f',
-        muted: 'hsla(0,0,7, 50%)',
+        muted: 'hsla(244.14,25.66%,22.16%, 50%)',
         gray: '#888',
       },
       dark: {
@@ -45,7 +45,7 @@ export default {
         primary: 'hsl(120, 100%, 40%)',
         secondary: 'hsl(173, 50%, 40%)',
         accent: 'hsl(120, 100%, 90%)',
-        muted: 'hsla(120, 20%, 7%, 50%)',
+        muted: 'hsla(250, 20%, 7%, 50%)',
         gray: 'hsl(120, 20%, 40%)',
       },
       pink: {
@@ -54,7 +54,7 @@ export default {
         secondary: 'hsl(350, 61%, 50%)',
         primary: 'hsl(348, 83%, 54%)',
         accent: 'hsl(346, 86%, 60%)',
-        muted: 'hsla(350, 100%, 88%, 50%)',
+        muted: 'hsla(3.75,30.79%,69.41%, 30%)',
         gray: 'hsl(350, 40%, 50%)',
       },
     },
