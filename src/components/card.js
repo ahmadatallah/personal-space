@@ -59,7 +59,11 @@ export const Cards = () => {
     <CardWrapper>
       <CardHandler as={Link} to="/archive/window-xp-palette/">
         <Card>
-          <GatsbyImage style={{ height: '170px' }} image={image1} />
+          <GatsbyImage
+            style={{ height: '170px' }}
+            image={image1}
+            alt="Windows XP Generative Art"
+          />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Windows XP
           </label>
@@ -70,7 +74,11 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/hal9000-generative-art/">
         <Card>
-          <GatsbyImage style={{ height: '170px' }} image={image2} />
+          <GatsbyImage
+            style={{ height: '170px' }}
+            image={image2}
+            alt="HAL9000 Generative Art"
+          />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Hal9000
           </label>
@@ -81,7 +89,11 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
         <Card>
-          <GatsbyImage style={{ height: '170px' }} image={image3} />
+          <GatsbyImage
+            style={{ height: '170px' }}
+            image={image3}
+            alt="On Some Faraway Beach Album"
+          />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             On Some Faraway Beach
           </label>
@@ -92,7 +104,11 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/red-room-generative-art/">
         <Card>
-          <GatsbyImage style={{ height: '170px' }} image={image4} />
+          <GatsbyImage
+            style={{ height: '170px' }}
+            image={image4}
+            alt="Red Room Generative Art"
+          />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Red Room
           </label>
@@ -103,7 +119,11 @@ export const Cards = () => {
       </CardHandler>
       <CardHandler as={Link} to="/archive/made-from-tiny-boxes/">
         <Card>
-          <GatsbyImage style={{ height: '170px' }} image={image5} />
+          <GatsbyImage
+            style={{ height: '170px' }}
+            image={image5}
+            alt="Made From Tiny Boxes Album"
+          />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Made from Tiny Boxes
           </label>

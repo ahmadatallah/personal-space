@@ -45,6 +45,7 @@ const TextShadow = (props) => {
           sx={{
             display: 'flex',
             columnGap: 5,
+            borderRadius: '10px',
             alignItems: 'center',
             flexDirection: ['column', 'column', 'row'],
           }}
@@ -55,6 +56,7 @@ const TextShadow = (props) => {
           />
           <GatsbyImage
             image={result.main.childImageSharp.gatsbyImageData}
+            alt="Profile Photo"
             sx={{
               my: 4,
               mr: [2, 1, 0],

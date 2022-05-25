@@ -129,8 +129,8 @@ export const Card = (props) => {
           img: {
             borderRadius: '0.5rem 0.5rem 0 0',
             width: '100%',
-            '-o-object-fit': 'cover',
-            'object-fit': 'cover',
+            OObjectFit: 'cover',
+            objectFit: 'cover',
           },
         },
 
