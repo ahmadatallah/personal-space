@@ -53,6 +53,9 @@ const TextShadow = (props) => {
           <GatsbyImage
             image={result.main.childImageSharp.gatsbyImageData}
             alt="Profile Photo"
+            imgStyle={{
+              borderRadius: '10px',
+            }}
             sx={{
               my: 4,
               mr: [2, 1, 0],
