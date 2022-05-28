@@ -17,7 +17,7 @@
     "react/display-name": 1,
     "quotes": [
       2,
-      "single",
+      "double",
       {
         "avoidEscape": true
       }

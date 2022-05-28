@@ -50,10 +50,6 @@ const TextShadow = (props) => {
             flexDirection: ['column', 'column', 'row'],
           }}
         >
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=VT323:wght@400"
-          />
           <GatsbyImage
             image={result.main.childImageSharp.gatsbyImageData}
             alt="Profile Photo"
@@ -84,100 +80,75 @@ const TextShadow = (props) => {
             into generative art/design and photography.
             <br />
             <br />I use this space to share some highlights from the daily
-            random stuff I do which you can find at the
+            random stuff I do which you can find at the{' '}
             <NavLink
               as={Link}
               to="/archive"
               sx={{
-                variant: 'styles.navitem',
-                fontSize: ['10px', '12px', '14px'],
-                borderBottom: 'solid 1px',
-                mx: 1,
+                variant: 'styles.shortcut',
               }}
             >
               Archive
-            </NavLink>
-            and sometimes drafts at
+            </NavLink>{' '}
+            and sometimes drafts at{' '}
             <NavLink
               as={Link}
               to="/notes"
               sx={{
-                fontSize: ['10px', '12px', '14px'],
-                ml: 1,
-                borderBottom: 'solid 1px',
-                variant: 'styles.navitem',
+                variant: 'styles.shortcut',
               }}
             >
               Notes
             </NavLink>
-            .
-            <br />
-            I'm also, privately active on
+            . I'm also, privately active on{' '}
             <a
               href="https://twitter.com/ahmadatallah"
               title="Twitter"
               sx={{
-                variant: 'styles.navitem',
-                ml: [1, 1, 2],
-                mr: 1,
-                fontSize: ['10px', '12px', '14px'],
-                borderBottom: 'solid 1px',
+                variant: 'styles.shortcut',
               }}
             >
               Twitter
             </a>
-            ,
+            ,{' '}
             <a
               href="https://github.com/ahmadatallah"
               title="GitHub"
               sx={{
-                variant: 'styles.navitem',
-                mx: 1,
-                fontSize: ['10px', '12px', '14px'],
-                borderBottom: 'solid 1px',
+                variant: 'styles.shortcut',
               }}
             >
               GitHub
-            </a>
-            and,
+            </a>{' '}
+            and,{' '}
             <a
               href="https://www.instagram.com/ahmad.atallah/"
               title="Instagram"
               sx={{
-                variant: 'styles.navitem',
-                ml: 2,
-                fontSize: ['10px', '12px', '14px'],
-                borderBottom: 'solid 1px',
+                variant: 'styles.shortcut',
               }}
             >
               Instagram
             </a>
-            .
-            <br />
-            You can contact me via E-mail at{' '}
+            . Feel free to contact me through E-mail at{' '}
             <a
               href="mailto:hi@atallahsan.cc"
               title="Email"
               sx={{
-                variant: 'styles.navitem',
-                fontSize: ['10px', '12px', '14px'],
-                ml: [0, 1, 1],
-                borderBottom: 'solid 1px',
+                variant: 'styles.shortcut',
               }}
             >
               me@atallahsan.cc
             </a>
             .
             <br />
-            The last of the unimportance you can do here is checking my
+            <br />
+            The last of the unimportance you can find here is checking my{' '}
             <a
               href={result.pdf.publicURL}
               title="Resume"
               sx={{
-                variant: 'styles.navitem',
-                fontSize: ['10px', '12px', '14px'],
-                borderBottom: 'solid 1px',
-                ml: 1,
+                variant: 'styles.shortcut',
               }}
             >
               Resume

@@ -193,6 +193,11 @@ export default {
       alignItems: 'center',
       fontWeight: 'bold',
     },
+    shortcut: {
+      variant: 'styles.navitem',
+      fontSize: ['12px', '14px', '16px'],
+      borderBottom: 'solid 2px',
+    },
     pre: {
       ...nightOwl,
       boxSizing: 'border-box',

@@ -25,10 +25,17 @@ const Page = (props) => {
   return (
     <>
       <SEO title="Home" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
       />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap"
+        rel="stylesheet"
+      />
+
       <Layout {...props}>{props.children}</Layout>
     </>
   );
