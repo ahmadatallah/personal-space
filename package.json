@@ -28,7 +28,7 @@
     "gatsby-remark-shiki-twoslash": "^3.0.34",
     "gatsby-source-filesystem": "^4.12.1",
     "gatsby-source-instagram": "^0.9.0",
-    "gatsby-transformer-remark": "^5.12.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.12.1",
     "lodash.get": "^4.4.2",
     "react": "^16.13.1",
