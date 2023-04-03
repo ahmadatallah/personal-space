@@ -100,6 +100,7 @@ export const CardWrapper = (props) => (
       mt: 5,
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(20ch, 1fr))',
+      rowGap: '24px',
       maxWidth: '100vw',
       width: '100%',
     }}
