@@ -49,7 +49,7 @@ export const Cards = () => {
       className="card"
       sx={{
         justifyContent: 'center',
-        variant: 'styles.navitem',
+        display: 'inline-flex',
       }}
       {...props}
     />

@@ -60,7 +60,8 @@ export default {
     },
   },
   fonts: {
-    body: 'Reem Kufi, system-ui, sans-serif',
+    body:
+      'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
     monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {
@@ -195,7 +196,7 @@ export default {
     },
     shortcut: {
       variant: 'styles.navitem',
-      fontSize: ['12px', '14px', '16px'],
+      fontSize: '14px',
       borderBottom: 'solid 2px',
     },
     pre: {

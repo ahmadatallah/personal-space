@@ -129,17 +129,6 @@ export default (props) => {
       >
         <NavLink
           as={Link}
-          to="/archive"
-          sx={{
-            variant: 'styles.navitem',
-            fontSize: 0,
-            mr: 1,
-          }}
-        >
-          Archive
-        </NavLink>
-        <NavLink
-          as={Link}
           to="/"
           sx={{
             variant: 'styles.navitem',
@@ -148,6 +137,18 @@ export default (props) => {
         >
           <Avatar />
         </NavLink>
+        <NavLink
+          as={Link}
+          to="/archive"
+          sx={{
+            variant: 'styles.navitem',
+            fontSize: '20px',
+            mr: 1,
+          }}
+        >
+          Archive
+        </NavLink>
+
         <ColorButton mode={mode} onClick={cycleMode} />
       </header>
       <main

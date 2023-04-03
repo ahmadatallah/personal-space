@@ -77,86 +77,92 @@ const TextShadow = (props) => {
               width: ['100%', '60%', '60%'],
             }}
           >
-            I'm Ahmad Atallah. A Software engineer at Aeditive. Based in
-            Hamburg, Germany. Worked before at Swvl. Started the front-end team
-            to be now one of the region's biggest teams. Currently, I'm more
-            into generative art/design and photography.
-            <br />
-            <br />I use this space to share some highlights from the daily
-            random stuff I do which you can find at the{' '}
-            <NavLink
-              as={Link}
-              to="/archive"
+            <h4>
+              {' '}
+              I'm Ahmad. A systematically degraded programmer and artist.
+            </h4>
+            <p
               sx={{
-                variant: 'styles.shortcut',
+                fontSize: '16px',
               }}
             >
-              Archive
-            </NavLink>{' '}
-            and sometimes drafts at{' '}
-            <NavLink
-              as={Link}
-              to="/notes"
-              sx={{
-                variant: 'styles.shortcut',
-              }}
-            >
-              Notes
-            </NavLink>
-            . I'm also, privately active on{' '}
-            <a
-              href="https://twitter.com/ahmadatallah"
-              title="Twitter"
-              sx={{
-                variant: 'styles.shortcut',
-              }}
-            >
-              Twitter
-            </a>
-            ,{' '}
-            <a
-              href="https://github.com/ahmadatallah"
-              title="GitHub"
-              sx={{
-                variant: 'styles.shortcut',
-              }}
-            >
-              GitHub
-            </a>{' '}
-            and,{' '}
-            <a
-              href="https://www.instagram.com/ahmad.atallah/"
-              title="Instagram"
-              sx={{
-                variant: 'styles.shortcut',
-              }}
-            >
-              Instagram
-            </a>
-            . Feel free to contact me through E-mail at{' '}
-            <a
-              href="mailto:hi@atallahsan.cc"
-              title="Email"
-              sx={{
-                variant: 'styles.shortcut',
-              }}
-            >
-              me@atallahsan.cc
-            </a>
-            .
-            <br />
-            <br />
-            The last of the unimportance you can find here is checking my{' '}
-            <a
-              href={result.pdf.publicURL}
-              title="Resume"
-              sx={{
-                variant: 'styles.shortcut',
-              }}
-            >
-              Resume
-            </a>
-            .
+              {' '}
+              I use this space to share some highlights from the daily random
+              stuff I do which you can find at the{' '}
+              <NavLink
+                as={Link}
+                to="/archive"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                Archive
+              </NavLink>{' '}
+              and sometimes drafts at{' '}
+              <NavLink
+                as={Link}
+                to="/notes"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                Notes
+              </NavLink>
+              . I'm also, privately active on{' '}
+              <a
+                href="https://twitter.com/ahmadatallah"
+                title="Twitter"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                Twitter
+              </a>
+              ,{' '}
+              <a
+                href="https://github.com/ahmadatallah"
+                title="GitHub"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                GitHub
+              </a>{' '}
+              and,{' '}
+              <a
+                href="https://www.instagram.com/ahmad.atallah/"
+                title="Instagram"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                Instagram
+              </a>
+              . Feel free to contact me through E-mail at{' '}
+              <a
+                href="mailto:hi@atallahsan.cc"
+                title="Email"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                me@atallahsan.cc
+              </a>
+              .
+              <br />
+              <br />
+              The last of the unimportance that you can find here is checking my{' '}
+              <a
+                href={result.pdf.publicURL}
+                title="Resume"
+                sx={{
+                  variant: 'styles.shortcut',
+                }}
+              >
+                Resume
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
