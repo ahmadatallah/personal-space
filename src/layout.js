@@ -92,7 +92,7 @@ export default (props) => {
 
   const resume = useStaticQuery(graphql`
     {
-      pdf: file(name: { eq: "resume" }) {
+      pdf: file(name: { eq: "resumelatest" }) {
         name
         extension
         publicURL
@@ -118,7 +118,6 @@ export default (props) => {
           display: 'flex',
           position: 'sticky',
           top: '0',
-          backgroundColor: 'muted',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1000,
