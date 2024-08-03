@@ -71,7 +71,7 @@ const TextShadow = (props) => {
                 width: ['100%', '60%', '60%'],
               }}
             >
-              <h4> I'm Ahmad, a programmer and artist.</h4>
+              <h4> I'm Ahmad, a programmer and an artist.</h4>
               <p
                 sx={{
                   fontSize: '16px',
@@ -131,7 +131,7 @@ const TextShadow = (props) => {
                 .
                 <br />
                 <br />
-                The last of the unimportance that you can find here is checking
+                The least important thing here is checking
                 my{' '}
                 <a
                   href={result.pdf.publicURL}
