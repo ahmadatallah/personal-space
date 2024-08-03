@@ -2,22 +2,7 @@
 import { jsx, useThemeUI, NavLink } from 'theme-ui';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { generateRandomBorderRadius } from '../components/border-background';
-
-function Gradient(props) {
-  const { theme } = useThemeUI();
-  return (
-    <div
-      sx={{
-        backgroundImage: `radial-gradient(ellipse at 48% 51%, hsla(163.85, 69.33%, 29.41%, 0.42) 48%, #6b6f4345 84%), repeating-conic-gradient(from 84deg at 8% 106%, ${theme.colors.accent} 7%, ${theme.colors.background} 60%)`,
-
-        borderRadius: generateRandomBorderRadius(),
-      }}
-    >
-      {props.children}
-    </div>
-  );
-}
+import { Gradient } from '../components/gradient';
 
 const TextShadow = (props) => {
   const { theme } = useThemeUI();
@@ -53,6 +38,7 @@ const TextShadow = (props) => {
             sx={{
               display: 'flex',
               columnGap: 5,
+              justifyContent: 'center',
               borderRadius: '10px',
               alignItems: 'center',
               flexDirection: ['column', 'column', 'row'],
@@ -85,13 +71,12 @@ const TextShadow = (props) => {
                 width: ['100%', '60%', '60%'],
               }}
             >
-              <h4> I'm Ahmad. a programmer and artist.</h4>
+              <h4> I'm Ahmad, a programmer and artist.</h4>
               <p
                 sx={{
                   fontSize: '16px',
                 }}
               >
-                {' '}
                 I use this space to share some highlights from the daily random
                 stuff I do which you can find at the{' '}
                 <NavLink
@@ -113,7 +98,7 @@ const TextShadow = (props) => {
                 >
                   Notes
                 </NavLink>
-                . I'm also, privately active on{' '}
+                . I'm not privately active on{' '}
                 <a
                   href="https://twitter.com/ahmadatallah"
                   title="Twitter"
@@ -123,17 +108,7 @@ const TextShadow = (props) => {
                 >
                   Twitter
                 </a>
-                ,{' '}
-                <a
-                  href="https://github.com/ahmadatallah"
-                  title="GitHub"
-                  sx={{
-                    variant: 'styles.shortcut',
-                  }}
-                >
-                  GitHub
-                </a>{' '}
-                and,{' '}
+                , and,{' '}
                 <a
                   href="https://www.instagram.com/ahmad.atallah/"
                   title="Instagram"

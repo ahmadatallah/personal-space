@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { jsx } from 'theme-ui';
 import get from 'lodash.get';
 import SEO from './components/seo';
 import Layout from './layout';
@@ -36,6 +37,10 @@ const Page = (props) => {
         rel="stylesheet"
       />
 
+      <link
+        href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap"
+        rel="stylesheet"
+      />
       <Layout {...props}>{props.children}</Layout>
     </>
   );

@@ -2,7 +2,7 @@
 import { jsx, useThemeUI } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import background from './background.svg';
+import background from './notes_background.svg';
 
 const Dexposure = () => {
   const { theme } = useThemeUI();

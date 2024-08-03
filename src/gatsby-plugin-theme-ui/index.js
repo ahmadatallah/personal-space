@@ -61,7 +61,7 @@ export default {
   },
   fonts: {
     body:
-      'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
+      'Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
     monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {

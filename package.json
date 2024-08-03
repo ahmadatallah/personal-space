@@ -14,6 +14,7 @@
     "@theme-ui/prism": "^0.14.3",
     "gatsby": "^4.12.1",
     "gatsby-image": "^3.11.0",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-catch-links": "^4.12.1",
     "gatsby-plugin-feed": "^4.12.1",
     "gatsby-plugin-google-analytics": "^4.12.1",

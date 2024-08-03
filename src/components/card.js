@@ -9,7 +9,7 @@ export const Cards = () => {
     {
       card1: file(name: { eq: "window-xp-palette-2" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200)
+          gatsbyImageData(layout: FIXED, width: 200, height: 200)
         }
       }
       card2: file(name: { eq: "hall9000-generative" }) {
@@ -24,15 +24,15 @@ export const Cards = () => {
         }
       }
 
-      card4: file(name: { eq: "red room - black" }) {
+      card4: file(name: { eq: "soy cuba frame 07" }) {
         childImageSharp {
           gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
-      card5: file(name: { eq: "angel" }) {
+      card5: file(name: { eq: "bombom" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200)
+          gatsbyImageData(layout: FIXED, width: 200, height: 300)
         }
       }
     }
@@ -50,6 +50,7 @@ export const Cards = () => {
       sx={{
         justifyContent: 'center',
         display: 'inline-flex',
+        width: '100%',
       }}
       {...props}
     />
@@ -67,9 +68,7 @@ export const Cards = () => {
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Windows XP
           </label>
-          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Archive
-          </small>
+          <small>Archive</small>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/hal9000-generative-art/">
@@ -82,9 +81,7 @@ export const Cards = () => {
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Hal9000
           </label>
-          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Archive
-          </small>
+          <small>Archive</small>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
@@ -97,24 +94,20 @@ export const Cards = () => {
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             On Some Faraway Beach
           </label>
-          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Archive
-          </small>
+          <small>Archive</small>
         </Card>
       </CardHandler>
-      <CardHandler as={Link} to="/archive/red-room-generative-art/">
+      <CardHandler as={Link} to="/archive/soy-cuba/">
         <Card>
           <GatsbyImage
             style={{ height: '170px' }}
             image={image4}
-            alt="Red Room Generative Art"
+            alt="Soy Cuba"
           />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Red Room
+            Soy Cuba
           </label>
-          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Archive
-          </small>
+          <small>Archive</small>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/made-from-tiny-boxes/">
@@ -127,9 +120,7 @@ export const Cards = () => {
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Made from Tiny Boxes
           </label>
-          <small sx={{ ml: 3, fontSize: '0.7rem', color: 'black' }}>
-            Archive
-          </small>
+          <small>Archive</small>
         </Card>
       </CardHandler>
     </CardWrapper>

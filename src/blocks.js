@@ -116,7 +116,7 @@ export const Card = (props) => {
       className="card"
       sx={{
         borderRadius: '0.5rem',
-        boxShadow: `-2px 0px 10px ${theme.colors.primary}, -20px 0px 5px ${theme.colors.accent}`,
+        boxShadow: `-2px 0px 10px ${theme.colors.primary}, -10px 0px 5px ${theme.colors.accent}`,
         pb: '1rem',
         ml: 3,
         maxHeight: '200px',
@@ -124,7 +124,7 @@ export const Card = (props) => {
         flexDirection: 'column',
         minWidth: '200px',
         overflow: 'hidden',
-        backgroundColor: 'white',
+        backdropFilter: 'contrast(0.77)',
         div: {
           img: {
             borderRadius: '0.5rem 0.5rem 0 0',
@@ -133,20 +133,25 @@ export const Card = (props) => {
             objectFit: 'cover',
           },
         },
-
-        h3: {
-          mt: '1rem',
-          mx: '1.2rem',
-          color: '#000',
-          fontSize: '1.0rem',
+        small: {
+          mr: 'auto',
+          ml: 3,
+          fontSize: '0.7rem',
+          color: 'background',
+          backgroundColor: 'primary',
+          borderRadius: '2px',
+          px: 1,
         },
         transition: 'all .2s ease-in-out',
         ':hover': {
           transform: 'scale(1.1)',
+          boxShadow: `0px 0px 32px ${theme.colors.accent}`,
           zIndex: 100,
         },
         label: {
           maxWidth: '184px',
+          color: 'text',
+          fontSize: '0.8rem',
         },
       }}
       {...props}

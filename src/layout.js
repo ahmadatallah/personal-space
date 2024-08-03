@@ -2,6 +2,8 @@
 import { jsx, useColorMode, NavLink, Text } from 'theme-ui';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import Avatar from './avatar';
+import border from './images/border.svg';
+
 import {
   FaTwitter as Twitter,
   FaGithub as GitHub,
@@ -90,7 +92,7 @@ export default (props) => {
     });
   const draft = props.pageContext?.frontmatter?.draft;
 
-  const resume = useStaticQuery(graphql`
+  const query = useStaticQuery(graphql`
     {
       pdf: file(name: { eq: "resumelatest" }) {
         name
@@ -105,7 +107,7 @@ export default (props) => {
       sx={{
         variant: 'styles.root',
         display: 'flex',
-        height: '100%',
+        height: '100vh',
         flexDirection: 'column',
       }}
     >
@@ -124,6 +126,12 @@ export default (props) => {
           mx: 'auto',
           px: 3,
           py: 4,
+          borderTopStyle: 'dashed',
+          borderTopWidth: '16px',
+          borderTopColor: 'primary',
+          borderImageSource: `url("${border}")`,
+          borderImageSlice: '90 0',
+          borderImageRepeat: 'round',
         }}
       >
         <ColorButton mode={mode} onClick={cycleMode} />
@@ -224,7 +232,7 @@ export default (props) => {
             <Instagram size={24} />
           </a>
           <a
-            href={resume.pdf.publicURL}
+            href={query.pdf.publicURL}
             title="Resume"
             sx={{
               variant: 'styles.navitem',
