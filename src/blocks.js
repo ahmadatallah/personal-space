@@ -122,7 +122,7 @@ export const Card = (props) => {
         maxHeight: '200px',
         display: 'flex',
         flexDirection: 'column',
-        minWidth: '300px',
+        minWidth: '200px',
         overflow: 'hidden',
         backdropFilter: 'contrast(0.77)',
         div: {

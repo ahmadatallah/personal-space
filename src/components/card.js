@@ -9,30 +9,30 @@ export const Cards = () => {
     {
       card1: file(name: { eq: "window-xp-palette-2" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 300, height: 200)
+          gatsbyImageData(layout: FIXED, width: 200, height: 200)
         }
       }
       card2: file(name: { eq: "hall9000-generative" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 300)
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
       card3: file(name: { eq: "girl" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 300)
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
       card4: file(name: { eq: "soy cuba frame 07" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 300)
+          gatsbyImageData(layout: FIXED, width: 200)
         }
       }
 
       card5: file(name: { eq: "bombom" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 300, height: 300)
+          gatsbyImageData(layout: FIXED, width: 200, height: 300)
         }
       }
     }
