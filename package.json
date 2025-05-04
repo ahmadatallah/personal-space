@@ -2,6 +2,7 @@
   "private": true,
   "name": "atallahsan",
   "version": "1.2.0",
+  "node": "18.11.18",
   "homepage": "/",
   "description": "Personal Space",
   "author": "Ahmad Atallah",
