@@ -2,11 +2,14 @@
   "private": true,
   "name": "atallahsan",
   "version": "1.2.0",
-  "node": "18.11.18",
   "homepage": "/",
   "description": "Personal Space",
   "author": "Ahmad Atallah",
   "license": "MIT",
+  "engines": {
+    "node": "16.20.2",
+    "yarn": "1.22.22"
+  },
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^7.0.6",
     "@emotion/react": "^11.9.0",
