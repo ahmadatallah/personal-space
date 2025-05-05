@@ -6,6 +6,7 @@
   "description": "Personal Space",
   "author": "Ahmad Atallah",
   "license": "MIT",
+  "packageManager": "yarn@1.22.22",
   "engines": {
     "node": "16.20.2",
     "yarn": "1.22.22"
