@@ -1,0 +1,11 @@
+name = "atallahsan"
+compatibility_date = "2025-01-13"
+
+[site]
+bucket = "./public"
+
+[env.production.site]
+bucket = "./public"
+
+[env.production]
+account_id = "c2762d9a607100e1d78b353ca90d0a80"  # Replace with your Cloudflare account ID 
