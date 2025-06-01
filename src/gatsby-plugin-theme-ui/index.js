@@ -60,8 +60,7 @@ export default {
     },
   },
   fonts: {
-    body:
-      'Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
+    body: 'Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
     monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {
@@ -195,7 +194,7 @@ export default {
       fontWeight: 'bold',
     },
     shortcut: {
-      variant: 'styles.navitem',
+      variant: 'styles.navlink',
       fontSize: '14px',
       borderBottom: 'solid 2px',
     },
