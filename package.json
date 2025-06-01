@@ -6,10 +6,10 @@
   "description": "Personal Space",
   "author": "Ahmad Atallah",
   "license": "MIT",
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "yarn@3.6.3",
   "engines": {
     "node": "16.20.2",
-    "yarn": "1.22.22"
+    "yarn": "3.6.3"
   },
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^7.0.6",

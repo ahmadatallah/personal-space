@@ -10,3 +10,4 @@ yarn-error.log
 tags
 public
 .cache
+.yarn
