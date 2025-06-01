@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^7.0.6",
+    "@cloudflare/kv-asset-handler": "^0.4.0",
     "@emotion/react": "^11.9.0",
     "@mdx-js/mdx": "^1.6.5",
     "@mdx-js/react": "^1.6.5",

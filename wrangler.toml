@@ -1,5 +1,6 @@
 name = "atallahsan"
 compatibility_date = "2025-01-13"
+main = "workers-site/index.js"
 
 [site]
 bucket = "./public"
