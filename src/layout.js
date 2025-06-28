@@ -178,6 +178,7 @@ export default (props) => {
       <footer
         sx={{
           px: 3,
+          py: 3,
           width: '100%',
           maxWidth: 'wide',
           mx: 'auto',
@@ -185,21 +186,11 @@ export default (props) => {
       >
         <div
           sx={{
-            py: 4,
             display: 'flex',
             justifyContent: 'center',
             flexWrap: 'wrap',
           }}
         >
-          <a
-            href="https://twitter.com/ahmadatallah"
-            title="Twitter"
-            sx={{
-              variant: 'styles.navitem',
-            }}
-          >
-            <Twitter size={24} />
-          </a>
           <a
             href="mailto:hi@atallahsan.cc"
             title="Email"
@@ -226,54 +217,67 @@ export default (props) => {
             title="Instagram"
             sx={{
               variant: 'styles.navitem',
-              mr: 2,
             }}
           >
             <Instagram size={24} />
           </a>
+
+          <NavLink as={Link} to="/" title="About the avatar">
+            <Avatar />
+          </NavLink>
           <a
             href={query.pdf.publicURL}
             title="Resume"
             sx={{
               variant: 'styles.navitem',
+              fontSize: '16px',
             }}
           >
             Resume
           </a>
-          <NavLink as={Link} to="/" title="About the avatar">
-            <Avatar />
-          </NavLink>
         </div>
         <div
           sx={{
             display: 'flex',
-            flexWrap: 'wrap',
             alignItems: 'center',
+            flexWrap: 'wrap',
+            columnGap: 2,
             fontSize: 0,
+            justifyContent: 'center',
+            mt: ['0px', '-16px', '-16px', '-16px'],
           }}
         >
           <NavLink
             as={Link}
             to="/archive"
             sx={{
-              variant: 'styles.navitem',
-              mr: 3,
+              variant: 'styles.shortcut',
+              fontSize: '12px',
             }}
           >
             Archive
           </NavLink>
           <NavLink
             as={Link}
+            to="/notes"
+            sx={{
+              variant: 'styles.shortcut',
+              fontSize: '12px',
+            }}
+          >
+            Notes
+          </NavLink>
+          <NavLink
+            as={Link}
             to="/about"
             sx={{
-              variant: 'styles.navitem',
-              mr: 4,
+              variant: 'styles.shortcut',
+              fontSize: '12px',
             }}
           >
             About
           </NavLink>
-          <div sx={{ mx: 'auto' }} />
-          <div sx={{ my: 2 }}>© 2021 Ahmad Atallah</div>
+          <div sx={{ my: 2 }}>© 2025 Ahmad Atallah</div>
         </div>
       </footer>
     </div>

@@ -377,43 +377,26 @@ export function GeometricBackground(props) {
     <div
       sx={{
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'visible',
+        display: 'flex',
+        alignItems: 'center',
+        minHeight: ['150px', '200px', '250px'],
+        minWidth: ['150px', '250px', '300px'],
+        justifyContent: 'center',
         '&::before': {
           content: '""',
           position: 'absolute',
-          top: ['-20%', '-10%', 0],
-          right: 0,
-          width: ['100%', '80%', '60%'],
-          height: '100%',
+          top: '-50px',
+          left: '-50px',
+          right: '-50px',
+          bottom: '-50px',
           backgroundImage: `url("${createMandalaPattern()}")`,
-          backgroundSize: ['500px 500px', '600px 600px', '600px 600px'],
-          backgroundPosition: ['center center', 'center right', 'center right'],
+          backgroundSize: ['300px 300px', '400px 400px', '500px 500px'],
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           animation: 'gentleRotate 120s linear infinite',
-          zIndex: 100,
-          opacity: [0.4, 0.7, 1],
-        },
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: [
-            `linear-gradient(180deg, ${
-              currentColors.background || '#fff'
-            } 0%, ${
-              currentColors.background || '#fff'
-            }dd 30%, transparent 60%)`,
-            `linear-gradient(90deg, ${currentColors.background || '#fff'} 0%, ${
-              currentColors.background || '#fff'
-            }dd 30%, transparent 60%)`,
-            `linear-gradient(90deg, ${currentColors.background || '#fff'} 0%, ${
-              currentColors.background || '#fff'
-            }dd 40%, transparent 70%)`,
-          ],
-          zIndex: 200,
+          zIndex: 2,
+          opacity: [0.8, 0.9, 1],
         },
         '@keyframes gentleRotate': {
           '0%': { transform: 'rotate(0deg) scale(1)' },
@@ -425,7 +408,7 @@ export function GeometricBackground(props) {
       <div
         sx={{
           position: 'relative',
-          zIndex: 300,
+          zIndex: 1000,
         }}
       >
         {props.children}

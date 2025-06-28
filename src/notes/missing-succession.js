@@ -17,15 +17,12 @@ const MissingSuccession = () => {
       <div
         sx={{
           backgroundImage: `url(${succession})`,
-          backgroundRepeat: ['repeat-y', 'repeat-x'],
+          backgroundRepeat: 'repeat-x',
           backgroundPositionX: 'center',
           backgroundPositionY: 'center',
           backgroundSize: '15%',
           filter: 'blur(0px)',
-          fontSize: ['40px', '60px', '100px'],
-          width: ['100vw', 'auto'],
-          whiteSpace: ['normal', 'nowrap'],
-          wordBreak: ['break-word', 'normal'],
+          fontSize: ['24px', '60px', '100px'],
           fontStyle: 'normal',
           fontWeight: '900',
           letterSpacing: '0.4em',
@@ -35,10 +32,7 @@ const MissingSuccession = () => {
           paddingBottom: '10px',
           paddingTop: '0px',
           paddingRight: '20px',
-          animation: [
-            'backgroundMove 3s linear infinite',
-            'backgroundMove 20s linear infinite',
-          ],
+          animation: 'backgroundMove 20s linear infinite',
           '@keyframes backgroundMove': {
             '0%': {
               backgroundPosition: '0% center',

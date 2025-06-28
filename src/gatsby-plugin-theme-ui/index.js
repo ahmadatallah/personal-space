@@ -191,12 +191,12 @@ export default {
       variant: 'styles.navlink',
       display: 'inline-flex',
       alignItems: 'center',
-      fontWeight: 'bold',
+      fontSize: [0, 1, 2, 3],
     },
     shortcut: {
       variant: 'styles.navlink',
       fontSize: '14px',
-      borderBottom: 'solid 2px',
+      borderBottom: 'solid 1px',
     },
     pre: {
       ...nightOwl,
