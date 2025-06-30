@@ -37,14 +37,17 @@ const TextShadow = (props) => {
     colorMode === 'hack';
 
   return (
-    <div
+    <main
+      role="main"
+      aria-labelledby="main-heading"
       sx={{
         display: 'flex',
         flexDirection: 'column',
         p: [2, 3, 4],
       }}
     >
-      <div
+      <section
+        aria-labelledby="intro-section"
         sx={{
           display: 'flex',
           columnGap: 2,
@@ -55,10 +58,35 @@ const TextShadow = (props) => {
         }}
       >
         <GeometricBackground>
-          <Link to="/about">
+          <div
+            aria-label="Decorative geometric pattern background"
+            role="img"
+            aria-hidden="true"
+          />
+          <Link
+            to="/about"
+            aria-label="View detailed about page with more information about Ahmad"
+            role="link"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.location.href = '/about';
+              }
+            }}
+            sx={{
+              display: 'block',
+              borderRadius: '10px',
+              '&:focus': {
+                outline: '3px solid',
+                outlineColor: 'accent',
+                outlineOffset: '3px',
+              },
+            }}
+          >
             <GatsbyImage
               image={result.main.childImageSharp.gatsbyImageData}
-              alt="Profile Photo"
+              alt="Profile photo showing ahmad in a silhouette with double exposure effect with a grafity"
               imgStyle={{
                 borderRadius: '10px',
               }}
@@ -68,7 +96,7 @@ const TextShadow = (props) => {
                 marginTop: '20px',
                 opacity: 1,
                 borderRadius: '10px',
-                '&:hover': {
+                '&:hover, &:focus-within': {
                   opacity: 0.8,
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   transform: 'scale(1.08) rotate(3deg)',
@@ -139,7 +167,16 @@ const TextShadow = (props) => {
             },
           }}
         >
-          <h4> I'm Ahmad, a programmer and an artist.</h4>
+          <h1
+            id="main-heading"
+            sx={{
+              fontSize: '24px',
+              fontWeight: 'bold',
+              mb: 3,
+            }}
+          >
+            I'm Ahmad, a programmer and an artist.
+          </h1>
           <p
             sx={{
               fontSize: '16px',
@@ -150,9 +187,23 @@ const TextShadow = (props) => {
             <NavLink
               as={Link}
               to="/archive"
+              aria-label="Browse the archive of daily highlights and projects"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/archive';
+                }
+              }}
               sx={{
                 variant: 'styles.shortcut',
                 fontWeight: 'normal',
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
               Archive
@@ -161,9 +212,23 @@ const TextShadow = (props) => {
             <NavLink
               as={Link}
               to="/notes"
+              aria-label="View draft notes and work-in-progress content"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/notes';
+                }
+              }}
               sx={{
                 variant: 'styles.shortcut',
                 fontWeight: 'normal',
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
               Notes
@@ -172,21 +237,55 @@ const TextShadow = (props) => {
             <a
               href="https://www.instagram.com/ahmad.atallah/"
               title="Instagram"
+              aria-label="Visit Ahmad's Instagram profile (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.open(
+                    'https://www.instagram.com/ahmad.atallah/',
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }
+              }}
               sx={{
                 variant: 'styles.shortcut',
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              Instagram
+              Instagram <span aria-hidden="true">&uarr;</span>
             </a>
             . Feel free to contact me via E-mail at{' '}
             <a
               href="mailto:hi@atallahsan.cc"
               title="Email"
+              aria-label="Send an email to Ahmad at hi@atallahsan.cc"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = 'mailto:hi@atallahsan.cc';
+                }
+              }}
               sx={{
                 variant: 'styles.shortcut',
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              me@atallahsan.cc
+              hi@atallahsan.cc
             </a>
             .
             <br />
@@ -195,17 +294,37 @@ const TextShadow = (props) => {
             <a
               href={result.pdf.publicURL}
               title="Resume"
+              aria-label="Download Ahmad's resume as PDF (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.open(
+                    result.pdf.publicURL,
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }
+              }}
               sx={{
                 variant: 'styles.shortcut',
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              Resume
+              Resume <span aria-hidden="true">(PDF)</span>
             </a>
             .
           </p>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

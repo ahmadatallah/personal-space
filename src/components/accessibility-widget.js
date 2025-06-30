@@ -1,21 +1,7 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { Fragment, useState, useEffect, useCallback } from 'react';
-import {
-  FaUniversalAccess,
-  FaTimes,
-  FaTextHeight,
-  FaAdjust,
-  FaEye,
-  FaVolumeUp,
-  FaBrain,
-  FaBolt,
-  FaCrosshairs,
-  FaDeaf,
-  FaWheelchair,
-  FaRedo,
-  FaPlus,
-} from 'react-icons/fa';
+import { FaUniversalAccess } from 'react-icons/fa';
 
 const AccessibilityWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +9,10 @@ const AccessibilityWidget = () => {
   const [highContrast, setHighContrast] = useState(false);
   const [adhdMode, setAdhdMode] = useState(false);
   const [epilepticMode, setEpilepticMode] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
 
   const toggleWidget = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
-  // Cleanup on unmount
   useEffect(() => {
     // Memoized style injection to avoid recreating identical styles
     let currentStyleContent = '';
@@ -145,17 +131,20 @@ const AccessibilityWidget = () => {
     const newSize = Math.min(fontSize + 10, 150);
     setFontSize(newSize);
     applyFontSize(newSize);
+    announceStatus(`Font size increased to ${newSize}%`);
   }, [fontSize]);
 
   const decreaseFontSize = useCallback(() => {
     const newSize = Math.max(fontSize - 10, 80);
     setFontSize(newSize);
     applyFontSize(newSize);
+    announceStatus(`Font size decreased to ${newSize}%`);
   }, [fontSize]);
 
   const resetFontSize = useCallback(() => {
     setFontSize(100);
     applyFontSize(100);
+    announceStatus('Font size reset to default 100%');
   }, []);
 
   const resetAllSettings = useCallback(() => {
@@ -174,6 +163,10 @@ const AccessibilityWidget = () => {
     // Reset epileptic mode
     setEpilepticMode(false);
     removeEpilepticSafeStyles();
+
+    announceStatus(
+      'All accessibility settings have been reset to default values'
+    );
   }, []);
 
   const applyFontSize = (size) => {
@@ -276,8 +269,10 @@ const AccessibilityWidget = () => {
     setHighContrast(newContrast);
     if (newContrast) {
       document.documentElement.style.filter = 'contrast(150%) brightness(1.2)';
+      announceStatus('High contrast mode enabled');
     } else {
       document.documentElement.style.filter = 'none';
+      announceStatus('High contrast mode disabled');
     }
   }, [highContrast]);
 
@@ -287,8 +282,10 @@ const AccessibilityWidget = () => {
 
     if (newAdhdMode) {
       createAdhdOverlay();
+      announceStatus('ADHD focus mode enabled - reading spotlight activated');
     } else {
       removeAdhdOverlay();
+      announceStatus('ADHD focus mode disabled');
     }
   }, [adhdMode]);
 
@@ -298,8 +295,12 @@ const AccessibilityWidget = () => {
 
     if (newEpilepticMode) {
       applyEpilepticSafeStyles();
+      announceStatus(
+        'Epilepsy-safe mode enabled - animations and flashing content disabled'
+      );
     } else {
       removeEpilepticSafeStyles();
+      announceStatus('Epilepsy-safe mode disabled');
     }
   }, [epilepticMode]);
 
@@ -446,6 +447,11 @@ const AccessibilityWidget = () => {
     }
   };
 
+  const announceStatus = (message) => {
+    setStatusMessage(message);
+    setTimeout(() => setStatusMessage(''), 3000);
+  };
+
   return (
     <Fragment>
       {/* Floating Accessibility Button */}
@@ -462,8 +468,19 @@ const AccessibilityWidget = () => {
       >
         <button
           onClick={toggleWidget}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleWidget();
+            }
+          }}
           title="Accessibility Options"
           id="accessibility-widget"
+          aria-label="Open accessibility options menu"
+          aria-expanded={isOpen}
+          aria-haspopup="dialog"
+          role="button"
+          tabIndex={0}
           sx={{
             width: '100%',
             height: '100%',
@@ -511,6 +528,15 @@ const AccessibilityWidget = () => {
       {isOpen && (
         <div
           data-accessibility-widget="true"
+          role="dialog"
+          aria-labelledby="accessibility-title"
+          aria-modal="false"
+          aria-live="polite"
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+              setIsOpen(false);
+            }
+          }}
           sx={{
             position: 'fixed !important',
             bottom: 'calc(20px + 60px + 10px) !important', // 10px above the div container
@@ -540,11 +566,23 @@ const AccessibilityWidget = () => {
               borderColor: 'muted',
             }}
           >
-            <h3 sx={{ m: 0, fontSize: '18px', fontWeight: 'bold' }}>
+            <h3
+              id="accessibility-title"
+              sx={{ m: 0, fontSize: '18px', fontWeight: 'bold' }}
+            >
               Accessibility Options
             </h3>
             <button
               onClick={toggleWidget}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleWidget();
+                }
+              }}
+              aria-label="Close accessibility options menu"
+              role="button"
+              tabIndex={0}
               sx={{
                 bg: 'transparent',
                 border: 'none',
@@ -552,19 +590,25 @@ const AccessibilityWidget = () => {
                 color: 'text',
                 p: 1,
                 borderRadius: '4px',
+                fontSize: '18px',
+                fontWeight: 'bold',
                 '&:hover': {
                   bg: 'muted',
                 },
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              <FaTimes size={16} />
+              ×
             </button>
           </div>
 
           {/* Font Size Controls */}
           <div sx={{ mb: 3 }}>
             <div sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <FaTextHeight sx={{ mr: 2, color: 'primary' }} />
               <span sx={{ fontWeight: 'bold' }}>Text Size</span>
               <span sx={{ ml: 'auto', fontSize: '14px', color: 'text' }}>
                 {fontSize}%
@@ -573,6 +617,15 @@ const AccessibilityWidget = () => {
             <div sx={{ display: 'flex', gap: 2 }}>
               <button
                 onClick={decreaseFontSize}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    decreaseFontSize();
+                  }
+                }}
+                aria-label={`Decrease text size. Current size: ${fontSize}%`}
+                role="button"
+                tabIndex={0}
                 sx={{
                   flex: 1,
                   py: 2,
@@ -586,6 +639,11 @@ const AccessibilityWidget = () => {
                   '&:hover': {
                     bg: 'accent',
                     color: 'background',
+                  },
+                  '&:focus': {
+                    outline: '2px solid',
+                    outlineColor: 'accent',
+                    outlineOffset: '1px',
                   },
                 }}
               >
@@ -593,6 +651,15 @@ const AccessibilityWidget = () => {
               </button>
               <button
                 onClick={resetFontSize}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    resetFontSize();
+                  }
+                }}
+                aria-label={`Reset text size to default 100%. Current size: ${fontSize}%`}
+                role="button"
+                tabIndex={0}
                 sx={{
                   flex: 1,
                   py: 2,
@@ -607,12 +674,26 @@ const AccessibilityWidget = () => {
                     bg: 'accent',
                     color: 'background',
                   },
+                  '&:focus': {
+                    outline: '2px solid',
+                    outlineColor: 'accent',
+                    outlineOffset: '1px',
+                  },
                 }}
               >
                 Reset
               </button>
               <button
                 onClick={increaseFontSize}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    increaseFontSize();
+                  }
+                }}
+                aria-label={`Increase text size. Current size: ${fontSize}%`}
+                role="button"
+                tabIndex={0}
                 sx={{
                   flex: 1,
                   py: 2,
@@ -626,6 +707,11 @@ const AccessibilityWidget = () => {
                   '&:hover': {
                     bg: 'accent',
                     color: 'background',
+                  },
+                  '&:focus': {
+                    outline: '2px solid',
+                    outlineColor: 'accent',
+                    outlineOffset: '1px',
                   },
                 }}
               >
@@ -638,10 +724,23 @@ const AccessibilityWidget = () => {
           <div sx={{ mb: 3 }}>
             <button
               onClick={toggleHighContrast}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleHighContrast();
+                }
+              }}
+              aria-label={`${
+                highContrast ? 'Disable' : 'Enable'
+              } high contrast mode for better visibility`}
+              aria-pressed={highContrast}
+              role="switch"
+              tabIndex={0}
               sx={{
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'flex-start',
                 py: 2,
                 px: 3,
                 bg: highContrast ? 'primary' : 'muted',
@@ -656,9 +755,13 @@ const AccessibilityWidget = () => {
                   bg: 'accent',
                   color: 'background',
                 },
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              <FaAdjust sx={{ mr: 2 }} />
               {highContrast ? 'Disable' : 'Enable'} High Contrast
             </button>
           </div>
@@ -667,6 +770,18 @@ const AccessibilityWidget = () => {
           <div sx={{ mb: 3 }}>
             <button
               onClick={toggleAdhdMode}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleAdhdMode();
+                }
+              }}
+              aria-label={`${
+                adhdMode ? 'Disable' : 'Enable'
+              } ADHD focus mode with reading spotlight that follows your mouse`}
+              aria-pressed={adhdMode}
+              role="switch"
+              tabIndex={0}
               sx={{
                 width: '100%',
                 display: 'flex',
@@ -682,30 +797,22 @@ const AccessibilityWidget = () => {
                 fontSize: '14px',
                 fontWeight: 'bold',
                 transition: 'all 0.2s ease',
-                minHeight: '44px',
                 '&:hover': {
                   bg: 'accent',
                   color: 'background',
                 },
-                '& svg': {
-                  width: '16px',
-                  height: '16px',
-                  flexShrink: 0,
-                  marginRight: '8px',
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
                 },
                 '@media (max-width: 480px)': {
                   fontSize: '13px',
                   py: 1.5,
                   px: 2,
-                  '& svg': {
-                    width: '14px',
-                    height: '14px',
-                    marginRight: '6px',
-                  },
                 },
               }}
             >
-              <FaCrosshairs />
               <span sx={{ whiteSpace: 'nowrap' }}>
                 {adhdMode ? 'Disable' : 'Enable'} ADHD Focus Mode
               </span>
@@ -716,10 +823,23 @@ const AccessibilityWidget = () => {
           <div sx={{ mb: 3 }}>
             <button
               onClick={toggleEpilepticMode}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleEpilepticMode();
+                }
+              }}
+              aria-label={`${
+                epilepticMode ? 'Disable' : 'Enable'
+              } epilepsy-safe mode to disable animations and reduce flashing content`}
+              aria-pressed={epilepticMode}
+              role="switch"
+              tabIndex={0}
               sx={{
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'flex-start',
                 py: 2,
                 px: 3,
                 bg: epilepticMode ? 'primary' : 'muted',
@@ -734,9 +854,13 @@ const AccessibilityWidget = () => {
                   bg: 'accent',
                   color: 'background',
                 },
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              <FaBolt sx={{ mr: 2 }} />
               {epilepticMode ? 'Disable' : 'Enable'} Epilepsy-Safe Mode
             </button>
           </div>
@@ -745,11 +869,20 @@ const AccessibilityWidget = () => {
           <div sx={{ mb: 3 }}>
             <button
               onClick={resetAllSettings}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  resetAllSettings();
+                }
+              }}
+              aria-label="Reset all accessibility settings to their default values"
+              role="button"
+              tabIndex={0}
               sx={{
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 py: 2,
                 px: 3,
                 bg: 'muted',
@@ -764,9 +897,13 @@ const AccessibilityWidget = () => {
                   bg: 'accent',
                   color: 'background',
                 },
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                },
               }}
             >
-              <FaRedo sx={{ mr: 2 }} />
               Reset All Settings
             </button>
           </div>
@@ -775,23 +912,55 @@ const AccessibilityWidget = () => {
           <div sx={{ pt: 2, borderTop: '1px solid', borderColor: 'muted' }}>
             <a
               href="/accessibility-statement"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/accessibility-statement';
+                }
+              }}
+              aria-label="View full accessibility statement page with detailed information about our accessibility features and compliance"
+              role="link"
+              tabIndex={0}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
                 color: 'primary',
                 textDecoration: 'none',
                 fontSize: '14px',
+                padding: '8px 4px',
+                borderRadius: '4px',
                 '&:hover': {
                   textDecoration: 'underline',
+                  bg: 'muted',
+                },
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '1px',
+                  bg: 'muted',
                 },
               }}
             >
-              <FaEye sx={{ mr: 2 }} />
               Accessibility Statement
             </a>
           </div>
         </div>
       )}
+
+      {/* Screen Reader Status Announcements */}
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        sx={{
+          position: 'absolute',
+          left: '-10000px',
+          width: '1px',
+          height: '1px',
+          overflow: 'hidden',
+        }}
+      >
+        {statusMessage}
+      </div>
     </Fragment>
   );
 };
