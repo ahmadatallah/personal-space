@@ -25,7 +25,7 @@ const Page = (props) => {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO title={title} description={description} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
         rel="preconnect"

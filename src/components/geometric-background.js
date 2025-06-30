@@ -377,11 +377,11 @@ export function GeometricBackground(props) {
     <div
       sx={{
         position: 'relative',
-        overflow: 'visible',
+        overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        minHeight: ['150px', '200px', '250px'],
-        minWidth: ['150px', '250px', '300px'],
+        minHeight: [300, 300, 400],
+        minWidth: [300, 300, 400],
         justifyContent: 'center',
         '&::before': {
           content: '""',
@@ -391,7 +391,7 @@ export function GeometricBackground(props) {
           right: '-50px',
           bottom: '-50px',
           backgroundImage: `url("${createMandalaPattern()}")`,
-          backgroundSize: ['300px 300px', '400px 400px', '500px 500px'],
+          backgroundSize: ['400px 400px', '400px 400px', '500px 500px'],
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           animation: 'gentleRotate 120s linear infinite',
@@ -400,7 +400,7 @@ export function GeometricBackground(props) {
         },
         '@keyframes gentleRotate': {
           '0%': { transform: 'rotate(0deg) scale(1)' },
-          '50%': { transform: 'rotate(180deg) scale(1.05)' },
+          '50%': { transform: 'rotate(180deg) scale(1)' },
           '100%': { transform: 'rotate(360deg) scale(1)' },
         },
       }}

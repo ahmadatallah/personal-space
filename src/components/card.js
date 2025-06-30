@@ -1,10 +1,18 @@
 /** @jsx jsx */
-import { jsx, NavLink } from 'theme-ui';
+import { jsx, NavLink, useThemeUI } from 'theme-ui';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { CardWrapper, Card } from '../blocks';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 export const Cards = () => {
+  const { theme, colorMode } = useThemeUI();
+
+  // Get current theme colors
+  const currentColors =
+    colorMode === 'light'
+      ? theme.colors
+      : theme.colors?.modes?.[colorMode] || theme.colors;
+
   const result = useStaticQuery(graphql`
     {
       card1: file(name: { eq: "window-xp-palette-2" }) {
@@ -56,12 +64,48 @@ export const Cards = () => {
     />
   );
 
+  const imageStyles = {
+    height: '170px',
+    opacity: 1,
+    transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    objectFit: 'cover',
+  };
+
+  const cardStyles = {
+    '&:hover .gatsby-image-wrapper': {
+      opacity: 0.9,
+      transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      transform: 'scale(1.03) rotate(1deg)',
+      cursor: 'pointer',
+      filter: 'brightness(1.1) contrast(1.05) saturate(1.05)',
+      boxShadow: `0 0 15px ${currentColors.accent}60, 0 0 30px ${currentColors.primary}40, 0 0 45px ${currentColors.secondary}30, 0 0 60px ${currentColors.muted}20`,
+      animation: 'subtleGlow 4s ease-in-out infinite alternate',
+    },
+    '@keyframes subtleGlow': {
+      '0%': {
+        filter:
+          'brightness(1.1) contrast(1.05) saturate(1.05) hue-rotate(0deg)',
+        boxShadow: `0 0 15px ${currentColors.accent}60, 0 0 30px ${currentColors.primary}40, 0 0 45px ${currentColors.secondary}30, 0 0 60px ${currentColors.muted}20`,
+      },
+      '50%': {
+        filter:
+          'brightness(1.15) contrast(1.08) saturate(1.08) hue-rotate(180deg)',
+        boxShadow: `0 0 20px ${currentColors.accent}70, 0 0 40px ${currentColors.primary}50, 0 0 60px ${currentColors.secondary}40, 0 0 80px ${currentColors.muted}30`,
+      },
+      '100%': {
+        filter:
+          'brightness(1.1) contrast(1.05) saturate(1.05) hue-rotate(360deg)',
+        boxShadow: `0 0 15px ${currentColors.accent}60, 0 0 30px ${currentColors.primary}40, 0 0 45px ${currentColors.secondary}30, 0 0 60px ${currentColors.muted}20`,
+      },
+    },
+  };
+
   return (
     <CardWrapper>
       <CardHandler as={Link} to="/archive/window-xp-palette/">
-        <Card>
+        <Card sx={cardStyles}>
           <GatsbyImage
-            style={{ height: '170px' }}
+            sx={imageStyles}
             image={image1}
             alt="Windows XP Generative Art"
           />
@@ -72,9 +116,9 @@ export const Cards = () => {
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/hal9000-generative-art/">
-        <Card>
+        <Card sx={cardStyles}>
           <GatsbyImage
-            style={{ height: '170px' }}
+            sx={imageStyles}
             image={image2}
             alt="HAL9000 Generative Art"
           />
@@ -85,9 +129,9 @@ export const Cards = () => {
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
-        <Card>
+        <Card sx={cardStyles}>
           <GatsbyImage
-            style={{ height: '170px' }}
+            sx={imageStyles}
             image={image3}
             alt="On Some Faraway Beach Album"
           />
@@ -98,12 +142,8 @@ export const Cards = () => {
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/soy-cuba/">
-        <Card>
-          <GatsbyImage
-            style={{ height: '170px' }}
-            image={image4}
-            alt="Soy Cuba"
-          />
+        <Card sx={cardStyles}>
+          <GatsbyImage sx={imageStyles} image={image4} alt="Soy Cuba" />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Soy Cuba
           </label>
@@ -111,9 +151,9 @@ export const Cards = () => {
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/made-from-tiny-boxes/">
-        <Card>
+        <Card sx={cardStyles}>
           <GatsbyImage
-            style={{ height: '170px' }}
+            sx={imageStyles}
             image={image5}
             alt="Made From Tiny Boxes Album"
           />

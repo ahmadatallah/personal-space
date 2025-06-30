@@ -55,21 +55,60 @@ const TextShadow = (props) => {
         }}
       >
         <GeometricBackground>
-          <GatsbyImage
-            image={result.main.childImageSharp.gatsbyImageData}
-            alt="Profile Photo"
-            imgStyle={{
-              borderRadius: '10px',
-            }}
-            sx={{
-              my: 4,
-              width: ['120px', '150px', '200px'],
-              mr: [2, 1, 0],
-              marginTop: '20px',
-              borderRadius: '10px',
-              boxShadow: `2px 2px 0px ${currentColors.secondary}, 4px 4px 0px ${currentColors.primary}, 8px 8px 0px ${currentColors.background}, 10px 10px 0px ${currentColors.background}, 12px 12px 0px ${currentColors.primary}, 14px 14px 0px ${currentColors.secondary}`,
-            }}
-          />
+          <Link to="/about">
+            <GatsbyImage
+              image={result.main.childImageSharp.gatsbyImageData}
+              alt="Profile Photo"
+              imgStyle={{
+                borderRadius: '10px',
+              }}
+              sx={{
+                my: 4,
+                width: ['170px', '170px', '205px'],
+                marginTop: '20px',
+                opacity: 1,
+                borderRadius: '10px',
+                '&:hover': {
+                  opacity: 0.8,
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: 'scale(1.08) rotate(3deg)',
+                  cursor: 'pointer',
+                  filter: 'brightness(1.2) contrast(1.15) saturate(1.1)',
+                  objectFit: 'cover',
+                  boxShadow: `0 0 25px ${currentColors.accent}90, 0 0 50px ${currentColors.primary}70, 0 0 75px ${currentColors.secondary}50, 0 0 100px ${currentColors.muted}30`,
+                  animation: 'galaxyGlow 3s ease-in-out infinite alternate',
+                },
+                '@keyframes galaxyGlow': {
+                  '0%': {
+                    filter:
+                      'brightness(1.2) contrast(1.15) saturate(1.1) hue-rotate(0deg)',
+                    boxShadow: `0 0 25px ${currentColors.accent}90, 0 0 50px ${currentColors.primary}70, 0 0 75px ${currentColors.secondary}50, 0 0 100px ${currentColors.muted}30`,
+                  },
+                  '25%': {
+                    filter:
+                      'brightness(1.4) contrast(1.25) saturate(1.2) hue-rotate(90deg)',
+                    boxShadow: `0 0 35px ${currentColors.accent}bb, 0 0 70px ${currentColors.primary}90, 0 0 105px ${currentColors.secondary}70, 0 0 140px ${currentColors.muted}50`,
+                  },
+                  '50%': {
+                    filter:
+                      'brightness(1.6) contrast(1.35) saturate(1.3) hue-rotate(180deg)',
+                    boxShadow: `0 0 45px ${currentColors.accent}dd, 0 0 90px ${currentColors.primary}bb, 0 0 135px ${currentColors.secondary}90, 0 0 180px ${currentColors.muted}70`,
+                  },
+                  '75%': {
+                    filter:
+                      'brightness(1.4) contrast(1.25) saturate(1.2) hue-rotate(270deg)',
+                    boxShadow: `0 0 35px ${currentColors.accent}bb, 0 0 70px ${currentColors.primary}90, 0 0 105px ${currentColors.secondary}70, 0 0 140px ${currentColors.muted}50`,
+                  },
+                  '100%': {
+                    filter:
+                      'brightness(1.2) contrast(1.15) saturate(1.1) hue-rotate(360deg)',
+                    boxShadow: `0 0 25px ${currentColors.accent}90, 0 0 50px ${currentColors.primary}70, 0 0 75px ${currentColors.secondary}50, 0 0 100px ${currentColors.muted}30`,
+                  },
+                },
+                boxShadow: `2px 2px 0px ${currentColors.secondary}, 4px 4px 0px ${currentColors.primary}, 8px 8px 0px ${currentColors.background}, 10px 10px 0px ${currentColors.background}, 12px 12px 0px ${currentColors.primary}, 14px 14px 0px ${currentColors.secondary}`,
+              }}
+            />
+          </Link>
         </GeometricBackground>
 
         <div
