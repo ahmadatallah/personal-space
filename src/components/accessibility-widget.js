@@ -808,14 +808,12 @@ const AccessibilityWidget = () => {
                 },
                 '@media (max-width: 480px)': {
                   fontSize: '13px',
-                  py: 1.5,
-                  px: 2,
+                  py: 2,
+                  px: 3,
                 },
               }}
             >
-              <span sx={{ whiteSpace: 'nowrap' }}>
-                {adhdMode ? 'Disable' : 'Enable'} ADHD Focus Mode
-              </span>
+              {adhdMode ? 'Disable' : 'Enable'} ADHD Focus Mode
             </button>
           </div>
 
