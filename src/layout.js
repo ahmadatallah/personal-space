@@ -298,6 +298,7 @@ export default (props) => {
               sx={{
                 variant: 'styles.shortcut',
                 fontSize: '12px',
+                textDecoration: 'underline',
               }}
             >
               Archive
@@ -308,6 +309,7 @@ export default (props) => {
               sx={{
                 variant: 'styles.shortcut',
                 fontSize: '12px',
+                textDecoration: 'underline',
               }}
             >
               Notes
@@ -318,6 +320,7 @@ export default (props) => {
               sx={{
                 variant: 'styles.shortcut',
                 fontSize: '12px',
+                textDecoration: 'underline',
               }}
             >
               About
@@ -365,7 +368,7 @@ export default (props) => {
                   },
                 }}
               >
-                Privacy Policy
+                Privacy
               </NavLink>
               <NavLink
                 as={Link}

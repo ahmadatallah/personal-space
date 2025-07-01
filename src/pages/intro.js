@@ -190,6 +190,7 @@ const TextShadow = (props) => {
             sx={{
               variant: 'styles.shortcut',
               fontWeight: 'normal',
+              textDecoration: 'underline',
               '&:focus': {
                 outline: '2px solid',
                 outlineColor: 'accent',
@@ -215,6 +216,7 @@ const TextShadow = (props) => {
             sx={{
               variant: 'styles.shortcut',
               fontWeight: 'normal',
+              textDecoration: 'underline',
               '&:focus': {
                 outline: '2px solid',
                 outlineColor: 'accent',

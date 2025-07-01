@@ -60,7 +60,7 @@ export default {
     },
   },
   fonts: {
-    body: 'Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
+    body: 'Ubuntu,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
     monospace: '"Roboto Mono", Menlo, monospace',
   },
   lineHeights: {
@@ -99,6 +99,12 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontSize: 2,
+      transitionProperty: 'background-color',
+      transitionTimingFunction: 'ease-out',
+      transitionDuration: '.4s',
+    },
+    body: {
+      backgroundColor: 'background',
       transitionProperty: 'background-color',
       transitionTimingFunction: 'ease-out',
       transitionDuration: '.4s',
@@ -182,7 +188,6 @@ export default {
     navlink: {
       variant: 'text.caps',
       color: 'inherit',
-      textDecoration: 'none',
       ':hover,:focus': {
         color: 'primary',
       },
@@ -196,7 +201,6 @@ export default {
     shortcut: {
       variant: 'styles.navlink',
       fontSize: '14px',
-      borderBottom: 'solid 1px',
     },
     pre: {
       ...nightOwl,
