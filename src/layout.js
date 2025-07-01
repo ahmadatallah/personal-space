@@ -289,7 +289,6 @@ export default (props) => {
               columnGap: 2,
               fontSize: 0,
               justifyContent: 'center',
-              mt: ['0px', '-16px', '-16px', '-16px'],
             }}
           >
             <NavLink
@@ -322,10 +321,111 @@ export default (props) => {
             >
               About
             </NavLink>
-            <div sx={{ my: 2 }}>© 2025 Ahmad Atallah</div>
           </div>
-          {/* Accessibility Widget */}
-          <AccessibilityWidget />
+
+          {/* Bottom Section with Policy Links, Copyright and Accessibility Widget */}
+          <div
+            sx={{
+              display: 'flex',
+              justifyContent: ['center', 'center', 'space-between'],
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              mt: 2,
+            }}
+          >
+            {/* Policy Links and Copyright */}
+            <div
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                justifyContent: ['center', 'center', 'flex-start'],
+              }}
+            >
+              <NavLink
+                as={Link}
+                to="/privacy-statement"
+                sx={{
+                  fontSize: '11px',
+                  color: 'text',
+                  textDecoration: 'underline',
+                  padding: '2px 4px',
+                  borderRadius: '2px',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'primary',
+                    textDecoration: 'underline',
+                  },
+                  '&:focus': {
+                    outline: '2px solid',
+                    outlineColor: 'accent',
+                    outlineOffset: '1px',
+                  },
+                }}
+              >
+                Privacy Policy
+              </NavLink>
+              <NavLink
+                as={Link}
+                to="/accessibility-statement"
+                sx={{
+                  fontSize: '11px',
+                  color: 'text',
+                  textDecoration: 'underline',
+                  padding: '2px 4px',
+                  borderRadius: '2px',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'primary',
+                    textDecoration: 'underline',
+                  },
+                  '&:focus': {
+                    outline: '2px solid',
+                    outlineColor: 'accent',
+                    outlineOffset: '1px',
+                  },
+                }}
+              >
+                Accessibility
+              </NavLink>
+              <NavLink
+                as={Link}
+                to="/license"
+                sx={{
+                  fontSize: '11px',
+                  color: 'text',
+                  textDecoration: 'underline',
+                  padding: '2px 4px',
+                  borderRadius: '2px',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'primary',
+                    textDecoration: 'underline',
+                  },
+                  '&:focus': {
+                    outline: '2px solid',
+                    outlineColor: 'accent',
+                    outlineOffset: '1px',
+                  },
+                }}
+              >
+                License
+              </NavLink>
+              <div
+                sx={{
+                  fontSize: '11px',
+                  opacity: 0.7,
+                  color: 'text',
+                }}
+              >
+                © 2025 Ahmad Atallah
+              </div>
+            </div>
+
+            {/* Accessibility Widget */}
+            <AccessibilityWidget />
+          </div>
         </footer>
       </div>
     </Fragment>

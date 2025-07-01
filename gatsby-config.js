@@ -37,12 +37,6 @@ module.exports = {
     },
     'gatsby-plugin-twitter',
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-186964410-1',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-feed',
       options: require('./feed'),
     },
