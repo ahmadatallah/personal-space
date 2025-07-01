@@ -191,6 +191,7 @@ export default (props) => {
         </header>
         <main
           id="main-content"
+          role="main"
           sx={{
             width: '100%',
             maxWidth: 'wide',
@@ -327,7 +328,7 @@ export default (props) => {
           <div
             sx={{
               display: 'flex',
-              justifyContent: ['center', 'center', 'space-between'],
+              justifyContent: 'center',
               alignItems: 'center',
               flexWrap: 'wrap',
               mt: 2,
@@ -340,14 +341,14 @@ export default (props) => {
                 gap: 1,
                 alignItems: 'center',
                 flexWrap: 'wrap',
-                justifyContent: ['center', 'center', 'flex-start'],
+                justifyContent: 'center',
               }}
             >
               <NavLink
                 as={Link}
                 to="/privacy-statement"
                 sx={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: 'text',
                   textDecoration: 'underline',
                   padding: '2px 4px',
@@ -370,7 +371,7 @@ export default (props) => {
                 as={Link}
                 to="/accessibility-statement"
                 sx={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: 'text',
                   textDecoration: 'underline',
                   padding: '2px 4px',
@@ -393,7 +394,7 @@ export default (props) => {
                 as={Link}
                 to="/license"
                 sx={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: 'text',
                   textDecoration: 'underline',
                   padding: '2px 4px',
@@ -414,7 +415,7 @@ export default (props) => {
               </NavLink>
               <div
                 sx={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   opacity: 0.7,
                   color: 'text',
                 }}

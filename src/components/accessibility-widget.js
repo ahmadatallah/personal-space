@@ -143,8 +143,9 @@ const AccessibilityWidget = () => {
 
   const resetFontSize = useCallback(() => {
     setFontSize(100);
+    // Apply 100% scaling to establish proper baseline
     applyFontSize(100);
-    announceStatus('Font size reset to default 100%');
+    announceStatus('Font size reset to default');
   }, []);
 
   const resetAllSettings = useCallback(() => {
@@ -172,31 +173,35 @@ const AccessibilityWidget = () => {
   const applyFontSize = (size) => {
     const scaleFactor = size / 100;
 
-    // Create CSS content
+    // If scaling is 100% (no change), remove styles entirely to restore original
+    if (scaleFactor === 1) {
+      const existingStyle = document.getElementById(
+        'accessibility-font-size-styles'
+      );
+      if (existingStyle) {
+        existingStyle.remove();
+      }
+      return;
+    }
+
+    // Use CSS zoom for universal scaling
     const newStyleContent = `
-        /* Apply font scaling to content areas, header, and footer (but not accessibility widget) */
-        main, article, section, header, footer, nav, .content, .post-content, .mdx-content {
-          font-size: calc(1em * ${scaleFactor}) !important;
+        /* Scale everything using CSS zoom */
+        body {
+          zoom: ${scaleFactor} !important;
         }
         
-        /* Exclude accessibility widget from font scaling - more specific rules */
+        /* Counter-scale accessibility widget to keep it normal size */
         [data-accessibility-widget] {
-          font-size: 14px !important;
+          zoom: ${1 / scaleFactor} !important;
+          position: fixed !important;
+          transform: none !important;
         }
-        [data-accessibility-widget] *,
-        [data-accessibility-widget] h1,
-        [data-accessibility-widget] h2, 
-        [data-accessibility-widget] h3,
-        [data-accessibility-widget] h4,
-        [data-accessibility-widget] h5,
-        [data-accessibility-widget] h6,
-        [data-accessibility-widget] p,
-        [data-accessibility-widget] a,
-        [data-accessibility-widget] span,
-        [data-accessibility-widget] button,
-        [data-accessibility-widget] div,
-        [data-accessibility-widget] small {
-          font-size: inherit !important;
+        
+        /* Force normal font sizes for accessibility widget */
+        [data-accessibility-widget],
+        [data-accessibility-widget] * {
+          font-size: 14px !important;
         }
         
         /* Specific overrides for accessibility widget elements */
@@ -209,37 +214,6 @@ const AccessibilityWidget = () => {
         [data-accessibility-widget] small,
         [data-accessibility-widget] .text-sm {
           font-size: 12px !important;
-        }
-        
-        /* Preserve relative sizing for headings in content areas */
-        main h1, article h1, section h1, header h1, footer h1, nav h1, .content h1, .post-content h1, .mdx-content h1 { 
-          font-size: calc(2em * ${scaleFactor}) !important; 
-        }
-        main h2, article h2, section h2, header h2, footer h2, nav h2, .content h2, .post-content h2, .mdx-content h2 { 
-          font-size: calc(1.5em * ${scaleFactor}) !important; 
-        }
-        main h3, article h3, section h3, header h3, footer h3, nav h3, .content h3, .post-content h3, .mdx-content h3 { 
-          font-size: calc(1.25em * ${scaleFactor}) !important; 
-        }
-        main h4, article h4, section h4, header h4, footer h4, nav h4, .content h4, .post-content h4, .mdx-content h4 { 
-          font-size: calc(1.125em * ${scaleFactor}) !important; 
-        }
-        main h5, article h5, section h5, header h5, footer h5, nav h5, .content h5, .post-content h5, .mdx-content h5 { 
-          font-size: calc(1em * ${scaleFactor}) !important; 
-        }
-        main h6, article h6, section h6, header h6, footer h6, nav h6, .content h6, .post-content h6, .mdx-content h6 { 
-          font-size: calc(0.875em * ${scaleFactor}) !important; 
-        }
-        
-        /* Text size classes in content areas */
-        main small, article small, section small, header small, footer small, nav small, .content small, .post-content small, .mdx-content small { 
-          font-size: calc(0.75em * ${scaleFactor}) !important; 
-        }
-        main p, article p, section p, header p, footer p, nav p, .content p, .post-content p, .mdx-content p { 
-          font-size: calc(1em * ${scaleFactor}) !important; 
-        }
-        main a, article a, section a, header a, footer a, nav a, .content a, .post-content a, .mdx-content a { 
-          font-size: calc(1em * ${scaleFactor}) !important; 
         }
     `;
 
