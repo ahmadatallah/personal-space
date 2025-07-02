@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { CardWrapper, Card } from '../blocks';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export const Cards = () => {
+export const Recents = () => {
   const { theme, colorMode } = useThemeUI();
 
   // Get current theme colors
@@ -17,30 +17,62 @@ export const Cards = () => {
     {
       card1: file(name: { eq: "window-xp-palette-2" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200, height: 200)
+          gatsbyImageData(
+            layout: FIXED
+            width: 400
+            height: 400
+            quality: 95
+            formats: [AUTO, WEBP]
+            placeholder: DOMINANT_COLOR
+          )
         }
       }
       card2: file(name: { eq: "hall9000-generative" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200)
+          gatsbyImageData(
+            layout: FIXED
+            width: 400
+            quality: 95
+            formats: [AUTO, WEBP]
+            placeholder: DOMINANT_COLOR
+          )
         }
       }
 
       card3: file(name: { eq: "girl" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200)
+          gatsbyImageData(
+            layout: FIXED
+            width: 400
+            quality: 95
+            formats: [AUTO, WEBP]
+            placeholder: DOMINANT_COLOR
+          )
         }
       }
 
       card4: file(name: { eq: "soy cuba frame 07" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200)
+          gatsbyImageData(
+            layout: FIXED
+            width: 400
+            quality: 95
+            formats: [AUTO, WEBP]
+            placeholder: DOMINANT_COLOR
+          )
         }
       }
 
       card5: file(name: { eq: "bombom" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 200, height: 300)
+          gatsbyImageData(
+            layout: FIXED
+            width: 400
+            height: 600
+            quality: 95
+            formats: [AUTO, WEBP]
+            placeholder: DOMINANT_COLOR
+          )
         }
       }
     }
@@ -59,6 +91,8 @@ export const Cards = () => {
         justifyContent: 'center',
         display: 'inline-flex',
         width: '100%',
+        maxWidth: '200px',
+        mx: 'auto', // Center the card horizontally
       }}
       {...props}
     />
@@ -66,37 +100,60 @@ export const Cards = () => {
 
   const imageStyles = {
     height: '170px',
+    width: '100%',
+    maxWidth: '200px',
     opacity: 1,
     transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     objectFit: 'cover',
+    objectPosition: 'center',
+    // High-quality image rendering
+    imageRendering: 'auto', // Smooth scaling for photographic images
+    backfaceVisibility: 'hidden',
+    transform: 'translateZ(0)', // Hardware acceleration for better rendering
   };
 
   const cardStyles = {
+    '@keyframes subtleGlow': {
+      '0%': {
+        filter: 'brightness(1.1) contrast(1.05) saturate(1.05) sepia(0%)',
+        boxShadow: `0 0 15px ${theme.colors.accent}60, 0 0 30px ${theme.colors.secondary}40, 0 0 45px ${theme.colors.primary}30`,
+      },
+      '25%': {
+        filter: 'brightness(1.12) contrast(1.06) saturate(1.1) sepia(25%)',
+        boxShadow: `0 0 18px ${theme.colors.accent}65, 0 0 35px ${theme.colors.primary}45, 0 0 50px ${theme.colors.secondary}35`,
+      },
+      '50%': {
+        filter: 'brightness(1.15) contrast(1.08) saturate(1.08) sepia(50%)',
+        boxShadow: `0 0 20px ${theme.colors.accent}70, 0 0 40px ${theme.colors.primary}50, 0 0 60px ${theme.colors.secondary}40`,
+      },
+      '75%': {
+        filter: 'brightness(1.12) contrast(1.06) saturate(1.1) sepia(75%)',
+        boxShadow: `0 0 18px ${theme.colors.accent}65, 0 0 35px ${theme.colors.primary}45, 0 0 50px ${theme.colors.secondary}35`,
+      },
+      '100%': {
+        filter: 'brightness(1.1) contrast(1.05) saturate(1.05) sepia(100%)',
+        boxShadow: `0 0 15px ${theme.colors.accent}60, 0 0 30px ${theme.colors.primary}40, 0 0 45px ${theme.colors.secondary}30`,
+      },
+    },
     '&:hover .gatsby-image-wrapper': {
       opacity: 0.9,
       transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       transform: 'scale(1.03) rotate(1deg)',
       cursor: 'pointer',
-      filter: 'brightness(1.1) contrast(1.05) saturate(1.05)',
-      boxShadow: `0 0 15px ${currentColors.accent}60, 0 0 30px ${currentColors.primary}40, 0 0 45px ${currentColors.secondary}30, 0 0 60px ${currentColors.muted}20`,
-      animation: 'subtleGlow 4s ease-in-out infinite alternate',
+      animationName: 'subtleGlow',
+      animationDuration: '4s',
+      animationTimingFunction: 'ease-in-out',
+      animationIterationCount: 'infinite',
+      animationDirection: 'alternate',
+      animationFillMode: 'both',
     },
-    '@keyframes subtleGlow': {
-      '0%': {
-        filter:
-          'brightness(1.1) contrast(1.05) saturate(1.05) hue-rotate(0deg)',
-        boxShadow: `0 0 15px ${currentColors.accent}60, 0 0 30px ${currentColors.primary}40, 0 0 45px ${currentColors.secondary}30, 0 0 60px ${currentColors.muted}20`,
-      },
-      '50%': {
-        filter:
-          'brightness(1.15) contrast(1.08) saturate(1.08) hue-rotate(180deg)',
-        boxShadow: `0 0 20px ${currentColors.accent}70, 0 0 40px ${currentColors.primary}50, 0 0 60px ${currentColors.secondary}40, 0 0 80px ${currentColors.muted}30`,
-      },
-      '100%': {
-        filter:
-          'brightness(1.1) contrast(1.05) saturate(1.05) hue-rotate(360deg)',
-        boxShadow: `0 0 15px ${currentColors.accent}60, 0 0 30px ${currentColors.primary}40, 0 0 45px ${currentColors.secondary}30, 0 0 60px ${currentColors.muted}20`,
-      },
+    '&:hover .gatsby-image-wrapper img': {
+      animationName: 'subtleGlow',
+      animationDuration: '2s',
+      animationTimingFunction: 'ease-in-out',
+      animationIterationCount: 'infinite',
+      animationDirection: 'alternate',
+      animationFillMode: 'both',
     },
   };
 

@@ -489,10 +489,6 @@ const AccessibilityWidget = () => {
               height: '24px',
               flexShrink: 0,
               display: 'block',
-              '@media (max-width: 480px)': {
-                width: '20px',
-                height: '20px',
-              },
             }}
           />
         </button>
@@ -779,11 +775,6 @@ const AccessibilityWidget = () => {
                   outline: '2px solid',
                   outlineColor: 'accent',
                   outlineOffset: '1px',
-                },
-                '@media (max-width: 480px)': {
-                  fontSize: '13px',
-                  py: 2,
-                  px: 3,
                 },
               }}
             >

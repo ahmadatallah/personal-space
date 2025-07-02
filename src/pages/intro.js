@@ -94,37 +94,37 @@ const TextShadow = (props) => {
                 cursor: 'pointer',
                 filter: 'brightness(1.2) contrast(1.15) saturate(1.1)',
                 objectFit: 'cover',
-                boxShadow: `0 0 25px ${currentColors.accent}90, 0 0 50px ${currentColors.primary}70, 0 0 75px ${currentColors.secondary}50, 0 0 100px ${currentColors.muted}30`,
-                animation: 'galaxyGlow 3s ease-in-out infinite alternate',
+                boxShadow: `0 0 25px ${theme.colors.accent}90, 0 0 50px ${theme.colors.primary}70, 0 0 75px ${theme.colors.secondary}50, 0 0 100px ${theme.colors.muted}30`,
+                animation: 'vintageGlow 3s ease-in-out infinite alternate',
               },
-              '@keyframes galaxyGlow': {
+              '@keyframes vintageGlow': {
                 '0%': {
                   filter:
-                    'brightness(1.2) contrast(1.15) saturate(1.1) hue-rotate(0deg)',
-                  boxShadow: `0 0 25px ${currentColors.accent}90, 0 0 50px ${currentColors.primary}70, 0 0 75px ${currentColors.secondary}50, 0 0 100px ${currentColors.muted}30`,
+                    'brightness(1.2) contrast(1.15) saturate(1.1) sepia(0%)',
+                  boxShadow: `0 0 25px ${theme.colors.accent}90, 0 0 50px ${theme.colors.primary}70, 0 0 75px ${theme.colors.secondary}50`,
                 },
                 '25%': {
                   filter:
-                    'brightness(1.4) contrast(1.25) saturate(1.2) hue-rotate(90deg)',
-                  boxShadow: `0 0 35px ${currentColors.accent}bb, 0 0 70px ${currentColors.primary}90, 0 0 105px ${currentColors.secondary}70, 0 0 140px ${currentColors.muted}50`,
+                    'brightness(1.3) contrast(1.2) saturate(1.15) sepia(25%)',
+                  boxShadow: `0 0 30px ${theme.colors.accent}bb, 0 0 60px ${theme.colors.primary}90, 0 0 90px ${theme.colors.secondary}70`,
                 },
                 '50%': {
                   filter:
-                    'brightness(1.6) contrast(1.35) saturate(1.3) hue-rotate(180deg)',
-                  boxShadow: `0 0 45px ${currentColors.accent}dd, 0 0 90px ${currentColors.primary}bb, 0 0 135px ${currentColors.secondary}90, 0 0 180px ${currentColors.muted}70`,
+                    'brightness(1.4) contrast(1.25) saturate(1.2) sepia(50%)',
+                  boxShadow: `0 0 35px ${theme.colors.accent}dd, 0 0 70px ${theme.colors.primary}bb, 0 0 105px ${theme.colors.secondary}90`,
                 },
                 '75%': {
                   filter:
-                    'brightness(1.4) contrast(1.25) saturate(1.2) hue-rotate(270deg)',
-                  boxShadow: `0 0 35px ${currentColors.accent}bb, 0 0 70px ${currentColors.primary}90, 0 0 105px ${currentColors.secondary}70, 0 0 140px ${currentColors.muted}50`,
+                    'brightness(1.3) contrast(1.2) saturate(1.15) sepia(75%)',
+                  boxShadow: `0 0 30px ${theme.colors.accent}bb, 0 0 60px ${theme.colors.primary}90, 0 0 90px ${theme.colors.secondary}70`,
                 },
                 '100%': {
                   filter:
-                    'brightness(1.2) contrast(1.15) saturate(1.1) hue-rotate(360deg)',
-                  boxShadow: `0 0 25px ${currentColors.accent}90, 0 0 50px ${currentColors.primary}70, 0 0 75px ${currentColors.secondary}50, 0 0 100px ${currentColors.muted}30`,
+                    'brightness(1.2) contrast(1.15) saturate(1.1) sepia(100%)',
+                  boxShadow: `0 0 25px ${theme.colors.accent}90, 0 0 50px ${theme.colors.primary}70, 0 0 75px ${theme.colors.secondary}50`,
                 },
               },
-              boxShadow: `2px 2px 0px ${currentColors.secondary}, 4px 4px 0px ${currentColors.primary}, 8px 8px 0px ${currentColors.background}, 10px 10px 0px ${currentColors.background}, 12px 12px 0px ${currentColors.primary}, 14px 14px 0px ${currentColors.secondary}`,
+              boxShadow: `2px 2px 0px ${theme.colors.secondary}, 4px 4px 0px ${theme.colors.primary}, 8px 8px 0px ${theme.colors.background}, 10px 10px 0px ${theme.colors.background}, 12px 12px 0px ${theme.colors.primary}, 14px 14px 0px ${theme.colors.secondary}`,
             }}
           />
         </Link>

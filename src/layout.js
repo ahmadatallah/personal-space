@@ -10,6 +10,7 @@ import {
   FaGithub as GitHub,
   FaInstagram as Instagram,
   FaEnvelope as Email,
+  FaArrowLeft as ArrowLeft,
 } from 'react-icons/fa';
 import { Fragment } from 'react';
 
@@ -94,6 +95,25 @@ export default (props) => {
     });
   const draft = props.pageContext?.frontmatter?.draft;
 
+  // Check if we're on an archive or notes post page (not the index pages)
+  const currentPath =
+    typeof window !== 'undefined'
+      ? window.location.pathname
+      : props.location?.pathname || '';
+  const isArchivePost =
+    currentPath.startsWith('/archive/') &&
+    currentPath !== '/archive' &&
+    currentPath !== '/archive/';
+  const isNotesPost =
+    currentPath.startsWith('/notes/') &&
+    currentPath !== '/notes' &&
+    currentPath !== '/notes/';
+  const isCollectionPost = isArchivePost || isNotesPost;
+
+  // Determine the back link and label
+  const backLink = isArchivePost ? '/archive' : '/notes';
+  const backLabel = isArchivePost ? 'Archive' : 'Notes';
+
   const query = useStaticQuery(graphql`
     {
       pdf: file(name: { eq: "resumelatest" }) {
@@ -175,19 +195,88 @@ export default (props) => {
             borderImageSource: `url("${border}")`,
             borderImageSlice: '90 0',
             borderImageRepeat: 'round',
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
-          <ColorButton mode={mode} onClick={cycleMode} />
-          <NavLink
-            as={Link}
-            to="/"
+          {/* Back Button - Aligned with Content */}
+          <div
             sx={{
-              variant: 'styles.navitem',
-              fontSize: 0,
+              position: 'fixed',
+              left: ['24px', 'calc((100vw - 1280px) / 2 + 24px)'], // Responsive: mobile padding, then align with content
+              top: '16px', // Adjust to align with header content
+              opacity: isCollectionPost ? 1 : 0,
+              visibility: isCollectionPost ? 'visible' : 'hidden',
+              transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+              transitionDelay: isCollectionPost ? '0.1s' : '0s',
+              pointerEvents: isCollectionPost ? 'auto' : 'none',
+              zIndex: 1001, // Above header
             }}
           >
-            <Avatar />
-          </NavLink>
+            <NavLink
+              as={Link}
+              to={backLink}
+              aria-label={`Back to ${backLabel}`}
+              sx={{
+                variant: 'styles.navitem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1,
+                fontSize: 1,
+                textDecoration: 'none',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                '&:hover': {
+                  transform: 'translateX(-4px) scale(1.05)',
+                  '& svg': {
+                    transform: 'translateX(-2px)',
+                  },
+                },
+                '&:focus': {
+                  outline: '2px solid',
+                  outlineColor: 'accent',
+                  outlineOffset: '2px',
+                  borderRadius: '4px',
+                },
+              }}
+            >
+              <ArrowLeft
+                size={14}
+                aria-hidden="true"
+                sx={{
+                  transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                }}
+              />
+              {backLabel}
+            </NavLink>
+          </div>
+
+          {/* Center Content - Always Centered */}
+          <div
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
+          >
+            <div
+              sx={{
+                transform: 'scale(1)',
+              }}
+            >
+              <ColorButton mode={mode} onClick={cycleMode} />
+            </div>
+            <NavLink
+              as={Link}
+              to="/"
+              sx={{
+                variant: 'styles.navitem',
+                fontSize: 0,
+                transform: 'scale(1)',
+              }}
+            >
+              <Avatar />
+            </NavLink>
+          </div>
         </header>
         <main
           id="main-content"
