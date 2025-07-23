@@ -70,9 +70,10 @@ const Notes = (props) => {
               >
                 {post.context.frontmatter.title}
                 <ArrowRight
-                  size={16}
                   aria-hidden="true"
+                  size={16}
                   sx={{
+                    flexShrink: 0,
                     transition: 'transform 0.2s ease',
                     'a:hover &': {
                       transform: 'translateX(2px)',

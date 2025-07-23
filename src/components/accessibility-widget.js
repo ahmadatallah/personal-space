@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Fragment, useState, useEffect, useCallback } from 'react';
-import { FaUniversalAccess } from 'react-icons/fa';
+import { FaUniversalAccess, FaWindowClose } from 'react-icons/fa';
 
 const AccessibilityWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +38,7 @@ const AccessibilityWidget = () => {
           right: 20px !important;
           max-width: calc(100vw - 40px) !important;
         }
-        
+
         /* Force fixed font sizes for accessibility widget */
         [data-accessibility-widget] {
           font-size: 14px !important;
@@ -56,7 +56,7 @@ const AccessibilityWidget = () => {
         [data-accessibility-widget] .text-sm {
           font-size: 12px !important;
         }
-        
+
         /* Mobile responsiveness */
         @media (max-width: 480px) {
           [data-accessibility-widget="true"]:first-of-type {
@@ -69,7 +69,7 @@ const AccessibilityWidget = () => {
             min-height: 50px !important;
             max-height: 50px !important;
           }
-          
+
           /* Force fixed font sizes for accessibility widget on mobile */
           [data-accessibility-widget] {
             font-size: 13px !important;
@@ -190,20 +190,20 @@ const AccessibilityWidget = () => {
         body {
           zoom: ${scaleFactor} !important;
         }
-        
+
         /* Counter-scale accessibility widget to keep it normal size */
         [data-accessibility-widget] {
           zoom: ${1 / scaleFactor} !important;
           position: fixed !important;
           transform: none !important;
         }
-        
+
         /* Force normal font sizes for accessibility widget */
         [data-accessibility-widget],
         [data-accessibility-widget] * {
           font-size: 14px !important;
         }
-        
+
         /* Specific overrides for accessibility widget elements */
         [data-accessibility-widget] h3 {
           font-size: 18px !important;
@@ -572,7 +572,7 @@ const AccessibilityWidget = () => {
                 },
               }}
             >
-              ×
+              <FaWindowClose size={24} />
             </button>
           </div>
 

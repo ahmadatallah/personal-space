@@ -69,9 +69,10 @@ const Archive = (props) => {
               >
                 {post.context.frontmatter.title}
                 <ArrowRight
-                  size={16}
                   aria-hidden="true"
+                  size={24}
                   sx={{
+                    flexShrink: 0,
                     transition: 'transform 0.2s ease',
                     'a:hover &': {
                       transform: 'translateX(2px)',

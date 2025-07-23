@@ -111,8 +111,8 @@ export default (props) => {
   const isCollectionPost = isArchivePost || isNotesPost;
 
   // Determine the back link and label
-  const backLink = isArchivePost ? '/archive' : '/notes';
-  const backLabel = isArchivePost ? 'Archive' : 'Notes';
+  const backLink = isArchivePost ? '/archive' : isNotesPost ? '/notes' : 'Back';
+  const backLabel = isArchivePost ? 'Archive' : isNotesPost ? 'Notes' : 'Back';
 
   const query = useStaticQuery(graphql`
     {
@@ -223,6 +223,7 @@ export default (props) => {
                 gap: 1,
                 fontSize: 1,
                 textDecoration: 'none',
+                fontSize: ['12px', '14px', '16px'],
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 '&:hover': {
                   transform: 'translateX(-4px) scale(1.05)',
