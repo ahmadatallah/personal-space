@@ -1,0 +1,48 @@
+---
+title: 'Hydra'
+date: 2025-07-26
+---
+
+import Gallery from '@browniebroke/gatsby-image-gallery';
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+  query hydra {
+    images: allFile(
+      filter: { relativeDirectory: { eq: "hydra" } }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            thumb: gatsbyImageData(layout: CONSTRAINED, width: 500)
+            full: gatsbyImageData(layout: FULL_WIDTH)
+          }
+          name
+        }
+      }
+    }
+  }
+`;
+
+<div className="hydra-gallery">
+  <style>{`
+    .hydra-gallery .gatsby-image-gallery--grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .hydra-gallery .gatsby-image-gallery--grid > :last-child {
+      grid-column: 1 / -1;
+    }
+  `}</style>
+  <Gallery
+    images={props.data.images.edges.map(({ node }) => ({
+      ...node.childImageSharp,
+      caption: node.name,
+      thumbAlt: node.name,
+    }))}
+  />
+</div>
+
+"There is nowhere in the world where you can live like you can in Hydra, and that includes Hydra." — Leonard Cohen

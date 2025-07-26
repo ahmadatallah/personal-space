@@ -63,12 +63,12 @@ export const Recents = () => {
         }
       }
 
-      card5: file(name: { eq: "bombom" }) {
+      card5: file(name: { eq: "hydra_02" }) {
         childImageSharp {
           gatsbyImageData(
             layout: FIXED
-            width: 400
-            height: 600
+            width: 800
+            height: 800
             quality: 95
             formats: [AUTO, WEBP]
             placeholder: DOMINANT_COLOR
@@ -198,24 +198,24 @@ export const Recents = () => {
           <small>Archive</small>
         </Card>
       </CardHandler>
+      <CardHandler as={Link} to="/archive/hydra/">
+        <Card sx={cardStyles}>
+          <GatsbyImage
+            sx={imageStyles}
+            image={image5}
+            alt="There is nowhere in the world where you can live like you can in Hydra, and that includes Hydra"
+          />
+          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
+            Hydra
+          </label>
+          <small>Archive</small>
+        </Card>
+      </CardHandler>
       <CardHandler as={Link} to="/archive/soy-cuba/">
         <Card sx={cardStyles}>
           <GatsbyImage sx={imageStyles} image={image4} alt="Soy Cuba" />
           <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
             Soy Cuba
-          </label>
-          <small>Archive</small>
-        </Card>
-      </CardHandler>
-      <CardHandler as={Link} to="/archive/made-from-tiny-boxes/">
-        <Card sx={cardStyles}>
-          <GatsbyImage
-            sx={imageStyles}
-            image={image5}
-            alt="Made From Tiny Boxes Album"
-          />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Made from Tiny Boxes
           </label>
           <small>Archive</small>
         </Card>
