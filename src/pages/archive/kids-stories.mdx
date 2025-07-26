@@ -3,7 +3,7 @@ title: 'Kids Stories'
 date: 2020-12-09
 ---
 
-import Gallery from '@browniebroke/gatsby-image-gallery';
+import GalleryWrapper from '../../components/gallery-wrapper';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -25,7 +25,7 @@ export const query = graphql`
   }
 `;
 
-<Gallery
+<GalleryWrapper
   images={props.data.images.edges
     .map(({ node }) => ({
       ...node.childImageSharp,
@@ -37,7 +37,7 @@ export const query = graphql`
 
 Story 1
 
-<Gallery
+<GalleryWrapper
   images={props.data.images.edges
     .map(({ node }) => ({
       ...node.childImageSharp,

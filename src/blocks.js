@@ -135,7 +135,6 @@ export const Card = (props) => {
         },
         small: {
           mr: 'auto',
-          ml: 3,
           fontSize: '0.7rem',
           color: 'background',
           backgroundColor: 'primary',

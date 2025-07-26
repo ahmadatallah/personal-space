@@ -3,7 +3,7 @@ title: 'Red Room Generative Art'
 date: 2021-02-06
 ---
 
-import Gallery from '@browniebroke/gatsby-image-gallery';
+import GalleryWrapper from '../../components/gallery-wrapper';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -25,7 +25,7 @@ export const query = graphql`
   }
 `;
 
-<Gallery
+<GalleryWrapper
   images={props.data.images.edges.map(({ node }) => ({
     ...node.childImageSharp,
     caption: node.name,

@@ -3,7 +3,7 @@ title: 'Hydra'
 date: 2025-07-26
 ---
 
-import Gallery from '@browniebroke/gatsby-image-gallery';
+import GalleryWrapper from '../../components/gallery-wrapper';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -36,7 +36,7 @@ export const query = graphql`
       grid-column: 1 / -1;
     }
   `}</style>
-  <Gallery
+  <GalleryWrapper
     images={props.data.images.edges.map(({ node }) => ({
       ...node.childImageSharp,
       caption: node.name,

@@ -63,7 +63,7 @@ export const Recents = () => {
         }
       }
 
-      card5: file(name: { eq: "hydra_02" }) {
+      card5: file(name: { eq: "hydra_04" }) {
         childImageSharp {
           gatsbyImageData(
             layout: FIXED
@@ -99,9 +99,11 @@ export const Recents = () => {
   );
 
   const imageStyles = {
-    height: '170px',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    height: '100%',
     width: '100%',
-    maxWidth: '200px',
     opacity: 1,
     transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     objectFit: 'cover',
@@ -109,115 +111,158 @@ export const Recents = () => {
     // High-quality image rendering
     imageRendering: 'auto', // Smooth scaling for photographic images
     backfaceVisibility: 'hidden',
-    transform: 'translateZ(0)', // Hardware acceleration for better rendering
+    transform: 'translate(-50%, -50%) translateZ(0)', // Center and hardware acceleration
   };
 
   const cardStyles = {
-    '@keyframes subtleGlow': {
-      '0%': {
-        filter: 'brightness(1.1) contrast(1.05) saturate(1.05) sepia(0%)',
-        boxShadow: `0 0 15px ${theme.colors.accent}60, 0 0 30px ${theme.colors.secondary}40, 0 0 45px ${theme.colors.primary}30`,
-      },
-      '25%': {
-        filter: 'brightness(1.12) contrast(1.06) saturate(1.1) sepia(25%)',
-        boxShadow: `0 0 18px ${theme.colors.accent}65, 0 0 35px ${theme.colors.primary}45, 0 0 50px ${theme.colors.secondary}35`,
-      },
-      '50%': {
-        filter: 'brightness(1.15) contrast(1.08) saturate(1.08) sepia(50%)',
-        boxShadow: `0 0 20px ${theme.colors.accent}70, 0 0 40px ${theme.colors.primary}50, 0 0 60px ${theme.colors.secondary}40`,
-      },
-      '75%': {
-        filter: 'brightness(1.12) contrast(1.06) saturate(1.1) sepia(75%)',
-        boxShadow: `0 0 18px ${theme.colors.accent}65, 0 0 35px ${theme.colors.primary}45, 0 0 50px ${theme.colors.secondary}35`,
-      },
-      '100%': {
-        filter: 'brightness(1.1) contrast(1.05) saturate(1.05) sepia(100%)',
-        boxShadow: `0 0 15px ${theme.colors.accent}60, 0 0 30px ${theme.colors.primary}40, 0 0 45px ${theme.colors.secondary}30`,
-      },
+    overflow: 'hidden',
+    borderRadius: '8px',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      transform: 'translateY(-4px)',
     },
     '&:hover .gatsby-image-wrapper': {
-      opacity: 0.9,
-      transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-      transform: 'scale(1.03) rotate(1deg)',
-      cursor: 'pointer',
-      animationName: 'subtleGlow',
-      animationDuration: '4s',
-      animationTimingFunction: 'ease-in-out',
-      animationIterationCount: 'infinite',
-      animationDirection: 'alternate',
-      animationFillMode: 'both',
-    },
-    '&:hover .gatsby-image-wrapper img': {
-      animationName: 'subtleGlow',
-      animationDuration: '2s',
-      animationTimingFunction: 'ease-in-out',
-      animationIterationCount: 'infinite',
-      animationDirection: 'alternate',
-      animationFillMode: 'both',
+      transform: 'translate(-50%, -50%) scale(1.05) translateZ(0)',
+      transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     },
   };
 
   return (
     <CardWrapper>
       <CardHandler as={Link} to="/archive/window-xp-palette/">
-        <Card sx={cardStyles}>
+        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
           <GatsbyImage
             sx={imageStyles}
             image={image1}
             alt="Windows XP Generative Art"
           />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Windows XP
-          </label>
-          <small>Archive</small>
+          <div
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: `linear-gradient(transparent, ${currentColors.background})`,
+              p: 3,
+              borderRadius: '6px',
+              color: 'text',
+            }}
+          >
+            <small sx={{ opacity: 0.8 }}>Archive</small>
+            <label
+              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
+            >
+              Windows XP
+            </label>
+          </div>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/hal9000-generative-art/">
-        <Card sx={cardStyles}>
+        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
           <GatsbyImage
             sx={imageStyles}
             image={image2}
             alt="HAL9000 Generative Art"
           />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Hal9000
-          </label>
-          <small>Archive</small>
+          <div
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: `linear-gradient(transparent, ${currentColors.background})`,
+              p: 3,
+              borderRadius: '6px',
+              color: 'text',
+            }}
+          >
+            <small sx={{ opacity: 0.8 }}>Archive</small>
+            <label
+              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
+            >
+              Hal9000
+            </label>
+          </div>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
-        <Card sx={cardStyles}>
+        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
           <GatsbyImage
             sx={imageStyles}
             image={image3}
             alt="On Some Faraway Beach Album"
           />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            On Some Faraway Beach
-          </label>
-          <small>Archive</small>
+          <div
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: `linear-gradient(transparent, ${currentColors.background})`,
+              p: 3,
+              borderRadius: '6px',
+              color: 'text',
+            }}
+          >
+            <small sx={{ opacity: 0.8 }}>Archive</small>
+            <label
+              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
+            >
+              On Some Faraway Beach
+            </label>
+          </div>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/hydra/">
-        <Card sx={cardStyles}>
+        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
           <GatsbyImage
             sx={imageStyles}
             image={image5}
             alt="There is nowhere in the world where you can live like you can in Hydra, and that includes Hydra"
           />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Hydra
-          </label>
-          <small>Archive</small>
+          <div
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: `linear-gradient(transparent, ${currentColors.background})`,
+              p: 3,
+              borderRadius: '6px',
+              color: 'text',
+            }}
+          >
+            <small sx={{ opacity: 0.8 }}>Archive</small>
+            <label
+              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
+            >
+              Hydra
+            </label>
+          </div>
         </Card>
       </CardHandler>
       <CardHandler as={Link} to="/archive/soy-cuba/">
-        <Card sx={cardStyles}>
+        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
           <GatsbyImage sx={imageStyles} image={image4} alt="Soy Cuba" />
-          <label sx={{ ml: 3, fontSize: '12px', color: 'black', my: 2 }}>
-            Soy Cuba
-          </label>
-          <small>Archive</small>
+          <div
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: `linear-gradient(transparent, ${currentColors.background})`,
+              p: 3,
+              borderRadius: '6px',
+              color: 'text',
+            }}
+          >
+            <small sx={{ opacity: 0.8 }}>Archive</small>
+            <label
+              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
+            >
+              Soy Cuba
+            </label>
+          </div>
         </Card>
       </CardHandler>
     </CardWrapper>
