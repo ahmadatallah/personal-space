@@ -11,8 +11,11 @@
     "node": "20.19.2",
     "yarn": "3.6.3"
   },
+  "resolutions": {
+    "react-image-lightbox": "5.1.4"
+  },
   "dependencies": {
-    "@browniebroke/gatsby-image-gallery": "^7.0.6",
+    "@browniebroke/gatsby-image-gallery": "^8.2.0",
     "@cloudflare/kv-asset-handler": "^0.4.0",
     "@emotion/react": "^11.9.0",
     "@mdx-js/mdx": "^1.6.5",
@@ -58,9 +61,6 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/eslint-parser": "^7.28.0",
-    "babel-eslint": "^10.1.0",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.1",
     "prettier": "^2.2.1",

@@ -3,7 +3,7 @@ title: 'Hydra'
 date: 2025-07-26
 ---
 
-import GalleryWrapper from '../../components/gallery-wrapper';
+import GalleryWrapper from '../../components/gallery/gallery-wrapper';
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -15,8 +15,15 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            thumb: gatsbyImageData(layout: CONSTRAINED, width: 500)
-            full: gatsbyImageData(layout: FULL_WIDTH)
+            thumb: gatsbyImageData(
+              layout: CONSTRAINED
+              width: 500
+              placeholder: DOMINANT_COLOR
+            )
+            full: gatsbyImageData(
+              layout: FULL_WIDTH
+              placeholder: DOMINANT_COLOR
+            )
           }
           name
         }

@@ -95,7 +95,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.14.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.28.0":
+"@babel/core@npm:^7.14.0, @babel/core@npm:^7.15.5":
   version: 7.28.0
   resolution: "@babel/core@npm:7.28.0"
   dependencies:
@@ -118,7 +118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-parser@npm:^7.15.4, @babel/eslint-parser@npm:^7.28.0":
+"@babel/eslint-parser@npm:^7.15.4":
   version: 7.28.0
   resolution: "@babel/eslint-parser@npm:7.28.0"
   dependencies:
@@ -365,7 +365,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.12.7, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.15.5, @babel/parser@npm:^7.16.8, @babel/parser@npm:^7.27.2, @babel/parser@npm:^7.28.0, @babel/parser@npm:^7.7.0":
+"@babel/parser@npm:^7.12.7, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.15.5, @babel/parser@npm:^7.16.8, @babel/parser@npm:^7.27.2, @babel/parser@npm:^7.28.0":
   version: 7.28.0
   resolution: "@babel/parser@npm:7.28.0"
   dependencies:
@@ -1500,7 +1500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.14.0, @babel/traverse@npm:^7.15.4, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.27.1, @babel/traverse@npm:^7.27.3, @babel/traverse@npm:^7.28.0, @babel/traverse@npm:^7.7.0":
+"@babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.14.0, @babel/traverse@npm:^7.15.4, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.27.1, @babel/traverse@npm:^7.27.3, @babel/traverse@npm:^7.28.0":
   version: 7.28.0
   resolution: "@babel/traverse@npm:7.28.0"
   dependencies:
@@ -1515,7 +1515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.0.0-beta.49, @babel/types@npm:^7.12.7, @babel/types@npm:^7.15.4, @babel/types@npm:^7.16.8, @babel/types@npm:^7.27.1, @babel/types@npm:^7.27.3, @babel/types@npm:^7.28.0, @babel/types@npm:^7.28.2, @babel/types@npm:^7.4.4, @babel/types@npm:^7.7.0":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.0.0-beta.49, @babel/types@npm:^7.12.7, @babel/types@npm:^7.15.4, @babel/types@npm:^7.16.8, @babel/types@npm:^7.27.1, @babel/types@npm:^7.27.3, @babel/types@npm:^7.28.0, @babel/types@npm:^7.28.2, @babel/types@npm:^7.4.4":
   version: 7.28.2
   resolution: "@babel/types@npm:7.28.2"
   dependencies:
@@ -1525,17 +1525,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@browniebroke/gatsby-image-gallery@npm:^7.0.6":
-  version: 7.2.1
-  resolution: "@browniebroke/gatsby-image-gallery@npm:7.2.1"
+"@browniebroke/gatsby-image-gallery@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "@browniebroke/gatsby-image-gallery@npm:8.2.0"
   dependencies:
     react-image-lightbox: "github:browniebroke/react-image-lightbox"
     styled-components: ">= 5.0"
   peerDependencies:
-    gatsby-plugin-image: ^2.0 || ^3.0.0
+    gatsby-plugin-image: ^3.0.0
     react: ">=16"
     styled-components: ">= 5.0"
-  checksum: 818332979aac30a738f5310b058030639a07bc5fb3d89bb1b5f8e830e83ce267ac91668bf7542e20e4a514a2ea06c501e099b91e09043e6c1a303431d0093ec4
+  checksum: 6a7abfdbd09368adfdc0846e47e9daba56941063cf4b80e9419df9c8caa5de4da18c92fd3b9aeec0d4efc71ba569c1f49e6151a3b604e124c025818cbe0a587e
   languageName: node
   linkType: hard
 
@@ -4532,15 +4532,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "atallahsan@workspace:."
   dependencies:
-    "@babel/core": ^7.28.0
-    "@babel/eslint-parser": ^7.28.0
-    "@browniebroke/gatsby-image-gallery": ^7.0.6
+    "@browniebroke/gatsby-image-gallery": ^8.2.0
     "@cloudflare/kv-asset-handler": ^0.4.0
     "@emotion/react": ^11.9.0
     "@mdx-js/mdx": ^1.6.5
     "@mdx-js/react": ^1.6.5
     "@theme-ui/prism": ^0.14.3
-    babel-eslint: ^10.1.0
     eslint-plugin-prettier: ^3.1.2
     gatsby: ^4.12.1
     gatsby-image: ^3.11.0
@@ -4637,22 +4634,6 @@ __metadata:
   version: 4.1.0
   resolution: "axobject-query@npm:4.1.0"
   checksum: 7d1e87bf0aa7ae7a76cd39ab627b7c48fda3dc40181303d9adce4ba1d5b5ce73b5e5403ee6626ec8e91090448c887294d6144e24b6741a976f5be9347e3ae1df
-  languageName: node
-  linkType: hard
-
-"babel-eslint@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "babel-eslint@npm:10.1.0"
-  dependencies:
-    "@babel/code-frame": ^7.0.0
-    "@babel/parser": ^7.7.0
-    "@babel/traverse": ^7.7.0
-    "@babel/types": ^7.7.0
-    eslint-visitor-keys: ^1.0.0
-    resolve: ^1.12.0
-  peerDependencies:
-    eslint: ">= 4.12.1"
-  checksum: bdc1f62b6b0f9c4d5108c96d835dad0c0066bc45b7c020fcb2d6a08107cf69c9217a99d3438dbd701b2816896190c4283ba04270ed9a8349ee07bd8dafcdc050
   languageName: node
   linkType: hard
 
@@ -7382,7 +7363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^1.0.0, eslint-visitor-keys@npm:^1.1.0, eslint-visitor-keys@npm:^1.3.0":
+"eslint-visitor-keys@npm:^1.1.0, eslint-visitor-keys@npm:^1.3.0":
   version: 1.3.0
   resolution: "eslint-visitor-keys@npm:1.3.0"
   checksum: 37a19b712f42f4c9027e8ba98c2b06031c17e0c0a4c696cd429bd9ee04eb43889c446f2cd545e1ff51bef9593fcec94ecd2c2ef89129fcbbf3adadbef520376a
@@ -14143,16 +14124,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-image-lightbox@github:browniebroke/react-image-lightbox":
+"react-image-lightbox@npm:5.1.4":
   version: 5.1.4
-  resolution: "react-image-lightbox@git+ssh://git@github.com/browniebroke/react-image-lightbox.git#commit=1c330ac9b6c07f833ce94d3dfb446dac73119587"
+  resolution: "react-image-lightbox@npm:5.1.4"
   dependencies:
     prop-types: ^15.7.2
     react-modal: ^3.11.1
   peerDependencies:
-    react: 16.x || 17.x || 18.x
-    react-dom: 16.x || 17.x || 18.x
-  checksum: 0f6b761c6cb3ecac4843cbd2b124c7bff3cfb493f394d3f770d3ea7970109af94ac3d9487564f6fb911fb1d1ad1ff2a8b2203c188a8db4448cc38c0a35109c08
+    react: 16.x || 17.x
+    react-dom: 16.x || 17.x
+  checksum: 59a209eba5d23301ae450413d2ce87c72c645964e8d797d55060c9261ba9043c6f8c44347ae51ed9db47fd696db13a1e05dfea33da08ef09a4e0acaa0b9065bc
   languageName: node
   linkType: hard
 
@@ -14782,7 +14763,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.10.0, resolve@npm:^1.12.0, resolve@npm:^1.19.0, resolve@npm:^1.22.10, resolve@npm:^1.22.4, resolve@npm:^1.3.2":
+"resolve@npm:^1.10.0, resolve@npm:^1.19.0, resolve@npm:^1.22.10, resolve@npm:^1.22.4, resolve@npm:^1.3.2":
   version: 1.22.10
   resolution: "resolve@npm:1.22.10"
   dependencies:
@@ -14808,7 +14789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.10#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.4#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.10#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.4#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>":
   version: 1.22.10
   resolution: "resolve@patch:resolve@npm%3A1.22.10#~builtin<compat/resolve>::version=1.22.10&hash=c3c19d"
   dependencies:
