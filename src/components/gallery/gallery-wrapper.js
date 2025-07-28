@@ -24,11 +24,11 @@ const GalleryWrapperContent = ({ images, ...props }) => {
           border-radius: 8px;
           overflow: hidden;
         }
-        
+
         .gallery-wrapper [data-placeholder-image] {
           opacity: 1 !important;
         }
-        
+
         /* Create gradient overlay for placeholder */
         .gallery-wrapper .gatsby-image-wrapper::after {
           content: "";
@@ -38,8 +38,8 @@ const GalleryWrapperContent = ({ images, ...props }) => {
           right: 0;
           bottom: 0;
           background: radial-gradient(
-            circle at center, 
-            transparent 0%, 
+            circle at center,
+            transparent 0%,
             rgba(255, 255, 255, 0.1) 40%,
             rgba(255, 255, 255, 0.2) 100%
           );
@@ -49,7 +49,7 @@ const GalleryWrapperContent = ({ images, ...props }) => {
           opacity: 0;
           transition: opacity 0.3s ease;
         }
-        
+
         /* Show gradient when placeholder is visible */
         .gallery-wrapper .gatsby-image-wrapper:not(.gatsby-image-wrapper--complete)::after {
           opacity: 1;

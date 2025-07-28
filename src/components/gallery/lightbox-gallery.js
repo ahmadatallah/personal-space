@@ -17,9 +17,6 @@ const LightboxGallery = ({ images, ...props }) => {
           borderRadius: '8px',
           overflow: 'hidden',
           transition: 'transform 0.3s ease',
-          '&:hover': {
-            transform: 'scale(1.02)',
-          },
         },
         '& [data-placeholder-image]': {
           opacity: '1 !important',
@@ -49,9 +46,9 @@ const LightboxGallery = ({ images, ...props }) => {
           --bg-color: var(--gatsby-placeholder-bg);
         }
         .gatsby-image-wrapper::before {
-          background: radial-gradient(circle at center, 
-            var(--bg-color, rgba(0,0,0,0.1)) 0%, 
-            rgba(0,0,0,0.05) 50%, 
+          background: radial-gradient(circle at center,
+            var(--bg-color, rgba(0,0,0,0.1)) 0%,
+            rgba(0,0,0,0.05) 50%,
             transparent 100%) !important;
         }
       `}</style>

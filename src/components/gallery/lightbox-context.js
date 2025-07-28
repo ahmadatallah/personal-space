@@ -1,5 +1,7 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, NavLink } from 'theme-ui';
+import { Link } from 'gatsby';
+import Avatar from '../../avatar';
 import React, {
   createContext,
   useContext,
@@ -20,6 +22,55 @@ export const useLightbox = () => {
 };
 
 const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const imageRef = React.useRef(null);
+  // Reset zoom when image changes
+  useEffect(() => {
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  }, [currentIndex]);
+
+  const handleWheel = useCallback((e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    setScale((prevScale) => {
+      const newScale = Math.max(1, Math.min(3, prevScale + delta));
+      if (newScale === 1) {
+        setPosition({ x: 0, y: 0 });
+      }
+      return newScale;
+    });
+  }, []);
+
+  const handleMouseDown = useCallback(
+    (e) => {
+      if (scale > 1) {
+        setIsDragging(true);
+        setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+      }
+    },
+    [scale, position]
+  );
+
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (isDragging && scale > 1) {
+        setPosition({
+          x: e.clientX - dragStart.x,
+          y: e.clientY - dragStart.y,
+        });
+      }
+    },
+    [isDragging, dragStart, scale]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
   const handleKeyDown = useCallback(
     (e) => {
       e.preventDefault();
@@ -36,29 +87,23 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
     document.body.style.overflow = 'hidden';
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
       document.body.style.overflow = '';
     };
-  }, [handleKeyDown]);
+  }, [handleKeyDown, handleMouseMove, handleMouseUp]);
 
   const currentImage = images[currentIndex];
   const imageData = currentImage?.full;
   const image = imageData ? getImage(imageData) : null;
   const imgSrc = imageData?.images?.fallback?.src || imageData?.src || '';
 
-  console.log(
-    'Current Image:',
-    currentImage,
-    'Image Data:',
-    imageData,
-    'Image:',
-    image,
-    'Image Source:',
-    imgSrc
-  );
   return (
     <div
       sx={{
@@ -70,37 +115,207 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
         backgroundColor: 'rgba(0, 0, 0, 0.95)',
         zIndex: 1000,
         display: 'flex',
+        px: 3,
+        py: 4,
         alignItems: 'center',
         justifyContent: 'center',
         backdropFilter: 'blur(10px)',
       }}
       onClick={onClose}
     >
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onClose();
-        }}
+      {/* Header with close button and zoom controls */}
+      <div
         sx={{
           position: 'absolute',
-          top: 4,
-          right: 4,
-          bg: 'transparent',
-          border: 'none',
-          color: 'white',
-          fontSize: 5,
-          cursor: 'pointer',
-          padding: 2,
-          transition: 'transform 0.2s ease',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '50px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          px: 3,
+          py: 4,
           zIndex: 20,
-          '&:hover': {
-            transform: 'scale(1.1)',
-          },
+          backdropFilter: 'blur(5px)',
         }}
-        aria-label="Close lightbox"
       >
-        ×
-      </button>
+        <div />
+
+        {/* Center Content - Zoom Controls + Logo */}
+        <div
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 3,
+          }}
+        >
+          {/* Zoom Controls */}
+          {image && (
+            <div
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+              }}
+            >
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setScale((prevScale) => {
+                    const newScale = Math.min(3, prevScale + 0.2);
+                    return newScale;
+                  });
+                }}
+                sx={{
+                  width: '40px',
+                  height: '40px',
+                  border: 'none',
+                  bg: 'transparent',
+                  color: 'white',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '24px',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    transform: 'scale(1.1)',
+                  },
+                }}
+                aria-label="Zoom in"
+              >
+                +
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setScale((prevScale) => {
+                    const newScale = Math.max(1, prevScale - 0.2);
+                    if (newScale === 1) {
+                      setPosition({ x: 0, y: 0 });
+                    }
+                    return newScale;
+                  });
+                }}
+                sx={{
+                  width: '40px',
+                  height: '40px',
+                  border: 'none',
+                  bg: 'transparent',
+                  color: 'white',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '24px',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    transform: 'scale(1.1)',
+                  },
+                }}
+                aria-label="Zoom out"
+              >
+                −
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setScale(1);
+                  setPosition({ x: 0, y: 0 });
+                }}
+                sx={{
+                  width: '40px',
+                  height: '40px',
+                  border: 'none',
+                  bg: 'transparent',
+                  color: 'white',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    transform: 'scale(1.1)',
+                  },
+                }}
+                aria-label="Reset zoom"
+              >
+                ⌂
+              </button>
+            </div>
+          )}
+
+          {/* Logo */}
+          <NavLink
+            as={Link}
+            to="/"
+            sx={{
+              variant: 'styles.navitem',
+              fontSize: 0,
+              transform: 'scale(1)',
+              color: 'white',
+            }}
+          >
+            <Avatar />
+          </NavLink>
+        </div>
+
+        {/* Scale Text - Absolutely positioned */}
+        {scale > 1 && (
+          <div
+            sx={{
+              position: 'absolute',
+              right: '80px', // Position to the left of close button
+              fontSize: '12px',
+              color: 'white',
+              bg: 'rgba(0, 0, 0, 0.7)',
+              px: 2,
+              py: 1,
+              borderRadius: '12px',
+              textAlign: 'center',
+              minWidth: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {Math.round(scale * 100)}%
+          </div>
+        )}
+
+        {/* Close Button - Right */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          sx={{
+            bg: 'transparent',
+            border: 'none',
+            color: 'white',
+            fontSize: 5,
+            cursor: 'pointer',
+            padding: 2,
+            transition: 'transform 0.2s ease',
+            '&:hover': {
+              transform: 'scale(1.1)',
+            },
+          }}
+          aria-label="Close lightbox"
+        >
+          ×
+        </button>
+      </div>
 
       <button
         onClick={(e) => {
@@ -195,41 +410,62 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
             sx={{
               width: '100%',
               height: [
-                'calc(80vh - 60px)',
-                'calc(85vh - 60px)',
-                'calc(90vh - 60px)',
+                'calc(80vh - 72px)',
+                'calc(85vh - 72px)',
+                'calc(90vh - 72px)',
               ],
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              overflow: 'hidden',
               '@media (max-width: 768px)': {
                 height: 'calc(70vh - 60px)',
               },
             }}
+            onWheel={handleWheel}
           >
-            <GatsbyImage
-              image={image}
-              alt={currentImage?.caption || ''}
-              loading="eager"
-              objectFit="contain"
+            <div
+              ref={imageRef}
+              onMouseDown={handleMouseDown}
               sx={{
+                transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
+                transformOrigin: 'center center',
+                transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+                cursor:
+                  scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
                 width: '100%',
                 height: '100%',
-                borderRadius: '8px',
-                '& img': {
-                  objectFit: 'contain !important',
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                },
-                '& [data-placeholder-image]': {
-                  opacity: '1 !important',
-                  background: `radial-gradient(circle at center, 
-                    ${imageData?.backgroundColor || 'rgba(0,0,0,0.1)'} 0%, 
-                    rgba(0,0,0,0.05) 50%, 
-                    transparent 100%) !important`,
-                },
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-            />
+            >
+              <GatsbyImage
+                image={image}
+                alt={currentImage?.caption || ''}
+                loading="eager"
+                objectFit="contain"
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '8px',
+                  userSelect: 'none',
+                  pointerEvents: 'none',
+                  '& img': {
+                    objectFit: 'contain !important',
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                  },
+                  '& [data-placeholder-image]': {
+                    opacity: '1 !important',
+                    background: `radial-gradient(circle at center,
+                      ${imageData?.backgroundColor || 'rgba(0,0,0,0.1)'} 0%,
+                      rgba(0,0,0,0.05) 50%,
+                      transparent 100%) !important`,
+                  },
+                }}
+              />
+            </div>
           </div>
         ) : null}
         {currentImage?.caption && (
@@ -255,7 +491,7 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
           left: '50%',
           transform: 'translateX(-50%)',
           display: 'flex',
-          gap: 2,
+          gap: 1,
         }}
       >
         {images.map((_, index) => (
@@ -266,14 +502,18 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
               onNavigate(index);
             }}
             sx={{
-              width: ['8px', '10px'],
-              height: ['8px', '10px'],
-              borderRadius: '50%',
+              width: '10px',
+              height: '10px',
               border: 'none',
-              bg: index === currentIndex ? 'white' : 'rgba(255, 255, 255, 0.4)',
+              borderRadius: '2px',
+              bg:
+                index === currentIndex
+                  ? 'secondary'
+                  : 'rgba(255, 255, 255, 0.4)',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
               transform: index === currentIndex ? 'scale(1.2)' : 'scale(1)',
+              aspectRatio: '1',
               '&:hover': {
                 bg:
                   index === currentIndex ? 'white' : 'rgba(255, 255, 255, 0.6)',
