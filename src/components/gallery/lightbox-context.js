@@ -27,6 +27,7 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const imageRef = React.useRef(null);
+
   // Reset zoom when image changes
   useEffect(() => {
     setScale(1);
@@ -102,7 +103,6 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
   const currentImage = images[currentIndex];
   const imageData = currentImage?.full;
   const image = imageData ? getImage(imageData) : null;
-  const imgSrc = imageData?.images?.fallback?.src || imageData?.src || '';
 
   return (
     <div
@@ -141,7 +141,6 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
         }}
       >
         <div />
-
         {/* Center Content - Zoom Controls + Logo */}
         <div
           sx={{
@@ -156,7 +155,6 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
               sx={{
                 display: 'flex',
                 gap: 1,
-                alignItems: 'center',
               }}
             >
               <button
@@ -177,7 +175,7 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '24px',
+                  fontSize: '32px',
                   fontWeight: 'bold',
                   transition: 'all 0.2s ease',
                   '&:hover': {
@@ -189,7 +187,32 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
               >
                 +
               </button>
-
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setScale(1);
+                  setPosition({ x: 0, y: 0 });
+                }}
+                sx={{
+                  border: 'none',
+                  bg: 'transparent',
+                  color: 'white',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '32px',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    transform: 'scale(1.1)',
+                  },
+                }}
+                aria-label="Reset zoom"
+              >
+                ⌂
+              </button>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -211,7 +234,7 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '24px',
+                  fontSize: '32px',
                   fontWeight: 'bold',
                   transition: 'all 0.2s ease',
                   '&:hover': {
@@ -222,35 +245,6 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
                 aria-label="Zoom out"
               >
                 −
-              </button>
-
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setScale(1);
-                  setPosition({ x: 0, y: 0 });
-                }}
-                sx={{
-                  width: '40px',
-                  height: '40px',
-                  border: 'none',
-                  bg: 'transparent',
-                  color: 'white',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    transform: 'scale(1.1)',
-                  },
-                }}
-                aria-label="Reset zoom"
-              >
-                ⌂
               </button>
             </div>
           )}
@@ -346,7 +340,7 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
           },
           '@media (max-width: 768px)': {
             left: 2,
-            fontSize: 4,
+            fontSize: 6,
           },
         }}
         aria-label="Previous image"
@@ -367,11 +361,9 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
           bg: 'transparent',
           border: 'none',
           color: 'white',
-          fontSize: 5,
+          fontSize: 6,
           cursor: 'pointer',
           padding: 2,
-          minWidth: '24px',
-          minHeight: '24px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -383,7 +375,6 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
           },
           '@media (max-width: 768px)': {
             right: 2,
-            fontSize: 4,
           },
         }}
         aria-label="Next image"
