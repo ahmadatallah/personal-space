@@ -117,6 +117,8 @@ const CustomLightbox = ({ images, currentIndex, onClose, onNavigate }) => {
         display: 'flex',
         px: 3,
         py: 4,
+        px: 3,
+        py: 4,
         alignItems: 'center',
         justifyContent: 'center',
         backdropFilter: 'blur(10px)',

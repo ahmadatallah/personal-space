@@ -1,0 +1,30 @@
+---
+title: 'Motion'
+---
+
+import { MotionGalleryWrapper } from '../../components/motion-gallery';
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+  query MotionVideos {
+    videos: allFile(
+      filter: {
+        relativeDirectory: { eq: "motion" }
+        extension: { in: ["mp4", "webm", "mov"] }
+      }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          publicURL
+          name
+          relativePath
+        }
+      }
+    }
+  }
+`;
+
+<MotionGalleryWrapper
+  videos={props.data.videos.edges.map(({ node }) => node)}
+/>
