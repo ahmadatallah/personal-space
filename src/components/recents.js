@@ -27,7 +27,7 @@ export const Recents = () => {
           )
         }
       }
-      card2: file(name: { eq: "hall9000-generative" }) {
+      card2: file(name: { eq: "displacement-gold-thumbnail" }) {
         childImageSharp {
           gatsbyImageData(
             layout: FIXED
@@ -157,34 +157,6 @@ export const Recents = () => {
           </div>
         </Card>
       </CardHandler>
-      <CardHandler as={Link} to="/archive/hal9000-generative-art/">
-        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
-          <GatsbyImage
-            sx={imageStyles}
-            image={image2}
-            alt="HAL9000 Generative Art"
-          />
-          <div
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: `linear-gradient(transparent, ${currentColors.background})`,
-              p: 3,
-              borderRadius: '6px',
-              color: 'text',
-            }}
-          >
-            <small sx={{ opacity: 0.8 }}>Archive</small>
-            <label
-              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
-            >
-              Hal9000
-            </label>
-          </div>
-        </Card>
-      </CardHandler>
       <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
         <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
           <GatsbyImage
@@ -209,6 +181,35 @@ export const Recents = () => {
               sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
             >
               On Some Faraway Beach
+            </label>
+          </div>
+        </Card>
+      </CardHandler>
+
+      <CardHandler as={Link} to="/motion">
+        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
+          <GatsbyImage
+            sx={imageStyles}
+            image={image2}
+            alt="Blender 3D Animation Trials"
+          />
+          <div
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: `linear-gradient(transparent, ${currentColors.background})`,
+              p: 3,
+              borderRadius: '6px',
+              color: 'text',
+            }}
+          >
+            <small sx={{ opacity: 0.8 }}>Motion</small>
+            <label
+              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
+            >
+              Blender 3D Animation
             </label>
           </div>
         </Card>
