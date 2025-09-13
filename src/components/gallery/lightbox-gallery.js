@@ -12,6 +12,7 @@ const LightboxGallery = ({ images, ...props }) => {
 
   return (
     <div
+      onContextMenu={(e) => e.preventDefault()}
       sx={{
         '& [data-gatsby-image-wrapper]': {
           borderRadius: '8px',
