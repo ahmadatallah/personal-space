@@ -56,6 +56,19 @@ async function handleEvent(event) {
     response.headers.set('Referrer-Policy', 'unsafe-url');
     response.headers.set('Feature-Policy', 'none');
 
+    // Set correct content-type for WebP images
+    if (url.pathname.endsWith('.webp')) {
+      response.headers.set('Content-Type', 'image/webp');
+    }
+
+    // Add cache control for static assets
+    if (url.pathname.startsWith('/static/')) {
+      response.headers.set(
+        'Cache-Control',
+        'public, max-age=31536000, immutable'
+      );
+    }
+
     return response;
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html
