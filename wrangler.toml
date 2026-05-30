@@ -9,4 +9,8 @@ bucket = "./public"
 bucket = "./public"
 
 [env.production]
-account_id = "c2762d9a607100e1d78b353ca90d0a80"  # Replace with your Cloudflare account ID 
+account_id = "c2762d9a607100e1d78b353ca90d0a80"  # Replace with your Cloudflare account ID
+
+[observability.logs]
+enabled = false
+invocation_logs = true
