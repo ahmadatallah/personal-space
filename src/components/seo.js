@@ -10,8 +10,8 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title, image }) {
+  const { site, fallbackImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +19,12 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+          }
+        }
+        fallbackImage: file(name: { eq: "about-img" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 1200)
           }
         }
       }
@@ -26,6 +32,14 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const ogImage =
+    image ||
+    fallbackImage?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
+  const ogImageUrl = ogImage
+    ? ogImage.startsWith('http')
+      ? ogImage
+      : `${site.siteMetadata.siteUrl}${ogImage}`
+    : null;
 
   return (
     <Helmet
@@ -53,7 +67,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: 'twitter:card',
-          content: 'summary',
+          content: ogImageUrl ? 'summary_large_image' : 'summary',
         },
         {
           name: 'twitter:creator',
@@ -67,7 +81,16 @@ function SEO({ description, lang, meta, title }) {
           name: 'twitter:description',
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]
+        .concat(
+          ogImageUrl
+            ? [
+                { property: 'og:image', content: ogImageUrl },
+                { name: 'twitter:image', content: ogImageUrl },
+              ]
+            : []
+        )
+        .concat(meta)}
     />
   );
 }
@@ -76,6 +99,7 @@ SEO.defaultProps = {
   lang: 'en',
   meta: [],
   description: '',
+  image: '',
 };
 
 SEO.propTypes = {
@@ -83,6 +107,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default SEO;
