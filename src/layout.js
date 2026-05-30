@@ -1,68 +1,267 @@
 /** @jsx jsx */
-import { jsx, useColorMode, NavLink, Text } from 'theme-ui';
+import { jsx, useColorMode, NavLink, useThemeUI } from 'theme-ui';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { FaArrowRight as ArrowRight } from 'react-icons/fa';
 import Avatar from './avatar';
-import border from './images/border.svg';
-import AccessibilityWidget from './components/accessibility-widget';
+import { Fragment, useState, useEffect, useCallback } from 'react';
 
-import {
-  FaTwitter as Twitter,
-  FaGithub as GitHub,
-  FaInstagram as Instagram,
-  FaEnvelope as Email,
-  FaArrowLeft as ArrowLeft,
-} from 'react-icons/fa';
-import { Fragment } from 'react';
+const allModes = {
+  light: { bg: '#fff', text: '#111', label: 'Light theme' },
+  black: { bg: '#0a0a0a', text: '#f8f8f8', label: 'Black theme' },
+  dark: { bg: 'hsl(180, 6%, 16%)', text: '#f5f5f5', label: 'Dark theme' },
+  deep: { bg: 'hsl(230, 28%, 19%)', text: '#f8f8f8', label: 'Deep theme' },
+  hack: { bg: '#171923', text: '#68d391', label: 'Hack theme' },
+  pink: { bg: '#fff5f7', text: '#4a1a35', label: 'Pink theme' },
+};
 
-const modes = ['light', 'black', 'dark', 'deep', 'hack', 'pink'];
+const smallBtnStyle = {
+  appearance: 'none',
+  border: '1px solid',
+  borderColor: 'transparent',
+  borderRadius: '3px',
+  height: '24px',
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '10px',
+  fontWeight: 700,
+  fontFamily: 'body',
+  p: 0,
+  px: '6px',
+  bg: 'transparent',
+  color: 'gray',
+  opacity: 0.6,
+  ':hover': {
+    opacity: 1,
+  },
+};
 
-const ColorButton = ({ mode, ...props }) => (
-  <button
-    {...props}
-    title="Cycle Color Mode"
-    sx={{
-      display: 'inline-block',
-      appearance: 'none',
-      bg: 'transparent',
-      color: 'inherit',
-      p: 1,
-      m: 0,
-      border: 0,
-      borderRadius: 9999,
-      ':hover,:focus': {
-        color: 'primary',
-        boxShadow: '0 0 0 3px',
-        outline: 'none',
-      },
-    }}
-  >
-    <svg
-      viewBox="0 0 32 32"
-      width="24"
-      height="24"
-      fill="currentcolor"
+const TopBar = () => {
+  const [mode, setMode] = useColorMode();
+  const [fontSize, setFontSize] = useState(100);
+  const [highContrast, setHighContrast] = useState(false);
+  const [adhdMode, setAdhdMode] = useState(false);
+  const [epilepticMode, setEpilepticMode] = useState(false);
+
+  const changeFontSize = useCallback((delta) => {
+    setFontSize((prev) => {
+      const next = Math.min(150, Math.max(80, prev + delta));
+      if (next === 100) {
+        const el = document.getElementById('a11y-font-styles');
+        if (el) el.remove();
+      } else {
+        let el = document.getElementById('a11y-font-styles');
+        if (!el) {
+          el = document.createElement('style');
+          el.id = 'a11y-font-styles';
+          document.head.appendChild(el);
+        }
+        el.textContent = `body { zoom: ${next / 100} !important; }`;
+      }
+      return next;
+    });
+  }, []);
+
+  const toggleContrast = useCallback(() => {
+    setHighContrast((prev) => {
+      const next = !prev;
+      document.documentElement.style.filter = next
+        ? 'contrast(150%) brightness(1.2)'
+        : 'none';
+      return next;
+    });
+  }, []);
+
+  const toggleAdhd = useCallback(() => {
+    setAdhdMode((prev) => {
+      const next = !prev;
+      if (next) {
+        const overlay = document.createElement('div');
+        overlay.id = 'adhd-focus-overlay';
+        const initTop = window.innerHeight * 0.7 - 50;
+        overlay.style.cssText = `position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:8000;background:linear-gradient(to bottom,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) ${initTop}px,transparent ${initTop}px,transparent ${
+          initTop + 100
+        }px,rgba(0,0,0,0.8) ${initTop + 100}px,rgba(0,0,0,0.8) 100%);`;
+        document.body.appendChild(overlay);
+        let rafId = null;
+        const onMove = (e) => {
+          if (rafId) return;
+          rafId = requestAnimationFrame(() => {
+            const t = Math.max(
+              0,
+              Math.min(e.clientY - 50, window.innerHeight - 100)
+            );
+            overlay.style.background = `linear-gradient(to bottom,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) ${t}px,transparent ${t}px,transparent ${
+              t + 100
+            }px,rgba(0,0,0,0.8) ${t + 100}px,rgba(0,0,0,0.8) 100%)`;
+            rafId = null;
+          });
+        };
+        document.addEventListener('mousemove', onMove, { passive: true });
+        overlay.cleanup = () => {
+          if (rafId) cancelAnimationFrame(rafId);
+          document.removeEventListener('mousemove', onMove);
+        };
+      } else {
+        const overlay = document.getElementById('adhd-focus-overlay');
+        if (overlay) {
+          if (overlay.cleanup) overlay.cleanup();
+          overlay.remove();
+        }
+      }
+      return next;
+    });
+  }, []);
+
+  const toggleEpileptic = useCallback(() => {
+    setEpilepticMode((prev) => {
+      const next = !prev;
+      const root = document.documentElement;
+      if (next) {
+        root.classList.add('epileptic-safe');
+        if (!document.getElementById('epileptic-safe-styles')) {
+          const s = document.createElement('style');
+          s.id = 'epileptic-safe-styles';
+          s.textContent = `.epileptic-safe *{animation:none!important;transition:none!important}.epileptic-safe video,.epileptic-safe img[src*=".gif"]{filter:grayscale(100%)!important}.epileptic-safe{filter:saturate(50%)!important}`;
+          document.head.appendChild(s);
+        }
+      } else {
+        root.classList.remove('epileptic-safe');
+        const s = document.getElementById('epileptic-safe-styles');
+        if (s) s.remove();
+      }
+      return next;
+    });
+  }, []);
+
+  return (
+    <div
       sx={{
-        display: 'block',
+        position: 'fixed',
+        top: 3,
+        right: 3,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        gap: '4px',
+        zIndex: 1000,
       }}
     >
-      <circle
-        cx="16"
-        cy="16"
-        r="14"
-        fill="none"
-        stroke="currentcolor"
-        strokeWidth="4"
-      />
-      <path
-        d={`
-          M 16 0
-          A 16 16 0 0 0 16 32
-          z
-        `}
-      />
-    </svg>
-  </button>
-);
+      {/* Theme row */}
+      <div sx={{ display: 'flex', gap: '4px' }}>
+        {Object.entries(allModes).map(([name, colors]) => (
+          <button
+            key={name}
+            onClick={() => setMode(name)}
+            title={colors.label}
+            aria-label={colors.label}
+            sx={{
+              appearance: 'none',
+              border: '1px solid',
+              borderColor: mode === name ? colors.text : 'transparent',
+              borderRadius: '3px',
+              width: '24px',
+              height: '24px',
+              bg: colors.bg,
+              color: colors.text,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '11px',
+              fontWeight: 700,
+              fontFamily: 'body',
+              p: 0,
+              opacity: mode === name ? 1 : 0.6,
+              ':hover': {
+                opacity: 1,
+                borderColor: colors.text,
+              },
+            }}
+          >
+            A
+          </button>
+        ))}
+      </div>
+      {/* Accessibility row */}
+      <div sx={{ display: 'flex', gap: '4px' }}>
+        <button
+          onClick={() => changeFontSize(-10)}
+          title="Decrease text size"
+          aria-label={`Decrease text size (${fontSize}%)`}
+          sx={smallBtnStyle}
+        >
+          A-
+        </button>
+        <button
+          onClick={() => changeFontSize(10)}
+          title="Increase text size"
+          aria-label={`Increase text size (${fontSize}%)`}
+          sx={smallBtnStyle}
+        >
+          A+
+        </button>
+        <button
+          onClick={toggleContrast}
+          title={
+            highContrast ? 'Disable high contrast' : 'Enable high contrast'
+          }
+          aria-label={
+            highContrast ? 'Disable high contrast' : 'Enable high contrast'
+          }
+          aria-pressed={highContrast}
+          sx={{
+            ...smallBtnStyle,
+            opacity: highContrast ? 1 : 0.6,
+            color: highContrast ? 'text' : 'gray',
+          }}
+        >
+          HC
+        </button>
+        <button
+          onClick={toggleAdhd}
+          title={
+            adhdMode ? 'Disable ADHD focus mode' : 'Enable ADHD focus mode'
+          }
+          aria-label={
+            adhdMode ? 'Disable ADHD focus mode' : 'Enable ADHD focus mode'
+          }
+          aria-pressed={adhdMode}
+          sx={{
+            ...smallBtnStyle,
+            opacity: adhdMode ? 1 : 0.6,
+            color: adhdMode ? 'text' : 'gray',
+          }}
+        >
+          FO
+        </button>
+        <button
+          onClick={toggleEpileptic}
+          title={
+            epilepticMode
+              ? 'Disable epilepsy-safe mode'
+              : 'Enable epilepsy-safe mode'
+          }
+          aria-label={
+            epilepticMode
+              ? 'Disable epilepsy-safe mode'
+              : 'Enable epilepsy-safe mode'
+          }
+          aria-pressed={epilepticMode}
+          sx={{
+            ...smallBtnStyle,
+            opacity: epilepticMode ? 1 : 0.6,
+            color: epilepticMode ? 'text' : 'gray',
+          }}
+        >
+          ES
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const Draft = () => (
   <div
@@ -71,20 +270,21 @@ const Draft = () => (
       my: 4,
       fontWeight: 'bold',
       color: 'background',
-      bg: 'accent',
+      bg: 'text',
     }}
   >
-    ⚠️ You are viewing an draft post, and this may not be ready for primetime.
+    Draft - this may not be ready for primetime.
   </div>
 );
 
+const navLinkStyle = {
+  variant: 'styles.navlink',
+  display: 'block',
+  fontSize: 2,
+  py: '2px',
+};
+
 export default (props) => {
-  const [mode, setMode] = useColorMode();
-  const cycleMode = (e) => {
-    const i = modes.indexOf(mode);
-    const n = (i + 1) % modes.length;
-    setMode(modes[n]);
-  };
   const title = props.pageContext?.frontmatter?.title;
   let date = props.pageContext?.frontmatter?.date;
   const minRead = props.pageContext?.frontmatter?.minRead;
@@ -95,25 +295,6 @@ export default (props) => {
     });
   const draft = props.pageContext?.frontmatter?.draft;
 
-  // Check if we're on an archive or notes post page (not the index pages)
-  const currentPath =
-    typeof window !== 'undefined'
-      ? window.location.pathname
-      : props.location?.pathname || '';
-  const isArchivePost =
-    currentPath.startsWith('/archive/') &&
-    currentPath !== '/archive' &&
-    currentPath !== '/archive/';
-  const isNotesPost =
-    currentPath.startsWith('/notes/') &&
-    currentPath !== '/notes' &&
-    currentPath !== '/notes/';
-  const isCollectionPost = isArchivePost || isNotesPost;
-
-  // Determine the back link and label
-  const backLink = isArchivePost ? '/archive' : isNotesPost ? '/notes' : 'Back';
-  const backLabel = isArchivePost ? 'Archive' : isNotesPost ? 'Notes' : 'Back';
-
   const query = useStaticQuery(graphql`
     {
       pdf: file(name: { eq: "resumelatest" }) {
@@ -121,17 +302,22 @@ export default (props) => {
         extension
         publicURL
       }
+      avatar: file(name: { eq: "about-img" }) {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, width: 80)
+        }
+      }
     }
   `);
 
   return (
     <Fragment>
-      {/* Skip Navigation Links */}
+      {/* Skip Navigation */}
       <div
         sx={{
           position: 'fixed',
-          top: '0',
-          left: '0',
+          top: 0,
+          left: 0,
           zIndex: 100000,
           '& a': {
             position: 'absolute',
@@ -143,382 +329,212 @@ export default (props) => {
           },
           '& a:focus': {
             position: 'fixed',
-            top: '30px',
-            left: '8px',
+            top: '10px',
+            left: '10px',
             width: 'auto',
             height: 'auto',
-            padding: '12px 16px',
-            backgroundColor: 'primary',
+            padding: '8px 12px',
+            backgroundColor: 'text',
             color: 'background',
             textDecoration: 'none',
-            borderRadius: '4px',
-            fontWeight: 'bold',
-            fontSize: '14px',
-            border: '2px solid',
-            borderColor: 'background',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+            fontSize: 0,
             zIndex: 100001,
           },
         }}
       >
         <a href="#main-content">Skip to main content</a>
-        <a href="#footer-navigation">Skip to footer</a>
-        <a href="#accessibility-widget">Skip to accessibility options</a>
       </div>
+
+      <TopBar />
 
       <div
         sx={{
           variant: 'styles.root',
           display: 'flex',
-          height: '100vh',
+          minHeight: '100vh',
           flexDirection: 'column',
+          maxWidth: '960px',
+          mx: 'auto',
+          px: [3, 3, 4],
+          transitionProperty: 'background-color, color',
+          transitionTimingFunction: 'ease-out',
+          transitionDuration: '.4s',
         }}
       >
-        <header
+        <div
           sx={{
-            width: '100%',
-            height: '50px',
-            backdropFilter: 'blur(5px)',
-            flexShrink: 0,
             display: 'flex',
-            position: 'sticky',
-            top: '0',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            mx: 'auto',
-            px: 3,
-            py: 4,
-            borderTopStyle: 'dashed',
-            borderTopWidth: '16px',
-            borderTopColor: 'primary',
-            borderImageSource: `url("${border}")`,
-            borderImageSlice: '90 0',
-            borderImageRepeat: 'round',
-            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            flexDirection: ['column', 'column', 'row'],
+            gap: [0, 0, 5],
+            pt: [3, 4, 5],
+            flex: '1 1 auto',
           }}
         >
-          {/* Back Button - Aligned with Content */}
-          <div
+          {/* Sidebar Nav */}
+          <nav
             sx={{
-              position: 'fixed',
-              left: ['24px', 'calc((100vw - 1280px) / 2 + 24px)'], // Responsive: mobile padding, then align with content
-              top: '16px', // Adjust to align with header content
-              opacity: isCollectionPost ? 1 : 0,
-              visibility: isCollectionPost ? 'visible' : 'hidden',
-              transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-              transitionDelay: isCollectionPost ? '0.1s' : '0s',
-              pointerEvents: isCollectionPost ? 'auto' : 'none',
-              zIndex: 1001, // Above header
+              flexShrink: 0,
+              width: ['100%', '100%', '180px'],
+              mb: [4, 4, 0],
             }}
           >
             <NavLink
               as={Link}
-              to={backLink}
-              aria-label={`Back to ${backLabel}`}
+              to="/"
               sx={{
-                variant: 'styles.navitem',
-                display: 'inline-flex',
+                display: 'flex',
                 alignItems: 'center',
-                gap: 1,
-                fontSize: 1,
+                gap: 2,
+                mb: 3,
+                color: 'text',
                 textDecoration: 'none',
-                fontSize: ['12px', '14px', '16px'],
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                '&:hover': {
-                  transform: 'translateX(-4px) scale(1.05)',
-                  '& svg': {
-                    transform: 'translateX(-2px)',
-                  },
-                },
-                '&:focus': {
-                  outline: '2px solid',
-                  outlineColor: 'accent',
-                  outlineOffset: '2px',
-                  borderRadius: '4px',
-                },
               }}
             >
-              <ArrowLeft
-                size={14}
-                aria-hidden="true"
+              <GatsbyImage
+                image={query.avatar.childImageSharp.gatsbyImageData}
+                alt="Ahmad Atallah"
+                imgStyle={{ borderRadius: '50%' }}
                 sx={{
-                  transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  width: '44px',
+                  height: '44px',
+                  flexShrink: 0,
+                  borderRadius: '50%',
                 }}
               />
-              {backLabel}
+              <Avatar />
             </NavLink>
-          </div>
+            <NavLink as={Link} to="/projects" sx={navLinkStyle}>
+              Projects <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
+            </NavLink>
+            <NavLink as={Link} to="/archive" sx={navLinkStyle}>
+              Archive <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
+            </NavLink>
+            <NavLink as={Link} to="/notes" sx={navLinkStyle}>
+              Notes <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
+            </NavLink>
+            <NavLink as={Link} to="/about" sx={navLinkStyle}>
+              About <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
+            </NavLink>
+          </nav>
 
-          {/* Center Content - Always Centered */}
+          {/* Main Content */}
+          <main
+            id="main-content"
+            role="main"
+            sx={{
+              flex: '1 1 auto',
+              minWidth: 0,
+              pb: 5,
+            }}
+          >
+            {draft && <Draft />}
+            {title && (
+              <h1
+                sx={{
+                  fontSize: 5,
+                  fontWeight: 900,
+                  lineHeight: 'heading',
+                  mt: 0,
+                  mb: 2,
+                }}
+              >
+                {title}
+              </h1>
+            )}
+
+            {(date || minRead) && (
+              <div
+                sx={{
+                  fontSize: 0,
+                  color: 'gray',
+                  mb: 4,
+                }}
+              >
+                {date} {minRead && `- ${minRead} min read`}
+              </div>
+            )}
+
+            {props.children}
+          </main>
+        </div>
+
+        <footer
+          id="footer-navigation"
+          sx={{
+            py: 4,
+            borderTop: '1px solid',
+            borderColor: 'muted',
+          }}
+        >
           <div
             sx={{
               display: 'flex',
+              justifyContent: 'space-between',
               alignItems: 'center',
+              flexWrap: 'wrap',
               gap: 2,
-              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              fontSize: 0,
+              color: 'gray',
             }}
           >
-            <div
-              sx={{
-                transform: 'scale(1)',
-              }}
-            >
-              <ColorButton mode={mode} onClick={cycleMode} />
+            <div sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
+              <a
+                href="mailto:hi@atallahsan.cc"
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                Email
+              </a>
+              <a
+                href="https://github.com/ahmadatallah"
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.instagram.com/ahmad.atallah/"
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ahmad-atallah-7ba192392/"
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                LinkedIn
+              </a>
+              <a
+                href={query.pdf.publicURL}
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                Resume
+              </a>
+              <NavLink
+                as={Link}
+                to="/license"
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                License
+              </NavLink>
+              <NavLink
+                as={Link}
+                to="/accessibility-statement"
+                sx={{ variant: 'styles.navlink', fontSize: 0 }}
+              >
+                Accessibility
+              </NavLink>
             </div>
             <NavLink
               as={Link}
               to="/"
               sx={{
-                variant: 'styles.navitem',
-                fontSize: 0,
-                transform: 'scale(1)',
+                color: 'text',
+                textDecoration: 'none',
+                opacity: 0.6,
+                ':hover': { opacity: 1 },
               }}
             >
               <Avatar />
             </NavLink>
-          </div>
-        </header>
-        <main
-          id="main-content"
-          role="main"
-          sx={{
-            width: '100%',
-            maxWidth: 'wide',
-            px: 3,
-            mx: 'auto',
-            flex: '1 1 auto',
-          }}
-        >
-          <div
-            sx={{
-              maxWidth: !!title ? 'container' : null,
-            }}
-          >
-            {draft && <Draft />}
-            {title && <Text as="h1">{title}</Text>}
-
-            <div
-              sx={{
-                variant: 'text.small',
-                fontWeight: 'bold',
-              }}
-            >
-              {date && date} {minRead && `- ${minRead} min read`}
-            </div>
-
-            {props.children}
-          </div>
-        </main>
-        <footer
-          id="footer-navigation"
-          sx={{
-            px: 3,
-            py: 3,
-            width: '100%',
-            maxWidth: 'wide',
-            mx: 'auto',
-          }}
-        >
-          <div
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
-            <a
-              href="mailto:hi@atallahsan.cc"
-              title="Email"
-              sx={{
-                variant: 'styles.navitem',
-                ml: 2,
-                mr: 2,
-              }}
-            >
-              <Email size={24} />
-            </a>
-            <a
-              href="https://github.com/ahmadatallah"
-              title="GitHub"
-              sx={{
-                variant: 'styles.navitem',
-                mr: 2,
-              }}
-            >
-              <GitHub size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/ahmad.atallah/"
-              title="Instagram"
-              sx={{
-                variant: 'styles.navitem',
-              }}
-            >
-              <Instagram size={24} />
-            </a>
-
-            <NavLink as={Link} to="/" title="About the avatar">
-              <Avatar />
-            </NavLink>
-            <a
-              href={query.pdf.publicURL}
-              title="Resume"
-              sx={{
-                variant: 'styles.navitem',
-                fontSize: '16px',
-              }}
-            >
-              Resume
-            </a>
-          </div>
-          <div
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              columnGap: 2,
-              fontSize: 0,
-              justifyContent: 'center',
-            }}
-          >
-            <NavLink
-              as={Link}
-              to="/archive"
-              sx={{
-                variant: 'styles.shortcut',
-                fontSize: '12px',
-                textDecoration: 'underline',
-              }}
-            >
-              Archive
-            </NavLink>
-            <NavLink
-              as={Link}
-              to="/notes"
-              sx={{
-                variant: 'styles.shortcut',
-                fontSize: '12px',
-                textDecoration: 'underline',
-              }}
-            >
-              Notes
-            </NavLink>
-            <NavLink
-              as={Link}
-              to="/about"
-              sx={{
-                variant: 'styles.shortcut',
-                fontSize: '12px',
-                textDecoration: 'underline',
-              }}
-            >
-              About
-            </NavLink>
-          </div>
-
-          {/* Bottom Section with Policy Links, Copyright and Accessibility Widget */}
-          <div
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              mt: 2,
-            }}
-          >
-            {/* Policy Links and Copyright */}
-            <div
-              sx={{
-                display: 'flex',
-                gap: 1,
-                alignItems: 'center',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-              }}
-            >
-              <NavLink
-                as={Link}
-                to="/privacy-statement"
-                sx={{
-                  fontSize: '12px',
-                  color: 'text',
-                  textDecoration: 'underline',
-                  padding: '2px 4px',
-                  borderRadius: '2px',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    color: 'primary',
-                    textDecoration: 'underline',
-                  },
-                  '&:focus': {
-                    outline: '2px solid',
-                    outlineColor: 'accent',
-                    outlineOffset: '1px',
-                  },
-                }}
-              >
-                Privacy
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/accessibility-statement"
-                sx={{
-                  fontSize: '12px',
-                  color: 'text',
-                  textDecoration: 'underline',
-                  padding: '2px 4px',
-                  borderRadius: '2px',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    color: 'primary',
-                    textDecoration: 'underline',
-                  },
-                  '&:focus': {
-                    outline: '2px solid',
-                    outlineColor: 'accent',
-                    outlineOffset: '1px',
-                  },
-                }}
-              >
-                Accessibility
-              </NavLink>
-              <NavLink
-                as={Link}
-                to="/license"
-                sx={{
-                  fontSize: '12px',
-                  color: 'text',
-                  textDecoration: 'underline',
-                  padding: '2px 4px',
-                  borderRadius: '2px',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    color: 'primary',
-                    textDecoration: 'underline',
-                  },
-                  '&:focus': {
-                    outline: '2px solid',
-                    outlineColor: 'accent',
-                    outlineOffset: '1px',
-                  },
-                }}
-              >
-                License
-              </NavLink>
-              <div
-                sx={{
-                  fontSize: '12px',
-                  opacity: 0.7,
-                  color: 'text',
-                }}
-              >
-                © 2025 Ahmad Atallah
-              </div>
-            </div>
-
-            {/* Accessibility Widget */}
-            <AccessibilityWidget />
           </div>
         </footer>
       </div>

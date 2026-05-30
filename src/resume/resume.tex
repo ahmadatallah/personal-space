@@ -1,0 +1,624 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modified Atallah - One Page Two Column Resume
+% LaTeX Template
+% Version 1.0 (07/04/2020)
+%
+% Author
+% Ahmad Atallah
+
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+\usepackage{progressbar}
+\usepackage{graphicx}    % For layout adjustments
+\usepackage[document]{ragged2e}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Ahmad}{Atallah}{ \urlstyle{same}\href{https://atallahsan.cc}
+\vspace{1pt}
+\\
+{\bf atallahsan.cc} \textbullet{}
+\href{mailto:me@atallahsan.cc}{\bf me@atallahsan.cc} \textbullet{} \href{tel: +491744745520}{\bf +491744745520} \textbullet{} \urlstyle{same}\href{https://github.com/ahmadatallah}{\bf Github} \textbullet{}
+\urlstyle{same}\href{https://twitter.com/ahmadatallah}{\bf Twitter}}
+
+\begin{minipage}[t]{0.63\textwidth}\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.35\textwidth}{\Large\textit{Frontend engineer and artist}}\end{minipage}
+\vspace{8pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.63\textwidth}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+\sectionsep
+\runsubsection{Hashcards}
+\descript{— Owner }
+\location{Sep \textbf{2025} – Present}
+\subsectionsep{}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Developing a free spaced repetition flashcard app, currently on its 10th release.
+\item Optimizing UX based on real gathered user feedback.
+\item Sharing knowledge on FSRS (Free Spaced Repetition Scheduler).
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+
+\runsubsection{Getsafe}
+\descript{— Sr Software Engineer (Frontend) }
+\location{Apr \textbf{2023} – Present | Remote, Germany}
+\subsectionsep{}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Launching and maintaining high quality insurance products serving +500K customers in Germany, France, Austria and (previously) UK
+\item Developing and improving buying flows/funnels for various insurance products with high conversion rate, backed by user sessions and a data persistence layer
+\item Maintaining a monorepo hosting multiple apps and shared packages across web and mobile, with Expo and EAS Build/Update pipelines for native releases
+\item Shipping OTA updates to thousands of customers, enabling rapid iteration and hotfixes without app store releases
+\item Building a backend-for-frontend (BFF) layer to aggregate and tailor API responses for client-specific needs
+\item Configuring and maintaining a Sanity CMS for products, clients, and platforms enabling seamless editing and rich content experience
+\item Bootstrapping a rich content personalization datasource tailored for the native mobile app
+\item Delivering insurance product features to mobile apps including documents, payments, and policy details
+\item Resolving customer support tickets with proper regression and postmortems
+\item Actively contributing to the Getsafe design system, aligning component tokens and documentation across platforms
+
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+
+\runsubsection{Aeditive GmbH}
+\descript{— Sr Software Engineer (Fullstack) }
+\location{Mar \textbf{2022} – Apr \textbf{2023} | Hamburg, Germany}
+\subsectionsep{}
+\begin{tightemize}
+\item Bootstrapped and actively developed a new SaaS backoffice solution platform for concrete 3D printing.
+\item Developed and designed a UI components library tailored to work in sync with 3D rendering
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+\runsubsection{Swvl Business}
+\descript{— Sr. Software Engineer I (Frontend) }
+\location{Jul \textbf{2021} – Mar \textbf{2022} | Cairo, Egypt}
+\subsectionsep{}
+\begin{tightemize}
+\item Lead the frontend development team of the company for its B2B scope.
+\item Maintain SWVL web design system.
+\item Guide and onboard new comers.
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+
+\runsubsection{Swvl}
+\descript{— Software Engineer II (Frontend)}
+\location{Dec \textbf{2018} – Jun \textbf{2021} | Cairo, Egypt}
+\subsectionsep{}
+\begin{tightemize}
+\item Worked on developing the company's administration dashboard and website.
+\item Initiated and released the company's business dashboards.
+\item Developed, and published a design system components packages on npm.
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+
+\runsubsection{Qobra}
+\descript{— Software Engineer (Frontend)}
+\location{Dec \textbf{2019} - Aug \textbf{2020 } | Remote}
+\subsectionsep{}
+\begin{tightemize}
+\item Started the core product desktop app with electron.
+\item Streamlined project's boilerplate to speed up development, with support for multiple tabs, shared state, and others.
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+
+\runsubsection{Millensys}
+\descript{— Software Engineer (Visualization)}
+\location{Feb - Dec \textbf{2018} | Alexandria, Egypt}
+\subsectionsep{}
+\begin{tightemize}
+\item Worked in the medical imaging team with OpenJPEG, LEADTOOLS, Windows API, OpenGL, canvas drawing, advanced image processing techniques, 2D and 3D visualization.
+\item Assigned to advanced DICOM viewer project (web based, and Desktop), reporting tool and others.
+\end{tightemize}
+\sectionsep
+\vspace{4pt}
+
+\runsubsection{Cairo University}
+\descript{— Engineering Graduate (Medical Visualization)}
+\location{Nov 2016 - Jul \textbf{2017} | Cairo, Egypt}
+\subsectionsep{}
+\begin{tightemize}
+\item Visualization Desktop App for fast 2-projection 2D-3D registration that assists in patient positioning process during radiation oncology treatment procedures.
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education}
+\subsectionsep{}
+\textbf{Cairo University}— Bachelor of System and Biomedical Engineering
+\location{Jul \textbf{2012 } - \textbf{2017} | Cairo, Egypt}
+\subsectionsep{}
+\textbf{Thesis} GPU-Based Visualization Application for 2-Projection 2D-3D Image Registration In Radiation Oncology
+\sectionsep
+
+\section{Activities}
+\subsectionsep{}
+\textbf{Generative Artist} \\
+I'm also passionate about generative art and design topics in my free time for fun, like generative design with CSS using \href{https://components.ai/}{components.ai}
+, typography, and art.
+\sectionsep
+
+\textbf{Amateur photographer}\\
+\textbf{Yet, sometimes Blender render-er}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.35\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\sectionsep
+\subsection{AI}
+\subsectionsep{}
+Working with AI across the development cycle — structured prompting, agentic workflows, and tool integrations. Drawing on a consolidated engineering skillset to critically review and verify what models produce.
+
+\vspace{4pt}
+\noindent
+\begin{flushleft}
+\begin{tabular}{@{}l@{\hspace{16pt}}l@{}}
+\textbf{Coding:} & \textbf{Design:} \\[2pt]
+Claude Code \textbullet{} Cursor \textbullet{} ChatGPT & Pencil \textbullet{} Figma \\[6pt]
+\textbf{Agents:} & \textbf{Infra:} \\[2pt]
+Mastra \textbullet{} Vercel AI SDK \textbullet{} LangChain & MCP Servers \textbullet{} Streaming APIs \\
+\end{tabular}
+\end{flushleft}
+\sectionsep
+\subsection{Programming}
+\subsectionsep{}
+\location{\textbf{Over 250k lines:}}
+\noindent
+\makebox[\textwidth][l]{%
+    TypeScript, Javascript
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.95}
+}
+
+\subsectionsep{}
+\location{\textbf{Over 6000 lines:}}
+\noindent
+\makebox[\textwidth][l]{%
+   NodeJS, Astro
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.75}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Python
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.55}
+}
+
+\subsectionsep{}
+\location{\textbf{Over 3000 lines:}}
+\noindent
+\makebox[\textwidth][l]{%
+    Lua, Shell
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.45}
+}
+
+\subsectionsep{}
+\location{\textbf{Familiar:}}
+\noindent
+\makebox[\textwidth][l]{%
+    Haskell, Pascal, C/C++, Scala
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.25}
+}
+
+\subsectionsep{}
+\location{\textbf{Currently learning:}}
+\noindent
+\makebox[\textwidth][l]{%
+    Lean, Zig
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.15}
+}
+\sectionsep
+
+\subsection{Development}
+\subsectionsep
+\textbf{\faCaretRight \hspace{2pt} Client Libraries} —
+\noindent
+\makebox[\textwidth][l]{%
+    React \& ReactNative
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Vue
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.45}
+}
+
+\textbf{\faCaretRight \hspace{2pt} Frameworks} —
+\noindent
+\makebox[\textwidth][l]{%
+    Next.JS with SSR \& RSC
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.75}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Gatsby with SSR \& SSG
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.75}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Expo
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.75}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Express
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.7}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Remix, Angular, \& Serverless
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.6}
+}
+\vspace{3pt}
+\textbf{\faCaretRight \hspace{2pt} Editors} — \\
+\noindent
+\makebox[\textwidth][l]{%
+    VSCode/Cursor \& Vim \& Neovim
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Animation} — \\
+\noindent
+\makebox[\textwidth][l]{%
+    Rive, Motion, Reanimated \& Moti
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Build/task Runners} — \\
+\noindent
+\makebox[\textwidth][l]{%
+    Webpack, Rollup, Babel, Turbo, \& Metro
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+\vspace{3pt}
+\textbf{\faCaretRight \hspace{2pt} VCS \& CI/CD} —\\
+\noindent
+\makebox[\textwidth][l]{%
+    Git, CircleCI, Github Actions, Heroku, \& EAS
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+
+\makebox[\textwidth][l]{%
+  Bitrise, SVN, \&  Jenkins
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.3}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Content Management} — \\
+\noindent
+\makebox[\textwidth][l]{%
+    Sanity
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+\noindent
+\makebox[\textwidth][l]{%
+    Contentful \& Strapi
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.5}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Styling} — \\
+\noindent
+\makebox[\textwidth][l]{%
+CSS, Tailwind, Tachyons \& Theme-UI
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.9}
+}
+\noindent
+\makebox[\textwidth][l]{%
+Styled Components \& Emotion
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+\noindent
+\makebox[\textwidth][l]{%
+CSS Modules \& SCSS
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.6}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Design Systems} — \\
+\noindent{\small\textit{Tooling:}}\\
+\noindent
+\makebox[\textwidth][l]{%
+Storybook \& Chromatic
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+\noindent
+\makebox[\textwidth][l]{%
+Radix UI \& shadcn/ui
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+\noindent{\small\textit{Platforms:}}\\
+\noindent
+\makebox[\textwidth][l]{%
+Penpot
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.5}
+}
+\noindent
+\makebox[\textwidth][l]{%
+Zeroheight
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.3}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Templating} — \\
+\noindent
+\makebox[\textwidth][l]{%
+HTML,  JSX, MD \& MDX
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.8}
+}
+
+\noindent
+\makebox[\textwidth][l]{%
+ Handlbars
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.7}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Testing} — \\
+\noindent
+\makebox[\textwidth][l]{%
+ Jest, React testing library, MSW \& Cypress
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+\noindent
+\makebox[\textwidth][l]{%
+ Puppeteer, Maestro
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.7}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Utilities} — \\
+\noindent
+\makebox[\textwidth][l]{%
+Lodash, ts-pattern, React form \& i18next
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.9}
+}
+\noindent
+\makebox[\textwidth][l]{%
+Runtypes, Zod, Socket.IO, Ramda \& fp-ts
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.95}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} State Machines} — \\
+\noindent
+\makebox[\textwidth][l]{%
+ Redux toolkit, xState
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.9}
+}
+\noindent
+\makebox[\textwidth][l]{%
+  Signal
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.7}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Querying \& APIs} — \\
+\noindent
+\makebox[\textwidth][l]{%
+  REST, tRPC \& SSE
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.9}
+}
+\noindent
+\makebox[\textwidth][l]{%
+GraphQl, GROQ, \& React Query
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+
+\textbf{\faCaretRight \hspace{2pt} Database} — \\
+\noindent
+\makebox[\textwidth][l]{%
+ Instant
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.7}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Infrastructure} — \\
+\noindent
+\makebox[\textwidth][l]{%
+ AWS, Docker/compose, \& Heroku
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+\noindent
+\makebox[\textwidth][l]{%
+Qovery \& Terraform
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.7}
+}
+\vspace{2pt}
+\textbf{\faCaretRight \hspace{2pt} Observability} — \\
+\noindent
+\makebox[\textwidth][l]{%
+Mixpanel, Datadog \& Sentry
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+\noindent
+\makebox[\textwidth][l]{%
+Periscope \& Hotjar
+}%
+\subsectionsep
+\makebox[0.0cm][r]{%
+    \progressbar{0.65}
+}
+\textbf{\faCaretRight \hspace{2pt} Messaging} — \\
+\noindent
+\makebox[\textwidth][l]{%
+Sendgrid \& Customer.io
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.75}
+}
+\noindent
+\makebox[\textwidth][l]{%
+ Fastmail
+}%
+\makebox[0.0cm][r]{%
+    \progressbar{0.85}
+}
+\end{minipage}%
+\end{document}
+\documentclass[]{article}
+

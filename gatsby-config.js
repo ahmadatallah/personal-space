@@ -108,12 +108,12 @@ module.exports = {
         ],
         web: [
           {
-            name: `Roboto Mono`,
-            file: `https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap`,
+            name: `JetBrains Mono`,
+            file: `https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap`,
           },
           {
-            name: 'Ubuntu',
-            file: 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap',
+            name: 'General Sans',
+            file: 'https://cdn.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap',
           },
         ],
       },

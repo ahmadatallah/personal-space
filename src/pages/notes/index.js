@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Text } from 'theme-ui';
 import React from 'react';
+import { jsx } from 'theme-ui';
 import { graphql, Link } from 'gatsby';
-import { FaArrowRight as ArrowRight } from 'react-icons/fa';
 import SEO from '../../components/seo';
 
 export const query = graphql`
@@ -36,55 +35,43 @@ const Notes = (props) => {
   return (
     <>
       <SEO title="Notes" />
+      <h1 sx={{ fontSize: 5, fontWeight: 900, mb: 4 }}>Notes</h1>
       <ul
         sx={{
-          maxWidth: 'container',
           listStyle: 'none',
-          padding: 0,
-          margin: 0,
+          p: 0,
+          m: 0,
         }}
       >
         {notes?.map((post) => (
-          <li key={post.id}>
-            <Text as="h2" sx={{ mt: 4, mb: 0 }}>
-              <Link
-                to={post.path}
-                aria-label={`Navigate to ${post.context.frontmatter.title}`}
-                sx={{
-                  variant: 'styles.navlink',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 2,
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    transform: 'translateX(4px)',
-                  },
-                  '&:focus': {
-                    outline: '2px solid',
-                    outlineColor: 'accent',
-                    outlineOffset: '2px',
-                    borderRadius: '4px',
-                  },
-                }}
-              >
-                {post.context.frontmatter.title}
-                <ArrowRight
-                  aria-hidden="true"
-                  size={16}
-                  sx={{
-                    flexShrink: 0,
-                    transition: 'transform 0.2s ease',
-                    'a:hover &': {
-                      transform: 'translateX(2px)',
-                    },
-                  }}
-                />
-              </Link>
-            </Text>
-            <div sx={{ variant: 'text.small', fontWeight: 'bold' }}>
-              {new Date(post.context.frontmatter.date).toLocaleDateString()}
-            </div>
+          <li
+            key={post.id}
+            sx={{
+              display: 'flex',
+              alignItems: 'baseline',
+              justifyContent: 'space-between',
+              gap: 2,
+              py: 1,
+            }}
+          >
+            <Link
+              to={post.path}
+              sx={{
+                variant: 'styles.navlink',
+                textDecoration: 'none',
+                fontSize: 2,
+                ':hover': { textDecoration: 'underline' },
+              }}
+            >
+              {post.context.frontmatter.title}
+            </Link>
+            <span sx={{ fontSize: 0, color: 'gray', flexShrink: 0 }}>
+              {
+                new Date(post.context.frontmatter.date)
+                  .toISOString()
+                  .split('T')[0]
+              }
+            </span>
           </li>
         ))}
       </ul>

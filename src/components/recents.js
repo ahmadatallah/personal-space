@@ -1,271 +1,214 @@
 /** @jsx jsx */
-import { jsx, NavLink, useThemeUI } from 'theme-ui';
+import React from 'react';
+import { jsx } from 'theme-ui';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { CardWrapper, Card } from '../blocks';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
+const formatDate = (dateStr) => {
+  if (!dateStr) return '';
+  return new Date(dateStr).toISOString().split('T')[0];
+};
+
+// Post slugs that differ from their image directory name
+const slugToDirOverrides = {
+  'window-xp-palette': 'windows-xp-palette',
+  'hal9000-generative-art': 'hal9000-gen-art',
+  'joy-division-generative-art': 'joy-division-gen-art',
+  'red-room-generative-art': 'red-room-gen-art',
+};
+
+const SectionHeader = ({ title }) => (
+  <h2
+    sx={{
+      fontSize: 3,
+      fontWeight: 700,
+      mt: 5,
+      mb: 3,
+      '&:first-of-type': { mt: 0 },
+    }}
+  >
+    {title}
+  </h2>
+);
+
+const PostRow = ({ to, title, date, images }) => (
+  <li sx={{ py: '6px' }}>
+    <div
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'baseline',
+        gap: 3,
+      }}
+    >
+      <Link
+        to={to}
+        sx={{
+          color: 'text',
+          textDecoration: 'none',
+          fontWeight: 400,
+          fontSize: 2,
+          ':hover': { textDecoration: 'underline' },
+        }}
+      >
+        {title}
+      </Link>
+      <span
+        sx={{
+          fontSize: 1,
+          color: 'gray',
+          flexShrink: 0,
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
+        {formatDate(date)}
+      </span>
+    </div>
+    {images && images.length > 0 && (
+      <div
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '4px',
+          mt: 2,
+          mb: 1,
+        }}
+      >
+        {images.map((img, i) => (
+          <Link key={i} to={to} sx={{ display: 'block', lineHeight: 0 }}>
+            <GatsbyImage
+              image={img}
+              alt=""
+              sx={{ width: '100%', aspectRatio: '1', borderRadius: '2px' }}
+              imgStyle={{ objectFit: 'cover' }}
+            />
+          </Link>
+        ))}
+      </div>
+    )}
+  </li>
+);
+
 export const Recents = () => {
-  const { theme, colorMode } = useThemeUI();
-
-  // Get current theme colors
-  const currentColors =
-    colorMode === 'light'
-      ? theme.colors
-      : theme.colors?.modes?.[colorMode] || theme.colors;
-
-  const result = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
-      card1: file(name: { eq: "window-xp-palette-2" }) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: FIXED
-            width: 400
-            height: 400
-            quality: 95
-            formats: [AUTO, WEBP]
-            placeholder: DOMINANT_COLOR
-          )
+      archive: allSitePage(
+        sort: { fields: context___frontmatter___date, order: DESC }
+        filter: {
+          path: { glob: "/archive/*" }
+          context: { frontmatter: { draft: { ne: true } } }
+        }
+        limit: 10
+      ) {
+        nodes {
+          id
+          path
+          context {
+            frontmatter {
+              title
+              date
+            }
+          }
         }
       }
-      card2: file(name: { eq: "displacement-gold-thumbnail" }) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: FIXED
-            width: 400
-            quality: 95
-            formats: [AUTO, WEBP]
-            placeholder: DOMINANT_COLOR
-          )
+      notes: allSitePage(
+        sort: { fields: context___frontmatter___date, order: DESC }
+        filter: {
+          path: { glob: "/notes/*" }
+          context: { frontmatter: { draft: { ne: true } } }
+        }
+        limit: 10
+      ) {
+        nodes {
+          id
+          path
+          context {
+            frontmatter {
+              title
+              date
+            }
+          }
         }
       }
-
-      card3: file(name: { eq: "girl" }) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: FIXED
-            width: 400
-            quality: 95
-            formats: [AUTO, WEBP]
-            placeholder: DOMINANT_COLOR
-          )
+      images: allFile(
+        filter: {
+          sourceInstanceName: { eq: "images" }
+          extension: { in: ["jpg", "jpeg", "png", "webp"] }
         }
-      }
-
-      card4: file(name: { eq: "soy cuba frame 07" }) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: FIXED
-            width: 400
-            quality: 95
-            formats: [AUTO, WEBP]
-            placeholder: DOMINANT_COLOR
-          )
-        }
-      }
-
-      card5: file(name: { eq: "hydra_04" }) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: FIXED
-            width: 800
-            height: 800
-            quality: 95
-            formats: [AUTO, WEBP]
-            placeholder: DOMINANT_COLOR
-          )
+        sort: { fields: name }
+      ) {
+        nodes {
+          relativeDirectory
+          childImageSharp {
+            gatsbyImageData(
+              layout: CONSTRAINED
+              width: 200
+              height: 200
+              quality: 80
+              formats: [AUTO, WEBP]
+              placeholder: DOMINANT_COLOR
+            )
+          }
         }
       }
     }
   `);
 
-  const image1 = result.card1.childImageSharp.gatsbyImageData;
-  const image2 = result.card2.childImageSharp.gatsbyImageData;
-  const image3 = result.card3.childImageSharp.gatsbyImageData;
-  const image4 = result.card4.childImageSharp.gatsbyImageData;
-  const image5 = result.card5.childImageSharp.gatsbyImageData;
+  // Group images by directory, max 4 per group
+  const imagesByDir = {};
+  data.images.nodes.forEach((node) => {
+    const dir = node.relativeDirectory;
+    if (!dir || !node.childImageSharp) return;
+    if (!imagesByDir[dir]) imagesByDir[dir] = [];
+    if (imagesByDir[dir].length < 4) {
+      imagesByDir[dir].push(node.childImageSharp.gatsbyImageData);
+    }
+  });
 
-  const CardHandler = ({ ...props }) => (
-    <NavLink
-      className="card"
-      sx={{
-        justifyContent: 'center',
-        display: 'inline-flex',
-        width: '100%',
-        maxWidth: '200px',
-        mx: 'auto', // Center the card horizontally
-      }}
-      {...props}
-    />
-  );
-
-  const imageStyles = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    height: '100%',
-    width: '100%',
-    opacity: 1,
-    transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-    objectFit: 'cover',
-    objectPosition: 'center',
-    // High-quality image rendering
-    imageRendering: 'auto', // Smooth scaling for photographic images
-    backfaceVisibility: 'hidden',
-    transform: 'translate(-50%, -50%) translateZ(0)', // Center and hardware acceleration
+  // Get images for a post by matching slug to image directory
+  const getPostImages = (postPath) => {
+    const slug = postPath.replace(/^\/archive\//, '').replace(/\/$/, '');
+    const dir = slugToDirOverrides[slug] || slug;
+    return imagesByDir[dir] || [];
   };
 
-  const cardStyles = {
-    overflow: 'hidden',
-    borderRadius: '8px',
-    transition: 'all 0.3s ease',
-    '&:hover': {
-      transform: 'translateY(-4px)',
-    },
-    '&:hover .gatsby-image-wrapper': {
-      transform: 'translate(-50%, -50%) scale(1.05) translateZ(0)',
-      transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-    },
-  };
+  const archive = data.archive.nodes;
+  const notes = data.notes.nodes;
 
   return (
-    <CardWrapper>
-      <CardHandler as={Link} to="/archive/window-xp-palette/">
-        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
-          <GatsbyImage
-            sx={imageStyles}
-            image={image1}
-            alt="Windows XP Generative Art"
-          />
-          <div
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: `linear-gradient(transparent, ${currentColors.background})`,
-              p: 3,
-              borderRadius: '6px',
-              color: 'text',
-            }}
-          >
-            <small sx={{ opacity: 0.8 }}>Archive</small>
-            <label
-              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
-            >
-              Windows XP
-            </label>
-          </div>
-        </Card>
-      </CardHandler>
-      <CardHandler as={Link} to="/archive/on-some-faraway-beach/">
-        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
-          <GatsbyImage
-            sx={imageStyles}
-            image={image3}
-            alt="On Some Faraway Beach Album"
-          />
-          <div
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: `linear-gradient(transparent, ${currentColors.background})`,
-              p: 3,
-              borderRadius: '6px',
-              color: 'text',
-            }}
-          >
-            <small sx={{ opacity: 0.8 }}>Archive</small>
-            <label
-              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
-            >
-              On Some Faraway Beach
-            </label>
-          </div>
-        </Card>
-      </CardHandler>
+    <div>
+      {notes.length > 0 && (
+        <>
+          <SectionHeader title="Notes" to="/notes" />
+          <ul sx={{ listStyle: 'none', p: 0, m: 0 }}>
+            {notes.map((post) => (
+              <PostRow
+                key={post.id}
+                to={post.path}
+                title={post.context.frontmatter.title}
+                date={post.context.frontmatter.date}
+              />
+            ))}
+          </ul>
+        </>
+      )}
 
-      <CardHandler as={Link} to="/motion">
-        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
-          <GatsbyImage
-            sx={imageStyles}
-            image={image2}
-            alt="Blender 3D Animation Trials"
-          />
-          <div
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: `linear-gradient(transparent, ${currentColors.background})`,
-              p: 3,
-              borderRadius: '6px',
-              color: 'text',
-            }}
-          >
-            <small sx={{ opacity: 0.8 }}>Motion</small>
-            <label
-              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
-            >
-              Blender 3D Animation
-            </label>
-          </div>
-        </Card>
-      </CardHandler>
-      <CardHandler as={Link} to="/archive/hydra/">
-        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
-          <GatsbyImage
-            sx={imageStyles}
-            image={image5}
-            alt="There is nowhere in the world where you can live like you can in Hydra, and that includes Hydra"
-          />
-          <div
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: `linear-gradient(transparent, ${currentColors.background})`,
-              p: 3,
-              borderRadius: '6px',
-              color: 'text',
-            }}
-          >
-            <small sx={{ opacity: 0.8 }}>Archive</small>
-            <label
-              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
-            >
-              Hydra
-            </label>
-          </div>
-        </Card>
-      </CardHandler>
-      <CardHandler as={Link} to="/archive/soy-cuba/">
-        <Card sx={{ ...cardStyles, position: 'relative', height: '200px' }}>
-          <GatsbyImage sx={imageStyles} image={image4} alt="Soy Cuba" />
-          <div
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: `linear-gradient(transparent, ${currentColors.background})`,
-              p: 3,
-              borderRadius: '6px',
-              color: 'text',
-            }}
-          >
-            <small sx={{ opacity: 0.8 }}>Archive</small>
-            <label
-              sx={{ fontSize: '12px', fontWeight: 'bold', display: 'block' }}
-            >
-              Soy Cuba
-            </label>
-          </div>
-        </Card>
-      </CardHandler>
-    </CardWrapper>
+      {archive.length > 0 && (
+        <>
+          <SectionHeader title="Archive" to="/archive" />
+          <ul sx={{ listStyle: 'none', p: 0, m: 0 }}>
+            {archive.map((post) => (
+              <PostRow
+                key={post.id}
+                to={post.path}
+                title={post.context.frontmatter.title}
+                date={post.context.frontmatter.date}
+                images={getPostImages(post.path)}
+              />
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
   );
 };

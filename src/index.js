@@ -26,21 +26,6 @@ const Page = (props) => {
   return (
     <>
       <SEO title={title} description={description} />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="true"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap"
-        rel="stylesheet"
-      />
-
-      <link
-        href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap"
-        rel="stylesheet"
-      />
       <Layout {...props}>{props.children}</Layout>
     </>
   );

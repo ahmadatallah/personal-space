@@ -3,13 +3,13 @@ import nightOwl from '@theme-ui/prism/presets/night-owl.json';
 export default {
   initialColorModeName: 'light',
   colors: {
-    text: '#1a1a1a',
-    background: '#fdfdfd',
-    primary: 'hsl(260, 95%, 60%)',
-    secondary: 'hsl(222, 65%, 52%)',
-    accent: 'hsl(280, 95%, 60%)',
-    muted: 'hsl(180, 16%, 66%, 45%)',
-    gray: '#4a4a4a',
+    text: '#111',
+    background: '#fff',
+    primary: '#111',
+    secondary: '#111',
+    accent: '#111',
+    muted: '#e0e0e0',
+    gray: '#333',
     highlight: '#033454',
     modes: {
       black: {
@@ -60,30 +60,29 @@ export default {
     },
   },
   fonts: {
-    body: 'Ubuntu,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif',
-    monospace: '"Roboto Mono", Menlo, monospace',
+    body: '"General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    monospace: '"JetBrains Mono", "Fira Code", Menlo, monospace',
   },
   lineHeights: {
-    body: 1.625,
+    body: 1.6,
     heading: 1.25,
   },
   fontWeights: {
     body: 400,
-    heading: 800,
+    heading: 600,
     bold: 700,
   },
-  fontSizes: [14, 16, 18, 20, 24, 32, 48, 64, 72, 96],
+  fontSizes: [13, 15, 16, 18, 20, 24, 32, 48],
   sizes: {
-    container: 768,
-    wide: 1280,
+    container: 960,
+    wide: 960,
   },
+  space: [0, 4, 8, 16, 24, 32, 48, 64],
   text: {
     heading: {
       fontSize: 5,
       fontWeight: 'heading',
       lineHeight: 'heading',
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em',
       my: 4,
     },
     small: {
@@ -91,7 +90,7 @@ export default {
     },
     caps: {
       textTransform: 'uppercase',
-      letterSpacing: '0.2em',
+      letterSpacing: '0.05em',
     },
   },
   styles: {
@@ -99,52 +98,54 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontSize: 2,
-      transitionProperty: 'background-color',
-      transitionTimingFunction: 'ease-out',
-      transitionDuration: '.4s',
-    },
-    body: {
-      backgroundColor: 'background',
-      transitionProperty: 'background-color',
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+      transitionProperty: 'background-color, color',
       transitionTimingFunction: 'ease-out',
       transitionDuration: '.4s',
     },
     h1: {
       fontSize: 5,
-      fontWeight: 'heading',
+      fontWeight: 900,
       lineHeight: 'heading',
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em',
       my: 4,
     },
     h2: {
-      mt: 4,
-      mb: 2,
+      fontSize: 4,
+      fontWeight: 600,
+      lineHeight: 'heading',
+      mt: 5,
+      mb: 3,
     },
     h3: {
-      fontSize: 2,
+      fontSize: 3,
+      fontWeight: 600,
     },
     h4: {
-      variant: 'text.heading',
+      fontSize: 2,
+      fontWeight: 600,
     },
     h5: {
-      variant: 'text.heading',
+      fontSize: 2,
+      fontWeight: 600,
     },
     h6: {
-      variant: 'text.heading',
+      fontSize: 1,
+      fontWeight: 600,
     },
     p: {
-      lineHeight: 1.5,
+      lineHeight: 1.6,
+      mb: 3,
       code: {
-        color: 'secondary',
+        color: 'text',
       },
     },
     a: {
-      color: 'secondary',
+      color: 'text',
+      textDecoration: 'underline',
+      textDecorationSkipInk: 'auto',
       ':hover': {
         cursor: 'pointer',
-        transition: 'scale(1.05)',
-        color: 'secondary',
       },
     },
     img: {
@@ -153,7 +154,7 @@ export default {
     },
     hr: {
       border: 0,
-      my: 4,
+      my: 5,
       borderBottom: '1px solid',
       borderColor: 'muted',
     },
@@ -179,6 +180,7 @@ export default {
       px: 3,
       my: 5,
       borderLeft: '4px solid',
+      borderColor: 'muted',
     },
     div: {
       '&.footnotes': {
@@ -186,32 +188,35 @@ export default {
       },
     },
     navlink: {
-      variant: 'text.caps',
       color: 'inherit',
+      textDecoration: 'none',
+      fontWeight: 500,
+      letterSpacing: '-0.015em',
       ':hover,:focus': {
-        color: 'primary',
+        textDecoration: 'underline',
       },
     },
     navitem: {
       variant: 'styles.navlink',
       display: 'inline-flex',
       alignItems: 'center',
-      fontSize: [0, 1, 2, 3],
+      fontSize: [1, 2],
     },
     shortcut: {
       variant: 'styles.navlink',
-      fontSize: '14px',
+      fontSize: 1,
     },
     pre: {
       ...nightOwl,
       boxSizing: 'border-box',
-      fontFamily: 'monaco, monospace',
+      fontFamily: 'monospace',
       whiteSpace: 'pre',
       wordWrap: 'break-word',
       wordSpacing: 'normal',
       wordBreak: 'normal',
       overflow: 'auto',
       py: 3,
+      px: 3,
       fontFeatureSettings: 'normal',
       textAlign: 'left',
       overflowWrap: 'normal',
@@ -219,7 +224,7 @@ export default {
       marginBottom: '0px',
       tabSize: 4,
       hyphens: 'none',
-      borderRadius: '10px',
+      borderRadius: '2px',
       '.highlight': {
         backgroundColor: 'highlight',
         borderWidth: '10px',
@@ -231,12 +236,12 @@ export default {
     },
     code: {
       fontFamily: 'monospace',
-      px: 3,
-      color: 'secondary',
+      px: 1,
+      color: 'text',
     },
     inlineCode: {
       fontFamily: 'monospace',
-      color: 'secondary',
+      color: 'text',
     },
   },
 };
