@@ -406,11 +406,14 @@ export default (props) => {
             <NavLink as={Link} to="/projects" sx={navLinkStyle}>
               Projects <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
             </NavLink>
+            <NavLink as={Link} to="/notes" sx={navLinkStyle}>
+              Notes <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
+            </NavLink>
             <NavLink as={Link} to="/archive" sx={navLinkStyle}>
               Archive <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
             </NavLink>
-            <NavLink as={Link} to="/notes" sx={navLinkStyle}>
-              Notes <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
+            <NavLink as={Link} to="/music" sx={navLinkStyle}>
+              Music <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />
             </NavLink>
             <NavLink as={Link} to="/about" sx={navLinkStyle}>
               About <ArrowRight size={10} sx={{ opacity: 0.4, ml: 1 }} />

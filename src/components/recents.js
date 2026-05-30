@@ -98,7 +98,7 @@ export const Recents = () => {
           path: { glob: "/archive/*" }
           context: { frontmatter: { draft: { ne: true } } }
         }
-        limit: 10
+        limit: 6
       ) {
         nodes {
           id
@@ -209,6 +209,84 @@ export const Recents = () => {
           </ul>
         </>
       )}
+
+      <SectionHeader title="Music" />
+      <div
+        sx={{
+          display: 'flex',
+          gap: 2,
+          flexWrap: 'wrap',
+        }}
+      >
+        <iframe
+          style={{ borderRadius: '8px', flex: '1 1 45%', minWidth: '280px' }}
+          src="https://open.spotify.com/embed/album/0B6r6jnemhqzvxLfml2deh?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Spotify album"
+        />
+        <iframe
+          style={{ borderRadius: '8px', flex: '1 1 45%', minWidth: '280px' }}
+          src="https://open.spotify.com/embed/album/47BHME7jRdQbcpt7QcTKRy?utm_source=generator"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Spotify album"
+        />
+        <iframe
+          style={{ borderRadius: '8px', flex: '1 1 45%', minWidth: '280px' }}
+          src="https://open.spotify.com/embed/album/2VSREVWXk7rj9lbuzcmLlT?utm_source=generator"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Spotify album"
+        />
+        <iframe
+          style={{
+            border: 0,
+            borderRadius: '8px',
+            flex: '1 1 45%',
+            minWidth: '280px',
+          }}
+          src="https://bandcamp.com/EmbeddedPlayer/album=1158321089/size=large/bgcol=333333/linkcol=ffffff/transparent=true/"
+          width="100%"
+          height="352"
+          seamless
+          loading="lazy"
+          title="ALLELUJAH! DON'T BEND! ASCEND! by Godspeed You! Black Emperor"
+        />
+        <iframe
+          style={{ borderRadius: '8px', flex: '1 1 45%', minWidth: '280px' }}
+          src="https://open.spotify.com/embed/album/0QayLUl2Egbp5wBqUbDrXQ?utm_source=generator"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Spotify album"
+        />
+        <iframe
+          style={{
+            border: 0,
+            borderRadius: '8px',
+            flex: '1 1 45%',
+            minWidth: '280px',
+          }}
+          src="https://bandcamp.com/EmbeddedPlayer/album=3146681056/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+          width="100%"
+          height="352"
+          seamless
+          loading="lazy"
+          title="Crave by Léonie Pernet"
+        />
+      </div>
     </div>
   );
 };
