@@ -3,10 +3,11 @@ import React from 'react';
 import { jsx } from 'theme-ui';
 import SEO from '../components/seo';
 
-const iframeBase = {
+const iframeBaseSx = {
   borderRadius: '8px',
-  flex: '1 1 45%',
-  minWidth: '280px',
+  width: '100%',
+  height: ['200px', '300px', '352px'],
+  border: 0,
 };
 
 const albums = [
@@ -45,18 +46,16 @@ const Music = () => (
     <h1 sx={{ fontSize: 5, fontWeight: 900, mb: 4 }}>Music</h1>
     <div
       sx={{
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: ['1fr 1fr', '1fr 1fr', '1fr 1fr'],
         gap: 2,
-        flexWrap: 'wrap',
       }}
     >
       {albums.map((album) => (
         <iframe
           key={album.src}
-          style={iframeBase}
+          sx={iframeBaseSx}
           src={album.src}
-          width="100%"
-          height="352"
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
@@ -66,10 +65,8 @@ const Music = () => (
       {bandcamp.map((album) => (
         <iframe
           key={album.src}
-          style={{ ...iframeBase, border: 0 }}
+          sx={iframeBaseSx}
           src={album.src}
-          width="100%"
-          height="352"
           seamless
           loading="lazy"
           title={album.title}
