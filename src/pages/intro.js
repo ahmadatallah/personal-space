@@ -36,7 +36,7 @@ const Intro = () => {
           to="/archive"
           sx={{ variant: 'styles.navlink', textDecoration: 'underline' }}
         >
-          Archive
+          archive
         </NavLink>{' '}
         and sometimes drafts in{' '}
         <NavLink
@@ -44,14 +44,14 @@ const Intro = () => {
           to="/notes"
           sx={{ variant: 'styles.navlink', textDecoration: 'underline' }}
         >
-          Notes
+          notes
         </NavLink>
-        . I'm not privately active on{' '}
+        . I'm privately active on{' '}
         <a
           href="https://www.instagram.com/ahmad.atallah/"
           sx={{ variant: 'styles.navlink', textDecoration: 'underline' }}
         >
-          Instagram
+          instagram
         </a>
         . Feel free to contact me at{' '}
         <a
@@ -67,7 +67,7 @@ const Intro = () => {
           rel="noopener noreferrer"
           sx={{ variant: 'styles.navlink', textDecoration: 'underline' }}
         >
-          Resume (PDF)
+          resume (pdf)
         </a>
         .
       </p>

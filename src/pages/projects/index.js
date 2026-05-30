@@ -18,8 +18,8 @@ const Sphere = ({ clipId, paths }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 200 200"
-      width="64"
-      height="64"
+      width="100%"
+      height="100%"
       sx={{
         filter:
           'drop-shadow(0px 2px 4px rgba(0,0,0,0.15)) drop-shadow(0px 4px 8px rgba(0,0,0,0.1))',

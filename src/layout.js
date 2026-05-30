@@ -471,7 +471,7 @@ export default (props) => {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              flexWrap: 'wrap',
+              flexWrap: 'nowrap',
               gap: 2,
               fontSize: 0,
               color: 'gray',
