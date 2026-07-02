@@ -196,42 +196,6 @@ const topics = [
   { id: 'history', paths: historyPaths },
 ];
 
-// jabr — git-branch staircase mark, adapts to the active color mode
-const JabrMark = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 124 124"
-    width="96"
-    height="96"
-    role="img"
-    aria-label="jabr"
-    sx={{ color: 'text' }}
-  >
-    <title>jabr</title>
-    <g
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path
-        d="M 22 102 L 22 86 Q 22 76 32 76 L 48 76
-           L 48 60 Q 48 50 58 50 L 74 50
-           L 74 34 Q 74 24 84 24 L 100 24"
-      />
-    </g>
-    <g fill="currentColor">
-      <circle cx="22" cy="102" r="10" />
-      <circle cx="100" cy="24" r="10" />
-    </g>
-    <g fill="#9CA3AF">
-      <circle cx="48" cy="76" r="10" />
-      <circle cx="74" cy="50" r="10" />
-    </g>
-  </svg>
-);
-
 const ProjectCard = ({ title, description, children }) => (
   <div
     sx={{
@@ -459,7 +423,22 @@ const Projects = () => {
               </div>
             </div>
           </a>
-          <JabrMark />
+          <video
+            src="/jabr-branches.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="jabr — stacked branches, animated"
+            sx={{
+              width: 200,
+              height: 200,
+              borderRadius: 12,
+              display: 'block',
+              flexShrink: 0,
+              bg: '#0E1117',
+            }}
+          />
         </div>
       </ProjectCard>
     </div>
