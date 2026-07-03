@@ -491,7 +491,7 @@ const Projects = () => {
       </ProjectCard>
 
       <ProjectCard
-        title="fast-classifier"
+        title="Fastclassifier"
         description="A deterministic, rule-first email classifier for Fastmail — sweep newsletters, file everything into labels, flag what needs a human reply. Dry-run by default and architecturally incapable of deleting mail. Born from organizing a real 6,551-email inbox; ships as a TypeScript library, a CLI, and an MCP server for agents."
       >
         <div
