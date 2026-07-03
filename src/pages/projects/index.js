@@ -232,6 +232,33 @@ const JabrMark = () => (
   </svg>
 );
 
+// fast-classifier — "the filed row": a ledger box with three rows, the middle
+// row sliding out through a gap in the right edge (an email being filed).
+const FastClassifierMark = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 32"
+    width="108"
+    height="96"
+    role="img"
+    aria-label="fast-classifier"
+    sx={{ color: 'text' }}
+  >
+    <title>fast-classifier</title>
+    <g
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.6"
+      strokeLinecap="square"
+    >
+      <path d="M29 11.5 V3 H3 V29 H29 V20.5" />
+      <line x1="8" y1="9.5" x2="23" y2="9.5" />
+      <line x1="8" y1="22.5" x2="23" y2="22.5" />
+    </g>
+    <rect x="8" y="14" width="27" height="4" fill="#14b8a6" />
+  </svg>
+);
+
 const ProjectCard = ({ title, description, children }) => (
   <div
     sx={{
@@ -460,6 +487,92 @@ const Projects = () => {
             </div>
           </a>
           <JabrMark />
+        </div>
+      </ProjectCard>
+
+      <ProjectCard
+        title="fast-classifier"
+        description="A deterministic, rule-first email classifier for Fastmail — sweep newsletters, file everything into labels, flag what needs a human reply. Dry-run by default and architecturally incapable of deleting mail. Born from organizing a real 6,551-email inbox; ships as a TypeScript library, a CLI, and an MCP server for agents."
+      >
+        <div
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: 4,
+          }}
+        >
+          <a
+            href="https://github.com/ahmadatallah/fast-classifier"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 2,
+              textDecoration: 'none',
+              color: 'background',
+              bg: 'text',
+              px: 3,
+              py: 2,
+              borderRadius: 8,
+            }}
+          >
+            <svg
+              sx={{ width: 20, height: 20 }}
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+            <div sx={{ textAlign: 'left' }}>
+              <div sx={{ fontSize: 0, opacity: 0.8, lineHeight: 1 }}>
+                View on
+              </div>
+              <div sx={{ fontSize: 1, fontWeight: 600, lineHeight: 1.2 }}>
+                GitHub
+              </div>
+            </div>
+          </a>
+          <a
+            href="https://ahmadatallah.github.io/fast-classifier/"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 2,
+              textDecoration: 'none',
+              color: 'text',
+              border: '1px solid',
+              borderColor: 'text',
+              px: 3,
+              py: 2,
+              borderRadius: 8,
+            }}
+          >
+            <svg
+              sx={{ width: 20, height: 20 }}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+            </svg>
+            <div sx={{ textAlign: 'left' }}>
+              <div sx={{ fontSize: 0, opacity: 0.8, lineHeight: 1 }}>
+                Read the
+              </div>
+              <div sx={{ fontSize: 1, fontWeight: 600, lineHeight: 1.2 }}>
+                Docs
+              </div>
+            </div>
+          </a>
+          <FastClassifierMark />
         </div>
       </ProjectCard>
     </div>
