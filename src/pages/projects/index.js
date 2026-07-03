@@ -486,6 +486,44 @@ const Projects = () => {
               </div>
             </div>
           </a>
+          <a
+            href="https://ahmadatallah.github.io/jabr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 2,
+              textDecoration: 'none',
+              color: 'text',
+              border: '1px solid',
+              borderColor: 'text',
+              px: 3,
+              py: 2,
+              borderRadius: 8,
+            }}
+          >
+            <svg
+              sx={{ width: 20, height: 20 }}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+            </svg>
+            <div sx={{ textAlign: 'left' }}>
+              <div sx={{ fontSize: 0, opacity: 0.8, lineHeight: 1 }}>
+                Read the
+              </div>
+              <div sx={{ fontSize: 1, fontWeight: 600, lineHeight: 1.2 }}>
+                Docs
+              </div>
+            </div>
+          </a>
           <JabrMark />
         </div>
       </ProjectCard>
