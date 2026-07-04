@@ -234,6 +234,9 @@ const JabrMark = () => (
 
 // fast-classifier — "the filed row": a ledger box with three rows, the middle
 // row sliding out through a gap in the right edge (an email being filed).
+// Animated like the project's demo video: the box draws itself, the ink rows
+// appear, the teal row slides out through the gap — then keeps cycling the
+// Fastmail palette (blue, light blue, amber) like the docs header logo.
 const FastClassifierMark = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -242,20 +245,67 @@ const FastClassifierMark = () => (
     height="96"
     role="img"
     aria-label="fast-classifier"
-    sx={{ color: 'text' }}
+    sx={{ color: 'text', overflow: 'visible' }}
   >
     <title>fast-classifier</title>
+    <style>{`
+      .fcm-box {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: fcmDraw 0.7s ease-in-out 0.2s forwards;
+      }
+      .fcm-ink {
+        opacity: 0;
+        animation: fcmFade 0.25s ease-out forwards;
+      }
+      .fcm-ink-2 { animation-delay: 0.95s; }
+      .fcm-ink-3 { animation-delay: 1.05s; }
+      .fcm-row {
+        transform-box: fill-box;
+        transform-origin: left center;
+        transform: scaleX(0);
+        animation:
+          fcmGrow 0.45s cubic-bezier(0.22, 1, 0.36, 1) 1.25s forwards,
+          fcmCycle 8s linear 2.2s infinite;
+      }
+      @keyframes fcmDraw { to { stroke-dashoffset: 0; } }
+      @keyframes fcmFade { to { opacity: 1; } }
+      @keyframes fcmGrow { to { transform: scaleX(1); } }
+      @keyframes fcmCycle {
+        0%, 20% { fill: #14b8a6; }
+        25%, 45% { fill: #0067b9; }
+        50%, 70% { fill: #69b3e7; }
+        75%, 95% { fill: #ffc107; }
+        100% { fill: #14b8a6; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .fcm-box { stroke-dashoffset: 0; animation: none; }
+        .fcm-ink { opacity: 1; animation: none; }
+        .fcm-row { transform: scaleX(1); animation: none; }
+      }
+    `}</style>
     <g
       fill="none"
       stroke="currentColor"
       strokeWidth="2.6"
       strokeLinecap="square"
     >
-      <path d="M29 11.5 V3 H3 V29 H29 V20.5" />
-      <line x1="8" y1="9.5" x2="23" y2="9.5" />
-      <line x1="8" y1="22.5" x2="23" y2="22.5" />
+      <path
+        className="fcm-box"
+        pathLength="100"
+        d="M29 11.5 V3 H3 V29 H29 V20.5"
+      />
+      <line className="fcm-ink fcm-ink-2" x1="8" y1="9.5" x2="23" y2="9.5" />
+      <line className="fcm-ink fcm-ink-3" x1="8" y1="22.5" x2="23" y2="22.5" />
     </g>
-    <rect x="8" y="14" width="27" height="4" fill="#14b8a6" />
+    <rect
+      className="fcm-row"
+      x="8"
+      y="14"
+      width="27"
+      height="4"
+      fill="#14b8a6"
+    />
   </svg>
 );
 
