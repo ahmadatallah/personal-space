@@ -1,8 +1,16 @@
 /** @jsx jsx */
 import { jsx, NavLink } from 'theme-ui';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 const Intro = () => {
+  const { pdf } = useStaticQuery(graphql`
+    {
+      pdf: file(name: { eq: "resumelatest" }) {
+        publicURL
+      }
+    }
+  `);
+
   return (
     <section
       aria-labelledby="intro-section"
@@ -62,7 +70,7 @@ const Intro = () => {
         </a>
         . The least important thing here is checking my{' '}
         <a
-          href="/resumelatest.pdf"
+          href={pdf.publicURL}
           target="_blank"
           rel="noopener noreferrer"
           sx={{ variant: 'styles.navlink', textDecoration: 'underline' }}
